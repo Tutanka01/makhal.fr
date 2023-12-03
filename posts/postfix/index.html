@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Postfix</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='mail, postfix'>
+
+    <meta property="og:url" content="https://tutanka01.github.io/posts/postfix/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Postfix">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://tutanka01.github.io/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://tutanka01.github.io/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Postfix">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://tutanka01.github.io/posts/postfix/">
+    <meta property="twitter:url" content="https://tutanka01.github.io/posts/postfix/">
+    <meta name="twitter:image" content="https://tutanka01.github.io/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://tutanka01.github.io/posts/postfix/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.edd985581bf860dfb4507e5885197f1680160c7fe19f23b31e183126d99dd596.js" integrity="sha256-7dmFWBv4YN&#43;0UH5YhRl/FoAWDH/hnyOzHhgxJtmd1ZY="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://tutanka01.github.io/">
+                    <img src="https://tutanka01.github.io//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://tutanka01.github.io/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://tutanka01.github.io/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://tutanka01.github.io/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://tutanka01.github.io/pages/about/"> About </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://tutanka01.github.io/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://tutanka01.github.io/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://tutanka01.github.io/pages/about/"> About </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Postfix</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            octobre 18, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://tutanka01.github.io/tags/mail">mail</a></li>
+        
+            <li class="post-tag"><a href="https://tutanka01.github.io/tags/postfix">postfix</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="decouverte-et-installation-de-postfix">Decouverte et installation de Postfix</h1>
+<p>Sur ce poste, je vais vous montrer comment installer et utiliser <strong>Postfix</strong>. Sur ce tuto je vais seulement vous montrer comment installer et configurer Postfix pour envoyer des mails en local et non a l&rsquo;exterieur. Cela sera fait dans un autre poste.
+Tout d&rsquo;abord une explication de ceu que c&rsquo;est postfix s&rsquo;impose :</p>
+<p>Postfix est un serveur de messagerie électronique, il permet d&rsquo;envoyer et de recevoir des mails. Voila un schema pour vous expliquer comment fonctionne un serveur de messagerie (sur ce tuto on va se consacrer seulement sur la partie, client -&gt; serveur SMTP):</p>
+<div class="mermaid">
+graph TB;
+
+subgraph Internet
+    A[Client] -->|Envoi d'un email| B[Serveur SMTP]
+end
+
+subgraph Serveur SMTP
+    B -->|Vérification de l'authentification| C{Authentifié?}
+    C -->|Oui| D[Traitement de l'email]
+    C -->|Non| B
+    D -->|Envoi à la file d'attente| E[File d'attente]
+end
+
+subgraph File d'attente
+    E -->|Vérification des destinataires| F{Destinataires valides?}
+    F -->|Oui| G[Traitement ultérieur]
+    F -->|Non| H[Rejet de l'email]
+end
+
+subgraph Traitement ultérieur
+    G -->|Envoi à la boîte aux lettres| I[Boîte aux lettres]
+end
+
+subgraph Boîte aux lettres
+    I -->|Stockage de l'email| J[Serveur de destination]
+end
+</div>
+<h2 id="installation-de-postfix">Installation de Postfix</h2>
+<p>Pour ce tutoriel, je vais utiliser Debian 11, mais vous pouvez utiliser n&rsquo;importe quelle distribution Linux.</p>
+<p>Pour installer Postfix, nous allons utiliser la commande suivante :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install postfix mailutils
+</span></span></code></pre></div><p>Pendant l&rsquo;installation de Postfix, vous allez avoir une fenêtre qui va vous demander de choisir le type de configuration que vous voulez, choisissez <strong><strong>&ldquo;Site Internet&rdquo;</strong></strong> et appuyez sur <strong><strong>&ldquo;Entrée&rdquo;</strong></strong>.</p>
+<p>Suite a cela vous allez avoir une autre fenêtre qui va vous demander de choisir le nom de domaine de votre serveur, choisissez le nom de domaine que vous voulez et appuyez sur <strong><strong>&ldquo;Entrée&rdquo;</strong></strong>. Sur cet exemple, j&rsquo;ai choisi le nom de domaine <strong><strong>&ldquo;makhal.lan&rdquo;</strong></strong>.</p>
+<h2 id="configuration-de-postfix">Configuration de Postfix</h2>
+<p>Postfix a plusieurs fichiers de configuration, mais nous allons nous concentrer sur le fichier <strong><strong>&ldquo;main.cf&rdquo;</strong></strong> qui se trouve dans le dossier <strong><strong>&quot;/etc/postfix&quot;</strong></strong>. Et egalemment sur le fichier <strong><strong>&ldquo;master.cf&rdquo;</strong></strong> qui se trouve dans le dossier <strong><strong>&quot;/etc/postfix&quot;</strong></strong>.</p>
+<p>Pour le fichier <strong><strong>main.cf</strong></strong>, nous allons le configurer pour pemettre a Postfix de envoyer des e-mail tout simplement en local pour l&rsquo;instant. Pour cela, nous allons ajouter les lignes suivantes a la fin du fichier :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>mydomain <span style="color:#f92672">=</span> makhal.lan
+</span></span><span style="display:flex;"><span>myhostname <span style="color:#f92672">=</span> svr-mail.makhal.lan
+</span></span><span style="display:flex;"><span>alias_maps <span style="color:#f92672">=</span> hash:/etc/aliases
+</span></span><span style="display:flex;"><span>alias_database <span style="color:#f92672">=</span> hash:/etc/aliases
+</span></span><span style="display:flex;"><span>myorigin <span style="color:#f92672">=</span> /etc/mailname
+</span></span><span style="display:flex;"><span>mydestination <span style="color:#f92672">=</span> $mydomain, localhost.$mydomain, localhost
+</span></span><span style="display:flex;"><span>default_transport <span style="color:#f92672">=</span> smtp
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#relayhost =</span>
+</span></span><span style="display:flex;"><span>mynetworks <span style="color:#f92672">=</span> 127.0.0.0/8 192.168.1.0/24 <span style="color:#75715e"># Ip RZO local</span>
+</span></span><span style="display:flex;"><span>home_mailbox <span style="color:#f92672">=</span> Maildir/
+</span></span><span style="display:flex;"><span>mailbox_size_limit <span style="color:#f92672">=</span> <span style="color:#ae81ff">51200000</span>
+</span></span><span style="display:flex;"><span>recipient_delimiter <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>inet_interfaces <span style="color:#f92672">=</span> all
+</span></span><span style="display:flex;"><span>inet_protocols <span style="color:#f92672">=</span> ipv4
+</span></span></code></pre></div><p>Sur ce fichier nous avons modifie/ajouté les lignes suivantes :</p>
+<blockquote>
+<p><strong>mydomain</strong> = makhal.lan : C&rsquo;est le nom de domaine de notre serveur mail.</p>
+</blockquote>
+<blockquote>
+<p><strong>myhostname</strong> = svr-mail.makhal.lan : C&rsquo;est le nom de notre serveur mail.</p>
+</blockquote>
+<blockquote>
+<p><strong>mydestination</strong> = $mydomain, localhost.$mydomain, localhost : C&rsquo;est la liste des domaines que notre serveur mail va accepter.</p>
+</blockquote>
+<blockquote>
+<p>m<strong>ynetworks</strong> = : C&rsquo;est la liste des réseaux qui peuvent utiliser notre serveur mail.</p>
+</blockquote>
+<blockquote>
+<p><strong>home_mailbox</strong> = Maildir/ : C&rsquo;est le dossier ou les mails seront stockés. Dans notre cas c&rsquo;est le dossier <strong><strong>&ldquo;Maildir&rdquo;</strong></strong> qui se trouve dans le dossier de l&rsquo;utilisateur.</p>
+</blockquote>
+<blockquote>
+<p><strong>mailbox_size_limit</strong> = 51200000 : C&rsquo;est la taille maximale des mails que notre serveur mail va accepter.</p>
+</blockquote>
+<blockquote>
+<p><strong>inet_interfaces</strong> = all : C&rsquo;est l&rsquo;interface réseau que notre serveur mail va utiliser.</p>
+</blockquote>
+<blockquote>
+<p>** inet_protocols** = ipv4 : C&rsquo;est le protocole réseau que notre serveur mail va utiliser.</p>
+</blockquote>
+<p>Pour verifier qu&rsquo;on a bien configuré notre serveur mail, nous allons utiliser la commande suivante :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo postfix check
+</span></span></code></pre></div><p>Si vous n&rsquo;avez pas de sortie c&rsquo;est que vous avez bien configuré votre serveur mail.</p>
+<p>Maintenant nous allons redemarrer postifx et creer, 2 users pour voir si notre serveur mail marche correctement.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl restart postfix
+</span></span><span style="display:flex;"><span>sudo useradd -m -s /bin/bash user1
+</span></span><span style="display:flex;"><span>sudo useradd -m -s /bin/bash user2
+</span></span></code></pre></div><p>Suite a cela il faut envoyer le email depuis user1 a user2 pour verifier que notre serveur mail marche correctement.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo su - user1
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Hello World&#34;</span> | mail -s <span style="color:#e6db74">&#34;Test&#34;</span>
+</span></span></code></pre></div><p>Pour verifier que le mail a bien ete envoyé, nous allons utiliser la commande suivante :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo su - user2
+</span></span><span style="display:flex;"><span>cd Maildir/new
+</span></span><span style="display:flex;"><span>cat <span style="color:#e6db74">&#34;fichiermail&#34;</span>
+</span></span></code></pre></div><p>Et vous allez avoir le mail que vous avez envoyé.Sinon, suivez a nouveau les etapes precedentes pour verifier que vous avez bien configuré votre serveur mail.</p>
+<p>Et voila, vous avez configuré votre serveur mail avec Postfix. Dans le prochain post, je vais vous montrer comment configurer Postfix pour envoyer des mails a l&rsquo;exterieur.</p>
+<p>Si vous avez des questions, n&rsquo;hesitez pas a me contacter.</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/bind9/">
+            &#8592;
+            :
+            Bind9
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octobre 15, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/docker-swarm/">
+            :
+            Docker Swarm
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            octobre 23, 2023
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2023 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

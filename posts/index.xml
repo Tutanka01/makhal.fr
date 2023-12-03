@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on makhal.fr</title>
+    <link>https://tutanka01.github.io/posts/</link>
+    <description>Recent content in Posts on makhal.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Mon, 23 Oct 2023 06:16:53 +0200</lastBuildDate>
+    <atom:link href="https://tutanka01.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker Swarm</title>
+      <link>https://tutanka01.github.io/posts/docker-swarm/</link>
+      <pubDate>Mon, 23 Oct 2023 06:16:53 +0200</pubDate>
+      <guid>https://tutanka01.github.io/posts/docker-swarm/</guid>
+      <description>Dans ce post, je vais vous montrer comment utiliser Docker et Docker Swarm.</description>
+    </item>
+    <item>
+      <title>Presentation</title>
+      <link>https://tutanka01.github.io/posts/presentation/</link>
+      <pubDate>Sat, 14 Oct 2023 16:10:25 +0200</pubDate>
+      <guid>https://tutanka01.github.io/posts/presentation/</guid>
+      <description>Dans ce post, je me présente et je parle de mes compétences et de mes certifications.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cv on makhal.fr</title>
+    <link>https://tutanka01.github.io/tags/cv/</link>
+    <description>Recent content in cv on makhal.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Sat, 14 Oct 2023 16:10:25 +0200</lastBuildDate>
+    <atom:link href="https://tutanka01.github.io/tags/cv/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Presentation</title>
+      <link>https://tutanka01.github.io/posts/presentation/</link>
+      <pubDate>Sat, 14 Oct 2023 16:10:25 +0200</pubDate>
+      <guid>https://tutanka01.github.io/posts/presentation/</guid>
+      <description>Dans ce post, je me présente et je parle de mes compétences et de mes certifications.</description>
+    </item>
+  </channel>
+</rss>

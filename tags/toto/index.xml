@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>toto on makhal.fr</title>
+    <link>https://tutanka01.github.io/tags/toto/</link>
+    <description>Recent content in toto on makhal.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Fri, 13 Oct 2023 16:53:03 +0200</lastBuildDate><atom:link href="https://tutanka01.github.io/tags/toto/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Second_post</title>
+      <link>https://tutanka01.github.io/posts/second_post/</link>
+      <pubDate>Fri, 13 Oct 2023 16:53:03 +0200</pubDate>
+      
+      <guid>https://tutanka01.github.io/posts/second_post/</guid>
+      <description>J&amp;rsquo;aime les pomes de terre Moi aussi </description>
+    </item>
+    
+  </channel>
+</rss>
