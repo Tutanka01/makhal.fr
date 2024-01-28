@@ -16,6 +16,13 @@
       <description>Au cours de ce post, je vais vous montrer comment mettre en place le DMARC, DKIM et SPF sur votre serveur de messagerie.</description>
     </item>
     <item>
+      <title>Kubernetes Debutant</title>
+      <link>https://tutanka01.github.io/posts/kubernetes_debutant/</link>
+      <pubDate>Sun, 03 Dec 2023 21:05:49 +0100</pubDate>
+      <guid>https://tutanka01.github.io/posts/kubernetes_debutant/</guid>
+      <description>Dans ce post, je vous présente Kubernetes :D</description>
+    </item>
+    <item>
       <title>Docker Swarm</title>
       <link>https://tutanka01.github.io/posts/docker-swarm/</link>
       <pubDate>Mon, 23 Oct 2023 06:16:53 +0200</pubDate>

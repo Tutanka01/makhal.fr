@@ -6,17 +6,10 @@
     <description>Recent content in kubernetes on makhal.fr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sat, 13 Jan 2024 20:25:33 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 03 Dec 2023 21:05:49 +0100</lastBuildDate>
     <atom:link href="https://tutanka01.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>K8stuto partie 1</title>
-      <link>https://tutanka01.github.io/posts/k8stuto/</link>
-      <pubDate>Sat, 13 Jan 2024 20:25:33 +0100</pubDate>
-      <guid>https://tutanka01.github.io/posts/k8stuto/</guid>
-      <description>Créer un premier POD et manipuler son environnement d&amp;rsquo;orchestration K8s</description>
-    </item>
-    <item>
-      <title>Kubernetes_debutant</title>
+      <title>Kubernetes Debutant</title>
       <link>https://tutanka01.github.io/posts/kubernetes_debutant/</link>
       <pubDate>Sun, 03 Dec 2023 21:05:49 +0100</pubDate>
       <guid>https://tutanka01.github.io/posts/kubernetes_debutant/</guid>
