@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>K8stuto partie 1</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='kubernetes'>
+
+    <meta property="og:url" content="https://tutanka01.github.io/posts/k8stuto/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="K8stuto partie 1">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://tutanka01.github.io/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://tutanka01.github.io/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="K8stuto partie 1">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://tutanka01.github.io/posts/k8stuto/">
+    <meta property="twitter:url" content="https://tutanka01.github.io/posts/k8stuto/">
+    <meta name="twitter:image" content="https://tutanka01.github.io/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://tutanka01.github.io/posts/k8stuto/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.edd985581bf860dfb4507e5885197f1680160c7fe19f23b31e183126d99dd596.js" integrity="sha256-7dmFWBv4YN&#43;0UH5YhRl/FoAWDH/hnyOzHhgxJtmd1ZY="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://tutanka01.github.io/">
+                    <img src="https://tutanka01.github.io//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://tutanka01.github.io/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://tutanka01.github.io/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://tutanka01.github.io/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://tutanka01.github.io/pages/about/"> About </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://tutanka01.github.io/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://tutanka01.github.io/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://tutanka01.github.io/pages/about/"> About </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>K8stuto partie 1</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            janvier 13, 2024
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://tutanka01.github.io/tags/kubernetes">kubernetes</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="exercice-1--créer-un-premier-pod-et-manipuler-son-environnement-dorchestration-k8s">Exercice 1 : créer un premier POD et manipuler son environnement d&rsquo;orchestration K8s</h1>
+<p>Ce premier exercice s&rsquo;intéresse à la création de l&rsquo;entité de référence dans un cluster Kubernetes à savoir un <code>Pod</code> qui est une représentation logique de un ou plusieurs conteneurs. Nous allons donc voir comment manipuler un <code>Pod</code> pour le créer, s&rsquo;y connecter via son conteneur associé et pour le supprimer. Nous étudierons également comment écrire un fichier de configuration utilisé pour faciliter l&rsquo;exportation des paramètres d&rsquo;un <code>Pod</code>. Nous verrons également l&rsquo;intérêt d&rsquo;utiliser un <code>Namespace</code> pour isoler les différents objets créés dans un cluster Kubernetes. Enfin, nous montrerons via une première solution comment accéder à un <code>Pod</code> par le réseau.</p>
+<p>Ce premier exercice sera aussi l&rsquo;occasion de manipuler les outils <strong>kubectl</strong> et <a href="https://k9scli.io/">K9s</a> que nous avons installés lors de la mise en place de notre cluster Kubernetes.</p>
+<blockquote>
+<p>Quelque soit le type d&rsquo;installation choisi pour la mise en place de votre cluster Kubernetes, toutes les commandes ci-dessous devraient normalement fonctionner. Nous considérons qu&rsquo;il existe un fichier <code>k3s.yaml</code> à la racine du dossier <code>microservices-kubernetes-gettingstarted-tutorial/</code>, si ce n&rsquo;est pas le cas, merci de reprendre la mise en place d&rsquo;un cluster Kubernetes. Il est important ensuite de s&rsquo;assurer que la variable <code>KUBECONFIG</code> soit initialisée avec le chemin du fichier d&rsquo;accès au cluster Kubernetes (<code>export KUBECONFIG=$PWD/k3s.yaml</code>).</p>
+</blockquote>
+<h2 id="but">But</h2>
+<ul>
+<li>Manipuler un <code>Pod</code> (créer, se connecter via son conteneur associé, supprimer)</li>
+<li>Écrire un fichier de configuration pour décrire un objet <code>Pod</code></li>
+<li>Accéder à un <code>Pod</code> via le réseau</li>
+<li>Organiser les <code>Pods</code> via les <code>Namespaces</code></li>
+</ul>
+<h2 id="étapes-à-suivre">Étapes à suivre</h2>
+<ul>
+<li>
+<p>Créer deux invites de commande, l&rsquo;une pour l&rsquo;exécution de <a href="https://k9scli.io/">K9s</a> et la seconde pour la saisie des commandes avec l&rsquo;outil <strong>kubectl</strong>, puis se placer pour chaque invite de commande à la racine du dossier <code>microservices-kubernetes-gettingstarted-tutorial/</code>. Pour faciliter l&rsquo;identification des invites de commande, nous les appellerons respectivement <em>k9s</em> et <em>kubectl</em>.</p>
+</li>
+<li>
+<p>Depuis l&rsquo;invite de commande <em>k9s</em> :</p>
+</li>
+</ul>
+<pre tabindex="0"><code>$ export KUBECONFIG=$PWD/k3s.yaml
+$ k9s
+</code></pre><p><img src="../images/k9s-k3d.png" alt="Outil K9s affichant les Pods déployés sur le cluster K8s" title="K9s pour gérer votre cluster K8s"></p>
+<p>L&rsquo;outil <a href="https://k9scli.io/">K9s</a> affiche tous les objets créés au sein du cluster. L&rsquo;affichage au démarrage donne l&rsquo;ensemble des objets de type <code>Pod</code>. Les <code>Pods</code> déjà présents concernent le fonctionnement interne de Kubernetes. Ces <code>Pods</code> sont identifiables par le <code>Namespace</code> appelé <code>kube-system</code> (colonne <code>NAMESPACE</code>).</p>
+<p>L&rsquo;utilisation <a href="https://k9scli.io/">K9s</a> est très proche de l&rsquo;éditeur de texte <strong>Vim</strong>. Deux modes sont disponibles : <em>commande</em> et <em>recherche</em>. Pour saisir une commande, la touche <code>:</code> doit être utilisée. Ce mode est identifiable par la forme du prompt <code>🐶&gt;</code> qui représente un chien de race Bigle (enfin je crois). L&rsquo;ensemble des commandes est disponible via le raccourci <code>CTRL + a</code> ou via la commande <code>:aliases</code>. Pour effectuer une recherche, la touche <code>/</code> doit être utilisée. Ce mode est identifiable par la forme du prompt <code>🐩&gt;</code> qui est un chien de race Caniche (il n&rsquo;y a pas à se tromper là).</p>
+<ul>
+<li>Depuis l&rsquo;outil <a href="https://k9scli.io/">K9s</a>, afficher la liste des <code>Namespaces</code> via la commande <code>:namespaces</code>.</li>
+</ul>
+<p><img src="../images/k9s-namespace.png" alt="Liste des Namespaces via la commande :namespace" title="K9s pour gérer votre cluster K8s"></p>
+<blockquote>
+<p>Le résultat est identique selon que vous utilisez le singulier ou le pluriel. <code>:namespaces</code> donne le même résultat que <code>:namespace</code>.</p>
+</blockquote>
+<p>Un ensemble de <code>Namespace</code> est donné par l&rsquo;outil <a href="https://k9scli.io/">K9s</a>. Ces <code>Namespaces</code> existent déjà car ils sont utilisés pour le fonctionnement interne de Kubernetes.</p>
+<ul>
+<li>Depuis l&rsquo;outil <a href="https://k9scli.io/">K9s</a>, retourner à l&rsquo;affichage de la liste des <code>Pods</code> via la commande <code>:pods</code>.</li>
+</ul>
+<p>Nous allons obtenir les mêmes informations depuis l&rsquo;outil <strong>kubectl</strong>. Cependant, contrairement à l&rsquo;outil <a href="https://k9scli.io/">K9s</a>, elles ne pourront être mises à jour qu&rsquo;en exécutant plusieurs fois la même ligne de commande. En effet, <a href="https://k9scli.io/">K9s</a> est réactif et tout changement sur le cluster Kubernetes est automatiquement affiché à l&rsquo;utilisateur (sous condition qu&rsquo;il se trouve dans la bonne commande).</p>
+<ul>
+<li>Depuis l&rsquo;invite de commande <em>kubectl</em> :</li>
+</ul>
+<pre tabindex="0"><code>$ export KUBECONFIG=$PWD/k3s.yaml
+$ kubectl get pods --all-namespaces
+NAMESPACE     NAME                                      READY   STATUS      RESTARTS   AGE
+kube-system   local-path-provisioner-79f67d76f8-flwh9   1/1     Running     0          115m
+kube-system   coredns-597584b69b-kwbdc                  1/1     Running     0          115m
+kube-system   helm-install-traefik-crd-67bd4            0/1     Completed   0          115m
+kube-system   svclb-traefik-86c9da09-xdmwv              2/2     Running     0          115m
+kube-system   svclb-traefik-86c9da09-mhm2n              2/2     Running     0          115m
+kube-system   helm-install-traefik-k6j29                0/1     Completed   1          115m
+kube-system   svclb-traefik-86c9da09-zs7tn              2/2     Running     0          115m
+kube-system   traefik-66c46d954f-pzwrl                  1/1     Running     0          115m
+kube-system   metrics-server-5f9f776df5-2rgdh           1/1     Running     0          115m
+</code></pre><p>L&rsquo;option <code>get</code> permet de récupérer les informations de l&rsquo;objet passé en paramètre <code>pods</code>. Le paramètre <code>--all-namespaces</code> indique que tous les <code>Namespaces</code> sont considérés.</p>
+<ul>
+<li>Affichons maintenant la liste des <code>Namespaces</code> de notre cluster Kubernetes, depuis l&rsquo;invite de commande <em>kubectl</em> :</li>
+</ul>
+<pre tabindex="0"><code>$ kubectl get namespace
+NAME              STATUS   AGE
+default           Active   117m
+kube-system       Active   117m
+kube-public       Active   117m
+kube-node-lease   Active   117m
+</code></pre><p>Il est maintenant temps de créer notre premier <code>Pod</code> qui, pour rappel, est une représentation logique de un ou plusieurs conteneurs.</p>
+<ul>
+<li>Dans l&rsquo;exemple qui va suivre, nous allons créer un <code>Pod</code> avec un conteneur basé sur l&rsquo;image du serveur web <a href="https://www.nginx.com/">Nginx</a>. Depuis l&rsquo;invite de commande <em>kubectl</em> :</li>
+</ul>
+<pre tabindex="0"><code>$ kubectl run myfirstpod --image=nginx:latest
+pod/myfirstpod created
+</code></pre><ul>
+<li>Pour s&rsquo;assurer que le <code>Pod</code> a été créé :</li>
+</ul>
+<pre tabindex="0"><code>$ kubectl get pods
+NAME         READY   STATUS    RESTARTS   AGE
+myfirstpod   1/1     Running   0          34s
+</code></pre><p>Depuis l&rsquo;outil <a href="https://k9scli.io/">K9s</a>, vous devriez obtenir le résultat suivant (commande <code>:pods</code> si vous n&rsquo;affichez pas la liste des <code>Pods</code>).</p>
+<p><img src="../images/k9s-myfirstpod.png" alt="Liste des Pods actuellement dans le cluster Kubernetes dont le Pod que nous venons de créer" title="Le Pod précédement créé est disponible dans la liste des Pods"></p>
+<p>Puisque notre premier <code>Pod</code> a été créé et déployé sans problème, nous allons vérifier si la page web par défaut de <a href="https://www.nginx.com/">Nginx</a> est retournée après une requête HTTP. L&rsquo;accès depuis l&rsquo;extérieur d&rsquo;un cluster K8s à un <code>Pod</code> se fait généralement par les services. Toutefois, nous découvrirons les services plus tard dans les prochains exercices. En attendant, nous allons utiliser une technique d&rsquo;exposition des <code>Pods</code> via une redirection des ports. Cette technique ne peut être mise en place que par l&rsquo;intermédiaire des outils <strong>kubectl</strong> et <a href="https://k9scli.io/">K9s</a>. Cette redirection des ports n&rsquo;est à utiliser que pour les phases de test, <strong>ne jamais utiliser cette technique pour la mise en production de vos microservices</strong>.</p>
+<ul>
+<li>Depuis l&rsquo;invite de commande <em>kubectl</em> :</li>
+</ul>
+<pre tabindex="0"><code>$ kubectl port-forward myfirstpod 8080:80
+Forwarding from 127.0.0.1:8080 -&gt; 80
+Forwarding from [::1]:8080 -&gt; 80
+Handling connection for 8080
+</code></pre><p>L&rsquo;option <code>port-forward</code> permet de créer un pont entre la machine locale (depuis le port 8080) et notre <code>Pod</code> (vers le port 80). À l&rsquo;éxécution de cette commande, le processus <strong>kubectl</strong> devient bloquant.</p>
+<blockquote>
+<p>Vous pouvez également utiliser l&rsquo;option <code>--address 0.0.0.0</code> pour exposer à toutes les adresses IP de la machine.</p>
+</blockquote>
+<ul>
+<li>Ouvrir la page par défaut de <a href="https://www.nginx.com/">Nginx</a> depuis un navigateur : http://localhost:8080.</li>
+</ul>
+<p><img src="../images/port-forward-nginx.png" alt="Page par défaut Nginx disponible par le Pod déployé" title="Accès au Pod"></p>
+<ul>
+<li>Arrêter le processus bloquant <strong>kubectl</strong> depuis l&rsquo;invite de commande <em>kubectl</em> via <code>CTRL+C</code>.</li>
+</ul>
+<p>Puisqu&rsquo;un <code>Pod</code> est une représentation logique de un ou plusieurs conteneurs, nous pouvons exécuter une commande directement sur les conteneurs d&rsquo;un <code>Pod</code>.</p>
+<ul>
+<li>Depuis l&rsquo;invite de commande <em>kubectl</em> :</li>
+</ul>
+<pre tabindex="0"><code>$ kubectl exec -it myfirstpod -- /bin/bash
+root@myfirstpod:/# ls
+bin  boot  dev	docker-entrypoint.d  docker-entrypoint.sh  etc	home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+</code></pre><p>L&rsquo;option <code>exec</code> permet d&rsquo;exécuter une commande sur un conteneur d&rsquo;un <code>Pod</code>. Comme un <code>Pod</code> peut représenter plusieurs conteneurs, il est possible d&rsquo;indiquer le conteneur sur lequel la commande doit être exécutée. S&rsquo;il n&rsquo;y a pas de conteneur d&rsquo;indiquer en paramètre, le conteneur par défaut choisi sera le premier. Dans notre cas, comme il n&rsquo;y a qu&rsquo;un conteneur dans notre <code>Pod</code>, c&rsquo;est le conteneur associé à l&rsquo;image <a href="https://www.nginx.com/">Nginx</a> qui sera utilisé. Les options <code>i</code> et <code>t</code> indiquent que la commande à exécuter sera interactive et le résultat sera affiché sur le teminal courant. Ces options sont identiques à <a href="https://www.docker.com/" title="Docker">Docker</a>. L&rsquo;option <code>--</code> précise que les paramètres qui suivront concerneront la commande à exécuter par le conteneur. Dans cet exemple, nous ouvrons un prompt depuis le conteneur.</p>
+<p>Nous allons changer la page HTML par défaut, en modifiant le contenu du fichier <em>/usr/share/nginx/html/index.html</em>.</p>
+<ul>
+<li>Toujours depuis l&rsquo;invite de commande <em>kubectl</em>, vous devriez toujours être dans le prompt du conteneur <a href="https://www.nginx.com/">Nginx</a> :</li>
+</ul>
+<pre tabindex="0"><code>root@myfirstpod:/# echo &#34;Modification de la page web par defaut&#34; &gt; /usr/share/nginx/html/index.html
+root@myfirstpod:/# exit
+$ kubectl port-forward myfirstpod 8080:80
+</code></pre><ul>
+<li>Depuis une nouvelle invite de commande, nous allons récupérer le contenu de la page web via l&rsquo;outil <a href="https://curl.haxx.se" title="cURL">cURL</a> :</li>
+</ul>
+<pre tabindex="0"><code>$ curl http://localhost:8080
+Modification de la page web par defaut
+</code></pre><ul>
+<li>Arrêter le pont réseau entre la machine locale et le <code>Pod</code> via <code>CTRL+C</code> puis supprimer le <code>Pod</code> depuis l&rsquo;invite de commande <em>kubectl</em> :</li>
+</ul>
+<pre tabindex="0"><code>$ kubectl delete pods myfirstpod
+pod &#34;myfirstpod&#34; deleted
+</code></pre><p>Pour l&rsquo;instant, nous avons créé un <code>Pod</code> via l&rsquo;option <code>run</code> de l&rsquo;outil <strong>kubectl</strong>. Nous allons utiliser un fichier de configuration basée sur une syntaxte YAML.</p>
+<ul>
+<li>Créer dans le répertoire <em>exercice1-pod-tools/</em> un fichier appelé <code>mypod.yaml</code> en ajoutant le contenu suivant :</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">mypod</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">mycontainer-1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx:latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">mycontainer-2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">alpine:latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: [<span style="color:#e6db74">&#34;watch&#34;</span>, <span style="color:#e6db74">&#34;wget&#34;</span>, <span style="color:#e6db74">&#34;-qO-&#34;</span>, <span style="color:#e6db74">&#34;localhost&#34;</span>]
+</span></span></code></pre></div><p>Ce fichier de configuration décrit un objet de type <code>Pod</code>. Deux conteneurs sont déclarés. Le premier est un conteneur basé sur l&rsquo;image du serveur web <a href="https://www.nginx.com/">Nginx</a> (identique aux instructions précédentes) et le second est un conteneur basé sur l&rsquo;image d&rsquo;une distribution minimaliste Linux <a href="https://www.alpinelinux.org/">Alpine</a>. Pour ce second conteneur, une commande récupère la page HTML du premier conteneur toutes les deux secondes (<code>watch</code>). La communication entre des conteneurs d&rsquo;un même <code>Pod</code> se fait via <code>localhost</code>.</p>
+<ul>
+<li>Pour créer ce <code>Pod</code> dans notre cluster :</li>
+</ul>
+<pre tabindex="0"><code>$ kubectl apply -f exercice1-pod-tools/mypod.yaml
+pod/mypod created
+</code></pre><p>L&rsquo;option <code>apply</code> permet d&rsquo;appliquer un fichier de configuration au cluster K8s.</p>
+<ul>
+<li>Vérifions que le <code>Pod</code> a été créé dans le cluster K8s :</li>
+</ul>
+<pre tabindex="0"><code>$ kubectl get pods mypod -o wide
+NAME    READY   STATUS    RESTARTS   AGE   IP          NODE                 
+mypod   2/2     Running   0          23s   10.42.2.6   k3d-mycluster-agent-1
+</code></pre><p>Nous introduisons le paramètre <code>-o</code> dans l&rsquo;option <code>get</code> qui permet d&rsquo;obtenir des informations plus détaillées. Nous remarquons également que les deux conteneurs sont en cours d&rsquo;exécution (<code>2/2</code>). Enfin, le <code>Pod</code> est déployé dans le nœud de travail <code>k3d-mycluster-agent-1</code>.</p>
+<ul>
+<li>Une autre option intéressante proposée par <strong>kubectl</strong> est <code>describe</code> qui permet d&rsquo;obtenir un détail complet des informations d&rsquo;un <code>Pod</code> :</li>
+</ul>
+<pre tabindex="0"><code>$ kubectl describe pods mypod
+Name:             mypod
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             k3d-mycluster-agent-1/172.29.0.4
+Start Time:       Tue, 07 Feb 2023 14:49:58 +0100
+Labels:           &lt;none&gt;
+Annotations:      &lt;none&gt;
+Status:           Running
+IP:               10.42.2.6
+IPs:
+  IP:  10.42.2.6
+Containers:
+  mycontainer-1:
+    Container ID:   containerd://79f46fa666100f1d1cb45c8a1e3d706c1df5fa7f677675f1350d6a08780f7527
+    Image:          nginx:latest
+    Image ID:       docker.io/library/nginx@sha256:c54fb26749e49dc2df77c6155e8b5f0f78b781b7f0eadd96ecfabdcdfa5b1ec4
+    Port:           80/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Tue, 07 Feb 2023 14:49:59 +0100
+    Ready:          True
+    Restart Count:  0
+    Environment:    &lt;none&gt;
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-zlnj6 (ro)
+  mycontainer-2:
+    Container ID:  containerd://5f76a700206b9ad9157751d4e99770a7741c7273278a3e5b8dff1ea7ffc6b20d
+    Image:         alpine:latest
+    Image ID:      docker.io/library/alpine@sha256:f271e74b17ced29b915d351685fd4644785c6d1559dd1f2d4189a5e851ef753a
+    Port:          &lt;none&gt;
+    Host Port:     &lt;none&gt;
+    Command:
+      watch
+      wget
+      -qO-
+      localhost
+    State:          Running
+      Started:      Tue, 07 Feb 2023 14:50:02 +0100
+    Ready:          True
+    Restart Count:  0
+    Environment:    &lt;none&gt;
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-zlnj6 (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  kube-api-access-zlnj6:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       &lt;nil&gt;
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              &lt;none&gt;
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  97s   default-scheduler  Successfully assigned default/mypod to k3d-mycluster-agent-1
+  Normal  Pulling    98s   kubelet            Pulling image &#34;nginx:latest&#34;
+  Normal  Pulled     97s   kubelet            Successfully pulled image &#34;nginx:latest&#34; in 660.068216ms (660.07449ms including waiting)
+  Normal  Created    97s   kubelet            Created container mycontainer-1
+  Normal  Started    97s   kubelet            Started container mycontainer-1
+  Normal  Pulling    97s   kubelet            Pulling image &#34;alpine:latest&#34;
+  Normal  Pulled     94s   kubelet            Successfully pulled image &#34;alpine:latest&#34; in 2.756540405s (2.756547566s including waiting)
+  Normal  Created    94s   kubelet            Created container mycontainer-2
+  Normal  Started    94s   kubelet            Started container mycontainer-2
+</code></pre><ul>
+<li>Comme le <code>Pod</code> <em>mypod</em> dispose de deux conteneurs (<em>mycontainer-1</em> et <em>mycontainer-2</em>), nous montrons comment exécuter une commande en choisissant un conteneur. Depuis l&rsquo;invite de commande <em>kubectl</em> :</li>
+</ul>
+<pre tabindex="0"><code>$ kubectl exec -it mypod -c mycontainer-1 -- /bin/sh -c &#34;echo &#39;Helloworld from K3s&#39; &gt; /usr/share/nginx/html/index.html&#34;
+</code></pre><p>Le choix du conteneur se fait via l&rsquo;option <code>-c</code> et dont le nom a été défini dans le fichier <em>mypod.yaml</em>. Contrairement à l&rsquo;exécution précédente d&rsquo;une commande dans un conteneur, nous modifierons directement le fichier <em>/usr/share/nginx/html/index.html</em> sans passer par un prompt interactif.</p>
+<ul>
+<li>Pour vérifier que la page web par défaut a été modifiée, nous utiliserons l&rsquo;option <code>logs</code> de <strong>kubectl</strong> qui comme son nom l&rsquo;indique permet d&rsquo;afficher le contenu de la sortie console :</li>
+</ul>
+<pre tabindex="0"><code>$ kubectl logs mypod --tail=10 -f -c mycontainer-2
+Every 2.0s: wget -qO- localhost                             2023-02-07 13:53:08
+
+Helloworld from K3s
+</code></pre><p>L&rsquo;option <code>-f</code> permet d&rsquo;afficher en continu l&rsquo;arrivée de nouveaux messages sur la sortie console. L&rsquo;option <code>-c</code>, déjà utilisée, permet de désigner le conteneur dans lequel nous souhaitons l&rsquo;affichage des messages de la sortie console. Enfin <code>--tail=10</code> n&rsquo;affichera que les dix dernières lignes.</p>
+<p>Nous allons nous intéresser au concept de <code>Namespace</code> qui permet de regrouper des <code>Pods</code> par projet, par équipe ou par famille. Actuellement, nous n&rsquo;avons pas utilisé explicitement de <code>Namespace</code> lors de la création des <code>Pods</code>. Si aucun <code>Namespace</code> n&rsquo;est précisé, un <code>Pod</code> sera automatiquement placé dans le <code>Namespace</code> intitulé <code>default</code>.</p>
+<p>L&rsquo;association d&rsquo;un <code>Pod</code> à un <code>Namespace</code> peut être faite soit dans le fichier de configuration, soit depuis la commande <strong>kubectl</strong>. Il est préférable d&rsquo;utiliser la seconde technique car cela permet d&rsquo;utiliser un même fichier de configuration dans des <code>Namespaces</code> différents. À noter que ce principe sera le même pour les autres types d&rsquo;objets (<code>Service</code>, <code>PersistentVolume</code>, etc.).</p>
+<ul>
+<li>Commencer par supprimer le <code>Pod</code> précédemment créé :</li>
+</ul>
+<pre tabindex="0"><code>$ kubectl delete pods mypod
+pod &#34;mypod&#34; deleted
+</code></pre><ul>
+<li>Créer dans le répertoire <em>exercice1-pod-tools/</em> un fichier appelé <em>mynamespaceexercice1.yaml</em> en ajoutant le contenu suivant :</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Namespace</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">mynamespaceexercice1</span>
+</span></span></code></pre></div><ul>
+<li>Pour créer ce <code>Namespace</code> dans notre cluster :</li>
+</ul>
+<pre tabindex="0"><code>$ kubectl apply -f exercice1-pod-tools/mynamespaceexercice1.yaml
+namespace/mynamespaceexercice1 created
+</code></pre><ul>
+<li>Nous pouvons maintenant recréer notre <code>Pod</code> dans ce <code>Namespace</code> :</li>
+</ul>
+<pre tabindex="0"><code>$ kubectl apply -f exercice1-pod-tools/mypod.yaml -n mynamespaceexercice1
+pod/mypod created
+</code></pre><p>L&rsquo;option <code>-n</code> sert à préciser le <code>Namespace</code> qui contiendra notre <code>Pod</code>.</p>
+<ul>
+<li>Pour lister les <code>Pods</code> d&rsquo;un <code>Namespace</code> donné, il faudra soit spécifier le <code>Namespace</code> via l&rsquo;option <code>n</code> soit utiliser l&rsquo;option <code>-all-namespace</code> :</li>
+</ul>
+<pre tabindex="0"><code>$ kubectl get pods
+No resources found in default namespace.
+
+$ kubectl get pods -n mynamespaceexercice1
+NAME    READY   STATUS    RESTARTS   AGE
+mypod   2/2     Running   0          24s
+
+$ kubectl get pods --all-namespaces
+NAMESPACE              NAME                                      READY   STATUS      RESTARTS   AGE
+kube-system            local-path-provisioner-79f67d76f8-flwh9   1/1     Running     0          135m
+kube-system            coredns-597584b69b-kwbdc                  1/1     Running     0          135m
+kube-system            helm-install-traefik-crd-67bd4            0/1     Completed   0          135m
+kube-system            svclb-traefik-86c9da09-xdmwv              2/2     Running     0          135m
+kube-system            svclb-traefik-86c9da09-mhm2n              2/2     Running     0          135m
+kube-system            helm-install-traefik-k6j29                0/1     Completed   1          135m
+kube-system            svclb-traefik-86c9da09-zs7tn              2/2     Running     0          135m
+kube-system            traefik-66c46d954f-pzwrl                  1/1     Running     0          135m
+kube-system            metrics-server-5f9f776df5-2rgdh           1/1     Running     0          135m
+mynamespaceexercice1   mypod                                     2/2     Running     0          65s
+</code></pre><p>Vous remarquerez dans la première commande que seuls les <code>Pods</code> dans le <code>Namespace</code> par défaut sont listés, sauf qu&rsquo;il n&rsquo;y en a pas. La deuxième commmande liste les <code>Pods</code> pour le <code>Namespace</code> <code>mynamespaceexercice1</code>. Enfin la troisième commande liste tous les <code>Pods</code> quelque soit son <code>Namespace</code>.</p>
+<ul>
+<li>Si vous supprimez un <code>Namespace</code>, tous les objets qu&rsquo;il contient seront supprimés.</li>
+</ul>
+<pre tabindex="0"><code>$ kubectl delete namespace mynamespaceexercice1
+namespace &#34;mynamespaceexercice1&#34; deleted
+</code></pre><ul>
+<li>Vérifier si le <code>Pod</code> a été supprimé :</li>
+</ul>
+<pre tabindex="0"><code>$ kubectl get pods --all-namespaces
+NAMESPACE     NAME                                     READY   STATUS      RESTARTS      AGE
+kube-system   local-path-provisioner-79f67d76f8-flwh9   1/1     Running     0          137m
+kube-system   coredns-597584b69b-kwbdc                  1/1     Running     0          137m
+kube-system   helm-install-traefik-crd-67bd4            0/1     Completed   0          137m
+kube-system   svclb-traefik-86c9da09-xdmwv              2/2     Running     0          136m
+kube-system   svclb-traefik-86c9da09-mhm2n              2/2     Running     0          136m
+kube-system   helm-install-traefik-k6j29                0/1     Completed   1          137m
+kube-system   svclb-traefik-86c9da09-zs7tn              2/2     Running     0          136m
+kube-system   traefik-66c46d954f-pzwrl                  1/1     Running     0          136m
+kube-system   metrics-server-5f9f776df5-2rgdh           1/1     Running     0          137m
+</code></pre><h2 id="bilan-de-lexercice">Bilan de l&rsquo;exercice</h2>
+<p>À cette étape, vous savez :</p>
+<ul>
+<li>manipuler les outils <strong>kubectl</strong> et <a href="https://k9scli.io/">K9s</a> ;</li>
+<li>créer un <code>Pod</code> avec et sans un fichier de configuration ;</li>
+<li>interagir avec un <code>Pod</code> pour exécuter une commande sur un des ses conteneurs ;</li>
+<li>tester en créant un pont entre la machine locale et un <code>Pod</code> (uniquement pour faire des tests !!!) ;</li>
+<li>créer des <code>Namespaces</code> pour organiser ses déploiements.</li>
+</ul>
+<h2 id="avez-vous-bien-compris-">Avez-vous bien compris ?</h2>
+<p>Pour continuer sur les concepts présentés dans cet exercice, nous proposons les expérimentations suivantes :</p>
+<ul>
+<li>créer un <code>Pod</code> basé sur une image <a href="https://httpd.apache.org/">Apache HTTP</a> et modifier le contenu du répertoire (<em>/var/www/html</em>);</li>
+<li>créer plusieurs <code>Pods</code> dans un <code>Namespace</code> et le supprimer.</li>
+</ul>
+<p>À noter que si vous bloquez sur un des points précédents, n&rsquo;hésitez pas à me solliciter sur <a href="https://github.com/mickaelbaron/mickaelbaron.github.io/issues">Github</a>, je répondrai avec plaisir.</p>
+<h2 id="ressources">Ressources</h2>
+<ul>
+<li><a href="https://blog.eleven-labs.com/fr/k9s/">https://blog.eleven-labs.com/fr/k9s/</a></li>
+<li><a href="https://medium.com/flant-com/k9s-terminal-ui-for-kubernetes-aeead8b0303f">https://medium.com/flant-com/k9s-terminal-ui-for-kubernetes-aeead8b0303f</a></li>
+</ul>
+
+        </p>
+        
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/kubernetes_debutant/">
+            &#8592;
+            :
+            Kubernetes_debutant
+        </a>
+    </p>
+    <p class="prev-post-date">
+        décembre 3, 2023
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

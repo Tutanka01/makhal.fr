@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Kubernetes_debutant</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='kubernetes, docker, devops'>
+
+    <meta property="og:url" content="https://tutanka01.github.io/posts/kubernetes_debutant/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kubernetes_debutant">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://tutanka01.github.io/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://tutanka01.github.io/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kubernetes_debutant">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://tutanka01.github.io/posts/kubernetes_debutant/">
+    <meta property="twitter:url" content="https://tutanka01.github.io/posts/kubernetes_debutant/">
+    <meta name="twitter:image" content="https://tutanka01.github.io/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://tutanka01.github.io/posts/kubernetes_debutant/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.edd985581bf860dfb4507e5885197f1680160c7fe19f23b31e183126d99dd596.js" integrity="sha256-7dmFWBv4YN&#43;0UH5YhRl/FoAWDH/hnyOzHhgxJtmd1ZY="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://tutanka01.github.io/">
+                    <img src="https://tutanka01.github.io//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://tutanka01.github.io/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://tutanka01.github.io/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://tutanka01.github.io/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://tutanka01.github.io/pages/about/"> About </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://tutanka01.github.io/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://tutanka01.github.io/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://tutanka01.github.io/pages/about/"> About </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Kubernetes_debutant</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            décembre 3, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://tutanka01.github.io/tags/kubernetes">kubernetes</a></li>
+        
+            <li class="post-tag"><a href="https://tutanka01.github.io/tags/docker">docker</a></li>
+        
+            <li class="post-tag"><a href="https://tutanka01.github.io/tags/devops">devops</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="kubernetes-pour-les-débutants">Kubernetes pour les débutants</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Bonjour a tous j&rsquo;espere que vous allez bien, sur ce post je vais vous presenter un outil que j&rsquo;essaie de maitriser depuis un moment. Et vu le manque de posts FR bien faits et complets sur le sujet, je me suis dit pourquoi pas faire un post sur le sujet.</p>
+<h2 id="quest-ce-que-kubernetes-">Qu&rsquo;est ce que Kubernetes ?</h2>
+<p>Deja, quand vous entendez kubernetes, vous pensez a quoi ? Moi je pense a un orchestrateur de conteneurs, et c&rsquo;est exactement ce que c&rsquo;est !!</p>
+<p>Kubernetes est un orchestrateur de conteneurs open source, et c&rsquo;est un outil qui permet de gérer des microservices. Il permet de déployer, de mettre à l&rsquo;échelle et de gérer des applications conteneurisées sur des clusters de serveurs. En gros cela permettra une H.A (haute disponnibilite), pour n&rsquo;importe qu&rsquo;elle application que vous allez developper.
+Sur ce tuto j&rsquo;utiliserais Docker, mais si vous etes plus alaise avec Podman, kubernetes le supporte aussi, donc vous pourrez suivre ce tuto tranquillement.</p>
+<h2 id="pourquoi-kubernetes-">Pourquoi Kubernetes ?</h2>
+<p>Kubenetes resout un probleme qui est le suivant : Comment gérer un grand nombre de conteneurs?? J&rsquo;ai deja eu ce probleme quand j&rsquo;ai voulu deployer une application, je voulais qu&rsquo;il soit disponible tout le temps, et c&rsquo;est la que Kubernetes intervient.</p>
+<p>Kubernetes permet de faire ça, il permet de gérer un grand nombre de conteneurs et de les rendre disponible tout le temps (Haute disponibilité).</p>
+<h2 id="comment-ça-marche-">Comment ça marche ?</h2>
+<p>Maintenant que vous savez ce que c&rsquo;est et pourquoi c&rsquo;est utile, on va voir comment ça marche.
+Kubernetes est base sur un systeme de master et de nodes, le master gere les nodes et les nodes hebergent les conteneurs.</p>
+<div class="mermaid">
+graph LR
+A[Master] -- Gere --> B[Node1]
+A -- Gere --> C[Node2]
+A -- Gere --> D[Node3]
+</div>
+<p>Le master gere les nodes et les nodes hebergent les conteneurs, mais comment ça marche ?
+Il faut savaoir que le Master (Control Plane) est compose de plusieurs composants :</p>
+<ul>
+<li>
+<p><strong>API Server :</strong> C&rsquo;est le composant qui expose l&rsquo;API Kubernetes. C&rsquo;est l&rsquo;interface principale pour le cluster Kubernetes. Il implémente une interface RESTful, qui permet aux utilisateurs et aux composants internes de communiquer avec le cluster Kubernetes.</p>
+</li>
+<li>
+<p><strong>Scheduler :</strong> C&rsquo;est le composant qui s&rsquo;assure que les conteneurs sont bien repartis sur les nodes. Il s&rsquo;assure que les conteneurs sont bien repartis sur les nodes en fonction des ressources disponibles.</p>
+</li>
+<li>
+<p><strong>Controller Manager :</strong> C&rsquo;est le composant qui s&rsquo;assure que les nodes et les conteneurs sont en bon etat. Il s&rsquo;assure que les nodes et les conteneurs sont en bon etat en surveillant l&rsquo;etat du cluster Kubernetes.</p>
+</li>
+<li>
+<p><strong>etcd :</strong> C&rsquo;est le composant qui stocke les donnees du cluster Kubernetes. Il stocke les donnees du cluster Kubernetes, comme les configurations des nodes et des conteneurs.</p>
+</li>
+</ul>
+<div class="mermaid">
+graph LR
+A[API Server] --> B[Scheduler]
+A --> C[Controller Manager]
+A --> D[etcd]
+</div>
+<p>Les nodes sont compose de plusieurs composants :</p>
+<ul>
+<li>
+<p><strong>Kubelet :</strong> C&rsquo;est le composant qui s&rsquo;assure que les conteneurs sont en bon etat. Il s&rsquo;assure que les conteneurs sont en bon etat en surveillant l&rsquo;etat des conteneurs.</p>
+</li>
+<li>
+<p><strong>Kube-proxy :</strong> C&rsquo;est le composant qui s&rsquo;assure que les conteneurs sont accessibles. Il s&rsquo;assure que les conteneurs sont accessibles en configurant les regles de routage.</p>
+</li>
+<li>
+<p><strong>Container Runtime :</strong> C&rsquo;est le composant qui s&rsquo;assure que les conteneurs sont bien executes. Il s&rsquo;assure que les conteneurs sont bien executes en executant les conteneurs.</p>
+</li>
+</ul>
+<div class="mermaid"> 
+graph LR
+A[Kubelet] --> B[Kube-proxy]
+A --> C[Container Runtime]
+</div>
+<h2 id="comment-installer-kubernetes-">Comment installer Kubernetes ?</h2>
+<p>Maintenant que vous savez ce que c&rsquo;est et comment ça marche, on va voir comment l&rsquo;installer. Pour l&rsquo;installer, il faut savoir que Kubernetes est compose de plusieurs composants :</p>
+<ul>
+<li><strong>Kubeadm :</strong> C&rsquo;est l&rsquo;outil qui permet d&rsquo;installer Kubernetes. Il permet d&rsquo;installer Kubernetes en executant des commandes.</li>
+<li><strong>Kubelet :</strong> C&rsquo;est le composant qui s&rsquo;assure que les conteneurs sont en bon etat. Il s&rsquo;assure que les conteneurs sont en bon etat en surveillant l&rsquo;etat des conteneurs.</li>
+<li><strong>Kubectl :</strong> C&rsquo;est l&rsquo;outil qui permet de gerer Kubernetes. Il permet de gerer Kubernetes en executant des commandes.</li>
+</ul>
+<p>Pour une installation simplifie, je vais utiliser minikube, qui est un outil qui permet d&rsquo;installer Kubernetes en local. Pour l&rsquo;installer, il faut executer la commande suivante :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+</span></span></code></pre></div><p>Une fois que c&rsquo;est fait, il faut le rendre executable :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo install minikube-linux-amd64 /usr/local/bin/minikube
+</span></span></code></pre></div><p>Et pour finir, il faut verifier que l&rsquo;installation a bien marche :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>minikube version
+</span></span></code></pre></div><h1 id="pas-bon-encore---a-revoir">PAS BON ENCORE - A REVOIR</h1>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/old/dmark_dkim_spf/">
+            &#8592;
+            :
+            Sécurisation Avancée des Services de Messagerie
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octobre 28, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/k8stuto/">
+            :
+            K8stuto partie 1
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            janvier 13, 2024
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

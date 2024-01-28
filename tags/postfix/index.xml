@@ -6,21 +6,14 @@
     <description>Recent content in postfix on makhal.fr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sat, 28 Oct 2023 15:48:49 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jan 2024 08:47:49 +0200</lastBuildDate>
     <atom:link href="https://tutanka01.github.io/tags/postfix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sécurisation Avancée des Services de Messagerie</title>
       <link>https://tutanka01.github.io/posts/dmark_dkim_spf/</link>
-      <pubDate>Sat, 28 Oct 2023 15:48:49 +0200</pubDate>
+      <pubDate>Sun, 28 Jan 2024 08:47:49 +0200</pubDate>
       <guid>https://tutanka01.github.io/posts/dmark_dkim_spf/</guid>
       <description>Au cours de ce post, je vais vous montrer comment mettre en place le DMARC, DKIM et SPF sur votre serveur de messagerie.</description>
-    </item>
-    <item>
-      <title>Postfix</title>
-      <link>https://tutanka01.github.io/posts/postfix/</link>
-      <pubDate>Wed, 18 Oct 2023 10:32:52 +0200</pubDate>
-      <guid>https://tutanka01.github.io/posts/postfix/</guid>
-      <description>Dans ce post, je vais vous montrer comment configurer un serveur mail avec Postfix.</description>
     </item>
   </channel>
 </rss>

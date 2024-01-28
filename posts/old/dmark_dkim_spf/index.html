@@ -21,7 +21,7 @@
     <meta name="description" content="">
     <meta name="keywords" content='postfix, mail'>
 
-    <meta property="og:url" content="https://tutanka01.github.io/posts/dmark_dkim_spf/">
+    <meta property="og:url" content="https://tutanka01.github.io/posts/old/dmark_dkim_spf/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Sécurisation Avancée des Services de Messagerie">
     <meta property="og:description" content="">
@@ -31,12 +31,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Sécurisation Avancée des Services de Messagerie">
     <meta name="twitter:description" content="">
-    <meta property="twitter:domain" content="https://tutanka01.github.io/posts/dmark_dkim_spf/">
-    <meta property="twitter:url" content="https://tutanka01.github.io/posts/dmark_dkim_spf/">
+    <meta property="twitter:domain" content="https://tutanka01.github.io/posts/old/dmark_dkim_spf/">
+    <meta property="twitter:url" content="https://tutanka01.github.io/posts/old/dmark_dkim_spf/">
     <meta name="twitter:image" content="https://tutanka01.github.io/images/avatar.jpg">
 
     
-    <link rel="canonical" href="https://tutanka01.github.io/posts/dmark_dkim_spf/" />
+    <link rel="canonical" href="https://tutanka01.github.io/posts/old/dmark_dkim_spf/" />
 
     
     <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
@@ -48,7 +48,7 @@
     <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
 
     
-    <script src="/js/bundle.min.27043ee3e4fae9fba993230b5c2ba193e1f265beeea9c49a69d028f72b22ccb5.js" integrity="sha256-JwQ&#43;4&#43;T66fupkyMLXCuhk&#43;HyZb7uqcSaadAo9ysizLU="></script>
+    <script src="/js/bundle.min.edd985581bf860dfb4507e5885197f1680160c7fe19f23b31e183126d99dd596.js" integrity="sha256-7dmFWBv4YN&#43;0UH5YhRl/FoAWDH/hnyOzHhgxJtmd1ZY="></script>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
     <script>
@@ -141,7 +141,7 @@
         <h1>Sécurisation Avancée des Services de Messagerie</h1>
         <small role="doc-subtitle"></small>
         <p class="post-date">
-            janvier 28, 2024
+            octobre 28, 2023
         </p>
 
         <ul class="post-tags">
@@ -156,10 +156,10 @@
     <div class="post-content">
         <p>
             <h2 id="introduction">Introduction</h2>
-<p>La sécurisation des services de messagerie est un element majeur pour toute organisation peu importe sa taille, et meme pours les particulieurs qui gerent leur propre messagerie. Les e-mails sont souvent ciblees par les attaques de phishing, de compromission de comptes, et de spam. Pour lutter contre ces menaces, il est essentiel de mettre en place des mécanismes d&rsquo;authentification et de sécurité. C&rsquo;est là qu&rsquo;interviennent SPF, DKIM et DMARC. Les trois mousquettaires de la sécurité des e-mails.</p>
+<p>La sécurisation des services de messagerie est un element majeur pour toute organisation peu importe sa taille. Les e-mails sont souvent ciblees par les attaques de phishing, de compromission de comptes, et de spam. Pour lutter contre ces menaces, il est essentiel de mettre en place des mécanismes d&rsquo;authentification et de sécurité. C&rsquo;est là qu&rsquo;interviennent SPF, DKIM et DMARC. Les trois mousquettaires de la sécurité des e-mails.</p>
 <h2 id="spf-sender-policy-framework">SPF (Sender Policy Framework)</h2>
 <h3 id="comprendre-spf">Comprendre SPF</h3>
-<p>Le SPF, ou Sender Policy Framework, est un mécanisme d&rsquo;authentification qui permet de vérifier que le serveur SMTP est autorisé à envoyer des e-mails au nom d&rsquo;un domaine spécifique. Il fonctionne en utilisant des enregistrements DNS pour déclarer quels serveurs sont autorisés ou non, a envoyer des e-mails pour un domaine donné. Sinon ça serait trop facile d&rsquo;envoyer des <em><strong>@gouv.fr</strong></em> depuis mon propre serveur SMTP.</p>
+<p>Le SPF, ou Sender Policy Framework, est un mécanisme d&rsquo;authentification qui permet de vérifier que le serveur SMTP est autorisé à envoyer des e-mails au nom d&rsquo;un domaine spécifique. Il fonctionne en utilisant des enregistrements DNS pour déclarer quels serveurs sont autorisés ou non a envoyer des e-mails pour un domaine donné. Sinon ça serat trop facile d&rsquo;envoyer des @gouv.fr depuis mon propre serveur SMTP.</p>
 <h3 id="mise-en-place-de-spf">Mise en Place de SPF</h3>
 <h4 id="étape-1--enregistrement-dns-spf">Étape 1 : Enregistrement DNS SPF</h4>
 <p>La première étape pour mettre en place SPF consiste à ajouter un enregistrement DNS SPF a notre domaine. Cet enregistrement indique les serveurs autorisés à envoyer des e-mails pour notre domaine.</p>
@@ -190,13 +190,42 @@
 </ol>
 <h4 id="étape-2--configuration-du-serveur-de-messagerie">Étape 2 : Configuration du Serveur de Messagerie</h4>
 <p>Après avoir configuré l&rsquo;enregistrement DNS SPF, vous devez configurer votre serveur de messagerie pour utiliser SPF lors de la réception d&rsquo;e-mails. La configuration peut varier en fonction du serveur de messagerie que vous utilisez. Voici comment configurer SPF pour Postfix.</p>
-<h3 id="spf-avec-plus-de-details">SPF avec plus de details</h3>
+<h5 id="configuration-spf-dans-postfix">Configuration SPF dans Postfix</h5>
+<ol>
+<li>Ouvrez le fichier de configuration principal de Postfix :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/postfix/main.cf
+</span></span></code></pre></div><ol start="2">
+<li>Ajoutez les directives SPF à la section <code>smtpd_recipient_restrictions</code> :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>smtpd_recipient_restrictions <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    check_policy_service unix:private/policy-spf
+</span></span></code></pre></div><p>Cette commande indique à Postfix d&rsquo;utiliser le service policy-spf pour vérifier SPF.</p>
+<ol start="3">
+<li>Créez un fichier de configuration pour SPF :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/postfix/private/policy-spf
+</span></span></code></pre></div><ol start="4">
+<li>Ajoutez le script policy-spf au fichier :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>/usr/bin/python /usr/lib/postfix-policyd-spf-perl/policyd-spf.py
+</span></span></code></pre></div><ol start="5">
+<li>Rendez le script exécutable :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo chmod +x /etc/postfix/private/policy-spf
+</span></span></code></pre></div><ol start="6">
+<li>Redémarrez Postfix pour prendre en compte les modifications :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl restart postfix
+</span></span></code></pre></div><h3 id="comprendre-spf-en-profondeur">Comprendre SPF en Profondeur</h3>
 <p>Le mécanisme SPF est basé sur la vérification de l&rsquo;enveloppe de l&rsquo;e-mail, qui comprend les adresses IP source du serveur SMTP. Lorsqu&rsquo;un serveur de messagerie reçoit un e-mail, il vérifie si l&rsquo;adresse IP source est autorisée dans l&rsquo;enregistrement DNS SPF du domaine du destinataire. Si l&rsquo;adresse IP est autorisée, l&rsquo;e-mail passe la vérification SPF.</p>
 <p>SPF permet de spécifier différents mécanismes d&rsquo;autorisation, tels que a (autorisation de l&rsquo;adresse IP du domaine), mx (autorisation des enregistrements MX du domaine), ip4 (autorisation d&rsquo;une adresse IP spécifique), et bien d&rsquo;autres. Vous pouvez également spécifier des mécanismes de rejet, tels que -all (rejet strict) et ~all (rejet léger). Si aucune règle n&rsquo;est spécifiée, SPF utilise la règle par défaut <code>?all</code> (ne pas rejeter). Cela signifie que si aucune règle n&rsquo;est spécifiée, l&rsquo;e-mail passera la vérification SPF. C&rsquo;est pourquoi il est important de spécifier une règle de rejet.</p>
 <p>Egalement, SPF permet d&rsquo;inclure d&rsquo;autres règles SPF depuis un autre domaine. Cela permet de réutiliser les règles SPF existantes. Par exemple, si vous souhaitez utiliser les règles SPF de Google, vous pouvez inclure <code>_spf.gouv.fr</code> dans votre enregistrement SPF. Cela permet d&rsquo;inclure les règles SPF de Google dans votre enregistrement SPF.</p>
 <h2 id="dkim-domainkeys-identified-mail">DKIM (DomainKeys Identified Mail)</h2>
 <h3 id="comprendre-dkim">Comprendre DKIM</h3>
-<p>DKIM est un autre mécanisme d&rsquo;authentification essentiel pour securiser nos e-mails. Il permet de vérifier l&rsquo;authenticité de l&rsquo;e-mail en vérifiant une signature cryptographique attachée à l&rsquo;en-tête du mail.</p>
+<p>DKIM est un autre mécanisme d&rsquo;authentification essentiel pour la sécurisation des e-mails. Il permet de vérifier l&rsquo;authenticité de l&rsquo;e-mail en vérifiant une signature cryptographique attachée à l&rsquo;en-tête de l&rsquo;e-mail.</p>
 <h3 id="mise-en-place-de-dkim">Mise en Place de DKIM</h3>
 <h4 id="étape-1--génération-des-clés-dkim">Étape 1 : Génération des Clés DKIM</h4>
 <p>La première étape pour mettre en place DKIM est de générer les paires de clés publiques et privées. Ces clés sont utilisées pour créer et vérifier la signature DKIM.</p>
@@ -210,7 +239,7 @@
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo opendkim-genkey -b <span style="color:#ae81ff">2048</span> -d votredomaine.com -D /etc/opendkim/keys -s mail
 </span></span></code></pre></div><blockquote>
-<p>Remarque: Vous pouvez utiliser votre propre wildcard si vous le voulez.</p>
+<p>Remarque: Vous pouvez utiliser votre propre wildcard si vous voulez.</p>
 </blockquote>
 <ol start="3">
 <li>Vous trouverez les clés générées dans le répertoire spécifié (<code>/etc/opendkim/keys</code> dans cet exemple).</li>
@@ -243,7 +272,7 @@ non_smtpd_milters = inet:localhost:12301
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl restart opendkim
 </span></span><span style="display:flex;"><span>sudo systemctl restart postfix
-</span></span></code></pre></div><h3 id="dkim-pour-les-pros">DKIM pour les pros&hellip;</h3>
+</span></span></code></pre></div><h3 id="comprendre-dkim-en-profondeur">Comprendre DKIM en Profondeur</h3>
 <p>DKIM repose sur un système de clés publiques et privées. Lorsqu&rsquo;un serveur de messagerie envoie un e-mail, il signe l&rsquo;e-mail avec sa clé privée. Le destinataire peut ensuite vérifier la signature à l&rsquo;aide de la clé publique publiée dans l&rsquo;enregistrement DNS du domaine expéditeur.</p>
 <p>Cela garantit que l&rsquo;e-mail n&rsquo;a pas été altéré en transit et qu&rsquo;il provient bien de l&rsquo;expéditeur prétendu. Si la signature est valide, le destinataire peut avoir confiance en l&rsquo;authenticité de l&rsquo;e-mail.</p>
 <h2 id="dmarc-domain-based-message-authentication-reporting-and-conformance">DMARC (Domain-based Message Authentication, Reporting, and Conformance)</h2>
@@ -266,7 +295,7 @@ non_smtpd_milters = inet:localhost:12301
 <p>DMARC fonctionne en utilisant SPF et DKIM pour authentifier les e-mails. Si un e-mail échoue à ces vérifications, DMARC spécifie comment le destinataire doit gérer cet e-mail. Les actions possibles sont <code>none</code> (ne rien faire), <code>quarantine</code> (marquer comme spam) et <code>reject</code> (rejeter complètement l&rsquo;e-mail).</p>
 <p>DMARC permet également de spécifier où envoyer les rapports de conformité et de défaillance. Cela vous permet de surveiller et d&rsquo;ajuster vos politiques de sécurité des e-mails en fonction des résultats.</p>
 <hr>
-<p>Avec SPF, DKIM et DMARC en place, on a pu mettre en œuvre une solide stratégie de sécurité des e-mails. Ces mécanismes travaillent ensemble pour authentifier et protéger les mails de notre boite contre les usurpations d&rsquo;identité, les attaques de phishing et les spams.</p>
+<p>Avec SPF, DKIM et DMARC en place, vous avez mis en œuvre une solide stratégie de sécurité des e-mails. Ces mécanismes travaillent ensemble pour authentifier et protéger les mails de notre boite contre les usurpations d&rsquo;identité, les attaques de phishing et les spams.</p>
 <hr>
 
         </p>
@@ -280,18 +309,31 @@ non_smtpd_milters = inet:localhost:12301
                 
 <div class="prev-post">
     <p>
-        <a href="/posts/docker-swarm/">
+        <a href="/posts/presentation/">
             &#8592;
             :
-            Docker Swarm
+            Presentation
         </a>
     </p>
     <p class="prev-post-date">
-        octobre 23, 2023
+        octobre 14, 2023
     </p>
 </div>
 
 
+
+<div class="next-post">
+    <p>
+        <a href="/posts/kubernetes_debutant/">
+            :
+            Kubernetes_debutant
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            décembre 3, 2023
+        </p>
+</div>
 
 
             

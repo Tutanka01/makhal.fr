@@ -6,8 +6,22 @@
     <description>Recent content in Tags on makhal.fr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Mon, 23 Oct 2023 06:16:53 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jan 2024 08:47:49 +0200</lastBuildDate>
     <atom:link href="https://tutanka01.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mail</title>
+      <link>https://tutanka01.github.io/tags/mail/</link>
+      <pubDate>Sun, 28 Jan 2024 08:47:49 +0200</pubDate>
+      <guid>https://tutanka01.github.io/tags/mail/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>postfix</title>
+      <link>https://tutanka01.github.io/tags/postfix/</link>
+      <pubDate>Sun, 28 Jan 2024 08:47:49 +0200</pubDate>
+      <guid>https://tutanka01.github.io/tags/postfix/</guid>
+      <description></description>
+    </item>
     <item>
       <title>docker</title>
       <link>https://tutanka01.github.io/tags/docker/</link>
