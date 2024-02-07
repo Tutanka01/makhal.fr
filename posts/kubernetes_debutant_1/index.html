@@ -162,22 +162,38 @@
 <p>Bonjour a tous j&rsquo;espere que vous allez bien, sur ce post je vais vous presenter un outil que j&rsquo;essaie de maitriser depuis un moment. Et vu le manque de posts FR bien faits et complets sur le sujet, je me suis dit pourquoi pas faire un post sur le sujet.</p>
 <h2 id="quest-ce-que-kubernetes-">Qu&rsquo;est ce que Kubernetes ?</h2>
 <p>Deja, quand vous entendez kubernetes, vous pensez a quoi ? Moi je pense a un orchestrateur de conteneurs, et c&rsquo;est exactement ce que c&rsquo;est !!</p>
+<p>Peut etre vous pensiez a autre chose mais c&rsquo;est pas grave, je vais vous expliquer quand meme ce que c&rsquo;est.</p>
 <p>Kubernetes est un orchestrateur de conteneurs open source, et c&rsquo;est un outil qui permet de gérer des microservices, donc du coup tout ce qui est containers, Docker, etc&hellip;</p>
 <p>Et c&rsquo;est ce qu&rsquo;on peut traiter commer, l&rsquo;alternative a <em><strong>Docker Swarm</strong></em>, beaucoup plus proffessionnelle et <em><strong>production-ready</strong></em>. Malgre qu&rsquo;il soit un outil complexe, et complique a maitriser, il est tres puissant, et tres utile.</p>
-<p>En resume cela permettra une H.A (haute disponnibilite), pour n&rsquo;importe qu&rsquo;elle application que vous allez developper.
-Sur ce tuto j&rsquo;utiliserais Docker, mais si vous etes plus alaise avec Podman ou n&rsquo;importe quelle autre techno qui gere des containers avec <em><strong>ContainerD</strong></em> ou autre, kubernetes le supporte aussi, donc vous pourrez suivre ce tuto tranquillement.</p>
+<p>En resume cela permettra une H.A (haute disponnibilite), pour n&rsquo;importe qu&rsquo;elle application que vous allez developper. Comme par exemple, un site web, une API, une application mobile. Tenez en compte que Kubernetes est tres flexible, et il peut s&rsquo;adapter a n&rsquo;importe quelle application. Tant que cette derniere est, on peut dire &ldquo;containerisee&rdquo;.</p>
+<p>Sur ce tuto j&rsquo;utiliserais Docker, mais si vous etes plus alaise avec Podman ou n&rsquo;importe quelle autre techno qui gere des containers avec <em><strong>ContainerD</strong></em> ou autre, kubernetes le supporte aussi, donc vous pourrez suivre ce tuto tranquillement.</p>
 <h2 id="pourquoi-kubernetes-">Pourquoi Kubernetes ?</h2>
 <p>Kubenetes resout un probleme qui est le suivant : Comment gérer un grand nombre de conteneurs?? J&rsquo;ai deja eu ce probleme quand j&rsquo;ai voulu deployer une application, je voulais qu&rsquo;il soit disponible tout le temps, et c&rsquo;est la que Kubernetes intervient.</p>
-<p>Kubernetes permet de faire ça, il permet de gérer un grand nombre de conteneurs et de les rendre disponible tout le temps (Haute disponibilité).</p>
+<p>Kubernetes permet de faire ça, il permet de gérer un grand nombre de conteneurs et de les rendre disponible tout le temps (Haute disponibilité). Mais aussi il permet de faire un autre tas de choses, comme par exemple :</p>
+<ul>
+<li>
+<p><strong>Auto-scaling :</strong> Kubernetes permet de faire du scaling automatique, si votre application a besoin de plus de ressources, Kubernetes va ajouter des conteneurs pour satisfaire les besoins de votre application. Et si votre application n&rsquo;a plus besoin de ces ressources ajoutees, Kubernetes va supprimer les conteneurs en trop.</p>
+</li>
+<li>
+<p><strong>Load Balancing :</strong> Kubernetes permet de faire du load balancing, c&rsquo;est a dire que si vous avez plusieurs conteneurs qui font la meme chose, Kubernetes va s&rsquo;assurer que les requetes sont bien reparties sur les conteneurs.</p>
+</li>
+<li>
+<p><strong>Rolling Updates :</strong> Kubernetes permet de faire des mises a jour en douceur, c&rsquo;est a dire que si vous avez une nouvelle version de votre application vous allez pouoir petit a petit mettre a jour votre application sans que les utilisateurs ne s&rsquo;en rendent compte. ça permet de faire des mises a jour sans downtime.</p>
+</li>
+<li>
+<p><strong>Storage Orchestration :</strong> Kubernetes permet de gerer le stockage, si vous avez besoin de stockage pour votre application, Kubernetes va s&rsquo;assurer que le stockage est bien gere. Et qu&rsquo;il sera uniforme pour tous les conteneurs.</p>
+</li>
+</ul>
 <h2 id="comment-ça-marche-">Comment ça marche ?</h2>
 <p>Maintenant que vous savez ce que c&rsquo;est et pourquoi c&rsquo;est utile, on va voir comment ça marche.</p>
-<p>Kubernetes est base sur le systeme de master et de nodes, le master gere les nodes et les nodes hebergent les conteneurs.</p>
+<p>Kubernetes est base sur le systeme de master (ou control-plane) et des nodes, le master gere les nodes et les nodes hebergent les conteneurs.</p>
+<p>Voila un schema qui explique comment ça marche:</p>
 <p><img src="/images/diagramme_k8s.png" alt="Image_k8s_1"></p>
 <blockquote>
 <p><a href="https://www.cncf.io/wp-content/uploads/2020/09/Kubernetes-architecture-diagram-1-1-1024x698.png">Source</a></p>
 </blockquote>
-<p>Le master gere les nodes et les nodes hebergent les conteneurs, mais comment ça marche ?
-Il faut savaoir que le Master (Control Plane) est compose de plusieurs composants :</p>
+<p>Le master gere les nodes et les nodes hebergent les conteneurs, mais comment ça marche ?</p>
+<p>Il faut savoir que le Master (Control Plane) est compose de plusieurs composants :</p>
 <ul>
 <li>
 <p><strong>API Server :</strong> C&rsquo;est le composant qui expose l&rsquo;API Kubernetes. C&rsquo;est l&rsquo;interface principale pour le cluster Kubernetes. Il implémente une interface RESTful, qui permet aux utilisateurs et aux composants internes de communiquer avec le cluster Kubernetes. C&rsquo;est du coup la seule porte d&rsquo;entree pour le cluster Kubernetes. Et c&rsquo;est avec cette API que l&rsquo;on va pouvoir gerer notre cluster.</p>
@@ -231,6 +247,8 @@ A --> D[etcd]
 <p>Dans cette VM, Minikube va initialiser un cluster <em><strong>Kubernetes</strong></em> et va faire tout le necessaire pour nous donner acces a notre Cluster Kubernetes. Dans ce cas, notre <em><strong>Cluster</strong></em> sera compose d&rsquo;un seul <em><strong>Node</strong></em>, qui sera en meme temps le <em><strong>Master</strong></em> (des fois les gens l&rsquo;appellent aussi control-plane&hellip;) et le <em><strong>Node</strong></em>.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>Je sais je suis parti un peu vite dans le sujet, mais ne vous inquitez pas, je vais dans les prochains posts, vous montrer comment faire pour deployer un cluster Kubernetes dans des conditions &ldquo;reelles&rdquo;, et aussi comment deployer des applications sur ce cluster. Mais aussi egalement vous donner plus de details a propos de la theorie de Kubernetes.</p>
+<p>Je prefere que vous mettiez les mains dans le cambouis, et que vous voyez par vous meme comment ça marche, et comment ça se passe. Mais cela n&rsquo;empeche pas que je vais vous donner des details sur la theorie de Kubernetes, et comment ça marche.</p>
+<p>Je vous remercie d&rsquo;avoir lu ce post, et j&rsquo;espere que vous avez appris quelque chose. Si vous avez des questions, n&rsquo;hesitez pas a me contacter, je serais ravi de vous aider.</p>
 
         </p>
         
