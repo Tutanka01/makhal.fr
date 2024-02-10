@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Kubernetes Partie 1</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='kubernetes, docker, devops'>
+
+    <meta property="og:url" content="https://tutanka01.github.io/posts/k8s/kubernetes_debutant_1/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kubernetes Partie 1">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://tutanka01.github.io/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://tutanka01.github.io/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kubernetes Partie 1">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://tutanka01.github.io/posts/k8s/kubernetes_debutant_1/">
+    <meta property="twitter:url" content="https://tutanka01.github.io/posts/k8s/kubernetes_debutant_1/">
+    <meta name="twitter:image" content="https://tutanka01.github.io/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://tutanka01.github.io/posts/k8s/kubernetes_debutant_1/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.27043ee3e4fae9fba993230b5c2ba193e1f265beeea9c49a69d028f72b22ccb5.js" integrity="sha256-JwQ&#43;4&#43;T66fupkyMLXCuhk&#43;HyZb7uqcSaadAo9ysizLU="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://tutanka01.github.io/">
+                    <img src="https://tutanka01.github.io//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://tutanka01.github.io/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://tutanka01.github.io/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://tutanka01.github.io/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://tutanka01.github.io/pages/about/"> About </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://tutanka01.github.io/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://tutanka01.github.io/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://tutanka01.github.io/pages/about/"> About </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Kubernetes Partie 1</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            décembre 3, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://tutanka01.github.io/tags/kubernetes">kubernetes</a></li>
+        
+            <li class="post-tag"><a href="https://tutanka01.github.io/tags/docker">docker</a></li>
+        
+            <li class="post-tag"><a href="https://tutanka01.github.io/tags/devops">devops</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="kubernetes-pour-les-débutants">Kubernetes pour les débutants</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Bonjour à tous, j&rsquo;espère que vous allez bien. Sur ce post, je vais vous présenter un outil que j&rsquo;essaie de maîtriser depuis un moment. Et vu le manque de posts FR bien faits et complets sur le sujet, je me suis dit pourquoi pas faire un post sur le sujet.</p>
+<h2 id="quest-ce-que-kubernetes-">Qu&rsquo;est-ce que Kubernetes ?</h2>
+<p>Déjà, quand vous entendez Kubernetes, vous pensez à quoi ? Moi, je pense à un orchestrateur de conteneurs, et c&rsquo;est exactement ce que c&rsquo;est !!</p>
+<p>Peut-être vous pensiez à autre chose mais ce n&rsquo;est pas grave, je vais vous expliquer quand même ce que c&rsquo;est.</p>
+<p>Kubernetes est un orchestrateur de conteneurs open source, et c&rsquo;est un outil qui permet de gérer des microservices, donc du coup tout ce qui est containers, Docker, etc&hellip;</p>
+<p>Et c&rsquo;est ce qu&rsquo;on peut traiter comme l&rsquo;alternative à <strong>Docker Swarm</strong>, beaucoup plus professionnelle et <em><strong>production-ready</strong></em>. Malgré qu&rsquo;il soit un outil complexe et compliqué à maîtriser, il est très puissant et très utile.</p>
+<p>En résumé, cela permettra une H.A (haute disponibilité) pour n&rsquo;importe quelle application que vous allez développer. Comme par exemple, un site web, une API, une application mobile. Il faut prendre en compte que Kubernetes est très flexible et il peut s&rsquo;adapter à n&rsquo;importe quelle application. Tant que cette dernière est, on peut dire &ldquo;containerisée&rdquo;.</p>
+<p>Pour ce tuto il ne faudra pas avoir de l&rsquo;experience avec Docker, mais il est préférable d&rsquo;avoir des connaissances en conteneurisation. Car kubernetes s&rsquo;occupe seulement de les gerer et non de les developper/creer.</p>
+<h2 id="pourquoi-kubernetes-">Pourquoi Kubernetes ?</h2>
+<p>Kubernetes résout un problème qui est le suivant : Comment gérer un grand nombre de conteneurs ? J&rsquo;ai déjà eu ce problème quand j&rsquo;ai voulu déployer une application, je voulais qu&rsquo;elle soit disponible tout le temps, et c&rsquo;est là que Kubernetes intervient.</p>
+<p>Kubernetes permet de faire ça, il permet de gérer un grand nombre de conteneurs et de les rendre disponibles tout le temps (Haute disponibilité). Mais aussi il permet de faire un autre tas de choses, comme par exemple :</p>
+<ul>
+<li>
+<p><strong>Auto-scaling :</strong> Kubernetes permet de faire du scaling automatique, si votre application a besoin de plus de ressources, Kubernetes va ajouter des conteneurs pour satisfaire les besoins de votre application. Et si votre application n&rsquo;a plus besoin de ces ressources ajoutées, Kubernetes va supprimer les conteneurs en trop.</p>
+</li>
+<li>
+<p><strong>Load Balancing :</strong> Kubernetes est parfait pour faire du load balancing, c&rsquo;est-à-dire que si vous avez plusieurs conteneurs qui font la même chose, Kubernetes va s&rsquo;assurer que les requêtes sont bien réparties sur les conteneurs.</p>
+</li>
+<li>
+<p><strong>Rolling Updates :</strong> Kubernetes permet de faire des mises à jour en douceur, c&rsquo;est-à-dire que si vous avez une nouvelle version de votre application vous allez pouvoir petit à petit mettre à jour votre application sans que les utilisateurs ne s&rsquo;en rendent compte. Ça permet de faire des mises à jour sans downtime.</p>
+</li>
+<li>
+<p><strong>Storage Orchestration :</strong> Kubernetes permet de gérer le stockage, si vous avez besoin de stockage pour votre application, Kubernetes va s&rsquo;assurer que le stockage est bien géré. Et qu&rsquo;il sera uniforme pour tous les conteneurs.</p>
+</li>
+</ul>
+<h2 id="avant-de-commencer">Avant de commencer</h2>
+<p>Bien entendu, pour pouvoir utiliser Kubernetes, il faut avoir des connaissances en conteneurisation et en conteneurs. Si vous n&rsquo;avez pas ces connaissances, je vous conseille de lire mon post sur Docker, qui est un outil qui permet de créer des conteneurs. Et qui est très utilisé dans le monde de Kubernetes.</p>
+<blockquote>
+<p><a href="https://www.ghassen.tech/posts/docker_debutant_1/">Docker pour les débutants</a></p>
+</blockquote>
+<h2 id="comment-ça-marche-">Comment ça marche ?</h2>
+<p>Maintenant que vous savez ce que c&rsquo;est et pourquoi c&rsquo;est utile, on va voir comment ça marche.</p>
+<p>Kubernetes est basé sur le système de master (ou control-plane) et des nodes, le master gère les nodes et les nodes hébergent les conteneurs.</p>
+<p>Voilà un schéma qui explique comment ça marche:</p>
+<p><img src="/images/diagramme_k8s.png" alt="Image_k8s_1"></p>
+<blockquote>
+<p><a href="https://www.cncf.io/wp-content/uploads/2020/09/Kubernetes-architecture-diagram-1-1-1024x698.png">Source</a></p>
+</blockquote>
+<p>Le master gère les nodes et les nodes hébergent les conteneurs, mais comment ça marche ?</p>
+<p>Il faut savoir que le Master (Control Plane) est composé de plusieurs composants :</p>
+<ul>
+<li>
+<p><strong>API Server :</strong> C&rsquo;est le composant qui expose l&rsquo;API Kubernetes. C&rsquo;est l&rsquo;interface principale pour le cluster Kubernetes. Il implémente une interface RESTful, qui permet aux utilisateurs et aux composants internes de communiquer avec le cluster Kubernetes. C&rsquo;est du coup la seule porte d&rsquo;entrée pour le cluster Kubernetes. Et c&rsquo;est avec cette API que l&rsquo;on va pouvoir gérer notre cluster.</p>
+</li>
+<li>
+<p><strong>Scheduler :</strong> C&rsquo;est le composant qui s&rsquo;assure que les conteneurs sont bien répartis sur les nodes. Il s&rsquo;assure que les conteneurs sont bien répartis sur les nodes en fonction des ressources disponibles.</p>
+</li>
+<li>
+<p><strong>Controller Manager :</strong> C&rsquo;est l&rsquo;outil qui s&rsquo;assure que les nodes et les conteneurs sont en bon état, en surveillant l&rsquo;état du cluster Kubernetes.</p>
+</li>
+<li>
+<p><strong>etcd :</strong> C&rsquo;est le composant qui stocke les données du cluster Kubernetes, comme les configurations des nodes et des conteneurs&hellip;</p>
+</li>
+</ul>
+<div class="mermaid">
+graph LR
+A[API Server] --> B[Scheduler]
+A --> C[Controller Manager]
+A --> D[etcd]
+</div>
+<p>Les nodes sont également composés de quelques services qui permettent de gérer les conteneurs :</p>
+<ul>
+<li>
+<p><strong>Kubelet :</strong> C&rsquo;est le composant qui s&rsquo;assure que les conteneurs sont en bon état, en surveillant l&rsquo;état des conteneurs.</p>
+</li>
+<li>
+<p><strong>Kube-proxy :</strong> Il s&rsquo;assure que les conteneurs sont accessibles, en configurant les règles de routage.</p>
+</li>
+<li>
+<p><strong>Container Runtime :</strong> C&rsquo;est le composant qui s&rsquo;assure que les conteneurs s&rsquo;exécutent, on peut dire que c&rsquo;est lui qui fait le travail, comme par exemple Docker et/ou ContainerD ou même Podman.</p>
+</li>
+</ul>
+<h2 id="comment-installer-kubernetes-">Comment installer Kubernetes ?</h2>
+<p>Maintenant que vous savez ce que c&rsquo;est et comment ça marche, on va voir comment l&rsquo;installer. Voilà les deux outils principaux pour administrer votre cluster Kubernetes :</p>
+<ul>
+<li><strong>Kubeadm :</strong> C&rsquo;est l&rsquo;outil qui permet d&rsquo;installer Kubernetes.</li>
+<li>**Kubectl</li>
+</ul>
+<p>:** C&rsquo;est l&rsquo;outil qui permet de gérer Kubernetes. Il permet de gérer Kubernetes en exécutant des commandes.</p>
+<p>Pour une installation simplifiée, je vais utiliser Minikube, qui est un outil qui permet d&rsquo;installer Kubernetes en local. Pour l&rsquo;installer, il faut exécuter la commande suivante :</p>
+<blockquote>
+<p>Pour info, je suis sur Windows 11, donc je vais utiliser Chocolatey pour tout installer</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>choco install minikube
+</span></span></code></pre></div><p>Une fois que c&rsquo;est installé, il faut lancer Minikube avec la commande suivante :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>minikube start
+</span></span></code></pre></div><p>Une fois cette commande lancée, il faudra bien sûr avoir VirtualBox et/ou Hyper-V d&rsquo;installé sur votre machine.</p>
+<p>Si vous voulez plus de détails, voilà la doc de Minikube :</p>
+<blockquote>
+<p><a href="https://minikube.sigs.k8s.io/docs/">Minikube</a></p>
+</blockquote>
+<p>Dans cette VM, Minikube va initialiser un cluster Kubernetes et va faire tout le nécessaire pour nous donner accès à notre Cluster Kubernetes. Dans ce cas, notre Cluster sera composé d&rsquo;un seul Node, qui sera en même temps le Master (des fois les gens l&rsquo;appellent aussi control-plane&hellip;) et le Node.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Je sais je suis parti un peu vite dans le sujet, mais ne vous inquiétez pas, je vais dans les prochains posts, vous montrer comment faire pour déployer un cluster Kubernetes dans des conditions &ldquo;réelles&rdquo;, et aussi comment déployer des applications sur ce cluster. Mais aussi également vous donner plus de détails à propos de la théorie de Kubernetes.</p>
+<p>Je préfère que vous mettiez les mains dans le cambouis, et que vous voyez par vous-même comment ça marche, et comment ça se passe. Mais cela n&rsquo;empêche pas que je vais vous donner des détails sur la théorie de Kubernetes, et comment ça marche.</p>
+<p>Je vous remercie d&rsquo;avoir lu ce post, et j&rsquo;espère que vous avez appris quelque chose. Si vous avez des questions, n&rsquo;hésitez pas à me contacter, je serais ravi de vous aider.</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/docker/docker-swarm/">
+            &#8592;
+            :
+            Docker Swarm
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octobre 23, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/messagerie/dmark_dkim_spf/">
+            :
+            Sécurisation Avancée des Services de Messagerie
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            janvier 28, 2024
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

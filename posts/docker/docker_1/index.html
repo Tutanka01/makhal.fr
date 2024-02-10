@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Dacker partie 1</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='docker, docker-swarm'>
+
+    <meta property="og:url" content="https://tutanka01.github.io/posts/docker/docker_1/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dacker partie 1">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://tutanka01.github.io/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://tutanka01.github.io/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dacker partie 1">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://tutanka01.github.io/posts/docker/docker_1/">
+    <meta property="twitter:url" content="https://tutanka01.github.io/posts/docker/docker_1/">
+    <meta name="twitter:image" content="https://tutanka01.github.io/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://tutanka01.github.io/posts/docker/docker_1/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.27043ee3e4fae9fba993230b5c2ba193e1f265beeea9c49a69d028f72b22ccb5.js" integrity="sha256-JwQ&#43;4&#43;T66fupkyMLXCuhk&#43;HyZb7uqcSaadAo9ysizLU="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://tutanka01.github.io/">
+                    <img src="https://tutanka01.github.io//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://tutanka01.github.io/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://tutanka01.github.io/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://tutanka01.github.io/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://tutanka01.github.io/pages/about/"> About </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://tutanka01.github.io/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://tutanka01.github.io/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://tutanka01.github.io/pages/about/"> About </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Dacker partie 1</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            février 10, 2024
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://tutanka01.github.io/tags/docker">docker</a></li>
+        
+            <li class="post-tag"><a href="https://tutanka01.github.io/tags/docker-swarm">docker-swarm</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="docker">Docker</h1>
+<h2 id="introduction-à-docker">Introduction à Docker</h2>
+<p>Bonjour et bienvenue sur ce post, je vais vous montrer comment utiliser Docker.</p>
+<p>Cette fameuse technologie qui a révolutionné le monde de l&rsquo;IT, et qui a permis de faire des choses incroyables. Sûrement vous avez déjà entendu parler de Docker, mais vous ne savez pas ce que c&rsquo;est, ou bien vous avez déjà entendu parler de Docker, et vous voulez en savoir plus. Dans tous les cas, vous êtes au bon endroit.</p>
+<h3 id="quest-ce-que-docker-">Qu&rsquo;est-ce que Docker ?</h3>
+<p>Déjà, Docker c&rsquo;est quoi, et pourquoi est-ce que c&rsquo;est si populaire ?</p>
+<p>Il faut savoir que Docker n&rsquo;est pas une invention technologique, mais c&rsquo;est une amélioration d&rsquo;une technologie qui existait déjà, qui est les <strong>conteneurs</strong>. Les conteneurs existent depuis longtemps, mais ils n&rsquo;étaient pas aussi populaires que maintenant.</p>
+<p>Pour vous expliquer ce que c&rsquo;est un conteneur, je vais vous donner un exemple simple. Vous avez sûrement déjà entendu parler des <strong>VM</strong> (Virtual Machines), et bien les conteneurs c&rsquo;est un peu comme les VM, mais en beaucoup plus léger, et beaucoup plus rapide.</p>
+<p>Dans la pratique, une VM c&rsquo;est un ordinateur dans un ordinateur, et un conteneur c&rsquo;est un processus dans un ordinateur.</p>
+<p>C&rsquo;est un peu plus clair ? Non ? Pas de soucis, voilà une image qui décrit ce que je veux dire :</p>
+<p><img src="/images/Docker/docker_vs_vm.png" alt="Texte alternatif"></p>
+<blockquote>
+<p>Source : <a href="https://hanwenzhang123.medium.com/docker-vs-virtual-machine-vs-kubernetes-overview-389db7de7618">medium</a></p>
+</blockquote>
+<p>Ici on voit clairement que pour avoir une VM il faut un hyperviseur, et un OS, et pour faire la Vm qu&rsquo;on veut on doit egalement virtualiser le hardware, alors que pour un conteneur, il suffit d&rsquo;avoir un OS, et on virtualise le processus en quelque sorte. Cela est en termes clairs veut dire que a la place de virtualiser toute une machine pour notre application, on prend juste de ce qu&rsquo;on a besoin de l&rsquo;hote et on l&rsquo;utilise, sans consommer beaucoup de ressources.</p>
+<p>Cela permet d&rsquo;éviter de lancer une VM qui consomme beaucoup de ressources, et qui prend beaucoup de temps pour se lancer. Pour un simple serveur WEB. Alors qu&rsquo;avec un conteneur, on peut lancer un serveur WEB en quelques secondes, et avec très peu de ressources consommées.</p>
+<h3 id="pourquoi-utiliser-docker-">Pourquoi Utiliser Docker ?</h3>
+<p>Bon peut-être je vous ai pas convaincu avec l&rsquo;histoire de la légèreté et la rapidité, mais voilà d&rsquo;autres raisons pour lesquelles vous devriez utiliser Docker :</p>
+<ul>
+<li><strong>Isolation des Applications :</strong> Chaque application et ses dépendances sont encapsulées dans un conteneur, évitant ainsi les conflits du genre, la BDD a changé la version PHP et mon site web ne marche plus.</li>
+<li><strong>Portabilité :</strong> Les conteneurs Docker fonctionnent de manière identique sur n&rsquo;importe quel environnement où Docker est installé. Plus l&rsquo;excuse, <em><strong>Oh! ça marche sur mon poste pourtant!</strong></em></li>
+<li><strong>Efficacité :</strong> Les conteneurs partagent le même noyau du système hôte, ce qui les rend légers et nécessitant moins de ressources que les machines virtuelles traditionnelles. <strong>Mais attention à bien les sécuriser !!</strong></li>
+<li><strong>Rapidité :</strong> Les conteneurs se lancent en quelques secondes, et ils sont très rapides à déployer, et à gérer.</li>
+<li><strong>Flexibilité :</strong> Les conteneurs sont très flexibles, et ils peuvent être déployés sur n&rsquo;importe quelle infrastructure, que ce soit sur votre machine, ou sur le cloud.</li>
+</ul>
+<p>Aussi, et la raison la plus importante est, que Docker est très utilisé dans le monde de l&rsquo;IT, et c&rsquo;est un outil qui est très demandé. Donc si vous voulez faire une carrière dans l&rsquo;IT, il faut absolument que vous maîtrisiez Docker.</p>
+<h3 id="pourquoi-docker-est-il-si-populaire-">Pourquoi Docker est-il si populaire ?</h3>
+<p>Vous allez vous dire peut-être, mais comment ça marche Docker ? Et surtout c&rsquo;est quoi la différence entre une VM et un container ? Bien que je l&rsquo;ai un peu, explique dans la partie précédente, je vais vous donner des détails et surtout une explication un poil plus détaillé.</p>
+<p>Pour le faire, je vais, vous donne un exemple. Imaginons vous avez un serveur ou vous mettez plusieurs sites web dessus. Chaque site web a ses propres dépendances et versions qu&rsquo;il utilise, donc un site qui marche sur php5 ne pourra pas marcher sur php7. Donc, pour éviter ce genre de problème, vous allez créer une VM pour chaque site web, et vous allez installer les dépendances nécessaires pour chaque site web.</p>
+<p>Et cela, c&rsquo;est très lourd, et très coûteux, et très lent. Et c&rsquo;est là que Docker intervient. Avec Docker, vous pouvez créer un conteneur pour chaque site web, et chaque conteneur va avoir ses propres dépendances, et ses propres versions, et ils vont fonctionner de manière isolée, et sans conflits. Et tout ça, dans le même serveur, et sans consommer beaucoup de ressources.</p>
+<p>Sans oublier le point clé, de Docker et de la containerisation, c&rsquo;est la portabilité. C&rsquo;est la pierre angulaire de Docker, et c&rsquo;est ce qui a fait son succès. Vous pouvez déployer votre application sur n&rsquo;importe quelle infrastructure, et elle va fonctionner de la même manière.</p>
+<p>Donc imaginons vous achetez un nouveau serveur, et vous voulez déployer votre application, et bien vous n&rsquo;avez qu&rsquo;à copier le conteneur, et le lancer sur le nouveau serveur, et votre application va fonctionner de la même manière. Ce n&rsquo;est pas beau ça ?</p>
+<h3 id="installation-de-docker">Installation de Docker</h3>
+<h4 id="windows-et-macos">Windows et MacOS</h4>
+<p>Une fois que je vous ai donné envie d&rsquo;utiliser Docker, je vais vous montrer comment l&rsquo;installer.</p>
+<p>Pour Windows et MacOS, il suffit de télécharger Docker Desktop à partir du <a href="https://www.docker.com/products/docker-desktop">site officiel de Docker</a> et suivez les instructions d&rsquo;installation.</p>
+<p>Une fois l&rsquo;installation terminée, lancez Docker Desktop.</p>
+<h4 id="linux">Linux</h4>
+<p>Pour Linux, il suffit de faire la commande suivante :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -qO- https://get.docker.com/ | sh
+</span></span></code></pre></div><p>Bien entendu, il faut que vous ayez les droits pour pouvoir installer des packages sur votre machine.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Voilà, j&rsquo;espère que je vous ai donné envie d&rsquo;utiliser Docker, et que vous avez compris ce ce que c&rsquo;est, et pourquoi est-ce que c&rsquo;est si populaire.</p>
+<p>Dans le prochain post, je vais vous montrer comment utiliser Docker, et comment déployer une application d&rsquo;exemple sur Docker.</p>
+<p>Je vous remercie d&rsquo;avoir lu ce post, et j&rsquo;espère que vous avez appris quelque chose. Si vous avez des questions, n&rsquo;hésitez pas à me contacter, je serais ravi de vous aider.</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/messagerie/dmark_dkim_spf/">
+            &#8592;
+            :
+            Sécurisation Avancée des Services de Messagerie
+        </a>
+    </p>
+    <p class="prev-post-date">
+        janvier 28, 2024
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

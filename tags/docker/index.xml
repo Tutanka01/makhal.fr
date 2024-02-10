@@ -6,20 +6,27 @@
     <description>Recent content in docker on makhal.fr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sun, 03 Dec 2023 21:05:49 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 10 Feb 2024 06:16:53 +0200</lastBuildDate>
     <atom:link href="https://tutanka01.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Dacker partie 1</title>
+      <link>https://tutanka01.github.io/posts/docker/docker_1/</link>
+      <pubDate>Sat, 10 Feb 2024 06:16:53 +0200</pubDate>
+      <guid>https://tutanka01.github.io/posts/docker/docker_1/</guid>
+      <description>Je vais vous montrer comment utiliser Docker et pourquoi est-ce que c&amp;rsquo;est si populaire.</description>
+    </item>
+    <item>
       <title>Kubernetes Partie 1</title>
-      <link>https://tutanka01.github.io/posts/kubernetes_debutant_1/</link>
+      <link>https://tutanka01.github.io/posts/k8s/kubernetes_debutant_1/</link>
       <pubDate>Sun, 03 Dec 2023 21:05:49 +0100</pubDate>
-      <guid>https://tutanka01.github.io/posts/kubernetes_debutant_1/</guid>
+      <guid>https://tutanka01.github.io/posts/k8s/kubernetes_debutant_1/</guid>
       <description>Dans ce post, je vous présente Kubernetes :D</description>
     </item>
     <item>
       <title>Docker Swarm</title>
-      <link>https://tutanka01.github.io/posts/docker-swarm/</link>
+      <link>https://tutanka01.github.io/posts/docker/docker-swarm/</link>
       <pubDate>Mon, 23 Oct 2023 06:16:53 +0200</pubDate>
-      <guid>https://tutanka01.github.io/posts/docker-swarm/</guid>
+      <guid>https://tutanka01.github.io/posts/docker/docker-swarm/</guid>
       <description>Dans ce post, je vais vous montrer comment utiliser Docker et Docker Swarm.</description>
     </item>
   </channel>

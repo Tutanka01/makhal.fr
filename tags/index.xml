@@ -6,8 +6,22 @@
     <description>Recent content in Tags on makhal.fr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sun, 28 Jan 2024 08:47:49 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 10 Feb 2024 06:16:53 +0200</lastBuildDate>
     <atom:link href="https://tutanka01.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker</title>
+      <link>https://tutanka01.github.io/tags/docker/</link>
+      <pubDate>Sat, 10 Feb 2024 06:16:53 +0200</pubDate>
+      <guid>https://tutanka01.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>docker-swarm</title>
+      <link>https://tutanka01.github.io/tags/docker-swarm/</link>
+      <pubDate>Sat, 10 Feb 2024 06:16:53 +0200</pubDate>
+      <guid>https://tutanka01.github.io/tags/docker-swarm/</guid>
+      <description></description>
+    </item>
     <item>
       <title>mail</title>
       <link>https://tutanka01.github.io/tags/mail/</link>
@@ -30,24 +44,10 @@
       <description></description>
     </item>
     <item>
-      <title>docker</title>
-      <link>https://tutanka01.github.io/tags/docker/</link>
-      <pubDate>Sun, 03 Dec 2023 21:05:49 +0100</pubDate>
-      <guid>https://tutanka01.github.io/tags/docker/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>kubernetes</title>
       <link>https://tutanka01.github.io/tags/kubernetes/</link>
       <pubDate>Sun, 03 Dec 2023 21:05:49 +0100</pubDate>
       <guid>https://tutanka01.github.io/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>docker-swarm</title>
-      <link>https://tutanka01.github.io/tags/docker-swarm/</link>
-      <pubDate>Mon, 23 Oct 2023 06:16:53 +0200</pubDate>
-      <guid>https://tutanka01.github.io/tags/docker-swarm/</guid>
       <description></description>
     </item>
     <item>
