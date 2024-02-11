@@ -19,7 +19,7 @@
     
     <title>Dacker partie 1</title>
     <meta name="description" content="">
-    <meta name="keywords" content='docker, docker-swarm'>
+    <meta name="keywords" content='docker'>
 
     <meta property="og:url" content="https://tutanka01.github.io/posts/docker/docker_1/">
     <meta property="og:type" content="website">
@@ -148,8 +148,6 @@
         
             <li class="post-tag"><a href="https://tutanka01.github.io/tags/docker">docker</a></li>
         
-            <li class="post-tag"><a href="https://tutanka01.github.io/tags/docker-swarm">docker-swarm</a></li>
-        
         </ul>
     </div>
 
@@ -157,7 +155,7 @@
         <p>
             <h1 id="docker">Docker</h1>
 <h2 id="introduction-à-docker">Introduction à Docker</h2>
-<p>Bonjour et bienvenue sur ce post, je vais vous montrer comment utiliser Docker.</p>
+<p>Bonjour et bienvenue sur ce post ou je vais vous expliquer ce que c&rsquo;est Docker et comment l&rsquo;utiliser.</p>
 <p>Cette fameuse technologie qui a révolutionné le monde de l&rsquo;IT, et qui a permis de faire des choses incroyables. Sûrement vous avez déjà entendu parler de Docker, mais vous ne savez pas ce que c&rsquo;est, ou bien vous avez déjà entendu parler de Docker, et vous voulez en savoir plus. Dans tous les cas, vous êtes au bon endroit.</p>
 <h3 id="quest-ce-que-docker-">Qu&rsquo;est-ce que Docker ?</h3>
 <p>Déjà, Docker c&rsquo;est quoi, et pourquoi est-ce que c&rsquo;est si populaire ?</p>
@@ -192,6 +190,10 @@
 <p>Une fois que je vous ai donné envie d&rsquo;utiliser Docker, je vais vous montrer comment l&rsquo;installer.</p>
 <p>Pour Windows et MacOS, il suffit de télécharger Docker Desktop à partir du <a href="https://www.docker.com/products/docker-desktop">site officiel de Docker</a> et suivez les instructions d&rsquo;installation.</p>
 <p>Une fois l&rsquo;installation terminée, lancez Docker Desktop.</p>
+<h5 id="remarque-pour-windows">Remarque pour Windows</h5>
+<p>Docker se base sur le noyau Linux pour bien marcher. Du coup sur un Windows, il va installer en même temps, WSL (Windows Subsystem for Linux), qui est un sous-système Linux pour Windows. Cela veut dire que vous allez avoir un noyau Linux sur votre Windows, et vous allez pouvoir faire n&rsquo;importe quoi que vous faites sur Linux, sur votre Windows.</p>
+<p>Donc si vous avez déjà WSL, vous pouvez installer Docker Desktop, et vous allez avoir Docker sur votre Windows.</p>
+<p>Mais si vous n&rsquo;avez pas WSL, vous pouvez l&rsquo;installer en suivant ce <a href="https://docs.microsoft.com/fr-fr/windows/wsl/install">lien</a>.</p>
 <h4 id="linux">Linux</h4>
 <p>Pour Linux, il suffit de faire la commande suivante :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -qO- https://get.docker.com/ | sh
