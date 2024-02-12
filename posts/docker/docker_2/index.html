@@ -175,10 +175,10 @@
 <p>Mais aussi vous pouvez créer vos propres images, cela on le verra dans une autre partie. L&rsquo;utilité de cela est que vous pouvez, en quelque sorte, encapsuler votre application dans une image et la distribuer à n&rsquo;importe qui. Et cette personne pourra créer un conteneur à partir de cette image et exécuter votre application sans avoir à installer quoi que ce soit.</p>
 <h3 id="les-conteneurs">Les conteneurs</h3>
 <p>Avant de vous parler de toutes les options qu&rsquo;on peut utiliser pour créer un conteneur, je vous prie de lancer cette commande :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -p --rm 8080:80 nginx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --rm -p  8080:80 nginx
 </span></span></code></pre></div><p>Voilà ce que vous devriez voir :</p>
 <p><img src="/images/Docker/demo_image.gif" alt="Texte alternatif" title="Titre de l'image"></p>
-<p>On constate que en moins de 5 secondes on a un serveur web fonctionnel. C&rsquo;est magique n&rsquo;est-ce pas ??</p>
+<p>On constate qu&rsquo;en moins de 5 secondes on a un serveur web fonctionnel. C&rsquo;est magique n&rsquo;est-ce pas ??</p>
 <p>La commande <code>docker run</code> est la commande qu&rsquo;on utilise pour créer un conteneur à partir d&rsquo;une image. Dans notre cas, on a utilisé l&rsquo;image <code>nginx</code> qui est une image pour un serveur web Nginx. La commande <code>docker run</code> a plusieurs options qu&rsquo;on peut utiliser pour configurer le conteneur. Dans notre cas, on a utilisé l&rsquo;option <code>-p</code> pour mapper le port 8080 de notre machine hôte au port 80 du conteneur. C&rsquo;est pour cela qu&rsquo;on peut accéder au serveur web en utilisant le port 8080.</p>
 <p>L&rsquo;option <code>--rm</code> est une option qui permet de supprimer le conteneur dès qu&rsquo;on l&rsquo;arrête. C&rsquo;est très utile pour nettoyer l&rsquo;environnement après avoir testé un conteneur.</p>
 <p>Voilà une petite liste des options les plus utilisées avec la commande <code>docker run</code> :</p>
@@ -197,7 +197,7 @@
 <li><code>--ulimit</code> : pour définir des limites sur les ressources du conteneur</li>
 </ul>
 <p>Je ne vais pas m&rsquo;attarder une par une sur ces options, car dans la pratique on n&rsquo;utilise quasiment jamais la commande <code>docker run</code>.</p>
-<p>Malgré que cette commande permet de créer un conteneur très rapidement, elle est très limitée. Car on ne peut pas sauvegarder les options qu&rsquo;on utilise pour créer un nouveau conteneur.</p>
+<p>Malgré que cette commande permet de créer un conteneur très rapidement, elle est très limitée. Car on ne peut pas sauvegarder les options qu&rsquo;on utilise pour créer un nouveau conteneur. Ou meme de creer un genre de template pour creer 500 conteneurs avec les memes options. Il faudra lancer la commande <code>docker run</code> 500 fois avec les memes options.</p>
 <p>On utilise plutôt des fichiers de configuration pour définir les options qu&rsquo;on veut utiliser pour créer un conteneur. Ces fichiers de configuration sont appelés des <em><strong>&ldquo;Dockerfiles&rdquo;</strong></em> (pour customiser nos images) et/ou <em><strong>Docker-Compose</strong></em> (Pour customiser le conteneur). On va voir comment créer un Dockerfile et des Docker-Compose dans la prochaine partie.</p>
 <h3 id="dockerfile">Dockerfile</h3>
 <p>Comme je l&rsquo;ai dit un peu plus haut, un Dockerfile est un fichier de configuration qui permet de définir comment créer une image. Un Dockerfile contient une série d&rsquo;instructions qui permettent de définir l&rsquo;environnement dans lequel l&rsquo;application va être exécutée.</p>
