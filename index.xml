@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>makhal.fr</title>
-    <link>https://tutanka01.github.io/</link>
+    <link>https://makhal.fr/</link>
     <description>Recent content on makhal.fr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
     <lastBuildDate>Sun, 11 Feb 2024 11:49:38 +0100</lastBuildDate>
-    <atom:link href="https://tutanka01.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://makhal.fr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker Partie 2</title>
-      <link>https://tutanka01.github.io/posts/docker/docker_2/</link>
+      <link>https://makhal.fr/posts/docker/docker_2/</link>
       <pubDate>Sun, 11 Feb 2024 11:49:38 +0100</pubDate>
-      <guid>https://tutanka01.github.io/posts/docker/docker_2/</guid>
+      <guid>https://makhal.fr/posts/docker/docker_2/</guid>
       <description>La suite de la partie 1, ou je vais vous montrer comment utiliser Docker</description>
     </item>
     <item>
       <title>Docker partie 1</title>
-      <link>https://tutanka01.github.io/posts/docker/docker_1/</link>
+      <link>https://makhal.fr/posts/docker/docker_1/</link>
       <pubDate>Sat, 10 Feb 2024 06:16:53 +0200</pubDate>
-      <guid>https://tutanka01.github.io/posts/docker/docker_1/</guid>
+      <guid>https://makhal.fr/posts/docker/docker_1/</guid>
       <description>Je vais vous montrer comment utiliser Docker et pourquoi est-ce que c&amp;rsquo;est si populaire.</description>
     </item>
     <item>
       <title>Sécurisation Avancée des Services de Messagerie</title>
-      <link>https://tutanka01.github.io/posts/messagerie/dmark_dkim_spf/</link>
+      <link>https://makhal.fr/posts/messagerie/dmark_dkim_spf/</link>
       <pubDate>Sun, 28 Jan 2024 08:47:49 +0200</pubDate>
-      <guid>https://tutanka01.github.io/posts/messagerie/dmark_dkim_spf/</guid>
+      <guid>https://makhal.fr/posts/messagerie/dmark_dkim_spf/</guid>
       <description>Au cours de ce post, je vais vous montrer comment mettre en place le DMARC, DKIM et SPF sur votre serveur de messagerie.</description>
     </item>
     <item>
       <title>Kubernetes Partie 1</title>
-      <link>https://tutanka01.github.io/posts/k8s/kubernetes_debutant_1/</link>
+      <link>https://makhal.fr/posts/k8s/kubernetes_debutant_1/</link>
       <pubDate>Sun, 03 Dec 2023 21:05:49 +0100</pubDate>
-      <guid>https://tutanka01.github.io/posts/k8s/kubernetes_debutant_1/</guid>
+      <guid>https://makhal.fr/posts/k8s/kubernetes_debutant_1/</guid>
       <description>Dans ce post, je vous présente Kubernetes :D</description>
     </item>
     <item>
       <title>Docker Swarm</title>
-      <link>https://tutanka01.github.io/posts/docker/docker-swarm/</link>
+      <link>https://makhal.fr/posts/docker/docker-swarm/</link>
       <pubDate>Mon, 23 Oct 2023 06:16:53 +0200</pubDate>
-      <guid>https://tutanka01.github.io/posts/docker/docker-swarm/</guid>
+      <guid>https://makhal.fr/posts/docker/docker-swarm/</guid>
       <description>Dans ce post, je vais vous montrer comment utiliser Docker et Docker Swarm.</description>
     </item>
     <item>
       <title>About</title>
-      <link>https://tutanka01.github.io/pages/about/</link>
+      <link>https://makhal.fr/pages/about/</link>
       <pubDate>Sat, 14 Oct 2023 17:29:57 +0200</pubDate>
-      <guid>https://tutanka01.github.io/pages/about/</guid>
+      <guid>https://makhal.fr/pages/about/</guid>
       <description>Mohamad El Akhal El Bouzidi Je suis étudiant en BUT Reseaux et Telecommunications en specialisation Cybersecurite et je travaille actuellement en tant qu&amp;rsquo;alternant au poste d&amp;rsquo;administrateur Systèmes et Réseaux chez Aditu. Mon parcours est guidé par ma passion pour la sécurité informatique et mon désir de contribuer au monde.&#xA;À Propos de Moi Je suis passionné par l&amp;rsquo;informatique, la cybersécurité et le monde Linux. J&amp;rsquo;adore plonger dans les méandres de la technologie pour comprendre comment les systèmes fonctionnent et trouver des moyens de les améliorer.</description>
     </item>
     <item>
       <title>Presentation</title>
-      <link>https://tutanka01.github.io/posts/presentation/</link>
+      <link>https://makhal.fr/posts/presentation/</link>
       <pubDate>Sat, 14 Oct 2023 16:10:25 +0200</pubDate>
-      <guid>https://tutanka01.github.io/posts/presentation/</guid>
+      <guid>https://makhal.fr/posts/presentation/</guid>
       <description>Dans ce post, je me présente et je parle de mes compétences et de mes certifications.</description>
     </item>
     <item>
       <title></title>
-      <link>https://tutanka01.github.io/index-about/</link>
+      <link>https://makhal.fr/index-about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tutanka01.github.io/index-about/</guid>
+      <guid>https://makhal.fr/index-about/</guid>
       <description>A propos de moi Je m&amp;rsquo;appelle Mohamad El Akhal El Bouzidi et je suis etudiant en BUT Reseaux et Telecoms a l&amp;rsquo;universite de Pau et des Pays de l&amp;rsquo;Adour.</description>
     </item>
   </channel>

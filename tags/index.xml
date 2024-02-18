@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on makhal.fr</title>
-    <link>https://tutanka01.github.io/tags/</link>
+    <link>https://makhal.fr/tags/</link>
     <description>Recent content in Tags on makhal.fr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
     <lastBuildDate>Sun, 11 Feb 2024 11:49:38 +0100</lastBuildDate>
-    <atom:link href="https://tutanka01.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://makhal.fr/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>docker</title>
-      <link>https://tutanka01.github.io/tags/docker/</link>
+      <link>https://makhal.fr/tags/docker/</link>
       <pubDate>Sun, 11 Feb 2024 11:49:38 +0100</pubDate>
-      <guid>https://tutanka01.github.io/tags/docker/</guid>
+      <guid>https://makhal.fr/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>mail</title>
-      <link>https://tutanka01.github.io/tags/mail/</link>
+      <link>https://makhal.fr/tags/mail/</link>
       <pubDate>Sun, 28 Jan 2024 08:47:49 +0200</pubDate>
-      <guid>https://tutanka01.github.io/tags/mail/</guid>
+      <guid>https://makhal.fr/tags/mail/</guid>
       <description></description>
     </item>
     <item>
       <title>postfix</title>
-      <link>https://tutanka01.github.io/tags/postfix/</link>
+      <link>https://makhal.fr/tags/postfix/</link>
       <pubDate>Sun, 28 Jan 2024 08:47:49 +0200</pubDate>
-      <guid>https://tutanka01.github.io/tags/postfix/</guid>
+      <guid>https://makhal.fr/tags/postfix/</guid>
       <description></description>
     </item>
     <item>
       <title>devops</title>
-      <link>https://tutanka01.github.io/tags/devops/</link>
+      <link>https://makhal.fr/tags/devops/</link>
       <pubDate>Sun, 03 Dec 2023 21:05:49 +0100</pubDate>
-      <guid>https://tutanka01.github.io/tags/devops/</guid>
+      <guid>https://makhal.fr/tags/devops/</guid>
       <description></description>
     </item>
     <item>
       <title>kubernetes</title>
-      <link>https://tutanka01.github.io/tags/kubernetes/</link>
+      <link>https://makhal.fr/tags/kubernetes/</link>
       <pubDate>Sun, 03 Dec 2023 21:05:49 +0100</pubDate>
-      <guid>https://tutanka01.github.io/tags/kubernetes/</guid>
+      <guid>https://makhal.fr/tags/kubernetes/</guid>
       <description></description>
     </item>
     <item>
       <title>docker-swarm</title>
-      <link>https://tutanka01.github.io/tags/docker-swarm/</link>
+      <link>https://makhal.fr/tags/docker-swarm/</link>
       <pubDate>Mon, 23 Oct 2023 06:16:53 +0200</pubDate>
-      <guid>https://tutanka01.github.io/tags/docker-swarm/</guid>
+      <guid>https://makhal.fr/tags/docker-swarm/</guid>
       <description></description>
     </item>
     <item>
       <title>about</title>
-      <link>https://tutanka01.github.io/tags/about/</link>
+      <link>https://makhal.fr/tags/about/</link>
       <pubDate>Sat, 14 Oct 2023 16:10:25 +0200</pubDate>
-      <guid>https://tutanka01.github.io/tags/about/</guid>
+      <guid>https://makhal.fr/tags/about/</guid>
       <description></description>
     </item>
     <item>
       <title>cv</title>
-      <link>https://tutanka01.github.io/tags/cv/</link>
+      <link>https://makhal.fr/tags/cv/</link>
       <pubDate>Sat, 14 Oct 2023 16:10:25 +0200</pubDate>
-      <guid>https://tutanka01.github.io/tags/cv/</guid>
+      <guid>https://makhal.fr/tags/cv/</guid>
       <description></description>
     </item>
   </channel>
