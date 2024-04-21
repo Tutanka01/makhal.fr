@@ -155,8 +155,8 @@
         <p>
             <h1 id="docker-partie-3">Docker Partie 3</h1>
 <h2 id="docker-compose">Docker-Compose</h2>
-<p>Alors, normalement, vous avez déjà une idée de ce qu&rsquo;est Docker, et comment l&rsquo;utiliser. Au moins vous captez le concept de base. Mais, si vous avez déjà essayé de lancer plusieurs conteneurs en même temps, vous avez dû vous rendre compte que c&rsquo;est un peu complique. Vous devez lancer chaque conteneur un par un, et vous devez vous souvenir des commandes pour chaque conteneur. C&rsquo;est là que Docker-Compose entre en jeu.</p>
-<p>Surtout quand vous voulez les faire communiquer entre eux, c&rsquo;est un peu complique. Vous devez vous souvenir des noms des conteneurs, et vous devez vous souvenir des ports que vous avez utilisés. C&rsquo;est là que Docker-Compose entre en jeu.</p>
+<p>Normalement, vous avez déjà une idée de ce qu&rsquo;est Docker, et comment l&rsquo;utiliser. Au moins vous captez le concept de base. Mais, si vous avez déjà essayé de lancer plusieurs conteneurs en même temps, vous avez dû vous rendre compte que c&rsquo;est un peu complique. Vous devez lancer chaque conteneur un par un, et vous devez vous souvenir des commandes pour chaque conteneur. C&rsquo;est là que Docker-Compose entre en jeu.</p>
+<p>Surtout quand vous voulez les faire communiquer entre eux, c&rsquo;est un peu complique. Vous devez vous souvenir des noms des conteneurs, des reseaux qui lui sont associés, des ports qu&rsquo;ils exposent, etc&hellip;</p>
 <p>Docker-Compose est un outil qui vous permet de définir et de lancer des applications multi-conteneurs. Avec Docker-Compose, vous pouvez utiliser un fichier YAML pour configurer vos services. Vous pouvez ensuite lancer tous vos services avec une seule commande.</p>
 <blockquote>
 <p>Note: Docker-Compose est un outil qui est installé avec Docker. Donc, si vous avez déjà installé Docker, vous avez déjà Docker-Compose.</p>
@@ -174,6 +174,10 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">MYSQL_ROOT_PASSWORD</span>: <span style="color:#ae81ff">example</span>
 </span></span></code></pre></div><p>Pour le moment rien de complique, nous avons juste deux services, <code>web</code> et <code>db</code>. Le service <code>web</code> utilise l&rsquo;image <code>nginx:latest</code>, et il expose le port <code>80</code> du conteneur sur le port <code>8080</code> de l&rsquo;hôte. Le service <code>db</code> utilise l&rsquo;image <code>mysql:latest</code>, et il définit la variable d&rsquo;environnement <code>MYSQL_ROOT_PASSWORD</code> à <code>example</code>.</p>
+<p>Ce Docker-Compose, est la traduction exacte de ce que une commande <code>docker run</code> ferait. :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d -p 8080:80 nginx:latest
+</span></span><span style="display:flex;"><span>docker run -d -e MYSQL_ROOT_PASSWORD<span style="color:#f92672">=</span>example mysql:latest
+</span></span></code></pre></div><p>C&rsquo;est juste qu&rsquo;avec Docker-Compose, vous pouvez lancer les deux services en même temps. Et en plus vous pouvez envoyer ce fichier à un autre développeur, et il pourra lancer les mêmes services avec la même configuration. C&rsquo;est très pratique.</p>
 <p>Comme je l&rsquo;ai ai dit dans la partie 2. Chaque image a ses propres variables d&rsquo;environnement. Vous pouvez les trouver dans la documentation de l&rsquo;image. Par exemple, pour l&rsquo;image <code>mysql</code>, vous pouvez trouver les variables d&rsquo;environnement <a href="https://hub.docker.com/_/mysql">ici</a>.</p>
 <p>Du coup, pour lancer ces deux services, vous pouvez utiliser la commande suivante:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker compose up
@@ -227,8 +231,8 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">graylog_config</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">graylog_plugins</span>:
 </span></span></code></pre></div><p>Voila, un docker compose un poil plus complexe que le précédent. Nous avons trois services, <code>mongodb</code>, <code>elasticsearch</code> et <code>graylog</code>. Le service <code>mongodb</code> utilise l&rsquo;image <code>mongo:4</code>, et il monte un volume pour stocker les données. Le service <code>elasticsearch</code> utilise l&rsquo;image <code>docker.elastic.co/elasticsearch/elasticsearch:7.10.2</code>, et il définit une variable d&rsquo;environnement <code>discovery.type</code> à <code>single-node</code>. Le service <code>graylog</code> utilise l&rsquo;image <code>graylog/graylog:4.0</code>, et il expose plusieurs ports. Il définit aussi une variable d&rsquo;environnement <code>GRAYLOG_HTTP_EXTERNAL_URI</code> à <code>http://</code>. Il dépend aussi des services <code>mongodb</code> et <code>elasticsearch</code>. Il monte aussi plusieurs volumes pour stocker les données.</p>
-<p>Je suis sur vous n&rsquo;avez absolument rien compris. C&rsquo;est normal, c&rsquo;est un exemple complexe. Mais, je voulais juste vous montrer que vous pouvez faire des choses complique avec Docker-Compose. Vous pouvez lancer plusieurs services en même temps, et vous pouvez les faire communiquer entre eux. C&rsquo;est très pratique.</p>
-<p>Voila une explication du Docker-Compose :</p>
+<p>Je suis sur vous n&rsquo;avez absolument rien compris. C&rsquo;est normal, c&rsquo;est un exemple complexe. Mais, je voulais juste vous montrer que vous pouvez faire des choses complique avec Docker-Compose. Vous pouvez lancer plusieurs services en même temps, et vous pouvez les faire communiquer entre eux.</p>
+<p>Voila une explication de quelques option docker compose que vous pouvez utiliser dans un fichier <code>compose.yaml</code></p>
 <ul>
 <li><code>version</code>: La version de Docker-Compose. Vous pouvez utiliser la version 3 pour la plupart des cas.</li>
 <li><code>services</code>: Les services que vous voulez lancer. Chaque service a un nom, et vous pouvez définir plusieurs options pour chaque service. Vous pouvez définir l&rsquo;image que vous voulez utiliser, les ports que vous voulez exposer, les variables d&rsquo;environnement que vous voulez définir, etc. Les configurations que vous allez definir en dessous d&rsquo;un service s&rsquo;appliqueront seulement à ce service.</li>
@@ -243,6 +247,10 @@
 <li><code>environment</code>: Les variables d&rsquo;environnement que vous voulez définir. Vous pouvez définir plusieurs variables, et vous pouvez les utiliser dans les services.</li>
 <li>&hellip;.</li>
 </ul>
+<p>Si jamais vous voulez des informations plus détaillées sur les options que vous pouvez utiliser dans un fichier <code>compose.yaml</code>, vous pouvez consulter la documentation officielle <a href="https://docs.docker.com/compose/compose-file/">ici</a>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Bon, peut être que je vous ai un peu perdu avec l&rsquo;exemple de Graylog. Mais je voulais seulement vous montrer la puissance que docker compose peut vous offrir. Vous pouvez lancer plusieurs services en même temps, et en un claquement de doigts vous avez ce qui allait vous prendre des heures si vous aviez utilisé <code>docker run</code>. V</p>
+<p>J&rsquo;espere que vous avez compris l&rsquo;essentiel de Docker-Compose.</p>
 
         </p>
         
@@ -267,6 +275,19 @@
 </div>
 
 
+
+<div class="next-post">
+    <p>
+        <a href="/posts/docs/maj_ios_tftp/">
+            :
+            Mise a jour manuelle d&#39;un Switch Cisco par TFTP
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            avril 21, 2024
+        </p>
+</div>
 
 
             

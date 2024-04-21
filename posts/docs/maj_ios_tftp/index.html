@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Mise a jour manuelle d&#39;un Switch Cisco par TFTP</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='cisco, ccna, tftp, ios'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/docs/maj_ios_tftp/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mise a jour manuelle d&#39;un Switch Cisco par TFTP">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mise a jour manuelle d&#39;un Switch Cisco par TFTP">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/docs/maj_ios_tftp/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/docs/maj_ios_tftp/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/docs/maj_ios_tftp/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.27043ee3e4fae9fba993230b5c2ba193e1f265beeea9c49a69d028f72b22ccb5.js" integrity="sha256-JwQ&#43;4&#43;T66fupkyMLXCuhk&#43;HyZb7uqcSaadAo9ysizLU="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr">
+                    <img src="https://makhal.fr/images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> About </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> About </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Mise a jour manuelle d&#39;un Switch Cisco par TFTP</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            avril 21, 2024
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/cisco">cisco</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/ccna">ccna</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/tftp">tftp</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/ios">ios</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="mise-a-jour-manuelle-du-switch">Mise a jour manuelle du switch</h1>
+<p>Dans cette documentation je vais vous montrer comment procéder a une mise a jour manuelle en utilisant la méthode <strong>tftp</strong> pour un switch Cisco. Cette méthode est très utile, surtout si vous avez un switch qui n&rsquo;est pas connecte a internet, ou si vous avez des problèmes de connexion. Dans les prochaines parties de cette documentation je vais vous montrer comment procéder a cette mise a jour mais cette fois ci grace a Ansible ! En attendant, voici comment procéder manuellement.</p>
+<h2 id="téléchargement-et-installation-manuelle">Téléchargement et installation manuelle.</h2>
+<p>La première chose qu&rsquo;on doit faire est paramétrer le switch pour lui donner une adresse IP, pour lui permettre la communication entre lui et le serveur <em>tftp</em>. Pour cela on va donner une adresse IP a l&rsquo;interface <em>vlan 1</em> dans notre range IP. Pour le faire voici les étapes :</p>
+<p>Une fois que vous êtes connectes au port console du switch tapez les commandes suivantes :</p>
+<pre tabindex="0"><code class="language-textile" data-lang="textile">Switch&gt; enable
+Switch# configure terminal
+Switch(config)#
+</code></pre><p>Une fois dans le mode config, vous allez devoir sélectionner l&rsquo;interface <em>vlan 1</em>, pour effectuer nos modifications :</p>
+<pre tabindex="0"><code class="language-textile" data-lang="textile">Switch(config)#interface vlan 1
+Switch(config-if)#
+</code></pre><p>Lorsque vous serez dans ce sous-menu, on va taper la commande suivante pour lui donner une adresse IP :</p>
+<pre tabindex="0"><code class="language-textile" data-lang="textile">Switch(config-if)#ip address 200.200.200.20 255.255.255.0
+</code></pre><p>Et voila, plutôt simple. Une étape facultative serait d&rsquo;ajouter une <code>default-gateway</code> pour éviter tout futur problème. Cette etape n&rsquo;est plus facultative si vous vous trouvez derriere un router ou il y a des zones <em><strong>caches</strong></em>. Mais cela est au choix, et cela dépend aussi de la configuration réseau (exemple, configuration point-to-point).</p>
+<p>Bon, une fois qu&rsquo;on a fait ça on a fait la moitie du travail, maintenant il faut identifier quelle version de <em>firmware</em> est-ce qu&rsquo;on a dans notre switch. Avec la commande (dans le mode enable):</p>
+<pre tabindex="0"><code class="language-textile" data-lang="textile">Switch#show version
+</code></pre><p>Vous aurez une sortie d&rsquo;écran plutôt conséquente, mais je vous invite a chercher cette ligne :</p>
+<p><img src="/images/doc/maj_ios_tftp/switch_version.png" alt="versio du switch"></p>
+<p>Ici on peut voir le model de switch que j&rsquo;ai mais également la version de firmware qui est installe sur le switch.</p>
+<p>Pour télécharger la version la plus récente, il faut aller dans le site : <a href="https://software.cisco.com">https://software.cisco.com</a></p>
+<p>Une fois dedans on va taper dans la barre de recherche le <strong>MODELE</strong> de notre switch, donc pour moi : <code>C2960-24TT-L</code> (pensez a bien enlever le <em>WS</em> qui se trouve devant !).</p>
+<p>Une fois que vous avez fait votre recherche vous allez vous rediriger vers votre famille de switch, puis, vous allez sélectionner la version <strong>EXACTE</strong>, de votre switch, donc pour moi :</p>
+<p><img src="/images/doc/maj_ios_tftp/cisco_software1.png" alt=""></p>
+<p>Une fois dans ce menu, vous allez appuyer sur <code>IOS SOFTWARE</code>. Moi je vais prendre la version recommande, surtout, vous devez vérifier que sur votre version de firmware, que sur le nom, le sigle <em>k9</em> apparaisse, sinon vous ne pourrez pas suivre la suite du tuto. Voila l&rsquo;image que je vais télécharger :</p>
+<p><img src="/images/doc/maj_ios_tftp/cisco_software2.png" alt=""></p>
+<p>Il suffit pour la télécharger, de se connecter avec son compte <em>Cisco</em> et/ou en créer un si vous en avez pas.</p>
+<p>Maintenant, il faut mettre en place notre serveur <em>tftp</em>, pour cela on va télécharger un petit logiciel, ce logiciel vous pourrez le trouver sur : <a href="https://www.solarwinds.com/fr/free-tools/free-tftp-server">Logiciel TFTP</a>, une fois que vous l&rsquo;avez télécharge et installé, vous allez le lancer. Vous vous trouverez devant une fenêtre comme celle la :</p>
+<p><img src="/images/doc/maj_ios_tftp/tftp.png" alt=""></p>
+<p>Lorsque vous installez ce logiciel, tout marche <em>OUT OF THE BOX</em>, donc pas la peine de faire des modifications de quoi que ce soit. Il faudra simplement bouger notre fichier <em>.bin</em> telecharge vers le dossier C:\TFTP-Root. Notez bien le nom de votre fichier, pour moi <code>c2960-lanbasek9-mz.122-55.SE12.bin</code>, une fois que vous avez fait tout ça cela veut dire que tout est pret pour que votre serveur reçoive le fichier <em>.bin</em>.</p>
+<p>Direction votre switch, (je vous recommande de vérifier que vous arrivez bien a ping votre machine d&rsquo;administration depuis le switch.). Avant toute chose on va vérifier le contenu de notre mémoire <em>flash:</em>, tapez la commande suivante :</p>
+<pre tabindex="0"><code class="language-textile" data-lang="textile">Switch#dir
+Directory of flash:/
+
+    2  -rwx        3016   Mar 1 1993 00:05:36 +00:00  vlan.dat
+    6  drwx         192   Mar 1 1993 00:06:47 +00:00  c2960-lanbase-mz.122-35.SE5
+
+32514048 bytes total (24177152 bytes free)
+</code></pre><p>Il faut <strong><!-- raw HTML omitted -->ABSOLUMENT<!-- raw HTML omitted --></strong> vérifier que vous avez <strong>assez</strong> de place pour accueillir le nouveau fichier <em>.bin</em>, pour moi c&rsquo;est largement bon.</p>
+<p>Maintenant on va procéder a l&rsquo;envoie par <em>tftp</em> de notre <em>.bin</em> vers le switch, pour cela il faut tapper ces commandes en mode <em>enable</em> :</p>
+<pre tabindex="0"><code class="language-textile" data-lang="textile">copy tftp://200.200.200.10/c2960-lanbasek9-mz.122-55.SE12.bin flash:
+</code></pre><p>Cette commande va copier le contenu du serveur <em>tftp</em> vers la mémoire flash. Une fois que vous avez lancée cette commande, vous allez voir sur votre serveur <em>tftp</em> des connexions qui ne veulent pas réussir, ne vous inquiétez pas, le switch il lui faut au moins 2 ou 3 tentatives avant de lancer sa copie. Vous aurez une sortie d&rsquo;écran ressemblera a cela :</p>
+<p><img src="/images/doc/maj_ios_tftp/tftp2.png" alt=""></p>
+<p>Normalement si vous lancez la commande <code>dir</code>, vous verrez que vous avez bel et bien télécharge le <em>.bin</em></p>
+<p>Maintenant qu&rsquo;on a copie notre <em>.bin</em> il nous faut maintenant dire au switch de le prendre en compte pour le prochain démarrage. Pour cela il faut taper le commandes suivantes :</p>
+<pre tabindex="0"><code class="language-textile" data-lang="textile">Switch(config)#boot system c2960-lanbasek9-mz.122-55.SE12.bin
+Switch(config)#end
+Switch#wr
+Switch#reload
+</code></pre><p>Et voila !! Maintenant il faudra juste attendre que le <em>reload</em> fasse effet, et normalement, vous aurez un switch avec la toute dernière version de firmware !!</p>
+<p>Pour le verifier tapez tout simplement la commande <code>show version</code> en mode enable, et vous l&rsquo;aurez :</p>
+<p><img src="/images/doc/maj_ios_tftp/tftp3.png" alt=""></p>
+<p>Voila ! J&rsquo;espere que vous avez bien aime ce petit tutoriel, et que vous avez pu mettre a jour votre switch sans aucun problème. Si vous avez des questions n&rsquo;hésitez pas a me contacter.</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/docker/docker_3/">
+            &#8592;
+            :
+            Docker Partie 3
+        </a>
+    </p>
+    <p class="prev-post-date">
+        février 18, 2024
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 makhal.fr</span>
+    
+</footer>
+</body>
+</html>
