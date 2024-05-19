@@ -4,10 +4,17 @@
     <title>makhal.fr</title>
     <link>https://makhal.fr/</link>
     <description>Recent content on makhal.fr</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sun, 21 Apr 2024 21:40:45 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 19 May 2024 12:05:49 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes Partie 1</title>
+      <link>https://makhal.fr/posts/k8s/k8s1-1/</link>
+      <pubDate>Sun, 19 May 2024 12:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/posts/k8s/k8s1-1/</guid>
+      <description>Dans ce post, je vous présente Kubernetes :D</description>
+    </item>
     <item>
       <title>Mise a jour manuelle d&#39;un Switch Cisco par TFTP</title>
       <link>https://makhal.fr/posts/docs/maj_ios_tftp/</link>
@@ -42,13 +49,6 @@
       <pubDate>Sun, 28 Jan 2024 08:47:49 +0200</pubDate>
       <guid>https://makhal.fr/posts/messagerie/dmark_dkim_spf/</guid>
       <description>Au cours de ce post, je vais vous montrer comment mettre en place le DMARC, DKIM et SPF sur votre serveur de messagerie.</description>
-    </item>
-    <item>
-      <title>Kubernetes Partie 1</title>
-      <link>https://makhal.fr/posts/k8s/kubernetes_debutant_1/</link>
-      <pubDate>Sun, 03 Dec 2023 21:05:49 +0100</pubDate>
-      <guid>https://makhal.fr/posts/k8s/kubernetes_debutant_1/</guid>
-      <description>Dans ce post, je vous présente Kubernetes :D</description>
     </item>
     <item>
       <title>Docker Swarm</title>

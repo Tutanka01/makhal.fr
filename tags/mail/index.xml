@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mail on makhal.fr</title>
+    <title>Mail on makhal.fr</title>
     <link>https://makhal.fr/tags/mail/</link>
-    <description>Recent content in mail on makhal.fr</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Mail on makhal.fr</description>
+    <generator>Hugo</generator>
     <language>fr-fr</language>
     <lastBuildDate>Sun, 28 Jan 2024 08:47:49 +0200</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/mail/index.xml" rel="self" type="application/rss+xml" />
