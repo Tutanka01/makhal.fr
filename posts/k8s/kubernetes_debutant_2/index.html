@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Kubernetes Partie 2</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='kubernetes, docker, devops'>
+
+    <meta property="og:url" content="http://localhost:1313/posts/k8s/kubernetes_debutant_2/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kubernetes Partie 2">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://localhost:1313/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="http://localhost:1313/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kubernetes Partie 2">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="http://localhost:1313/posts/k8s/kubernetes_debutant_2/">
+    <meta property="twitter:url" content="http://localhost:1313/posts/k8s/kubernetes_debutant_2/">
+    <meta name="twitter:image" content="http://localhost:1313/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="http://localhost:1313/posts/k8s/kubernetes_debutant_2/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.fbe2f55794ed6ded1573152a130784ee5cb022de9676b19dd37d7559ee6f6fc6.js" integrity="sha256-&#43;&#43;L1V5Ttbe0VcxUqEweE7lywIt6WdrGd0311We5vb8Y="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="http://localhost:1313/">
+                    <img src="http://localhost:1313//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:1313/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/pages/about/"> About </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/pages/about/"> About </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Kubernetes Partie 2</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            mai 28, 2024
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/kubernetes">kubernetes</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/docker">docker</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/devops">devops</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="kubernetes-pour-les-débutants---partie-2">Kubernetes pour les débutants - Partie 2</h1>
+<p>Bon, on a vol d&rsquo;oiseau tout ce qui se passe dans un cluster complet de K8&rsquo;s, maintenant dans ce post on va s&rsquo;interesser principallement tout ce qui passe dans le control-plane, car c&rsquo;est la ou toute la magie de Kuberentes s&rsquo;oppere, un cluster sans controle-plane c&rsquo;est comme un corps sans cerveau&hellip;</p>
+<h2 id="control-plane">Control-Plane</h2>
+<p>Le control-plane n&rsquo;a plus besoin d&rsquo;etre presente, dans le dernier post je vois ai donne les 3 elements principaux qui le composent, pour rappel c&rsquo;est le :</p>
+<ul>
+<li><strong>API Server</strong></li>
+<li><strong>Scheduler</strong></li>
+<li><strong>Controller Manager</strong></li>
+<li><strong>etcd</strong></li>
+</ul>
+<p>Deja, avant de commencer il faut que vous sachiez, qu&rsquo;un cluster Kuberntes peut vivre ( plus ou moins ) meme si un de ces derniers elements n&rsquo;existe pas. Vous allez me dire, comment ça se fait ? Ce qui se passe c&rsquo;est que tous ces elements sont la pour nous faciliter la vie, pour faire les choses automatiquement, par exemple c&rsquo;est pas nous qu&rsquo;on va dire a chaque nouveau pod ou aller, le <strong>Replication Controller</strong> le fera pour nous.</p>
+<p>Pour chaque cas il y a un <strong>controller-amanger</strong> qui pourra gerer cela pour nous. Dans la suite je vais vous parler des <strong>controller-amanger</strong> les plus importants qu&rsquo;on va devoir maitriser pour adminsitrer un cluster K8&rsquo;s</p>
+<h3 id="node-controller">Node Controller</h3>
+<p>Le <strong>Node Controller</strong>, comme le nom l&rsquo;indique, est le composant qui surveille l&rsquo;état des worker nodes (serveurs qui travaillent) dans le cluster Kubernetes. Il a plusieurs fonctions clés pour assurer que les nœuds fonctionnent correctement :</p>
+<ul>
+<li>
+<p><strong>Détection des nœuds non répondants</strong> : Le Node Controller vérifie régulièrement si les nœuds envoient des signaux de vie (heartbeats). Si un nœud ne répond pas dans un délai spécifié, le Node Controller le marque comme &ldquo;NotReady&rdquo; et commence à gérer les pods en conséquence.</p>
+</li>
+<li>
+<p><strong>Gestion des pods orphelins</strong> : Si un nœud est marqué comme &ldquo;NotReady&rdquo; et ne revient pas en ligne après un certain temps, le Node Controller supprime les pods associés et les recrée sur d&rsquo;autres nœuds disponibles pour maintenir la disponibilité des applications.</p>
+</li>
+<li>
+<p><strong>Mise à jour des informations de statut</strong> : Le Node Controller met à jour l&rsquo;état des nœuds dans le etcd via l&rsquo;API Server, assurant que les informations sur l&rsquo;état des nœuds sont précises et à jour.</p>
+</li>
+</ul>
+<div class="mermaid">
+graph LR
+    A[Worker Nodes] -- Envoie des requêtes --> B[API du Control Plane]
+    B -- Stocke le status --> C[etcd]
+</div>
+<p>e vais maintenant vous présenter la commande que vous allez utiliser le plus pour administrer votre cluster : <code>kubectl</code>. Inutile pour le moment de vous expliquer toutes les options et éléments que vous pouvez modifier avec cette commande, je vais vous les montrer au fur et à mesure, et nous les mettrons en pratique également.</p>
+<p>Du coup avec la commande <code>kubectl</code> on peut voir l&rsquo;etat des noeuds :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get nodes
+</span></span></code></pre></div><p>Vous aurez un resultat qui va ressembler a quelque chose comme ça :</p>
+<p><img src="/images/k8s/k8s2/command1.png" alt="alt text"></p>
+<h3 id="replicaset-controller">ReplicaSet Controller</h3>
+<p>Le <strong>replicaSet Controller</strong> est comme moi j&rsquo;aime bien le dire, une des vertebres de K8&rsquo;s. Car lorsque vous allez dire a cet element que vous voulez avoir 1000 pods (applications) differents, il va faire tout ce qu&rsquo;il peut pour le faire, tout ça d&rsquo;une manniere distribue et sans mettre le cluster en danger.</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/k8s/k8s1-1/">
+            &#8592;
+            :
+            Kubernetes Partie 1
+        </a>
+    </p>
+    <p class="prev-post-date">
+        mai 19, 2024
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 makhal.fr</span>
+    
+</footer>
+</body>
+</html>
