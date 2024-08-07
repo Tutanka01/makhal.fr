@@ -2,11 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://makhal.fr/posts/cyber/decouverte_siem/</loc>
+    <lastmod>2024-08-07T20:05:49+01:00</lastmod>
+  </url><url>
     <loc>https://makhal.fr/</loc>
-    <lastmod>2024-06-03T10:56:10+01:00</lastmod>
+    <lastmod>2024-08-07T20:05:49+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/posts/</loc>
-    <lastmod>2024-06-03T10:56:10+01:00</lastmod>
+    <lastmod>2024-08-07T20:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/secops/</loc>
+    <lastmod>2024-08-07T20:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/siem/</loc>
+    <lastmod>2024-08-07T20:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/</loc>
+    <lastmod>2024-08-07T20:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/wazuh/</loc>
+    <lastmod>2024-08-07T20:05:49+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/ccna/</loc>
     <lastmod>2024-04-21T21:40:45+02:00</lastmod>
@@ -18,9 +33,6 @@
     <lastmod>2024-04-21T21:40:45+02:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/posts/docs/maj_ios_tftp/</loc>
-    <lastmod>2024-04-21T21:40:45+02:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/</loc>
     <lastmod>2024-04-21T21:40:45+02:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/tftp/</loc>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Decouverte de Wazuh</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='SIEM, Wazuh, SecOPS'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/cyber/decouverte_siem/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Decouverte de Wazuh">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Decouverte de Wazuh">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/cyber/decouverte_siem/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/cyber/decouverte_siem/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/cyber/decouverte_siem/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.fbe2f55794ed6ded1573152a130784ee5cb022de9676b19dd37d7559ee6f6fc6.js" integrity="sha256-&#43;&#43;L1V5Ttbe0VcxUqEweE7lywIt6WdrGd0311We5vb8Y="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> About </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> About </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Decouverte de Wazuh</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            août 7, 2024
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/siem">SIEM</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/wazuh">Wazuh</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/secops">SecOPS</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="introduction">Introduction</h1>
+<p>Les Security information and event management, ou SIEM pour les intimes, sont des systemes essentiels pour centraliser les logs (journaux d&rsquo;activité) provenant de diverses machines qui composent un système d&rsquo;information (SI). Ces machines peuvent inclure des firewalls, des switches, des serveurs Windows ou Linux, ou tout autre systeme capable de générer des journaux.</p>
+<p>Un système SIEM collecte ces logs et les analyse en les soumettant à des règles prédéfinies. Si une activité suspecte est détectée (comme une attaque par force brute, la suppression d&rsquo;un fichier, des connexions anormales, ou le lancement de processus non autorisés), le SIEM déclenche une alerte. Cela permet de vérifier si l&rsquo;alerte est un vrai positif (en distinguant les faux positifs) et d&rsquo;agir en conséquence pour réduire le risque de compromettre la fameuse triade CIA : Confidentialité, Intégrité, et Disponibilité.</p>
+<p><img src="/Images/cyber-triad-1.png" alt="Triade CIA"></p>
+<p>Vous l&rsquo;aurez deviné, un système tel qu&rsquo;un SIEM est un élément essentiel si nous voulons améliorer la sécurité de notre SI.7</p>
+<p>Lançons-nous maintenant dans un guide sur comment installer et configurer une marque de SIEM open source, mais qui, malgré cela, est très puissante : cette solution est Wazuh. Je vais vous présenter au fur et à mesure des articles le processus d&rsquo;installation, de configuration, et, si j&rsquo;ai le temps, même des démos pour vous montrer à quel point un SIEM peut être puissant.</p>
+<h2 id="prerequis">Prerequis</h2>
+<p>Bon, nous allons nous lancer dans un projet qui est passionnant, mais avant de se lancer dans un tel projet, il faut avoir un certain bagage. Il faudra savoir manipuler un terminal Linux. Et c&rsquo;est tout !</p>
+<p>Vous voyez, je suis quand même sympa, je ne vous demande pas beaucoup ;)</p>
+<h2 id="decouverte-de-wazuh">Decouverte de Wazuh</h2>
+<p>Wazuh est une des références dans le domaine des SIEM.</p>
+<p>Wazuh va nous permettre de faire tout ce qu&rsquo;on veut et plus ! Pour information, Wazuh est basé sur pas mal d&rsquo;outils de la maison ElasticSearch, et ce, avant que ElasticSearch ne change sa politique financière. En fait, Wazuh est basé sur OpenSearch, lui-même dérivé d&rsquo;ElasticSearch. Wazuh a donc fait un fork pour être plus indépendant d&rsquo;OpenSearch. Bon, un vrai bourbier, mais les complications s&rsquo;arrêtent ici. Nous allons maintenant voir comment l&rsquo;installer sur une machine Debian.</p>
+<p>Mais avant cela, parlons un peu de l&rsquo;architecture que nous allons mettre en place.</p>
+<h1 id="architecture-">Architecture :</h1>
+<p><img src="/Images/Infra_Wazuh_1.png" alt="Infrastructure Wazuh"></p>
+<p>Voilà l&rsquo;architecture que nous allons mettre en place. Cette infrastructure, plutôt simple en apparence, cache beaucoup de choses derrière elle.</p>
+<p>Pour commencer, parlons des endpoints. Ici, Wazuh est un très bon élève, car il supporte beaucoup de plateformes. Sur ces plateformes qu&rsquo;il supporte, on pourra installer des agents-Wazuh qui, en plus de récupérer et d&rsquo;envoyer les journaux, peuvent faire un pré-traitement. De plus, Wazuh propose une fonctionnalité de réponse automatique aux événements. Nous verrons cette partie plus tard. Parmi les systèmes supportés, on trouve les principaux : Linux, Windows, et même des firewalls comme pfSense.</p>
+<p>Également, il supporte les redirections des logs Syslog, ce qui permet de récupérer les logs des firewalls, switches, et/ou autres serveurs où le Wazuh-Agent n&rsquo;est pas installable, et de les intégrer à notre infrastructure.</p>
+<p>Une fois que les agents ou les redirections Syslog auront récupéré les journaux qui nous intéressent, ils vont les envoyer à notre cerveau, au maître de la conférence : le Wazuh Server, ou le Wazuh-Manager pour les intimes. Ici, c&rsquo;est là où tout se passe, de l&rsquo;analyse à la réponse à incident, c&rsquo;est là où tout se décide.</p>
+<p>Une fois que le Wazuh-Server aura décidé ou non de lancer une alerte, on pourra voir ces alertes dans un magnifique dashboard appelé Wazuh-Dashboard (pas d&rsquo;originalité dans les noms&hellip;). Ici, on pourra chercher, observer, et même créer des dashboards personnalisés selon nos envies.</p>
+<p>Mais ces logs, une fois traités, il faut bien entendu les stocker quelque part pour les analyses futures, non ? Oui, absolument, vous avez raison ! C&rsquo;est là où le Wazuh-Indexer (base de données) va entrer en action, en stockant, et surtout, en fournissant à la demande toutes les infos que le Wazuh-Dashboard lui demandera, et ce, super rapidement.</p>
+<p>Et tout cela, on peut intégrer des Webhooks ou même des appels API pour pouvoir recevoir des notifications sur notre plateforme de messagerie préférée. C&rsquo;est pas beau, ça ?</p>
+<h1 id="installation">Installation</h1>
+<p>Bon fini de blabla et passons au choses serieuses, dans cette partie on va utiliser une seule machine Debian 12 et cela pour simplifier le tuto car sinon j&rsquo;aurais bien aime mettre des cluster de partout, mais si je fais ça, en 2026 je serais toujours en train d&rsquo;ecrire ce post.</p>
+<h2 id="wazuh-indxer">Wazuh-Indxer</h2>
+<p>Nous allons maintenant se concentrer dans la partie Wazuh-Indexer.</p>
+<p>On télécharge un ficher de conf préremplie de plus que le script qui va nous servir a créer nos, certificats internes. Pour permettre la connexion par https entre les differents services</p>
+<blockquote>
+<p>Attention ! En environnement de production il faudra utiliser les certificats SSL qui seront valides par les authorites de certification pour éviter tout problème dans le futur.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -sO https://packages.wazuh.com/4.7/wazuh-certs-tool.sh
+</span></span><span style="display:flex;"><span>curl -sO https://packages.wazuh.com/4.7/config.yml
+</span></span></code></pre></div><p>Une fois que nous avons fait ceci, nous allons modifier le fichier config.yaml pour lui indiquer quels seront les serveurs a qui on doit crer les certificats, vu qu&rsquo;on a un seul serveur cela va grandemment nous simplfier la tache.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nano ./config.yml
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">nodes</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Wazuh indexer nodes</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">indexer</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">SIEM-11.makhal.lan</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">ip</span>: <span style="color:#e6db74">&#34;192.168.222.145&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#- name: node-2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#  ip: &#34;&lt;indexer-node-ip&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#- name: node-3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#  ip: &#34;&lt;indexer-node-ip&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Wazuh server nodes</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># If there is more than one Wazuh server</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># node, each one must have a node_type</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">server</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">SIEM-11.makhal.lan</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">ip</span>: <span style="color:#e6db74">&#34;192.168.222.145&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#  node_type: master</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#- name: wazuh-2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#  ip: &#34;&lt;wazuh-manager-ip&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#  node_type: worker</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#- name: wazuh-3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#  ip: &#34;&lt;wazuh-manager-ip&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#  node_type: worker</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Wazuh dashboard nodes</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dashboard</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">SIEM-11.makhal.lan</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">ip</span>: <span style="color:#e6db74">&#34;192.168.222.145&#34;</span>
+</span></span></code></pre></div><p>Ici dans ce fichier nous allons indiquer 3 choses, le nom et addresse IP de notre Indexer de meme pour le server, et pareil pour le Dashboard. Une bonne pratique est d&rsquo;utiliser le hostname. Donc si jamais vous etes en cluster il faudra bien verifier que vos records DNS sont bons (ou modif du <code>/etc/hosts</code>)</p>
+<p>Ensuite nous allons lancer le script de creation de certificats :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash ./wazuh-certs-tool.sh -A
+</span></span><span style="display:flex;"><span>tar -cvf ./wazuh-certificates.tar -C ./wazuh-certificates/ .
+</span></span></code></pre></div><p>Une fois que le .tar cree avec tous nos certificats nous allons maintenant proceder a l&rsquo;importation des clefs et l&rsquo;ajour des depots Wazuh dans notre systeme, pour le faire, rien de plus simple que faire ces commandes :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get install gnupg apt-transport-https
+</span></span><span style="display:flex;"><span>curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import <span style="color:#f92672">&amp;&amp;</span> chmod <span style="color:#ae81ff">644</span> /usr/share/keyrings/wazuh.gpg
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main&#34;</span> | tee -a /etc/apt/sources.list.d/wazuh.list
+</span></span><span style="display:flex;"><span>apt-get update
+</span></span></code></pre></div><p>Et enfin :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get -y install wazuh-indexer
+</span></span></code></pre></div><p>Une fois le wazuh-indexer installe, on va modifer le <code>/etc/wazuh-indexer/opensearch.yml</code> pour configurer notre indexer.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">network.host</span>: <span style="color:#e6db74">&#34;192.168.222.145&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">node.name</span>: <span style="color:#e6db74">&#34;SIEM-11.makhal.lan&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">cluster.initial_master_nodes</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#e6db74">&#34;SIEM-11.makhal.lan&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#- &#34;node-2&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#- &#34;node-3&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">cluster.name</span>: <span style="color:#e6db74">&#34;wazuh-cluster&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">discovery.seed_hosts</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#e6db74">&#34;192.168.222.145&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  - &#34;node-2-ip&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  - &#34;node-3-ip&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">node.max_local_storage_nodes</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">path.data</span>: <span style="color:#ae81ff">/var/lib/wazuh-indexer</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">path.logs</span>: <span style="color:#ae81ff">/var/log/wazuh-indexer</span>
+</span></span></code></pre></div><p>Il faudra bien entendu connaitre son addresse IP, egalement si jamais vous avez sur votre VM un deuxieme disque ou vous allez vouloir stocker les logs, c&rsquo;est les champs :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">path.data</span>: <span style="color:#ae81ff">/var/lib/wazuh-indexer</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">path.logs</span>: <span style="color:#ae81ff">/var/log/wazuh-indexer</span>
+</span></span></code></pre></div><p>Qu&rsquo;il faudra modifier pour indiquer votre propre disque !</p>
+<p>Ensuite on importe les certifcats crees un peu plus tot, vers le indexer avec les commandes suivantes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>NODE_NAME<span style="color:#f92672">=</span>SIEM-11.makhal.lan
+</span></span></code></pre></div><p>Ici on met le meme hostname qu&rsquo;on a mis lors de la creation des certificats, et pour la suite il faudra lancer cet ensemble de commandes, pour mettre en place les certificats.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir /etc/wazuh-indexer/certs
+</span></span><span style="display:flex;"><span>tar -xf ./wazuh-certificates.tar -C /etc/wazuh-indexer/certs/ ./$NODE_NAME.pem ./$NODE_NAME-key.pem ./admin.pem ./admin-key.pem ./root-ca.pem
+</span></span><span style="display:flex;"><span>mv -n /etc/wazuh-indexer/certs/$NODE_NAME.pem /etc/wazuh-indexer/certs/indexer.pem
+</span></span><span style="display:flex;"><span>mv -n /etc/wazuh-indexer/certs/$NODE_NAME-key.pem /etc/wazuh-indexer/certs/indexer-key.pem
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">500</span> /etc/wazuh-indexer/certs
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">400</span> /etc/wazuh-indexer/certs/*
+</span></span><span style="display:flex;"><span>chown -R wazuh-indexer:wazuh-indexer /etc/wazuh-indexer/certs
+</span></span></code></pre></div><p>Puis on enable et on start le service du wazuh indexer</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl daemon-reload
+</span></span><span style="display:flex;"><span>systemctl enable wazuh-indexer
+</span></span><span style="display:flex;"><span>systemctl start wazuh-indexer
+</span></span></code></pre></div><p>Une fois que nous avons lance notre indexer, nous allons lancer ce script pour le faire rejoindre dans le cluster (meme s&rsquo;il est tout seul), c&rsquo;est une etape obligatoire :)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/share/wazuh-indexer/bin/indexer-security-init.sh
+</span></span></code></pre></div><p>Une fois cela fait on peut verifier le fonctionnment du Wazuh-Indexer en tappant la commande suivante :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -k -u admin:admin https://192.168.222.145:9200
+</span></span></code></pre></div><p>Et on aura le retour suivant :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;name&#34;</span> : <span style="color:#e6db74">&#34;SIEM-11.makhal.lan&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;cluster_name&#34;</span> : <span style="color:#e6db74">&#34;wazuh-cluster&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;cluster_uuid&#34;</span> : <span style="color:#e6db74">&#34;mUnh6H8FRsugnOc_i8HbIg&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;version&#34;</span> : {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;number&#34;</span> : <span style="color:#e6db74">&#34;7.10.2&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;build_type&#34;</span> : <span style="color:#e6db74">&#34;rpm&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;build_hash&#34;</span> : <span style="color:#e6db74">&#34;db90a415ff2fd428b4f7b3f800a51dc229287cb4&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;build_date&#34;</span> : <span style="color:#e6db74">&#34;2023-06-03T06:24:25.112415503Z&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;build_snapshot&#34;</span> : <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;lucene_version&#34;</span> : <span style="color:#e6db74">&#34;9.6.0&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;minimum_wire_compatibility_version&#34;</span> : <span style="color:#e6db74">&#34;7.10.0&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;minimum_index_compatibility_version&#34;</span> : <span style="color:#e6db74">&#34;7.0.0&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;tagline&#34;</span> : <span style="color:#e6db74">&#34;The OpenSearch Project: https://opensearch.org/&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="conclusion">Conclusion</h1>
+<p>Et voilà, rien de plus simple qu&rsquo;une installation de Wazuh-Indexer. Normalement, si vous avez suivi jusqu&rsquo;ici, vous avez une BDD Wazuh-Indexer prête à l&rsquo;emploi.</p>
+<p>Mais cela ne veut pas dire qu&rsquo;elle est prête à être mise en production. Dans le prochain post, nous allons l&rsquo;optimiser un peu et la rendre parfaite pour notre futur système SIEM.</p>
+<p>Dans la suite, nous allons également continuer notre installation et enfin commencer la configuration des différents services.</p>
+<p>Jusqu&rsquo;ici, merci beaucoup d&rsquo;avoir suivi, et n&rsquo;hésitez pas à me suivre sur LinkedIn, c&rsquo;est là où je mettrai les mises à jour du statut des posts. Merci encore.</p>
+<p>Mohamad El Akhal El Bouzidi</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/docs/maj_ios_tftp/">
+            &#8592;
+            :
+            Mise a jour manuelle d&#39;un Switch Cisco par TFTP
+        </a>
+    </p>
+    <p class="prev-post-date">
+        avril 21, 2024
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

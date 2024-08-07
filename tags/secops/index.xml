@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SecOPS on makhal.fr</title>
+    <link>https://makhal.fr/tags/secops/</link>
+    <description>Recent content in SecOPS on makhal.fr</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Wed, 07 Aug 2024 20:05:49 +0100</lastBuildDate>
+    <atom:link href="https://makhal.fr/tags/secops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Decouverte de Wazuh</title>
+      <link>https://makhal.fr/posts/cyber/decouverte_siem/</link>
+      <pubDate>Wed, 07 Aug 2024 20:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/posts/cyber/decouverte_siem/</guid>
+      <description>Dans une (encore) nouvelle serie de posts, nous allons decouvir le monde extraordianaire des SIEM</description>
+    </item>
+  </channel>
+</rss>

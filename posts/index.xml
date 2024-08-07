@@ -6,8 +6,15 @@
     <description>Recent content in Posts on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sun, 21 Apr 2024 21:40:45 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 07 Aug 2024 20:05:49 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Decouverte de Wazuh</title>
+      <link>https://makhal.fr/posts/cyber/decouverte_siem/</link>
+      <pubDate>Wed, 07 Aug 2024 20:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/posts/cyber/decouverte_siem/</guid>
+      <description>Dans une (encore) nouvelle serie de posts, nous allons decouvir le monde extraordianaire des SIEM</description>
+    </item>
     <item>
       <title>Mise a jour manuelle d&#39;un Switch Cisco par TFTP</title>
       <link>https://makhal.fr/posts/docs/maj_ios_tftp/</link>
