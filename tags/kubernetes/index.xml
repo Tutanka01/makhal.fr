@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubernetes on makhal.fr</title>
-    <link>http://localhost:1313/tags/kubernetes/</link>
+    <link>https://makhal.fr/tags/kubernetes/</link>
     <description>Recent content in Kubernetes on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Wed, 07 Aug 2024 20:05:49 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 May 2024 12:05:49 +0100</lastBuildDate>
+    <atom:link href="https://makhal.fr/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Decouverte de Sysmon</title>
-      <link>http://localhost:1313/posts/cyber/windows/sysmon_decouverte/</link>
-      <pubDate>Wed, 07 Aug 2024 20:05:49 +0100</pubDate>
-      <guid>http://localhost:1313/posts/cyber/windows/sysmon_decouverte/</guid>
+      <title>Kubernetes Partie 1</title>
+      <link>https://makhal.fr/posts/k8s/k8s1-1/</link>
+      <pubDate>Sun, 19 May 2024 12:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/posts/k8s/k8s1-1/</guid>
       <description>Dans ce post, je vous présente Kubernetes :D</description>
     </item>
   </channel>
