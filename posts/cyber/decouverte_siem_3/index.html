@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Découverte de Wazuh Partie 3</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='SIEM, Wazuh, SecOPS'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/cyber/decouverte_siem_3/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Découverte de Wazuh Partie 3">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Découverte de Wazuh Partie 3">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/cyber/decouverte_siem_3/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/cyber/decouverte_siem_3/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/cyber/decouverte_siem_3/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.fbe2f55794ed6ded1573152a130784ee5cb022de9676b19dd37d7559ee6f6fc6.js" integrity="sha256-&#43;&#43;L1V5Ttbe0VcxUqEweE7lywIt6WdrGd0311We5vb8Y="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> About </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> About </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Découverte de Wazuh Partie 3</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            août 17, 2024
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/siem">SIEM</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/wazuh">Wazuh</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/secops">SecOPS</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="introduction">Introduction</h1>
+<p>Maintenant, nous avons notre système SIEM mis en place et prêt à nous montrer tout ce qu&rsquo;il a dans son ventre.</p>
+<p><img src="/images/SIEM/Meme1.jpg" alt="Meme SIEM"></p>
+<p>Mais ne nous décourageons pas, nous allons essayer de regarder tous les cas d&rsquo;utilisation qu&rsquo;un SIEM peut avoir. Nous verrons comment détecter si un attaquant essaie d&rsquo;accéder à notre serveur, détecterons également les attaques par force brute, les changements dans les fichiers, les processus cachés, entre autres. En résumé, je vais essayer de vous montrer que si on joue bien son jeu, Wazuh peut être un outil très puissant pour détecter de véritables menaces, si et seulement si, il est bien configuré.</p>
+<p>Nous verrons également comment ajouter un agent, le configurer, et d&rsquo;autres aspects. Fini de parler, lançons-nous sur notre interface Wazuh !</p>
+<h2 id="ajout-du-premier-agent-windows">Ajout du premier agent Windows</h2>
+<p>Avant d&rsquo;ajouter notre premier agent Windows, nous allons devoir aller sur notre Wazuh-Dashboard et créer des groupes. Ces groupes vont beaucoup nous faciliter la tâche dans le futur. Avec ces groupes, nous pourrons éditer les configurations de manière groupée et non une par une. Cela est très pratique si jamais nous avons plus de 100 agents ou plus.</p>
+<p>Pour cela, nous nous dirigeons vers :</p>
+<p><img src="/images/SIEM/Ajout-agent/Ajout_groupe1.png" alt="Ajout_groupe1"></p>
+<p>Une fois dans ce menu, nous pouvons constater qu&rsquo;il existe déjà un groupe, le groupe <em><strong>default</strong></em>. Ce groupe ne peut pas être supprimé, mais si nous le souhaitons, nous pouvons le modifier, mais cela n&rsquo;est pas très conseillé, car il vaut mieux avoir des groupes nominatifs par <strong>groupe</strong> d&rsquo;agents, tels que Windows, Linux, Firewalls, Network, etc.</p>
+<p>Maintenant, il faut ajouter le groupe en cliquant sur <em><strong>Add new group</strong></em>, puis saisir le nom de notre nouveau groupe :</p>
+<p><img src="/images/SIEM/Ajout-agent/Ajout_groupe2.png" alt="Ajout_groupe2"></p>
+<p>Et c&rsquo;est bon. Vous pouvez remarquer sur le tableau que nous pouvons modifier et consulter la configuration de notre groupe. En gros, cette configuration est celle de l&rsquo;agent qui sera installé sur chaque machine que nous voulons surveiller. Ce fichier de configuration se base sur un logiciel très connu dans le monde du Blue Teaming, <em><strong>OSSEC</strong></em>. Il permet de définir des règles de surveillance et bien d&rsquo;autres choses.</p>
+<p>Ajoutons maintenant notre premier agent. Pour ce faire, nous nous dirigeons vers :
+<img src="/images/SIEM/Ajout-agent/Ajout_agent1.png" alt="Ajout Agent 1"></p>
+<p>Étant donné que nous n&rsquo;avons pas encore ajouté d&rsquo;agent, il nous dirige directement vers la page d&rsquo;ajout.</p>
+<p>Une fois sur cette page, rien de plus simple :</p>
+<p><img src="/images/SIEM/Ajout-agent/Ajout_agent2.png" alt="Ajout Agent 2"></p>
+<p>Tout d&rsquo;abord, il faudra sélectionner l&rsquo;OS de notre agent. Pour nous, notre premier agent sera un Windows 10. Ici, nous sélectionnons <em><strong>MSI 32/64 bits</strong></em>. Puis, dans <em><strong>Server Address</strong></em>, il faut mettre l&rsquo;adresse du Wazuh-Manager !</p>
+<blockquote>
+<p>Si jamais vous êtes sur différents nœuds, l&rsquo;adresse sera forcément différente de celle de votre Dashboard, faites attention !!</p>
+</blockquote>
+<p>Si nous descendons un peu plus bas, nous devons remplir ces deux champs :</p>
+<p><img src="/images/SIEM/Ajout-agent/Ajout_agent3.png" alt="Ajout Agent 3"></p>
+<p>Ici, nous devons d&rsquo;abord donner un nom <em><strong>UNIQUE</strong></em> à notre agent. Une fois que vous aurez décidé quel nom mettre, il faudra l&rsquo;assigner au groupe Windows créé un peu plus haut.</p>
+<p>Et voilà, maintenant Wazuh nous donne une commande <em><strong>PowerShell</strong></em> que nous devrons exécuter sur notre agent. Sans trop tarder, il faut copier cette commande et la lancer sur un terminal PowerShell avec les droits d&rsquo;administrateur. Une fois que Wazuh aura terminé de s&rsquo;installer, il faudra simplement démarrer le service avec la commande PowerShell :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>NET START WazuhSvc
+</span></span></code></pre></div><p><img src="/images/SIEM/Ajout-agent/Wazuh1.gif" alt="Ajout Agent 4"></p>
+<p>C&rsquo;est rapide, n&rsquo;est-ce pas ? Une fois que nous avons réussi à installer notre agent, il ne nous reste plus qu&rsquo;à <em><strong>fermer</strong></em> la fenêtre où nous sommes et vérifier si notre agent a bien été ajouté :</p>
+<p><img src="/images/SIEM/Ajout-agent/Ajout_agent5.png" alt="Ajout Agent 5"></p>
+<p>Et voilà comment nous avons réussi à ajouter notre tout premier agent. Maintenant, pour varier un peu, ajoutons un agent Linux.</p>
+<h2 id="ajout-du-premier-agent-linux">Ajout du premier agent Linux</h2>
+<p>Pour les agents Linux, nous allons suivre exactement la même procédure que pour les agents Windows. Allons-y alors.</p>
+<p>Tout d&rsquo;abord, nous allons créer notre groupe :</p>
+<p><img src="/images/SIEM/Ajout-agent/Ajout_groupe_Linux_1.png" alt="Ajout groupe Linux"></p>
+<p>Une fois notre groupe créé, nous allons nous diriger vers la page qui va nous permettre d&rsquo;ajouter des agents :</p>
+<p><img src="/images/SIEM/Ajout-agent/Ajout_agent_Linux_1.png" alt="Ajout Agent Linux 1"></p>
+<p><img src="/images/SIEM/Ajout-agent/Ajout_agent_Linux_2.png" alt="Ajout Agent Linux 2"></p>
+<p>Sur cette page, bien entendu, cela dépendra de la distribution Linux que vous utilisez pour votre machine. Moi, j&rsquo;utilise une machine Debian 12, donc pour moi, ce sera des paquets <em><strong>.deb</strong></em>. Il faudra juste faire attention à prendre la bonne option pour votre distribution Linux.</p>
+<p><img src="/images/SIEM/Ajout-agent/Ajout_agent_Linux_3.png" alt="Ajout Agent Linux 3"></p>
+<p>Une fois les champs bien remplis, nous pouvons copier et coller les commandes que notre Wazuh nous aura données. Cela ressemblera à quelque chose comme cela :</p>
+<p><img src="/images/SIEM/Ajout-agent/Wazuh2.gif" alt="Wazuh Gif Linux"></p>
+<p>Et voilà ! Maintenant, si nous retournons sur notre Dashboard des agents, nous pouvons constater que nous retrouvons nos 2 serveurs ajoutés :</p>
+<p><img src="/images/SIEM/Ajout-agent/Ajout_agent_Linux_5.png" alt="Wazuh Dashboard 1"></p>
+<p>C&rsquo;était simple, n&rsquo;est-ce pas ? Mais ne vous inquiétez pas, vous allez être encore plus surpris par la simplicité et la puissance de Wazuh.</p>
+<h2 id="première-découverte-des-fonctionnalités-wazuh">Première découverte des fonctionnalités Wazuh</h2>
+<p>Maintenant que nous avons nos agents qui envoient des logs de nos machines vers le <em><strong>wazuh-server</strong></em>, nous pouvons commencer à découvrir à vol d&rsquo;oiseau (pas dans les détails) toutes les fonctionnalités que Wazuh peut nous proposer.</p>
+<blockquote>
+<p>Ne vous inquiétez pas, plus tard dans de futurs posts, nous irons 1000 fois plus dans les détails.</p>
+</blockquote>
+<p>Tout d&rsquo;abord, nous allons nous diriger vers la page principale de notre Wazuh-Dashboard en appuyant simplement sur le logo en haut à droite.</p>
+<p><img src="/images/SIEM/Wazuh-Dashboards/Dashboard-Principal-1.png" alt="Dashboard Principal"></p>
+<p>J&rsquo;ai entouré en rouge tous les éléments que je considère importants. Bien entendu, je ne peux pas tout montrer. De plus, je n&rsquo;ai pas d&rsquo;environnement Office 365 sous la main, donc nous allons nous concentrer principalement sur les fonctionnalités de base.</p>
+<p>Tout d&rsquo;abord, nous avons une grande ligne qui nous montre l&rsquo;état des alertes. Ici, en un coup d&rsquo;œil, nous pouvons voir l&rsquo;état de notre infrastructure, si nous avons des alertes critiques, majeures ou mineures.</p>
+<p>Ensuite, nous avons divers modules, déjà prédéfinis dans Wazuh. Par exemple, nous avons le <em><strong>Configuration Assessment</strong></em> qui est d&rsquo;une grande utilité pour pouvoir renforcer la sécurité de nos machines. Lorsqu&rsquo;on entre dans ce module, nous avons un score, avec les conseils du CIS (Center for Internet Security) qui nous aident à savoir si notre machine ou serveur répond aux standards de l&rsquo;industrie.</p>
+<p><img src="/images/SIEM/Wazuh-Dashboards/CIS-Dashboard.png" alt="CIS Dashboard"></p>
+<p>Ici, par exemple, dans une installation <em><strong>vierge</strong></em> de Windows 10, nous avons un score de 29%, ce qui est <em><strong>CATASTROPHIQUE</strong></em>. Mais bon, nous ne sommes pas dans un environnement de production, donc nous allons le laisser comme ça. Si jamais le renforcement de la sécurité vous intéresse, n&rsquo;hésitez pas à me contacter pour que je fasse un post.</p>
+<p>On peut voir que des critères tels que :</p>
+<ul>
+<li>La taille du mot de passe</li>
+<li>La durée de vie d&rsquo;un mot de passe</li>
+<li>Que certains services soient arrêtés (Print Spooler)</li>
+</ul>
+<p>Entre autres, définissent cette note.</p>
+<p>Passons maintenant à autre chose, parlons de la partie <em><strong>Vulnerability Detection</strong></em>. Ici, nous allons pouvoir savoir si une de nos machines est exposée à une vulnérabilité, que ce soit à cause d&rsquo;un logiciel installé sur la machine ou de l&rsquo;OS lui-même. Cependant, il faut activer cette fonctionnalité <em><strong>manuellement</strong></em> car elle consomme pas mal de ressources sur l&rsquo;hôte et sur le serveur.</p>
+<blockquote>
+<p>Cela était nécessaire seulement sur les anciennes versions. Pour la nouvelle version de Wazuh, le <em><strong>Vulnerability Detection</strong></em> est activé par défaut !</p>
+</blockquote>
+<p>Une fois que nous l&rsquo;aurons soit activée, soit constatée qu&rsquo;elle l&rsquo;est par défaut, nous allons aller dans l&rsquo;onglet <em><strong>Vulnerability Detection</strong></em> :</p>
+<p><img src="/images/SIEM/Wazuh-Dashboards/VulnDect-Dashboard.png" alt="Dashboard Vulnérabilité"></p>
+<p>Là, nous constatons que ma machine (Debian/Linux), fraîchement déployée, a plus de 63 vulnérabilités critiques ?! Bon, faisons comme si de rien n&rsquo;était.</p>
+<p>Ici, nous avons un Dashboard plutôt bien fait, où l&rsquo;on peut voir les CVE qui affectent notre système, le top des paquets ayant le plus de vulnérabilités, entre autres.</p>
+<p>Si nous cliquons sur l&rsquo;onglet <em><strong>Inventory</strong></em>, nous avons une vue plus détaillée de ce qui concerne notre système :</p>
+<p><img src="/images/SIEM/Wazuh-Dashboards/VulnDect-Dashboard-2.png" alt="Dashboard Vulnérabilité"></p>
+<p>Plutôt utile, n&rsquo;est-ce pas ? Cela nous aidera, dans un environnement de production, à connaître la surface d&rsquo;attaque de nos machines, une chose essentielle à connaître pour mieux sécuriser par la suite !</p>
+<p>Bon, passons maintenant à quelque chose de moins passionnant, la <em><strong>RGPD</strong></em> ou <em><strong>GDPR</strong></em> en anglais. Vu que nous sommes en France, donc en Europe, c&rsquo;est la réglementation que nous devons respecter si nous ne voulons pas risquer de grosses amendes ou même la prison. Wazuh nous permet de vérifier si notre infrastructure répond aux exigences de la RGPD, dans le module <em><strong>GDPR</strong></em>.</p>
+<p><img src="/images/SIEM/Wazuh-Dashboards/GDPR-Dashboard-1.png" alt="GDPR Dashboard"></p>
+<p>Bon, rien de très excitant ici, rien qui saute aux yeux&hellip;</p>
+<p>Passons maintenant (c&rsquo;est promis, c&rsquo;est la dernière fois) à la partie <em><strong>Threat Hunting</strong></em>. C&rsquo;est ici que tout se joue, c&rsquo;est <em><strong>LA</strong></em> raison principale pour laquelle une organisation voudrait implémenter un SIEM.</p>
+<p>Le <em><strong>Threat Hunting</strong></em>, pour ceux qui ne le savent pas, consiste littéralement à chasser les menaces. L&rsquo;analyste SOC, armé de son fusil et de sa tenue de chasseur, va traquer les malheureux hackers. Bon, je me suis un peu emporté&hellip;</p>
+<p>Le <em><strong>Threat Hunting</strong></em> consiste à analyser les différentes alertes que notre SIEM va nous montrer, vérifier si elles sont légitimes, et intervenir si nécessaire. Cela peut aller jusqu&rsquo;à mettre en quarantaine l&rsquo;endpoint concerné, analyser ce qui se passe et décider des actions à prendre. Le <em><strong>Threat Hunting</strong></em> peut sauver une entreprise d&rsquo;une attaque de ransomware, voire pire !</p>
+<p>Donc, rien à prendre à la légère. Si nous allons dans le module <em><strong>Threat Hunting</strong></em> de Wazuh, nous trouvons un très beau Dashboard qui nous montre les alertes principales que Wazuh considère comme importantes :</p>
+<p><img src="/images/SIEM/Wazuh-Dashboards/Th-Hunt-Dashboard-1.png" alt="Threat Hunting 1"></p>
+<blockquote>
+<p>Bien entendu, tous les Dashboards sont personnalisables, donc encore un point positif pour Wazuh !</p>
+</blockquote>
+<p>Dans ce genre de Dashboard, on peut voir les alertes, les connexions réussies, le top des agents ayant des alertes, entre autres&hellip;</p>
+<p>Et ce qui est très sympa avec Wazuh, c&rsquo;est qu&rsquo;il fait une corrélation entre l&rsquo;alerte et une règle <em><strong>Mitre ATT&amp;CK</strong></em>, ce qui peut grandement nous aider à mieux classifier les alertes.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Bon, c&rsquo;est fini pour aujourd&rsquo;hui. Dans un prochain post, je vais vous montrer la vraie puissance de Wazuh, avec des démos et de vraies attaques. Donc, ne ratez surtout pas le prochain post !!</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/cyber/decouverte_siem_2/">
+            &#8592;
+            :
+            Découverte de Wazuh Partie 2
+        </a>
+    </p>
+    <p class="prev-post-date">
+        août 16, 2024
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 makhal.fr</span>
+    
+</footer>
+</body>
+</html>
