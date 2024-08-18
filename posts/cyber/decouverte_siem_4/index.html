@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Découverte de Wazuh Partie 4</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, Wazuh, SecOPS'>
+
+    <meta property="og:url" content="http://localhost:1313/posts/cyber/decouverte_siem_4/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Découverte de Wazuh Partie 4">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://localhost:1313/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="http://localhost:1313/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Découverte de Wazuh Partie 4">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="http://localhost:1313/posts/cyber/decouverte_siem_4/">
+    <meta property="twitter:url" content="http://localhost:1313/posts/cyber/decouverte_siem_4/">
+    <meta name="twitter:image" content="http://localhost:1313/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="http://localhost:1313/posts/cyber/decouverte_siem_4/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.fbe2f55794ed6ded1573152a130784ee5cb022de9676b19dd37d7559ee6f6fc6.js" integrity="sha256-&#43;&#43;L1V5Ttbe0VcxUqEweE7lywIt6WdrGd0311We5vb8Y="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="http://localhost:1313/">
+                    <img src="http://localhost:1313//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:1313/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/pages/about/"> About </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/pages/about/"> About </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Découverte de Wazuh Partie 4</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            août 18, 2024
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/siem">SIEM</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/wazuh">Wazuh</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/secops">SecOPS</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="introduction">Introduction</h1>
+<p>Dans ce nouveau post, comme promis dans le dernier post, je vais vous montrer la vraie puissance de <em><strong>Wazuh</strong></em> et comment est-ce que Wazuh peut nous aider a ameliorer la securite de notre infrastructure, avec bien entendu avant de faire ça, je vais installer Sysmon sur Windows (j&rsquo;expliquerais plus tard ce que c&rsquo;est), ajouter quelques <em>rules</em> Wazuh pour ameliorer la capacite de detection de Wazuh. Tout cela est plus dans ce post !</p>
+<h2 id="nouvelles-rules">Nouvelles <em><strong>Rules</strong></em></h2>
+<p>Dans cette grande partie on va faire deux choses principalement, on va installer d&rsquo;abord Sysmon sur nos systemes Windows, egalement on va revisiter nos configurations de groupes pour l&rsquo;ameliorer et optimiser, et une fois que nous aurons fait ça, j&rsquo;importerais des nouvelles regles sur notre Wazuh-Server pour avoir une meilleure detections des possibles menaces qui peuvent avoir sur nos systemes.</p>
+<p>Mais avant de commencer de faire toute la pratique que nous aimont tant, je suis oblige de vous faire passer par un peu de theorie.</p>
+<h3 id="cest-quoi-les-regles-et-les-decoders-">C&rsquo;est quoi les regles et les decoders ?</h3>
+<p>Tout d&rsquo;abord il faut savoir, que chaque ligne de log importe depuis un <em><strong>Wazuh-Agent</strong></em>, passe forcemment par un decoder, et au besoin elle passe egalement par une rule. Mais c&rsquo;est quoi un <em><strong>Decoder</strong></em> ?</p>
+<p>Un decoder c&rsquo;est tout simplement une regex, que le Wazuh-Server va esayer de faire passer a chaque ligne de log, ces decoders permettent d&rsquo;extraire tout type d&rsquo;information a propos d&rsquo;un log donnee.</p>
+<p>Par exemple, une ligne de log <em><strong>SSH</strong></em>, peut ressembler a cela :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>May <span style="color:#ae81ff">21</span> 20:22:28 slacker2 sshd<span style="color:#f92672">[</span>8813<span style="color:#f92672">]</span>: Accepted password <span style="color:#66d9ef">for</span> root from 192.168.20.185 port <span style="color:#ae81ff">1066</span> ssh2
+</span></span><span style="display:flex;"><span>May <span style="color:#ae81ff">21</span> 20:22:28 sol2 sshd<span style="color:#f92672">[</span>23857<span style="color:#f92672">]</span>: <span style="color:#f92672">[</span>ID <span style="color:#ae81ff">702911</span> auth.notice<span style="color:#f92672">]</span> User test1, coming from 192.168.2.185,  -  authenticated.
+</span></span><span style="display:flex;"><span>Oct <span style="color:#ae81ff">11</span> 08:05:46 hostname auth|security:info sshd<span style="color:#f92672">[</span>323808<span style="color:#f92672">]</span>: Accepted publickey <span style="color:#66d9ef">for</span> usr1 from 2.3.4.5 port <span style="color:#ae81ff">37909</span> ssh2
+</span></span></code></pre></div><p>Lorsque ce groupe de lignes de log va arriver vers notre Wazuh-Server, il va les faire passer une par une par des decoders (des regex) et recuperer des infos telles que :</p>
+<ul>
+<li>Le Timestamp</li>
+<li>Le serivce ssh</li>
+<li>Le user qui s&rsquo;authentifie</li>
+<li>IP SRC</li>
+<li>Erreurs</li>
+</ul>
+<p>Et d&rsquo;autres choses que ssh peut nous generer. Si on veut on peut voir ces decoders, il faudra juste aller vers : <em><strong>Server Management/Decoders</strong></em></p>
+<p><img src="/images/SIEM/Partie4/Decoders-menu1.png" alt="Decoders Path"></p>
+<p>Une fois dans ce menu, vous allez voir quelque chose qui ressemble a ça :</p>
+<p><img src="/images/SIEM/Partie4/Decoders-menu2.png" alt="Decoders Path"></p>
+<p>Ici, vous pouvez voir la liste entiere de tous les Decoders que <em><strong>Wazuh-Server</strong></em> utilise, par exemple prennons le fichier decoders <code>0310-ssh_decoders.xml</code>:</p>
+<p><img src="/images/SIEM/Partie4/Decoders-menu3.png" alt="Decoders Path"></p>
+<p>Vous pouvez voir d&rsquo;un coeup d&rsquo;oeil qu&rsquo;il s&rsquo;agit simplement de string regex, ou les logs seront passes un par un pour extraire tout type d&rsquo;information.</p>
+<p>Parlons maintenant des <em><strong>Rules</strong></em>, une fois que le Wazuh-Server, aura fait passer les logs par les decoders, il va faire passer ces chaines de caractere par les rules, c&rsquo;est a dire qu&rsquo;il va essayer de faire une corelation entre ce que les logs disent et un niveau d&rsquo;alerte ou une <em><strong>Mitre ATTACK</strong></em> ou des niveau de compliance, ou tous a la fois.</p>
+<p>Si vous voulez voir a quoi ça ressemble les <em><strong>Rules</strong></em> Wazuh il faudra se diriger vers : <em><strong>Server Management/Rules</strong></em>:</p>
+<p><img src="/images/SIEM/Partie4/Rules-menu1.png" alt="Rules Wazuh"></p>
+<p>Ici vous pouvez voir que les rules sont regroupes par famille de <em><strong>rules</strong></em>. Si on entre dans le fichier <code>0310-ssh_decoders.xml</code></p>
+<p><img src="/images/SIEM/Partie4/Rules-menu2.png" alt="Rules Wazuh 2"></p>
+<p>On peut voir que le Wazuh-Server va essayer de refaire passer des regex sur les champs extraits pour separer vraiement chaque type d&rsquo;evennement, je vous invite a bien regarder comment est-ce que ce fichier est ecrit, car c&rsquo;est passionnant de voir vombien de types d&rsquo;erreurs est-ce que le service ssh par exemple peut generer.</p>
+<p>Si vous voulez voir Wazuh-Server en action, il fatut se diriger vers le menu : <em><strong>Server Management/Ruleset Test</strong></em></p>
+<p><img src="/images/SIEM/Partie4/RulesetTest1.png" alt="RuleSetTest"></p>
+<p>Ici on va pouvoir copier/coller des lignes de log, de ce qu&rsquo;on veut, et voir quel est le processus logique de Wazuh, pour generer une alerte si il en trouve le besoin.</p>
+<p>Je vous invite a copier/coller les lignes de log que j&rsquo;ai ai mis un peu plus haut, qui metten en lumiere un tentative reussi de connexion par ssh par un utilisateur, normallement vous devriez avoir la sortie suivante :</p>
+<p><img src="/images/SIEM/Partie4/RulesetTest2.png" alt="RuleSetTest"></p>
+<p>Ici vous pouvez voir que Wazuh a bien d&rsquo;abord extrait les champs qui sont importants dans le message, et puis il a fait passer la ligne de log dans les rules jusqu&rsquo;a est-que une rule matche et apres si jamais la rule matche il lance l&rsquo;alerte qui convient, dans ce cas il genere une alerte de Niveau 3.</p>
+<h3 id="installation-sysmon">Installation SYSMON</h3>
+<p><em><strong>Sysmon</strong></em> si vous ne le connaisez pas, est un outil developpe par l&rsquo;equipe <em><strong>sysinternals</strong></em> qui ont cree beaucoup d&rsquo;utilitaires tres utiles pour les sysadmin. C&rsquo;est egalement un outil tres puissant qui permet une meilleure journalisation des évènements de sécurité système sous Windows. Il s&rsquo;agit d&rsquo;un élément indispensable pour une surveillance efficace.</p>
+<p><em><strong>Sysmon</strong></em> permet entre autres de logger tous ces types d&rsquo;evennements :</p>
+<ul>
+<li>Création de processus</li>
+<li>Connexion réseau</li>
+<li>Fin d&rsquo;un processus</li>
+<li>Chargement de pilote</li>
+<li>Chargement d&rsquo;image</li>
+<li>Evènement CreateRemoteThread (création d&rsquo;un thread par un processus)</li>
+<li>Evènement RawAccessRead</li>
+<li>Requête DNS</li>
+</ul>
+<p>Donc ce n&rsquo;est pas un outil qu&rsquo;il faut sousestimer, pour l&rsquo;installer rien de plus simple on se dirige vers leur site officiel :</p>
+<ul>
+<li><a href="https://learn.microsoft.com/fr-fr/sysinternals/downloads/sysmon">Lien vers site web sysinternals</a></li>
+</ul>
+<p>Egalement il faudra telecharger cette configuration de sysmon :</p>
+<ul>
+<li><a href="https://github.com/olafhartong/sysmon-modular/blob/master/sysmonconfig.xml">Lien vers sysmon.xml</a></li>
+</ul>
+<p>Cette configuration, elle fait partie d&rsquo;un repository Github tres connu, qui va pre-parametrer notre sysmon avec toutes les alertes de base necessaires pour pouvoir detecter tout ce qui se passe dans une machine, tout ça en les mettant en relation avec des Mitre ATTACK, ce qui est tres utile.</p>
+<p>Vous pouvez bien entendu creer votre propre fichier de configuration Sysmon, mais je ne vais pas m&rsquo;attarder sur cela, pour faire que le post soit le plus concis possible.</p>
+<p>Une fois que vous aurez telecharge votre executable sysmon il faudra l&rsquo;extraire et lancer la commande suivante dans un <em><strong>Powershell</strong></em> avec les droit Admin :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>sysmon.exe -accepteula -i sysmonconfig.xml
+</span></span></code></pre></div><p><img src="/images/SIEM/Partie4/Wazuh3.gif" alt="Gif Wazuh"></p>
+<p>Avec cette commande, on va juste dire a Sysmon quel sont les choses qu&rsquo;il doit surveiller (il y en a vraiment beaucoup) et une fois qu&rsquo;il connait ça, il va se mettre en mode <em><strong>daemon</strong></em> et normalement demarrer automatiquement a tous les prochains redemarrages.</p>
+<p>Ensuite je vous invite a aller au canal de journalisation suivant dans <em><strong>l&rsquo;observateur d&rsquo;evennements</strong></em> :</p>
+<ul>
+<li><code>Journaux D'applications\Microsoft\Windows\Sysmon\Operational</code></li>
+</ul>
+<p>Et vous verrez tous les logs que le sysmon aura deja receulli :</p>
+<p><img src="/images/SIEM/Partie4/Observateur_event_sysmon.png" alt="Observateur_event_sysmon"></p>
+<p>Suelement avec l&rsquo;observateur d&rsquo;evennements on peut faire plein de choses on peut aller jusqu&rsquo;a detecter les evennements qui ne vont pas, mais bon ce n&rsquo;est pas le sujet du post.</p>
+<h3 id="modification-groupes-windows">Modification Groupes Windows</h3>
+<p>Maintenant il faut bien entendu recuperer ces evennements, car a l&rsquo;instant notre Wazuh-Agent, ignore que ce canal de journalisation existe, donc il faut lui dire d&rsquo;aller les recuprer. Pour cela, on va se diriger vers la page des groupes,</p>
+<p><img src="/images/SIEM/Ajout-agent/Ajout_groupe1.png" alt="Ajout Groupe"></p>
+<p>Puis on appuie sur le bouton du <em>stylo</em> de notre groupe Windows :</p>
+<p><img src="/images/SIEM/Partie4/stylo.png" alt="Stylo"></p>
+<p>Une fois dedans, je vous invite a copier coller ceci :</p>
+<p><a href="https://github.com/Tutanka01/ScriptsInstall/blob/main/SIEM/Config-Windows.conf">Group Windows Agent</a></p>
+<p>Avec ce fichier de config qui sera deploye sur tous nos serveurs Windows on va pouvoir recuperer les config Sysmon, et autre en plus des informations qu&rsquo;on a deja, par exemple on a active le module <em><strong>FIM</strong></em>, c&rsquo;est a dire qu&rsquo;on va pouvoir verifier l&rsquo;integrite des fichiers, et voir si ils ont ete modifies.</p>
+<p>On va egalement surveiller de pret le compertemment de certains <em><strong>.exe</strong></em>, surveiller certaines entrees <em><strong>Regedit</strong></em> qui sont sensibles, entre d&rsquo;autres choses. C&rsquo;est un fichier de config vraiment tres tres complet.</p>
+<p>Une fois qu&rsquo;on a deploye ce ficher de conf, on va maintenant importer les nouvelles regles sur notre Wazuh-Manager qui vont nous servir pour traiter ces nouvelles informations. Je vous donne ci dessous un script bash qu&rsquo;il faut lancer sur le serveur ou se trouve le <em><strong>Wazuh-Manager</strong></em>, c&rsquo;est un script qui va recuperer pas mal de regles faites par l&rsquo;equipe <em><strong>SOC-Fortress</strong></em>, qui sont bien faites et tres optimises.</p>
+<p>Pour les importer on lance ce script dans le serveur :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -so ~/wazuh_socfortress_rules.sh https://raw.githubusercontent.com/socfortress/Wazuh-Rules/main/wazuh_socfortress_rules.sh <span style="color:#f92672">&amp;&amp;</span> bash ~/wazuh_socfortress_rules.sh
+</span></span></code></pre></div><p>Une fois lance, vous devriez voir quelque chose qui ressemble a ceci :</p>
+<p><img src="/images/SIEM/Partie4/Install_rules.png" alt="Import rules Wazuh"></p>
+<p>Et voila ! Maintenant on a nos regles cosutom, qui sont installe dans notre <em><strong>Wazuh-Server</strong></em>, si vous voulez aller voir ces regles, vous savez deja comment faire ;)</p>
+<h2 id="heading"></h2>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/cyber/decouverte_siem_3/">
+            &#8592;
+            :
+            Découverte de Wazuh Partie 3
+        </a>
+    </p>
+    <p class="prev-post-date">
+        août 17, 2024
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 makhal.fr</span>
+    
+</footer>
+</body>
+</html>
