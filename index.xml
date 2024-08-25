@@ -6,8 +6,15 @@
     <description>Recent content on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sat, 17 Aug 2024 12:05:49 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 22 Aug 2024 09:05:49 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Découverte de Wazuh Partie 4</title>
+      <link>https://makhal.fr/posts/cyber/decouverte_siem_4/</link>
+      <pubDate>Thu, 22 Aug 2024 09:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/posts/cyber/decouverte_siem_4/</guid>
+      <description>On verra dans ce post la puissance de Wazuh en important de nouvelles règles et des démos</description>
+    </item>
     <item>
       <title>Découverte de Wazuh Partie 3</title>
       <link>https://makhal.fr/posts/cyber/decouverte_siem_3/</link>
@@ -65,7 +72,7 @@
       <description>Je vais vous montrer comment utiliser Docker et pourquoi est-ce que c&amp;rsquo;est si populaire.</description>
     </item>
     <item>
-      <title>Sécurisation Avancée des Services de Messagerie</title>
+      <title>DMARC - SPF - DKIM</title>
       <link>https://makhal.fr/posts/messagerie/dmark_dkim_spf/</link>
       <pubDate>Sun, 28 Jan 2024 08:47:49 +0200</pubDate>
       <guid>https://makhal.fr/posts/messagerie/dmark_dkim_spf/</guid>
@@ -79,11 +86,18 @@
       <description>Dans ce post, je vais vous montrer comment utiliser Docker et Docker Swarm.</description>
     </item>
     <item>
+      <title>Bind9</title>
+      <link>https://makhal.fr/posts/old/bind9/</link>
+      <pubDate>Sun, 15 Oct 2023 09:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/old/bind9/</guid>
+      <description>Dans ce post, je vais vous montrer comment configurer un serveur DNS avec Bind9.</description>
+    </item>
+    <item>
       <title>About</title>
       <link>https://makhal.fr/pages/about/</link>
       <pubDate>Sat, 14 Oct 2023 17:29:57 +0200</pubDate>
       <guid>https://makhal.fr/pages/about/</guid>
-      <description>Mohamad El Akhal El Bouzidi Je suis étudiant en BUT Reseaux et Telecommunications en specialisation Cybersecurite et je travaille actuellement en tant qu&amp;rsquo;alternant au poste d&amp;rsquo;administrateur Systèmes et Réseaux chez Aditu. Mon parcours est guidé par ma passion pour la sécurité informatique et mon désir de contribuer au monde.&#xA;À Propos de Moi Je suis passionné par l&amp;rsquo;informatique, la cybersécurité et le monde Linux. J&amp;rsquo;adore plonger dans les méandres de la technologie pour comprendre comment les systèmes fonctionnent et trouver des moyens de les améliorer.</description>
+      <description>Mohamad El Akhal El Bouzidi Salut ! Je m&amp;rsquo;appelle Mohamad El Akhal El Bouzidi, et je suis un passionné de tout ce qui touche à l&amp;rsquo;informatique, particulièrement la cybersécurité et l&amp;rsquo;univers Linux. Actuellement étudiant en BUT Réseaux et Télécommunications avec une spécialisation en Cybersécurité, j&amp;rsquo;ai la chance de combiner théorie et pratique en travaillant en alternance comme Administrateur Systèmes et Réseaux chez Aditu.&#xA;Mon parcours n’est pas juste guidé par les lignes de code ou les configurations réseau, mais par une vraie passion pour la sécurité informatique et un désir profond de contribuer positivement à ce domaine en constante évolution.</description>
     </item>
     <item>
       <title>Presentation</title>
@@ -97,7 +111,7 @@
       <link>https://makhal.fr/index-about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://makhal.fr/index-about/</guid>
-      <description>A propos de moi Je m&amp;rsquo;appelle Mohamad El Akhal El Bouzidi et je suis etudiant en BUT Reseaux et Telecoms a l&amp;rsquo;universite de Pau et des Pays de l&amp;rsquo;Adour.</description>
+      <description>A propos de moi Je suis Mohamad El Akhal El Bouzidi, étudiant en 3ème année de BUT Réseaux et Télécoms et alternant spécialisé en cybersécurité chez Aditu</description>
     </item>
   </channel>
 </rss>
