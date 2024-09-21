@@ -2,116 +2,123 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>makhal.fr</title>
-    <link>https://makhal.fr/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Thu, 22 Aug 2024 09:05:49 +0100</lastBuildDate>
-    <atom:link href="https://makhal.fr/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Sep 2024 09:05:49 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Detection et  </title>
+      <link>http://localhost:1313/posts/cyber/decouverte_siem_5/</link>
+      <pubDate>Tue, 10 Sep 2024 09:05:49 +0100</pubDate>
+      <guid>http://localhost:1313/posts/cyber/decouverte_siem_5/</guid>
+      <description>On verra dans ce post la puissance de Wazuh en important de nouvelles règles et des démos</description>
+    </item>
     <item>
       <title>Découverte de Wazuh Partie 4</title>
-      <link>https://makhal.fr/posts/cyber/decouverte_siem_4/</link>
+      <link>http://localhost:1313/posts/cyber/decouverte_siem_4/</link>
       <pubDate>Thu, 22 Aug 2024 09:05:49 +0100</pubDate>
-      <guid>https://makhal.fr/posts/cyber/decouverte_siem_4/</guid>
+      <guid>http://localhost:1313/posts/cyber/decouverte_siem_4/</guid>
       <description>On verra dans ce post la puissance de Wazuh en important de nouvelles règles et des démos</description>
     </item>
     <item>
       <title>Découverte de Wazuh Partie 3</title>
-      <link>https://makhal.fr/posts/cyber/decouverte_siem_3/</link>
+      <link>http://localhost:1313/posts/cyber/decouverte_siem_3/</link>
       <pubDate>Sat, 17 Aug 2024 12:05:49 +0100</pubDate>
-      <guid>https://makhal.fr/posts/cyber/decouverte_siem_3/</guid>
+      <guid>http://localhost:1313/posts/cyber/decouverte_siem_3/</guid>
       <description>Dans ce post, nous allons ajouter, configurer et voir Wazuh en action</description>
     </item>
     <item>
       <title>Découverte de Wazuh Partie 2</title>
-      <link>https://makhal.fr/posts/cyber/decouverte_siem_2/</link>
+      <link>http://localhost:1313/posts/cyber/decouverte_siem_2/</link>
       <pubDate>Fri, 16 Aug 2024 21:05:49 +0100</pubDate>
-      <guid>https://makhal.fr/posts/cyber/decouverte_siem_2/</guid>
+      <guid>http://localhost:1313/posts/cyber/decouverte_siem_2/</guid>
       <description>Dans la suite du post précédent, nous allons installer et configurer le wazuh-master et autres.</description>
     </item>
     <item>
       <title>Decouverte de Wazuh</title>
-      <link>https://makhal.fr/posts/cyber/decouverte_siem/</link>
+      <link>http://localhost:1313/posts/cyber/decouverte_siem/</link>
       <pubDate>Wed, 07 Aug 2024 20:05:49 +0100</pubDate>
-      <guid>https://makhal.fr/posts/cyber/decouverte_siem/</guid>
+      <guid>http://localhost:1313/posts/cyber/decouverte_siem/</guid>
       <description>Dans une (encore) nouvelle serie de posts, nous allons decouvir le monde extraordianaire des SIEM</description>
     </item>
     <item>
       <title>Kubernetes Partie 1</title>
-      <link>https://makhal.fr/posts/k8s/k8s1-1/</link>
+      <link>http://localhost:1313/posts/k8s/k8s1-1/</link>
       <pubDate>Sun, 19 May 2024 12:05:49 +0100</pubDate>
-      <guid>https://makhal.fr/posts/k8s/k8s1-1/</guid>
+      <guid>http://localhost:1313/posts/k8s/k8s1-1/</guid>
       <description>Dans ce post, je vous présente Kubernetes :D</description>
     </item>
     <item>
       <title>Mise a jour manuelle d&#39;un Switch Cisco par TFTP</title>
-      <link>https://makhal.fr/posts/docs/maj_ios_tftp/</link>
+      <link>http://localhost:1313/posts/docs/maj_ios_tftp/</link>
       <pubDate>Sun, 21 Apr 2024 21:40:45 +0200</pubDate>
-      <guid>https://makhal.fr/posts/docs/maj_ios_tftp/</guid>
+      <guid>http://localhost:1313/posts/docs/maj_ios_tftp/</guid>
       <description>Documentation sur comment mettre a jour manuellement un switch Cisco par TFTP</description>
     </item>
     <item>
       <title>Docker Partie 3</title>
-      <link>https://makhal.fr/posts/docker/docker_3/</link>
+      <link>http://localhost:1313/posts/docker/docker_3/</link>
       <pubDate>Sun, 18 Feb 2024 11:49:38 +0100</pubDate>
-      <guid>https://makhal.fr/posts/docker/docker_3/</guid>
+      <guid>http://localhost:1313/posts/docker/docker_3/</guid>
       <description>La suite de la partie 2, ou je vais vous montrer comment utiliser Docker-Compose</description>
     </item>
     <item>
       <title>Docker Partie 2</title>
-      <link>https://makhal.fr/posts/docker/docker_2/</link>
+      <link>http://localhost:1313/posts/docker/docker_2/</link>
       <pubDate>Sun, 11 Feb 2024 11:49:38 +0100</pubDate>
-      <guid>https://makhal.fr/posts/docker/docker_2/</guid>
+      <guid>http://localhost:1313/posts/docker/docker_2/</guid>
       <description>La suite de la partie 1, ou je vais vous montrer comment utiliser Docker</description>
     </item>
     <item>
       <title>Docker partie 1</title>
-      <link>https://makhal.fr/posts/docker/docker_1/</link>
+      <link>http://localhost:1313/posts/docker/docker_1/</link>
       <pubDate>Sat, 10 Feb 2024 06:16:53 +0200</pubDate>
-      <guid>https://makhal.fr/posts/docker/docker_1/</guid>
+      <guid>http://localhost:1313/posts/docker/docker_1/</guid>
       <description>Je vais vous montrer comment utiliser Docker et pourquoi est-ce que c&amp;rsquo;est si populaire.</description>
     </item>
     <item>
       <title>DMARC - SPF - DKIM</title>
-      <link>https://makhal.fr/posts/messagerie/dmark_dkim_spf/</link>
+      <link>http://localhost:1313/posts/messagerie/dmark_dkim_spf/</link>
       <pubDate>Sun, 28 Jan 2024 08:47:49 +0200</pubDate>
-      <guid>https://makhal.fr/posts/messagerie/dmark_dkim_spf/</guid>
+      <guid>http://localhost:1313/posts/messagerie/dmark_dkim_spf/</guid>
       <description>Au cours de ce post, je vais vous montrer comment mettre en place le DMARC, DKIM et SPF sur votre serveur de messagerie.</description>
     </item>
     <item>
       <title>Docker Swarm</title>
-      <link>https://makhal.fr/posts/docker/docker-swarm/</link>
+      <link>http://localhost:1313/posts/docker/docker-swarm/</link>
       <pubDate>Mon, 23 Oct 2023 06:16:53 +0200</pubDate>
-      <guid>https://makhal.fr/posts/docker/docker-swarm/</guid>
+      <guid>http://localhost:1313/posts/docker/docker-swarm/</guid>
       <description>Dans ce post, je vais vous montrer comment utiliser Docker et Docker Swarm.</description>
     </item>
     <item>
       <title>Bind9</title>
-      <link>https://makhal.fr/posts/old/bind9/</link>
+      <link>http://localhost:1313/posts/old/bind9/</link>
       <pubDate>Sun, 15 Oct 2023 09:10:45 +0200</pubDate>
-      <guid>https://makhal.fr/posts/old/bind9/</guid>
+      <guid>http://localhost:1313/posts/old/bind9/</guid>
       <description>Dans ce post, je vais vous montrer comment configurer un serveur DNS avec Bind9.</description>
     </item>
     <item>
       <title>About</title>
-      <link>https://makhal.fr/pages/about/</link>
+      <link>http://localhost:1313/pages/about/</link>
       <pubDate>Sat, 14 Oct 2023 17:29:57 +0200</pubDate>
-      <guid>https://makhal.fr/pages/about/</guid>
-      <description>Mohamad El Akhal El Bouzidi Salut ! Je m&amp;rsquo;appelle Mohamad El Akhal El Bouzidi, et je suis un passionné de tout ce qui touche à l&amp;rsquo;informatique, particulièrement la cybersécurité et l&amp;rsquo;univers Linux. Actuellement étudiant en BUT Réseaux et Télécommunications avec une spécialisation en Cybersécurité, j&amp;rsquo;ai la chance de combiner théorie et pratique en travaillant en alternance comme Administrateur Systèmes et Réseaux chez Aditu.&#xA;Mon parcours n’est pas juste guidé par les lignes de code ou les configurations réseau, mais par une vraie passion pour la sécurité informatique et un désir profond de contribuer positivement à ce domaine en constante évolution.</description>
+      <guid>http://localhost:1313/pages/about/</guid>
+      <description>&lt;h1 id=&#34;mohamad-el-akhal-el-bouzidi&#34;&gt;Mohamad El Akhal El Bouzidi&lt;/h1&gt;&#xA;&lt;p&gt;Salut ! Je m&amp;rsquo;appelle Mohamad El Akhal El Bouzidi, et je suis un passionné de tout ce qui touche à l&amp;rsquo;informatique, particulièrement la cybersécurité et l&amp;rsquo;univers Linux. Actuellement étudiant en BUT Réseaux et Télécommunications avec une spécialisation en Cybersécurité, j&amp;rsquo;ai la chance de combiner théorie et pratique en travaillant en alternance comme Administrateur Systèmes et Réseaux chez Aditu.&lt;/p&gt;&#xA;&lt;p&gt;Mon parcours n’est pas juste guidé par les lignes de code ou les configurations réseau, mais par une vraie passion pour la sécurité informatique et un désir profond de contribuer positivement à ce domaine en constante évolution. J&amp;rsquo;aime découvrir comment les systèmes fonctionnent, trouver des moyens de les sécuriser, et surtout, partager mes connaissances avec ceux qui s&amp;rsquo;intéressent aussi à ce domaine fascinant.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Presentation</title>
-      <link>https://makhal.fr/posts/presentation/</link>
+      <link>http://localhost:1313/posts/presentation/</link>
       <pubDate>Sat, 14 Oct 2023 16:10:25 +0200</pubDate>
-      <guid>https://makhal.fr/posts/presentation/</guid>
+      <guid>http://localhost:1313/posts/presentation/</guid>
       <description>Dans ce post, je me présente et je parle de mes compétences et de mes certifications.</description>
     </item>
     <item>
       <title></title>
-      <link>https://makhal.fr/index-about/</link>
+      <link>http://localhost:1313/index-about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://makhal.fr/index-about/</guid>
-      <description>A propos de moi Je suis Mohamad El Akhal El Bouzidi, étudiant en 3ème année de BUT Réseaux et Télécoms et alternant spécialisé en cybersécurité chez Aditu</description>
+      <guid>http://localhost:1313/index-about/</guid>
+      <description>&lt;h1 id=&#34;a-propos-de-moi&#34;&gt;A propos de moi&lt;/h1&gt;&#xA;&lt;p&gt;Je suis Mohamad El Akhal El Bouzidi, étudiant en 3ème année de BUT Réseaux et Télécoms et alternant spécialisé en cybersécurité chez Aditu&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

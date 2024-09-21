@@ -2,113 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://makhal.fr/posts/cyber/decouverte_siem_4/</loc>
+    <loc>http://localhost:1313/tags/attaque/</loc>
+    <lastmod>2024-09-10T09:05:49+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/cyber/decouverte_siem_5/</loc>
+    <lastmod>2024-09-10T09:05:49+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-09-10T09:05:49+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2024-09-10T09:05:49+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/siem/</loc>
+    <lastmod>2024-09-10T09:05:49+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-09-10T09:05:49+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/windows/</loc>
+    <lastmod>2024-09-10T09:05:49+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/cyber/decouverte_siem_4/</loc>
     <lastmod>2024-08-22T09:05:49+01:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/</loc>
+    <loc>http://localhost:1313/tags/secops/</loc>
     <lastmod>2024-08-22T09:05:49+01:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/posts/</loc>
+    <loc>http://localhost:1313/tags/wazuh/</loc>
     <lastmod>2024-08-22T09:05:49+01:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/secops/</loc>
-    <lastmod>2024-08-22T09:05:49+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/siem/</loc>
-    <lastmod>2024-08-22T09:05:49+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/</loc>
-    <lastmod>2024-08-22T09:05:49+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/wazuh/</loc>
-    <lastmod>2024-08-22T09:05:49+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/posts/cyber/decouverte_siem_3/</loc>
+    <loc>http://localhost:1313/posts/cyber/decouverte_siem_3/</loc>
     <lastmod>2024-08-17T12:05:49+01:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/posts/cyber/decouverte_siem_2/</loc>
+    <loc>http://localhost:1313/posts/cyber/decouverte_siem_2/</loc>
     <lastmod>2024-08-16T21:05:49+01:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/posts/cyber/decouverte_siem/</loc>
+    <loc>http://localhost:1313/posts/cyber/decouverte_siem/</loc>
     <lastmod>2024-08-07T20:05:49+01:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/devops/</loc>
+    <loc>http://localhost:1313/tags/devops/</loc>
     <lastmod>2024-05-19T12:05:49+01:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/docker/</loc>
+    <loc>http://localhost:1313/tags/docker/</loc>
     <lastmod>2024-05-19T12:05:49+01:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/kubernetes/</loc>
+    <loc>http://localhost:1313/tags/kubernetes/</loc>
     <lastmod>2024-05-19T12:05:49+01:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/posts/k8s/k8s1-1/</loc>
+    <loc>http://localhost:1313/posts/k8s/k8s1-1/</loc>
     <lastmod>2024-05-19T12:05:49+01:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/ccna/</loc>
+    <loc>http://localhost:1313/tags/ccna/</loc>
     <lastmod>2024-04-21T21:40:45+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/cisco/</loc>
+    <loc>http://localhost:1313/tags/cisco/</loc>
     <lastmod>2024-04-21T21:40:45+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/ios/</loc>
+    <loc>http://localhost:1313/tags/ios/</loc>
     <lastmod>2024-04-21T21:40:45+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/posts/docs/maj_ios_tftp/</loc>
+    <loc>http://localhost:1313/posts/docs/maj_ios_tftp/</loc>
     <lastmod>2024-04-21T21:40:45+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/tftp/</loc>
+    <loc>http://localhost:1313/tags/tftp/</loc>
     <lastmod>2024-04-21T21:40:45+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/posts/docker/docker_3/</loc>
+    <loc>http://localhost:1313/posts/docker/docker_3/</loc>
     <lastmod>2024-02-18T11:49:38+01:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/posts/docker/docker_2/</loc>
+    <loc>http://localhost:1313/posts/docker/docker_2/</loc>
     <lastmod>2024-02-11T11:49:38+01:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/posts/docker/docker_1/</loc>
+    <loc>http://localhost:1313/posts/docker/docker_1/</loc>
     <lastmod>2024-02-10T06:16:53+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/posts/messagerie/dmark_dkim_spf/</loc>
+    <loc>http://localhost:1313/posts/messagerie/dmark_dkim_spf/</loc>
     <lastmod>2024-01-28T08:47:49+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/mail/</loc>
+    <loc>http://localhost:1313/tags/mail/</loc>
     <lastmod>2024-01-28T08:47:49+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/postfix/</loc>
+    <loc>http://localhost:1313/tags/postfix/</loc>
     <lastmod>2024-01-28T08:47:49+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/posts/docker/docker-swarm/</loc>
+    <loc>http://localhost:1313/posts/docker/docker-swarm/</loc>
     <lastmod>2023-10-23T06:16:53+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/docker-swarm/</loc>
+    <loc>http://localhost:1313/tags/docker-swarm/</loc>
     <lastmod>2023-10-23T06:16:53+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/bind9/</loc>
+    <loc>http://localhost:1313/tags/bind9/</loc>
     <lastmod>2023-10-15T09:10:45+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/posts/old/bind9/</loc>
+    <loc>http://localhost:1313/posts/old/bind9/</loc>
     <lastmod>2023-10-15T09:10:45+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/dns/</loc>
+    <loc>http://localhost:1313/tags/dns/</loc>
     <lastmod>2023-10-15T09:10:45+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/pages/about/</loc>
+    <loc>http://localhost:1313/pages/about/</loc>
     <lastmod>2023-10-14T17:29:57+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/pages/</loc>
+    <loc>http://localhost:1313/pages/</loc>
     <lastmod>2023-10-14T17:29:57+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/about/</loc>
+    <loc>http://localhost:1313/tags/about/</loc>
     <lastmod>2023-10-14T16:10:25+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/cv/</loc>
+    <loc>http://localhost:1313/tags/cv/</loc>
     <lastmod>2023-10-14T16:10:25+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/posts/presentation/</loc>
+    <loc>http://localhost:1313/posts/presentation/</loc>
     <lastmod>2023-10-14T16:10:25+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/index-about/</loc>
+    <loc>http://localhost:1313/index-about/</loc>
   </url><url>
-    <loc>https://makhal.fr/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>
