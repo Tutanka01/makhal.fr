@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Kubernetes Partie 2</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, kubernetes, docker, devops'>
+
+    <meta property="og:url" content="http://localhost:1313/posts/k8s/k8s1-2/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kubernetes Partie 2">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://localhost:1313/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="http://localhost:1313/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kubernetes Partie 2">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="http://localhost:1313/posts/k8s/k8s1-2/">
+    <meta property="twitter:url" content="http://localhost:1313/posts/k8s/k8s1-2/">
+    <meta name="twitter:image" content="http://localhost:1313/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="http://localhost:1313/posts/k8s/k8s1-2/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="http://localhost:1313/">
+                    <img src="http://localhost:1313//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:1313/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/pages/about/"> About </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/pages/about/"> About </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Kubernetes Partie 2</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            septembre 21, 2024
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/kubernetes">kubernetes</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/docker">docker</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/devops">devops</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="kubernetes-pour-les-débutants---partie-2">Kubernetes pour les débutants - Partie 2</h1>
+<p>Re-bonjour à tous et bienvenus dans ce nouveau post à propos de Kubernetes. Je sais, j&rsquo;ai failli à ma promesse, mais j&rsquo;avais beaucoup de choses à faire récemment, donc vous m&rsquo;excuserez.</p>
+<p>Dans ce post, nous allons découvrir un peu plus de choses à propos de Kubernetes. Malgré le <a href="https://makhal.fr/posts/k8s/k8s1-1/">post 1</a> qui est là, j&rsquo;ai l&rsquo;impression que je suis parti un peu trop vite. Ici, dans ce post, nous allons prendre tout le temps nécessaire pour comprendre à quoi sert chaque élément qui compose un cluster Kubernetes. Peut-être que cela sera un peu rébarbatif ; je m&rsquo;excuse d&rsquo;avance pour cela. Pour maîtriser un outil tel que Kubernetes, il faut bien sûr passer par la théorie avant de passer à la pratique. Et cela est vrai pour n&rsquo;importe quelle chose dans la vie.</p>
+<h2 id="quelques-rappels">Quelques rappels</h2>
+<p>Bon, je sais, le post <a href="https://makhal.fr/posts/k8s/k8s1-1/">1</a> date un peu, donc vous avez besoin de quelques rappels. Je vais donner ci-dessous la liste des composants qui composent un cluster Kubernetes. Cette même liste va nous servir de guide pour expliquer chaque composant : à quoi il sert, comment il fonctionne, et comment l&rsquo;implémenter :</p>
+<ul>
+<li><em><strong>etcd</strong></em></li>
+<li><em><strong>API Server</strong></em></li>
+<li><em><strong>Kube-Scheduler</strong></em></li>
+<li><em><strong>Controller-Manager</strong></em></li>
+<li><em><strong>Kubelet</strong></em></li>
+</ul>
+<h2 id="etcd">etcd</h2>
+<p>J&rsquo;ai décidé de parler du <em><strong>etcd</strong></em> en premier, car c&rsquo;est un des éléments les plus importants dans tout cluster Kubernetes. Il faut savoir que le etcd, c&rsquo;est là où toutes les données du cluster sont stockées, c&rsquo;est-à-dire l&rsquo;état du cluster Kubernetes.</p>
+<h3 id="cest-quoi-etcd-">C&rsquo;est quoi etcd ?</h3>
+<p>Selon la définition officielle, etcd, c&rsquo;est : &ldquo;etcd est un registre distribué, fortement cohérent, utilisé pour stocker des données de configuration et d&rsquo;état dans des systèmes distribués.&rdquo; Toute cette définition nous dit qu&rsquo;etcd est en fait une base de données facile et très rapide.</p>
+<p>etcd stocke toutes ses valeurs dans un format spécifique : key:value. Ce format est aussi utilisé dans les bases de données NoSQL, qui sont très utilisées dans des milieux où la rapidité est la pierre angulaire. Je ne suis pas là pour vous faire un cours à propos des bases de données, mais si vous le souhaitez, n&rsquo;hésitez pas à me contacter ;)</p>
+<p>Par exemple, etcd va stocker des valeurs de cette façon :</p>
+<p><img src="/images/k8s/k8s2/key-value.PNG" alt="Key-value schema"></p>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Key%E2%80%93value_database">Source</a></p>
+</blockquote>
+<p>Donc, etcd, c&rsquo;est une base de données. Par ailleurs, vous pouvez, si vous le voulez, installer etcd en standalone, c&rsquo;est-à-dire sans avoir besoin de Kubernetes, et l&rsquo;utiliser comme vous utiliseriez MongoDB ou une autre base de données NoSQL.</p>
+<p>Je vais le répéter à nouveau : etcd, c&rsquo;est le cœur de Kubernetes. Sans etcd, les autres éléments ne sauraient pas comment suivre les changements et répondre aux demandes de l&rsquo;administrateur. Par exemple, si l&rsquo;on veut ajouter un nouveau Pod, notre demande va être envoyée depuis l&rsquo;ApiServer à l&rsquo;etcd où la valeur du Pod va être ajoutée. Vu que le scheduler est là à regarder tout changement qui se passe dans l&rsquo;ApiServer, il va se rendre compte qu&rsquo;il y a un Pod qui n&rsquo;a pas de nœud attribué, donc il va faire son boulot et dire à un nœud de créer ce Pod. Puis, l&rsquo;ApiServer va mettre à jour l&rsquo;etcd pour indiquer où se trouve le Pod créé.</p>
+<p>Il existe des commandes pour maîtriser etcd, comme <em><strong>etcdctl</strong></em>. Cette commande permet de parler directement avec le service etcd et de récupérer toutes les infos qu&rsquo;on veut. Voici quelques commandes qui peuvent être utilisées pour déboguer :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    etcdctl snapshot save 
+</span></span><span style="display:flex;"><span>    etcdctl endpoint health
+</span></span><span style="display:flex;"><span>    etcdctl get
+</span></span><span style="display:flex;"><span>    etcdctl put
+</span></span></code></pre></div><p>Elles sont intéressantes, mais à notre niveau, nous n&rsquo;avons pas besoin de les connaître. Même si jamais on veut devenir des experts, il faudra les maîtriser et les utiliser fréquemment.</p>
+<h2 id="api-server-ou-kube-api">Api Server ou Kube API</h2>
+<p>Le <em><strong>Api Server</strong></em>, comme toute API, est la porte d&rsquo;entrée d&rsquo;un service. Dans notre cas, cela sera la seule porte d&rsquo;entrée à notre cluster Kubernetes, c&rsquo;est-à-dire l&rsquo;accès aux autres éléments qui composent Kubernetes. Et même entre les services, seul l&rsquo;Api Server peut directement écrire sur l&rsquo;etcd. Tous les autres éléments sont obligés de passer par l&rsquo;API.</p>
+<p>Pour mieux vous faire comprendre, le Kube-API fait quatre choses principalement :</p>
+<ul>
+<li><em><strong>Authentification</strong></em></li>
+<li><em><strong>Validation de la requête</strong></em></li>
+<li><em><strong>Récupération des données</strong></em></li>
+<li><em><strong>Mise à jour de l&rsquo;etcd</strong></em></li>
+</ul>
+<p>Avant d&rsquo;expliquer, je vais vous donner un scénario où l&rsquo;on tape une commande pour créer un nouveau Pod :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl run nginx --image<span style="color:#f92672">=</span>nginx
+</span></span></code></pre></div><p>Ici, nous allons créer un Pod qui s&rsquo;appelle nginx et qui a l&rsquo;image du même nom.</p>
+<p>Dans l&rsquo;étape <em><strong>Authentification</strong></em>, l&rsquo;Api-Server va vérifier si la personne qui envoie la requête a bien le droit d&rsquo;accéder aux ressources. Une fois qu&rsquo;il a validé que j&rsquo;ai le droit, il va ensuite vérifier la syntaxe de la commande, si elle est correcte ou pas. Si elle est correcte et que j&rsquo;ai bien le droit, il va récupérer ou écrire les données dans l&rsquo;etcd. Ici, il va écrire dans l&rsquo;etcd qu&rsquo;il y a un nouveau Pod qui s&rsquo;appelle nginx et dont l&rsquo;image est aussi nginx.</p>
+<p>Une fois qu&rsquo;il a créé cette entrée, il va renvoyer à l&rsquo;utilisateur que le Pod a bien été créé. Mais ça ne s&rsquo;arrête pas ici ! Le scheduler, que nous détaillerons après, fait souvent des requêtes à l&rsquo;Api Server pour savoir s&rsquo;il y a de nouvelles choses à faire. Une fois qu&rsquo;il découvre qu&rsquo;il existe un nouveau Pod sans nœud attribué, il va envoyer au Kubelet d&rsquo;un nœud de créer ce Pod. Une fois fait, l&rsquo;ApiServer met à jour l&rsquo;etcd et attribue le Pod au nœud que le scheduler a choisi.</p>
+<p>Vous voyez, Kubernetes, ce n&rsquo;est pas une chose simple, mais lorsqu&rsquo;on comprend comment ça marche, on est quasiment &ldquo;bouche bée&rdquo; par rapport à la puissance de l&rsquo;outil.</p>
+<h2 id="kube-scheduler">Kube-Scheduler</h2>
+<p>Pour comprendre à quoi sert le Kube-Scheduler, il faut d&rsquo;abord comprendre quel problème il résout. Comme vous le savez (j&rsquo;espère), Kubernetes est fait pour être en cluster. Et qui dit cluster dit nœuds, et qui dit nœuds dit qu&rsquo;il y a une possibilité que ces nœuds ne soient pas pareils. Ils peuvent avoir des tailles différentes (RAM, CPU, stockage) et des usages différents (nœuds de pré-production, production). Comment fait-on donc pour placer les Pods dans le bon nœud ?</p>
+<p>C&rsquo;est là que le <em><strong>Kube-Scheduler</strong></em> entre en jeu. Le <em><strong>Kube-Scheduler</strong></em> est le composant essentiel qui va servir à placer les Pods dans les bons nœuds. Ne vous trompez pas, ce n&rsquo;est pas le <em><strong>Kube-Scheduler</strong></em> qui place les Pods dans les nœuds ; lui, il est là pour décider seulement. C&rsquo;est le Kubelet, qui est dans chaque nœud, qui va placer le Pod.</p>
+<p>Prenons un cas pratique : imaginons un Pod qui a besoin d&rsquo;au moins 6 Go de RAM pour fonctionner. Nous avons 4 nœuds : 2 nœuds avec 5 Go de RAM, un avec 12 Go de RAM et le dernier avec 15 Go de RAM. Le scheduler suit une procédure pour décider dans quel nœud il doit placer ce Pod.</p>
+<p>Premièrement, il va <em><strong>Filtrer</strong></em> les nœuds qui respectent ou non les critères du Pod, c&rsquo;est-à-dire un minimum de 6 Go. Donc, les deux premiers nœuds sont en dehors de la liste. Il nous reste maintenant les deux derniers nœuds à 12 Go et 15 Go de RAM.</p>
+<p>Le <em><strong>Kube-Scheduler</strong></em> utilise une méthode de <em><strong>ranking</strong></em> où il va classer les nœuds selon quelques critères. Par défaut, il va regarder combien de ressources il restera si jamais le Pod est placé dans ce nœud. Si on le place sur le premier à 12 Go de RAM, il restera 6 Go de RAM, et si on le place sur le deuxième à 15 Go de RAM, il restera 9 Go de RAM. Donc, le deuxième gagne car il a une meilleure note.</p>
+<p>Certes, c&rsquo;est une façon un peu ancienne de décider, mais rien ne nous empêche de créer notre propre <em><strong>Kube-Scheduler</strong></em>, que nous pourrons personnaliser et faire fonctionner à notre façon. Mais bien sûr, par défaut, il existe d&rsquo;autres critères qu&rsquo;on verra dans d&rsquo;autres posts qui aident le <em><strong>Kube-Scheduler</strong></em> à décider où mettre le Pod.</p>
+<h2 id="controller-manager">Controller-Manager</h2>
+<p>Les <em><strong>controllers</strong></em> sont un des éléments les plus importants dans tout cluster Kubernetes. Un <em><strong>controller</strong></em> est un service qui surveille constamment un autre composant du cluster. Le <em><strong>controller</strong></em> est là pour amener l&rsquo;état du cluster vers l&rsquo;état désiré par l&rsquo;administrateur. Il existe plusieurs controllers. Les plus importants sont :</p>
+<ul>
+<li><em><strong>Node Controller</strong></em></li>
+<li><em><strong>Deployment Controller</strong></em></li>
+<li><em><strong>ReplicaSet Controller</strong></em></li>
+<li><em><strong>Service Controller</strong></em></li>
+</ul>
+<p>Je rappelle qu&rsquo;il existe bien d&rsquo;autres controllers. Pour vous faire réaliser l&rsquo;importance d&rsquo;un controller, parlons du Node Controller.</p>
+<p>Le Node Controller est là pour surveiller l&rsquo;état des nœuds et il est là pour prendre les actions nécessaires pour garder l&rsquo;application en vie. Par défaut, un nœud envoie un signal de vie ou &ldquo;heartbeat&rdquo; toutes les <em><strong>5 secondes</strong></em>. Si vous avez bien suivi, vous allez deviner que le Node Controller utilise le Kube-API pour avoir ces informations. Si jamais un nœud arrête d&rsquo;envoyer un heartbeat au Node Controller, celui-ci va attendre 40 secondes, et si jamais il ne reçoit toujours pas de heartbeat, il va le marquer comme <em><strong>unreachable</strong></em>.</p>
+<p>Une fois que le nœud est marqué comme unreachable, le Node Controller va attendre 5 minutes pour que le nœud revienne à la vie. S&rsquo;il ne le fait pas, il va enlever tous les Pods qui étaient attribués au nœud (au moins ceux qui font partie d&rsquo;un ReplicaSet, vous allez savoir ce que c&rsquo;est dans le prochain article ;) ), et il va les mettre dans d&rsquo;autres nœuds pour permettre à l&rsquo;application de continuer.</p>
+<p>Comme vous venez de le découvrir, les controllers sont le cerveau d&rsquo;un cluster Kubernetes. C&rsquo;est ce qui permet aux administrateurs de dormir le soir (je rigole, les sysadmins ne dorment pas). Chaque service ou composant que je vais expliquer dans d&rsquo;autres parties ou d&rsquo;autres posts, un controller est là pour le surveiller et monitorer son état.</p>
+<p>Cette image explique très bien le processus d&rsquo;un controller :</p>
+<p><img src="/images/k8s/k8s2/controller.png" alt="controllers"></p>
+<blockquote>
+<p><a href="https://k21academy.com/docker-kubernetes/kubernetes-operator/">Source</a></p>
+</blockquote>
+<h2 id="kubelet">Kubelet</h2>
+<p>Finalement, le dernier, mais pas le moins important, le <em><strong>Kubelet</strong></em>. Le Kubelet est le service de Kubernetes qui permet à un nœud de rejoindre un cluster.</p>
+<p>C&rsquo;est le service qui va faire tout le travail brut, c&rsquo;est-à-dire que c&rsquo;est lui qui va dire à son container-runtime, du genre Docker ou Podman, de pull l&rsquo;image du Pod et de créer le container. Également, le Kubelet est là pour surveiller l&rsquo;état des Pods qui sont à l&rsquo;intérieur de lui.</p>
+<p>Ci-dessous, une image qui représente cela :</p>
+<p><img src="/images/k8s/k8s2/kubelet.png" alt="Kubelet"></p>
+<blockquote>
+<p><a href="https://www.optiv.com/insights/source-zero/blog/kubernetes-attack-surface">Source</a></p>
+</blockquote>
+<h1 id="conclusion">Conclusion</h1>
+<p>Kubernetes est un outil puissant qui révolutionne la gestion des conteneurs et des applications en environnement distribué. Dans cette deuxième partie, nous avons exploré en détail les composants essentiels de Kubernetes, tels qu&rsquo;etcd, l&rsquo;API Server, le Kube-Scheduler, le Controller-Manager, et le Kubelet. Chacun de ces éléments joue un rôle crucial dans le fonctionnement d&rsquo;un cluster, assurant une orchestration efficace et fiable des ressources.</p>
+<p>En comprenant ces composants et leur interaction, vous serez mieux préparé à déployer et à gérer vos applications dans Kubernetes. N&rsquo;oubliez pas que la maîtrise de cet outil nécessite du temps et de la pratique, mais avec patience et persévérance, vous pourrez tirer pleinement parti de sa puissance. Dans les prochaines parties, nous approfondirons d&rsquo;autres fonctionnalités et concepts avancés, vous permettant de renforcer vos compétences et d&rsquo;optimiser votre utilisation de Kubernetes. Restez à l&rsquo;écoute !</p>
+
+        </p>
+        
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/cyber/decouverte_siem_4/">
+            &#8592;
+            :
+            Découverte de Wazuh Partie 4
+        </a>
+    </p>
+    <p class="prev-post-date">
+        août 22, 2024
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

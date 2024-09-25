@@ -2,31 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/attaque/</loc>
-    <lastmod>2024-09-10T09:05:49+01:00</lastmod>
+    <loc>http://localhost:1313/tags/devops/</loc>
+    <lastmod>2024-09-21T13:56:10+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/cyber/decouverte_siem_5/</loc>
-    <lastmod>2024-09-10T09:05:49+01:00</lastmod>
+    <loc>http://localhost:1313/tags/docker/</loc>
+    <lastmod>2024-09-21T13:56:10+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/kubernetes/</loc>
+    <lastmod>2024-09-21T13:56:10+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/k8s/k8s1-2/</loc>
+    <lastmod>2024-09-21T13:56:10+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-09-10T09:05:49+01:00</lastmod>
+    <lastmod>2024-09-21T13:56:10+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2024-09-10T09:05:49+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/siem/</loc>
-    <lastmod>2024-09-10T09:05:49+01:00</lastmod>
+    <lastmod>2024-09-21T13:56:10+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-09-10T09:05:49+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/windows/</loc>
-    <lastmod>2024-09-10T09:05:49+01:00</lastmod>
+    <lastmod>2024-09-21T13:56:10+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/cyber/decouverte_siem_4/</loc>
     <lastmod>2024-08-22T09:05:49+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/secops/</loc>
+    <lastmod>2024-08-22T09:05:49+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/siem/</loc>
     <lastmod>2024-08-22T09:05:49+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/wazuh/</loc>
@@ -40,15 +43,6 @@
   </url><url>
     <loc>http://localhost:1313/posts/cyber/decouverte_siem/</loc>
     <lastmod>2024-08-07T20:05:49+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/devops/</loc>
-    <lastmod>2024-05-19T12:05:49+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/docker/</loc>
-    <lastmod>2024-05-19T12:05:49+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/kubernetes/</loc>
-    <lastmod>2024-05-19T12:05:49+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/k8s/k8s1-1/</loc>
     <lastmod>2024-05-19T12:05:49+01:00</lastmod>

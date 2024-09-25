@@ -6,14 +6,14 @@
     <description>Recent content in Posts on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Tue, 10 Sep 2024 09:05:49 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 21 Sep 2024 13:56:10 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Detection et  </title>
-      <link>http://localhost:1313/posts/cyber/decouverte_siem_5/</link>
-      <pubDate>Tue, 10 Sep 2024 09:05:49 +0100</pubDate>
-      <guid>http://localhost:1313/posts/cyber/decouverte_siem_5/</guid>
-      <description>On verra dans ce post la puissance de Wazuh en important de nouvelles règles et des démos</description>
+      <title>Kubernetes Partie 2</title>
+      <link>http://localhost:1313/posts/k8s/k8s1-2/</link>
+      <pubDate>Sat, 21 Sep 2024 13:56:10 +0100</pubDate>
+      <guid>http://localhost:1313/posts/k8s/k8s1-2/</guid>
+      <description>Ici vous trouverez une explication plus detaille a propos des elements qui composent K8s</description>
     </item>
     <item>
       <title>Découverte de Wazuh Partie 4</title>
