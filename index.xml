@@ -6,8 +6,15 @@
     <description>Recent content on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sat, 21 Sep 2024 13:56:10 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 25 Sep 2024 17:29:57 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/pages/about/</link>
+      <pubDate>Wed, 25 Sep 2024 17:29:57 +0200</pubDate>
+      <guid>http://localhost:1313/pages/about/</guid>
+      <description>&lt;h1 id=&#34;mohamad-el-akhal-el-bouzidi&#34;&gt;Mohamad El Akhal El Bouzidi&lt;/h1&gt;&#xA;&lt;p&gt;Salut ! Je m&amp;rsquo;appelle Mohamad El Akhal El Bouzidi, et je suis un passionné de tout ce qui touche à l&amp;rsquo;informatique, particulièrement la cybersécurité et l&amp;rsquo;univers Linux. Actuellement étudiant en BUT Réseaux et Télécommunications avec une spécialisation en Cybersécurité, j&amp;rsquo;ai la chance de combiner théorie et pratique en travaillant en alternance comme Administrateur Systèmes et Réseaux chez Aditu.&lt;/p&gt;&#xA;&lt;p&gt;Mon parcours n’est pas juste guidé par les lignes de code ou les configurations réseau, mais par une vraie passion pour la sécurité informatique et un désir profond de contribuer positivement à ce domaine en constante évolution. J&amp;rsquo;aime découvrir comment les systèmes fonctionnent, trouver des moyens de les sécuriser, et surtout, partager mes connaissances avec ceux qui s&amp;rsquo;intéressent aussi à ce domaine fascinant.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Kubernetes Partie 2</title>
       <link>http://localhost:1313/posts/k8s/k8s1-2/</link>
@@ -100,13 +107,6 @@
       <description>Dans ce post, je vais vous montrer comment configurer un serveur DNS avec Bind9.</description>
     </item>
     <item>
-      <title>About</title>
-      <link>http://localhost:1313/pages/about/</link>
-      <pubDate>Sat, 14 Oct 2023 17:29:57 +0200</pubDate>
-      <guid>http://localhost:1313/pages/about/</guid>
-      <description>&lt;h1 id=&#34;mohamad-el-akhal-el-bouzidi&#34;&gt;Mohamad El Akhal El Bouzidi&lt;/h1&gt;&#xA;&lt;p&gt;Salut ! Je m&amp;rsquo;appelle Mohamad El Akhal El Bouzidi, et je suis un passionné de tout ce qui touche à l&amp;rsquo;informatique, particulièrement la cybersécurité et l&amp;rsquo;univers Linux. Actuellement étudiant en BUT Réseaux et Télécommunications avec une spécialisation en Cybersécurité, j&amp;rsquo;ai la chance de combiner théorie et pratique en travaillant en alternance comme Administrateur Systèmes et Réseaux chez Aditu.&lt;/p&gt;&#xA;&lt;p&gt;Mon parcours n’est pas juste guidé par les lignes de code ou les configurations réseau, mais par une vraie passion pour la sécurité informatique et un désir profond de contribuer positivement à ce domaine en constante évolution. J&amp;rsquo;aime découvrir comment les systèmes fonctionnent, trouver des moyens de les sécuriser, et surtout, partager mes connaissances avec ceux qui s&amp;rsquo;intéressent aussi à ce domaine fascinant.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Presentation</title>
       <link>http://localhost:1313/posts/presentation/</link>
       <pubDate>Sat, 14 Oct 2023 16:10:25 +0200</pubDate>
@@ -119,6 +119,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/index-about/</guid>
       <description>&lt;h1 id=&#34;a-propos-de-moi&#34;&gt;A propos de moi&lt;/h1&gt;&#xA;&lt;p&gt;Je suis Mohamad El Akhal El Bouzidi, étudiant en 3ème année de BUT Réseaux et Télécoms et alternant spécialisé en cybersécurité chez Aditu&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/docs/packer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/docs/packer/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

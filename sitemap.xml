@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/pages/about/</loc>
+    <lastmod>2024-09-25T17:29:57+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-09-25T17:29:57+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pages/</loc>
+    <lastmod>2024-09-25T17:29:57+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/devops/</loc>
     <lastmod>2024-09-21T13:56:10+01:00</lastmod>
   </url><url>
@@ -12,9 +21,6 @@
     <lastmod>2024-09-21T13:56:10+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/k8s/k8s1-2/</loc>
-    <lastmod>2024-09-21T13:56:10+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
     <lastmod>2024-09-21T13:56:10+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
@@ -95,12 +101,6 @@
     <loc>http://localhost:1313/tags/dns/</loc>
     <lastmod>2023-10-15T09:10:45+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/about/</loc>
-    <lastmod>2023-10-14T17:29:57+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/pages/</loc>
-    <lastmod>2023-10-14T17:29:57+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/about/</loc>
     <lastmod>2023-10-14T16:10:25+02:00</lastmod>
   </url><url>
@@ -111,6 +111,8 @@
     <lastmod>2023-10-14T16:10:25+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/index-about/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/docs/packer/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on makhal.fr</title>
+    <link>http://localhost:1313/tags/cloud/</link>
+    <description>Recent content in Cloud on makhal.fr</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Wed, 25 Sep 2024 20:05:49 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vagrant</title>
+      <link>http://localhost:1313/posts/docs/vagrant_doc/</link>
+      <pubDate>Wed, 25 Sep 2024 20:05:49 +0100</pubDate>
+      <guid>http://localhost:1313/posts/docs/vagrant_doc/</guid>
+      <description>Dans cette courte doc je presente Vagrant et son utilisation</description>
+    </item>
+  </channel>
+</rss>
