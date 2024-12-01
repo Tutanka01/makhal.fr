@@ -6,8 +6,22 @@
     <description>Recent content on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Wed, 25 Sep 2024 17:29:57 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 01 Dec 2024 11:12:10 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Le debut d&#39;une grande aventure : Déployer une application sur Kubernetes</title>
+      <link>https://makhal.fr/posts/k8s/k8s1-3/</link>
+      <pubDate>Sun, 01 Dec 2024 11:12:10 +0100</pubDate>
+      <guid>https://makhal.fr/posts/k8s/k8s1-3/</guid>
+      <description>Dans cet article, nous allons déployer une application simple sur K8s tout en découvrant les bases pratiques de son utilisation</description>
+    </item>
+    <item>
+      <title>Decouverte de l&#39;IAC avec Pulumi</title>
+      <link>https://makhal.fr/posts/docs/iac/pulumi/pulumi-azure/</link>
+      <pubDate>Wed, 30 Oct 2024 06:40:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/docs/iac/pulumi/pulumi-azure/</guid>
+      <description>Dans ce post, nous allons decouvrir l&amp;rsquo;IAC avec Pulumi sur Azure</description>
+    </item>
     <item>
       <title>About</title>
       <link>https://makhal.fr/pages/about/</link>
@@ -119,13 +133,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://makhal.fr/index-about/</guid>
       <description>&lt;h1 id=&#34;a-propos-de-moi&#34;&gt;A propos de moi&lt;/h1&gt;&#xA;&lt;p&gt;Je suis Mohamad El Akhal El Bouzidi, étudiant en 3ème année de BUT Réseaux et Télécoms et alternant spécialisé en cybersécurité chez Aditu&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://makhal.fr/posts/docs/packer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://makhal.fr/posts/docs/packer/</guid>
-      <description></description>
     </item>
   </channel>
 </rss>

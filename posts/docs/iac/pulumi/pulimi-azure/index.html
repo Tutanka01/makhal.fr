@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Decouverte de l&#39;IAC avec Pulumi</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, devops, IAC, Pulumi, Azure'>
+
+    <meta property="og:url" content="http://localhost:1313/posts/docs/iac/pulumi/pulimi-azure/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Decouverte de l&#39;IAC avec Pulumi">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://localhost:1313/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="http://localhost:1313/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Decouverte de l&#39;IAC avec Pulumi">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="http://localhost:1313/posts/docs/iac/pulumi/pulimi-azure/">
+    <meta property="twitter:url" content="http://localhost:1313/posts/docs/iac/pulumi/pulimi-azure/">
+    <meta name="twitter:image" content="http://localhost:1313/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="http://localhost:1313/posts/docs/iac/pulumi/pulimi-azure/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="http://localhost:1313/">
+                    <img src="http://localhost:1313//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:1313/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/pages/about/"> About </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/pages/about/"> About </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Decouverte de l&#39;IAC avec Pulumi</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            octobre 30, 2024
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/devops">devops</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/iac">IAC</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/pulumi">Pulumi</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/azure">Azure</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="découverte-de-liac-avec-pulumi">Découverte de l&rsquo;IaC avec Pulumi</h1>
+<p>Bonjour à tous, j’espère que vous allez bien ! Aujourd&rsquo;hui, on va découvrir ensemble deux concepts essentiels : l’Infrastructure as Code (IaC) et l’outil <strong>Pulumi</strong>. Si ces termes vous semblent flous, pas d’inquiétude, je vais tout vous expliquer !</p>
+<h2 id="infrastructure-as-code-iac">Infrastructure as Code (IaC)</h2>
+<p>L’IaC, ou <em><strong>Infrastructure as Code</strong></em>, consiste à <strong>déployer et gérer de l&rsquo;infrastructure</strong> (par exemple des VMs, des conteneurs, des réseaux, des buckets S3, etc.) à travers du code. Cette approche permet non seulement de <em><strong>versionner</strong></em> l’infrastructure mais aussi de la <em><strong>tester</strong></em>, de la <em><strong>déployer</strong></em> de manière reproductible, et de mieux la documenter.</p>
+<p>C’est vraiment pratique, car soyons honnêtes : qui ici n’a jamais passé des heures à créer manuellement des VMs, les configurer, les monitorer, les sauvegarder, etc.? C’est long, fastidieux, et pas vraiment amusant. L’IaC permet d’automatiser tout cela en un rien de temps.</p>
+<p><img src="/images/IAC/Pulumi/infra_as_code.png" alt="alt text"></p>
+<p>En général, un déploiement IaC commence par l’écriture du code. Un administrateur ou un ingénieur DevOps définit ce qu’il souhaite déployer, comme une architecture sur Azure comprenant un groupe de ressources, un réseau virtuel (VNet), et deux VMs. Ce fichier est ensuite poussé dans un dépôt Git, où se trouvent aussi des pipelines CI/CD pour tester le code et valider son bon fonctionnement. Cela peut, par exemple, éviter de supprimer par erreur des ressources en production. Si tout est correct, le pipeline valide alors le <strong>déploiement de l&rsquo;infrastructure</strong> de manière sécurisée et contrôlée.</p>
+<p>Un autre concept clé en IaC est l’<em><strong>idempotence</strong></em>. L&rsquo;idempotence garantit que si l’on redéploie une infrastructure déjà existante, rien ne change inutilement. Par exemple, si une VM est déjà déployée, le code ne doit pas en créer une nouvelle ; au lieu de cela, il vérifie l&rsquo;état actuel de l&rsquo;infrastructure, déploie ce qui manque et supprime ce qui est en trop.</p>
+<p>Grâce à l&rsquo;IaC, on peut exploiter tous les avantages connus du développement logiciel, comme le versionnage, le test, et le déploiement automatisé (CI/CD). Avec Pulumi, vous pouvez explorer toutes ces possibilités et profiter d&rsquo;une infrastructure flexible et robuste.</p>
+<p>Car cela ne s&rsquo;arrête pas là : l&rsquo;IaC permet aussi de <strong>réduire les coûts</strong>. En effet, en déployant des ressources uniquement quand elles sont nécessaires, on évite de payer pour des ressources inutilisées. Cela permet aussi de <strong>réduire les erreurs humaines</strong> et de <strong>gagner du temps</strong>. Enfin, l&rsquo;IaC permet de <strong>documenter</strong> l&rsquo;infrastructure de manière claire et précise, ce qui est très utile pour les nouveaux arrivants dans une équipe.</p>
+<h2 id="pulumi">Pulumi</h2>
+<p>Alors, <strong>Pulumi</strong>, c&rsquo;est quoi au juste ?</p>
+<p>Pulumi est un outil qui permet de faire de l&rsquo;IaC avec n&rsquo;importe quel langage de programmation, ce qui signifie que vous pouvez écrire votre infrastructure en utilisant votre langage préféré, que ce soit Python, Go, TypeScript, ou d&rsquo;autres. Bien sûr, Pulumi n&rsquo;est pas le seul dans le monde de l&rsquo;IaC. <strong>Terraform</strong> est également très populaire, mais l&rsquo;avantage de Pulumi est de permettre une flexibilité totale dans le choix du langage, ce qui est l&rsquo;une de ses grandes forces.</p>
+<p>Dans cet article, nous allons découvrir Pulumi en déployant une infrastructure sur Azure.</p>
+<blockquote>
+<p>Si vous ne connaissez pas encore Azure, ne vous inquiétez pas ! Je vous expliquerai tout cela dans un autre article.</p>
+</blockquote>
+<h3 id="installation-de-pulumi-et-prérequis">Installation de Pulumi et Prérequis</h3>
+<p>Petite précision avant de commencer : bien que je sois sous Windows, j&rsquo;utilise WSL, donc ce guide sera utile pour Linux et très similaire pour macOS. Si vous êtes sur Windows, je vous conseille aussi d’installer WSL : c’est vraiment pratique.</p>
+<p>Pour installer Pulumi, il suffit de se rendre sur le site officiel et de télécharger le binaire correspondant à votre OS. Dans mon cas, je suis sous Debian 12. La <a href="https://www.pulumi.com/docs/iac/download-install/">documentation officielle</a> recommande simplement cette commande pour l&rsquo;installation :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://get.pulumi.com | sh
+</span></span></code></pre></div><p>Une fois que vous avez lancé cette commande, vous pouvez en profiter pour prendre une gorgée de café. L’installation terminée, tapez :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pulumi about
+</span></span></code></pre></div><p>et vous devriez voir une sortie similaire à celle-ci :</p>
+<p><img src="/images/IAC/Pulumi/pulumi-install-1.png" alt="Pulumi install 1"></p>
+<p>Nous avons maintenant Pulumi d&rsquo;installé et prêt à l&rsquo;emploi. Avant de nous lancer dans le code, quelques prérequis sont nécessaires pour un déploiement sur Azure : il faut un compte Azure actif ainsi que le CLI d&rsquo;Azure installé et python3 d&rsquo;installe aussi. Pour vous aider sur l&rsquo;installation du <em><strong>azure-cli</strong></em>, la documentation <a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">officielle</a> peut vous aider.</p>
+<h3 id="premier-code-avec-pulumi">Premier Code avec Pulumi</h3>
+<p>Avec les prérequis installés, nous allons écrire notre premier code. Pour commencer, créons un dossier et initialisons un projet Pulumi avec la commande suivante :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir Pulumi <span style="color:#f92672">&amp;&amp;</span> cd Pulumi
+</span></span><span style="display:flex;"><span>pulumi new azure-python
+</span></span></code></pre></div><p>Ici, Pulumi nous demande de nous connecter à un compte. Oui, cela peut surprendre, mais cela permet de sauvegarder les projets sur le cloud sans partager votre code avec des tiers.</p>
+<p><img src="/images/IAC/Pulumi/lancement-projet.png" alt="Connexion au compte Pulumi"></p>
+<p>Une fois connecté, Pulumi demande le nom du projet et celui de la stack, autrement dit l’environnement dans lequel vous souhaitez déployer votre code. Vous pouvez conserver les valeurs par défaut pour l’instant, c’est-à-dire <strong>Project</strong> et <strong>Dev</strong>. Pulumi initialise alors son environnement, créant un environnement virtuel Python (nécessitant Python et pip). Il génère un fichier <code>__main__.py</code> qui contiendra le code de votre projet.</p>
+<p>L’arborescence de votre projet devrait ressembler à ceci :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@pcmakhal:/home/mohamad/Documents/Pulumi# tree -L <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>|-- Pulumi.dev2.yaml
+</span></span><span style="display:flex;"><span>|-- Pulumi.yaml
+</span></span><span style="display:flex;"><span>|-- __main__.py
+</span></span><span style="display:flex;"><span>|-- requirements.txt
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">`</span>-- venv
+</span></span></code></pre></div><p>Ces fichiers sont essentiels au projet. Le fichier <code>__main__.py</code> contient le code, <code>Pulumi.yaml</code> stocke les informations générales du projet, et <code>Pulumi.dev2.yaml</code> garde les détails de l’environnement initialisé. Si vous avez besoin de dépendances supplémentaires, vous pourrez les ajouter dans le fichier <code>requirements.txt</code>. En cas de suppression du dossier <code>venv</code>, il est également possible de recréer l’environnement virtuel.</p>
+<p>Dans le fichier <code>Pulumi.dev2.yaml</code>, si vous souhaitez changer le nom de l’environnement, du provider, ou de la région de déploiement (par défaut sur <code>West US</code>), c&rsquo;est possible en modifiant cette configuration :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">config</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">azure-native:location</span>: <span style="color:#ae81ff">WestUS2</span>
+</span></span></code></pre></div><h3 id="code-de-linfrastructure">Code de l&rsquo;Infrastructure</h3>
+<p>Lorsqu’on utilise la stack Azure par défaut de Pulumi, on obtient un code qui crée un groupe de ressources et un compte de stockage. Voici un exemple de ce code :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;Un programme Pulumi pour Azure avec Python&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pulumi
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pulumi_azure_native <span style="color:#f92672">import</span> storage
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pulumi_azure_native <span style="color:#f92672">import</span> resources
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Créer un groupe de ressources Azure</span>
+</span></span><span style="display:flex;"><span>resource_group <span style="color:#f92672">=</span> resources<span style="color:#f92672">.</span>ResourceGroup(<span style="color:#e6db74">&#34;resource_group&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Créer un compte de stockage Azure</span>
+</span></span><span style="display:flex;"><span>account <span style="color:#f92672">=</span> storage<span style="color:#f92672">.</span>StorageAccount(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;sa&#34;</span>,
+</span></span><span style="display:flex;"><span>    resource_group_name<span style="color:#f92672">=</span>resource_group<span style="color:#f92672">.</span>name,
+</span></span><span style="display:flex;"><span>    sku<span style="color:#f92672">=</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;name&#34;</span>: storage<span style="color:#f92672">.</span>SkuName<span style="color:#f92672">.</span>STANDARD_LRS,
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    kind<span style="color:#f92672">=</span>storage<span style="color:#f92672">.</span>Kind<span style="color:#f92672">.</span>STORAGE_V2,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Exporter la clé primaire du compte de stockage</span>
+</span></span><span style="display:flex;"><span>primary_key <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>    pulumi<span style="color:#f92672">.</span>Output<span style="color:#f92672">.</span>all(resource_group<span style="color:#f92672">.</span>name, account<span style="color:#f92672">.</span>name)
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span>apply(
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">lambda</span> args: storage<span style="color:#f92672">.</span>list_storage_account_keys(
+</span></span><span style="display:flex;"><span>            resource_group_name<span style="color:#f92672">=</span>args[<span style="color:#ae81ff">0</span>], account_name<span style="color:#f92672">=</span>args[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> accountKeys: accountKeys<span style="color:#f92672">.</span>keys[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>value)
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pulumi<span style="color:#f92672">.</span>export(<span style="color:#e6db74">&#34;primary_storage_key&#34;</span>, primary_key)
+</span></span></code></pre></div><p>Le code est en Python, ce qui le rend très parlant. On importe les modules nécessaires, crée un groupe de ressources et un compte de stockage, puis on exporte la clé primaire du compte pour la récupérer après le déploiement. Ce code, bien que simple, déploie efficacement et rapidement une infrastructure sur Azure.</p>
+<h3 id="déploiement-de-linfrastructure">Déploiement de l&rsquo;Infrastructure</h3>
+<p>Pour déployer avec Pulumi, il suffit d&rsquo;exécuter cette commande :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pulumi up
+</span></span></code></pre></div><p>Vous verrez une sortie semblable à celle-ci :</p>
+<p><img src="/images/IAC/Pulumi/_speed_ezgif-6-66b81fa85a.gif" alt="Animation du déploiement Pulumi"></p>
+<p>En seulement 60 secondes, l&rsquo;infrastructure est déployée sur Azure. Rendez-vous sur le portail Azure pour vérifier la création du groupe de ressources et du compte de stockage :</p>
+<p><img src="/images/IAC/Pulumi/capture_azure.png" alt="Portail Azure"></p>
+<h3 id="suppression-de-linfrastructure">Suppression de l&rsquo;Infrastructure</h3>
+<p>Enfin, pour détruire cette infrastructure, lancez simplement :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pulumi destroy
+</span></span></code></pre></div><p>Ce qui donnera une sortie similaire à celle-ci :</p>
+<p><img src="/images/IAC/Pulumi/ezgif.com-speed.gif" alt="Suppression de l&rsquo;infrastructure"></p>
+<p>Voilà ! Vous avez déployé puis supprimé une infrastructure sur Azure avec Pulumi.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Voilà, dans cet article nous avons exploré l&rsquo;IaC avec Pulumi et déployé notre première infrastructure sur Azure. J’espère que cet article vous a été utile et que vous avez appris quelque chose de nouveau. Si vous avez des questions, n&rsquo;hésitez pas à me les poser, je serai ravi d&rsquo;y répondre.</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/k8s/k8s1-2/">
+            &#8592;
+            :
+            Kubernetes Partie 2
+        </a>
+    </p>
+    <p class="prev-post-date">
+        septembre 21, 2024
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 makhal.fr</span>
+    
+</footer>
+</body>
+</html>
