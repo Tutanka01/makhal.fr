@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,26 +17,26 @@
     
 
     
-    <title>Kubernetes</title>
+    <title>Le deploiement sur Kubernetes</title>
     <meta name="description" content="">
-    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T'>
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, kubernetes, docker, devops'>
 
-    <meta property="og:url" content="https://makhal.fr/tags/kubernetes/">
+    <meta property="og:url" content="http://localhost:1313/posts/k8s/k8s1-4/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Kubernetes">
+    <meta property="og:title" content="Le deploiement sur Kubernetes">
     <meta property="og:description" content="">
-    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
-    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image" content="http://localhost:1313/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="http://localhost:1313/images/avatar.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Kubernetes">
+    <meta name="twitter:title" content="Le deploiement sur Kubernetes">
     <meta name="twitter:description" content="">
-    <meta property="twitter:domain" content="https://makhal.fr/tags/kubernetes/">
-    <meta property="twitter:url" content="https://makhal.fr/tags/kubernetes/">
-    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="twitter:domain" content="http://localhost:1313/posts/k8s/k8s1-4/">
+    <meta property="twitter:url" content="http://localhost:1313/posts/k8s/k8s1-4/">
+    <meta name="twitter:image" content="http://localhost:1313/images/avatar.jpg">
 
     
-    <link rel="canonical" href="https://makhal.fr/tags/kubernetes/" />
+    <link rel="canonical" href="http://localhost:1313/posts/k8s/k8s1-4/" />
 
     
     <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
@@ -72,30 +72,30 @@
         
         
             <div class="avatar">
-                <a href="https://makhal.fr/">
-                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                <a href="http://localhost:1313/">
+                    <img src="http://localhost:1313//images/avatar.jpg" alt="avatar" />
                 </a>
             </div>
         
 
         
         <div class="nav-title">
-            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+            <a class="nav-brand" href="http://localhost:1313/">makhal.fr</a>
         </div>
 
         
         <div class="nav-links">
             
                 <div class="nav-link">
-                    <a href="https://makhal.fr/posts/"> Posts </a>
+                    <a href="http://localhost:1313/posts/"> Posts </a>
                 </div>
             
                 <div class="nav-link">
-                    <a href="https://makhal.fr/tags/"> Tags </a>
+                    <a href="http://localhost:1313/tags/"> Tags </a>
                 </div>
             
                 <div class="nav-link">
-                    <a href="https://makhal.fr/pages/about/"> About </a>
+                    <a href="http://localhost:1313/pages/about/"> About </a>
                 </div>
             
                 <div class="nav-link">
@@ -121,15 +121,15 @@
             <ul class="nav-hamburger-list visibility-hidden">   
                 
                     <li class="nav-item">
-                        <a href="https://makhal.fr/posts/"> Posts </a>
+                        <a href="http://localhost:1313/posts/"> Posts </a>
                     </li>
                 
                     <li class="nav-item">
-                        <a href="https://makhal.fr/tags/"> Tags </a>
+                        <a href="http://localhost:1313/tags/"> Tags </a>
                     </li>
                 
                     <li class="nav-item">
-                        <a href="https://makhal.fr/pages/about/"> About </a>
+                        <a href="http://localhost:1313/pages/about/"> About </a>
                     </li>
                 
                     <li class="nav-item">
@@ -144,62 +144,95 @@
     </nav>
 </header>
 <main id="content">
-    <div class="container list-posts">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Le deploiement sur Kubernetes</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            décembre 2, 2024
+        </p>
 
-    <h1 class="list-title">kubernetes</h1>
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/kubernetes">kubernetes</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/docker">docker</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/devops">devops</a></li>
+        
+        </ul>
+    </div>
 
-    
+    <div class="post-content">
+        <p>
+            <p>Taches a faire pour ce post :</p>
+<ul>
+<li><input disabled="" type="checkbox"> Parler des fichiers yaml</li>
+<li><input disabled="" type="checkbox"> Parler des commandes kubectl un peu plus en detail</li>
+<li><input disabled="" type="checkbox"> Commencer a deployer l&rsquo;application qu&rsquo;on a cree</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Bonjour a tous et bienvenus dans cet nouvel article</p>
 
-    <h2 class="posts-year">2024</h2><article class="widget post-widget">
-    <a href="https://makhal.fr/posts/k8s/k8s1-3/" class="widget-title">Le deploiement sur Kubernetes</a>
-    <div class="widget-summary">Nous allons déployer une application simple sur un cluster K8s</div>
-    <div class="flex-break"></div>
-    <span class="widget-date">décembre 2, 2024</span>
-    <div class="widget-tags">
+        </p>
         
-            <a href="/tags/kubernetes" class="widget-tag">kubernetes</a>
         
-            <a href="/tags/docker" class="widget-tag">docker</a>
-        
-            <a href="/tags/devops" class="widget-tag">devops</a>
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
         
     </div>
-    
-</article><article class="widget post-widget">
-    <a href="https://makhal.fr/posts/k8s/k8s1-2/" class="widget-title">Kubernetes Partie 2</a>
-    <div class="widget-summary">Ici vous trouverez une explication plus detaille a propos des elements qui composent K8s </div>
-    <div class="flex-break"></div>
-    <span class="widget-date">septembre 21, 2024</span>
-    <div class="widget-tags">
+
+    <div class="prev-next">
         
-            <a href="/tags/kubernetes" class="widget-tag">kubernetes</a>
-        
-            <a href="/tags/docker" class="widget-tag">docker</a>
-        
-            <a href="/tags/devops" class="widget-tag">devops</a>
-        
-    </div>
-    
-</article><article class="widget post-widget">
-    <a href="https://makhal.fr/posts/k8s/k8s1-1/" class="widget-title">Kubernetes Partie 1</a>
-    <div class="widget-summary">Dans ce post, je vous présente Kubernetes :D</div>
-    <div class="flex-break"></div>
-    <span class="widget-date">mai 19, 2024</span>
-    <div class="widget-tags">
-        
-            <a href="/tags/kubernetes" class="widget-tag">kubernetes</a>
-        
-            <a href="/tags/docker" class="widget-tag">docker</a>
-        
-            <a href="/tags/devops" class="widget-tag">devops</a>
-        
-    </div>
-    
-</article>
-    
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/docs/iac/pulumi/pulumi-azure/">
+            &#8592;
+            :
+            Decouverte de l&#39;IAC avec Pulumi
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octobre 30, 2024
+    </p>
 </div>
 
 
+
+<div class="next-post">
+    <p>
+        <a href="/posts/k8s/k8s1-3/">
+            :
+            Le deploiement sur Kubernetes
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            décembre 2, 2024
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
 
         </main><footer class="footer">
     

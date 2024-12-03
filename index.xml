@@ -6,14 +6,14 @@
     <description>Recent content on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sun, 01 Dec 2024 11:12:10 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 02 Dec 2024 04:12:10 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Le debut d&#39;une grande aventure : Déployer une application sur Kubernetes</title>
+      <title>Le deploiement sur Kubernetes</title>
       <link>https://makhal.fr/posts/k8s/k8s1-3/</link>
-      <pubDate>Sun, 01 Dec 2024 11:12:10 +0100</pubDate>
+      <pubDate>Mon, 02 Dec 2024 04:12:10 +0100</pubDate>
       <guid>https://makhal.fr/posts/k8s/k8s1-3/</guid>
-      <description>Dans cet article, nous allons déployer une application simple sur K8s tout en découvrant les bases pratiques de son utilisation</description>
+      <description>Nous allons déployer une application simple sur un cluster K8s</description>
     </item>
     <item>
       <title>Decouverte de l&#39;IAC avec Pulumi</title>
