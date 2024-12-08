@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://makhal.fr/posts/cyber/poc/ransom-poc/</loc>
+    <lastmod>2024-12-08T11:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/cyber/</loc>
+    <lastmod>2024-12-08T11:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/</loc>
+    <lastmod>2024-12-08T11:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/poc/</loc>
+    <lastmod>2024-12-08T11:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/posts/</loc>
+    <lastmod>2024-12-08T11:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/python/</loc>
+    <lastmod>2024-12-08T11:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/ransomware/</loc>
+    <lastmod>2024-12-08T11:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/</loc>
+    <lastmod>2024-12-08T11:01:10+01:00</lastmod>
+  </url><url>
     <loc>https://makhal.fr/tags/devops/</loc>
     <lastmod>2024-12-02T04:12:10+01:00</lastmod>
   </url><url>
@@ -12,15 +36,6 @@
     <lastmod>2024-12-02T04:12:10+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/posts/k8s/k8s1-3/</loc>
-    <lastmod>2024-12-02T04:12:10+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/</loc>
-    <lastmod>2024-12-02T04:12:10+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/posts/</loc>
-    <lastmod>2024-12-02T04:12:10+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/</loc>
     <lastmod>2024-12-02T04:12:10+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/azure/</loc>

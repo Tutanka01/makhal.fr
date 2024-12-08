@@ -6,10 +6,17 @@
     <description>Recent content on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Mon, 02 Dec 2024 04:12:10 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2024 11:01:10 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Le deploiement sur Kubernetes</title>
+      <title>Anatomie d&#39;une attaque ransomware</title>
+      <link>https://makhal.fr/posts/cyber/poc/ransom-poc/</link>
+      <pubDate>Sun, 08 Dec 2024 11:01:10 +0100</pubDate>
+      <guid>https://makhal.fr/posts/cyber/poc/ransom-poc/</guid>
+      <description>Dans cet article nous allons voir toutes les etapes qui composent une attaque de ransomware</description>
+    </item>
+    <item>
+      <title>Le debut d&#39;une grande aventure K8s</title>
       <link>https://makhal.fr/posts/k8s/k8s1-3/</link>
       <pubDate>Mon, 02 Dec 2024 04:12:10 +0100</pubDate>
       <guid>https://makhal.fr/posts/k8s/k8s1-3/</guid>
