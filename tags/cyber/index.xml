@@ -2,17 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cyber on makhal.fr</title>
-    <link>https://makhal.fr/tags/cyber/</link>
+    <link>http://localhost:1313/tags/cyber/</link>
     <description>Recent content in Cyber on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sun, 08 Dec 2024 11:01:10 +0100</lastBuildDate>
-    <atom:link href="https://makhal.fr/tags/cyber/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jan 2025 11:01:10 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cyber/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Analyse d&#39;une attaque de ransomware</title>
+      <link>http://localhost:1313/posts/cyber/poc/analyse-ransom/</link>
+      <pubDate>Wed, 08 Jan 2025 11:01:10 +0100</pubDate>
+      <guid>http://localhost:1313/posts/cyber/poc/analyse-ransom/</guid>
+      <description>Dans cet article, nous allons analyser une attaque ransomware et la contrer.</description>
+    </item>
     <item>
       <title>Anatomie d&#39;une attaque ransomware</title>
-      <link>https://makhal.fr/posts/cyber/poc/ransom-poc/</link>
+      <link>http://localhost:1313/posts/cyber/poc/ransom-poc/</link>
       <pubDate>Sun, 08 Dec 2024 11:01:10 +0100</pubDate>
-      <guid>https://makhal.fr/posts/cyber/poc/ransom-poc/</guid>
+      <guid>http://localhost:1313/posts/cyber/poc/ransom-poc/</guid>
       <description>Dans cet article nous allons voir toutes les etapes qui composent une attaque de ransomware</description>
     </item>
   </channel>

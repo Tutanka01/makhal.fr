@@ -149,7 +149,7 @@
         <h1>Le deploiement sur Kubernetes</h1>
         <small role="doc-subtitle"></small>
         <p class="post-date">
-            décembre 2, 2024
+            janvier 7, 2025
         </p>
 
         <ul class="post-tags">
@@ -172,10 +172,25 @@
 <li><input disabled="" type="checkbox"> Commencer a deployer l&rsquo;application qu&rsquo;on a cree</li>
 </ul>
 <h2 id="introduction">Introduction</h2>
-<p>Bonjour a tous et bienvenus dans cet nouvel article qui est la continuite de notre serie sur Kubernetes. Dans cet article on va finalement deployer notre application sur notre cluster que nous avons cree dans les articles precedents. Si vous n&rsquo;avez pas encore lu l&rsquo;article precedent, je vous invite a le faire en cliquant <a href="/posts/k8s/k8s1-3">ici</a>.</p>
+<p>Bonjour a tous et bienvenus dans cet nouvel article qui est la continuite de notre serie sur Kubernetes. Dans cet article on va finalement deployer notre application  que nous avons cree dans le <a href="/posts/k8s/k8s1-3">post</a> precedent et on va la deployer sur notre cluster. Si vous n&rsquo;avez pas encore lu l&rsquo;article precedent, je vous invite a le faire en cliquant <a href="/posts/k8s/k8s1-3">ici</a>.</p>
 <p>Dans cet article on va parler des commandes qui vont nous permettre d&rsquo;interagir avec notre cluster Kubernetes, ces commandes la vont nous permettre de deployer notre application, de la mettre a jour, de la supprimer, etc. Mais vu qu&rsquo;on est feignant, on va aussi parler des fichiers yaml qui vont nous permettre de faire tout ca de maniere plus simple et plus organisee.</p>
 <h2 id="les-types-dobjet-kubernetes">Les types d&rsquo;objet Kubernetes</h2>
-<p>Avant de commencer a parler des commandes et des fichiers yaml, je suis oblige de vous faire passer un peu de theorie. Kubernetes est compose de differentes choses qu&rsquo;on peut creer, ces objets sont</p>
+<p>Avant de commencer a parler des commandes et des fichiers yaml, je suis oblige de vous faire passer un peu de theorie. Kubernetes est compose de differentes &ldquo;choses&rdquo; qu&rsquo;on peut creer.</p>
+<p>Ces choses la sont appelees des objets Kubernetes, et il y a plusieurs types d&rsquo;objets Kubernetes, chaque objet Kubernetes a un role bien defini dans le cluster. Voila une liste des objets Kubernetes les plus utilises :</p>
+<ul>
+<li>
+<p><strong>Pod</strong> : Un pod est l&rsquo;objet le plus basique sur Kubernetes, c&rsquo;est un conteneur ou un groupe de conteneurs qui partagent un meme espace de stockage, un meme reseau et un meme cycle de vie.</p>
+</li>
+<li>
+<p><strong>Service</strong> : Un service est un objet Kubernetes qui va permettre de faire communiquer les differents pods entre eux, il va permettre de faire du load balancing, de la decouverte de services, etc.</p>
+</li>
+<li>
+<p><strong>Deployment</strong> : Un deployment est un objet Kubernetes qui va permettre de deployer des pods, il va permettre de definir le nombre de replicas qu&rsquo;on veut, il va permettre de definir des strategies de deploiement, etc.</p>
+</li>
+</ul>
+<blockquote>
+<p>Nous en tant que admin du cluster on ne va jamais creer des pods directement, on va toujours creer des deployments qui vont creer des pods pour nous.</p>
+</blockquote>
 <h2 id="les-fichiers-yaml">Les fichiers yaml</h2>
 <p>Les fichiers yaml c&rsquo;est un standard pour definir des configurations, ces fichiers yaml vous pouvez les trouver un peu partout dans le monde du devops, que ce soit pour definir des configurations d&rsquo;applications, des configurations CI/CD&hellip; et bien evidemment des configurations Kubernetes.</p>
 <p>Les fichiers yaml ont plusiers caracteristiques, qui sont propres a yaml uniquement, comme par exemple la possibilite de definir des listes, des dictionnaires, des variables, des references, etc. C&rsquo;est un format tres flexible et tres puissant. Ce format a quand meme plusiers inconvenients, comme par exemple le fait qu&rsquo;il est tres sensible a l&rsquo;indentation, vraiment tres sensible, donc il faut faire tres attention a ça.</p>
@@ -256,31 +271,18 @@
                 
 <div class="prev-post">
     <p>
-        <a href="/posts/docs/iac/pulumi/pulumi-azure/">
+        <a href="/posts/cyber/poc/analyse-ransom/">
             &#8592;
             :
-            Decouverte de l&#39;IAC avec Pulumi
+            Analyse d&#39;une attaque de ransomware
         </a>
     </p>
     <p class="prev-post-date">
-        octobre 30, 2024
+        décembre 9, 2024
     </p>
 </div>
 
 
-
-<div class="next-post">
-    <p>
-        <a href="/posts/k8s/k8s1-3/">
-            :
-            Le debut d&#39;une grande aventure K8s
-            &#8594;
-        </a>
-    </p>
-        <p class="next-post-date">
-            décembre 2, 2024
-        </p>
-</div>
 
 
             
@@ -297,7 +299,7 @@
     
 
     
-    <span>&copy; 2024 makhal.fr</span>
+    <span>&copy; 2025 makhal.fr</span>
     
 </footer>
 </body>

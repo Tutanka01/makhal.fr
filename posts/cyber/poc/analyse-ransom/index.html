@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Analyse d&#39;une attaque de ransomware</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, POC, ransomware, wazuh'>
+
+    <meta property="og:url" content="http://localhost:1313/posts/cyber/poc/analyse-ransom/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Analyse d&#39;une attaque de ransomware">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://localhost:1313/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="http://localhost:1313/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Analyse d&#39;une attaque de ransomware">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="http://localhost:1313/posts/cyber/poc/analyse-ransom/">
+    <meta property="twitter:url" content="http://localhost:1313/posts/cyber/poc/analyse-ransom/">
+    <meta name="twitter:image" content="http://localhost:1313/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="http://localhost:1313/posts/cyber/poc/analyse-ransom/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="http://localhost:1313/">
+                    <img src="http://localhost:1313//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:1313/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/pages/about/"> About </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/pages/about/"> About </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Analyse d&#39;une attaque de ransomware</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            janvier 8, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/cyber">cyber</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/poc">POC</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/ransomware">ransomware</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/wazuh">wazuh</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/siem">SIEM</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="introduction">Introduction</h1>
+<p>Bonjour à tous, et bienvenue dans ce nouvel article ! Dans mon précédent <a href="/posts/cyber/poc/ransom-poc/">article</a>, nous avons exploré les coulisses d&rsquo;une attaque par ransomware. Nous avons découvert comment les cybercriminels orchestrent leurs attaques : depuis la conception d&rsquo;un e-mail de phishing convaincant jusqu&rsquo;à la création d&rsquo;un fichier Excel piégé capable de chiffrer <strong>toutes</strong> les données de la victime.</p>
+<p>Aujourd&rsquo;hui, nous allons adopter une perspective différente. Nous allons nous mettre dans la peau d&rsquo;un <em><strong>analyste SOC</strong></em> : notre mission sera de comprendre et de contrer ce type d&rsquo;attaque. Ensemble, nous analyserons l&rsquo;attaque du début à la fin, en explorant les outils et les techniques à notre disposition pour identifier et neutraliser la menace.</p>
+<p>Restez avec moi jusqu&rsquo;à la fin de cet article, car ça va être très intéressant.</p>
+<h2 id="quelques-rappels">Quelques rappels</h2>
+<p>Avant d&rsquo;entrer dans le vif du sujet, prenons un moment pour revoir certains concepts essentiels.</p>
+<p>Comme expliqué dans mon post : <a href="/posts/cyber/decouverte_siem_4/">Découverte du SIEM partie 4</a>, les logs sont des enregistrements d&rsquo;événements qui se produisent dans n&rsquo;importe quel système. Ces événements peuvent être variés, allant du système lui-même jusqu&rsquo;aux différents applicatifs installés sur ce dernier. Ces logs sont au cœur du travail d&rsquo;un analyste SOC.</p>
+<p>Un analyste SOC est une personne qui travaille dans un centre de sécurité opérationnel et qui a pour mission de détecter, analyser et répondre aux incidents de sécurité.</p>
+<p>Pour détecter ces incidents de sécurité, il se base sur des logs qui peuvent être passés dans une moulinette appelée <strong>SIEM</strong>. Ce SIEM va stocker, agréger et corréler les logs pour générer des alertes selon des critères bien prédéfinis. Ces critères sont, bien entendu, définis par l&rsquo;analyste SOC (plutôt un analyste niveau 3 qu&rsquo;un analyste niveau 1).</p>
+<p>Ainsi, un analyste SOC pourra détecter tout type d&rsquo;événements anormaux sur le réseau de l&rsquo;entreprise et réagir en conséquence.</p>
+<p>Dans ce post, comme vous vous en doutez déjà, nous allons utiliser <em><strong>Wazuh</strong></em>, un SIEM open source, pour analyser notre attaque. Si vous ne connaissez pas Wazuh, je vous invite à lire ma série d&rsquo;articles sur le sujet : <a href="/posts/cyber/decouverte_siem/">Découverte du SIEM partie 1</a>.</p>
+<p>De plus, si vous voulez reproduire ce que nous allons faire dans cet article, vous trouverez, dans les mêmes articles cités précédemment, comment installer Wazuh sur une machine virtuelle.</p>
+<h2 id="analyse-de-lattaque">Analyse de l&rsquo;attaque</h2>
+<p>Maintenant que nous avons fait le tour des concepts de base, nous allons passer à l&rsquo;analyse de l&rsquo;attaque. Ici, nous allons examiner l&rsquo;attaque avec une vue d&rsquo;oiseau, ou comme on dit en anglais : <em><strong>Holistic point of view</strong></em>, pour comprendre exactement ce qui se passe.</p>
+<p>Nous allons nous plonger dans un petit scénario pour réaliser une analyse aussi réaliste que possible.</p>
+<p>Un analyste SOC a reçu une notification sur le système de ticketing, indiquant qu&rsquo;un utilisateur signale que tous les fichiers dans son dossier Documents ont été chiffrés. Cet personne dit avoir aussi reçu en email de comme quoi il a gagne des pains au chocolat et qu&rsquo;il doit ouvrir un fichier Excel pour les s&rsquo;inscrire. Mais depuis qu&rsquo;il a ouvert ce fichier, tous ses fichiers ont été chiffrés.</p>
+<blockquote>
+<p>Reference : <a href="/posts/cyber/poc/ransom-poc/">Ransomware POC</a></p>
+</blockquote>
+<p>Maintenant que nous avons notre scénario, analysons ce qui s&rsquo;est passé.</p>
+<h2 id="première-analyse">Première analyse</h2>
+<p>Le premier réflexe de l&rsquo;analyste SOC va être de demander <em><strong>la plage horaire</strong></em> durant laquelle l&rsquo;utilisateur s&rsquo;est rendu compte du chiffrement de ses fichiers. Cette information sera très importante, car elle permettra de définir une période précise pour toutes les analyses futures.</p>
+<p>L&rsquo;utilisateur informe l&rsquo;analyste que c&rsquo;est <em><strong>entre 08h22 et 08h30</strong></em> qu&rsquo;il a remarqué que ses fichiers étaient chiffrés.</p>
+<p>Passons maintenant sur Wazuh pour examiner les logs de cette période.</p>
+<p>Sur Wazuh, nous allons devoir accéder à l&rsquo;onglet <strong>Discover</strong> :</p>
+<p><img src="/images/doc/analyse-ransom/discover-wazuh.png" alt="discover-wazuh"></p>
+<p>Une fois dans l&rsquo;onglet <strong>Discover</strong>, nous allons saisir les critères de recherche. Tout d&rsquo;abord, nous définissons la plage horaire en renseignant les dates et heures dans les champs <strong>From</strong> et <strong>To</strong>.</p>
+<p><img src="/images/doc/analyse-ransom/dates-wazuh.png" alt="Dates wazuh"></p>
+<p>Une fois que nous avons la bonne plage, regardons ensemble à quoi ressemblent les événements pour cette période :</p>
+<p><img src="/images/doc/analyse-ransom/vue-alertes-ensemble.png" alt="Vue d&rsquo;ensemble alertes"></p>
+<p>Je ne sais pas pour vous, mais en ce qui me concerne, je suis perdu. Il y a beaucoup trop de détails, et on ne sait pas par où commencer.</p>
+<p>C&rsquo;est pour cela qu&rsquo;il est crucial d&rsquo;avoir une méthode. Il faut savoir où chercher et comment chercher.</p>
+<p>Pour ce qui est du &ldquo;<em><strong>où chercher</strong></em>&rdquo;, nous devons filtrer les agents afin d’afficher uniquement l’ordinateur de notre utilisateur. Quant au &ldquo;comment chercher&rdquo;, il faut se rappeler de notre scénario :</p>
+<blockquote>
+<p>l’utilisateur nous informe avoir ouvert un fichier Excel.</p>
+</blockquote>
+<p>Nous allons donc rechercher des logs correspondant à l’ouverture d’un fichier Excel.</p>
+<p>Pour filtrer les agents, il suffit de cliquer sur le champ <strong>agent.hostname</strong> et de saisir le nom de l’ordinateur de notre utilisateur. Avec Wazuh, c’est tout simple : trois clics suffisent pour obtenir le résultat souhaité.</p>
+<p><img src="/images/doc/analyse-ransom/filtrage-agent.png" alt="Filtrage agent"></p>
+<p>Pour le &ldquo;comment chercher&rdquo;, nous allons rechercher des logs correspondant à l’ouverture d’un fichier Excel. Pour cela, il est essentiel de connaître les différents types d&rsquo;événements qui peuvent être générés sur un système Windows. Voici un petit tableau qui résume ces différents types d’événements :</p>
+<table>
+  <thead>
+      <tr>
+          <th>Event ID</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>4656</td>
+          <td>Ouverture d&rsquo;un fichier</td>
+      </tr>
+      <tr>
+          <td>4663</td>
+          <td>Acces a un objet</td>
+      </tr>
+      <tr>
+          <td>4670</td>
+          <td>Tentative de creation d&rsquo;un objet</td>
+      </tr>
+      <tr>
+          <td>5145</td>
+          <td>Creation d&rsquo;un fichier</td>
+      </tr>
+  </tbody>
+</table>
+
+        </p>
+        
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/cyber/poc/ransom-poc/">
+            &#8592;
+            :
+            Anatomie d&#39;une attaque ransomware
+        </a>
+    </p>
+    <p class="prev-post-date">
+        décembre 8, 2024
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/sysadmin/proxmox-cloud-init/">
+            :
+            Proxmox Cloud-Init le guide complet
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            janvier 18, 2025
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

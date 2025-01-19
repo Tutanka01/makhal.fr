@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>DMARC - SPF - DKIM</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, postfix, mail'>
+
+    <meta property="og:url" content="http://localhost:1313/posts/old/messagerie/dmark_dkim_spf/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DMARC - SPF - DKIM">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://localhost:1313/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="http://localhost:1313/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DMARC - SPF - DKIM">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="http://localhost:1313/posts/old/messagerie/dmark_dkim_spf/">
+    <meta property="twitter:url" content="http://localhost:1313/posts/old/messagerie/dmark_dkim_spf/">
+    <meta name="twitter:image" content="http://localhost:1313/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="http://localhost:1313/posts/old/messagerie/dmark_dkim_spf/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="http://localhost:1313/">
+                    <img src="http://localhost:1313//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:1313/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/pages/about/"> About </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/pages/about/"> About </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>DMARC - SPF - DKIM</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            janvier 28, 2024
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/postfix">postfix</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/mail">mail</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h2 id="introduction">Introduction</h2>
+<p>La sécurisation des services de messagerie est un element majeur pour toute organisation peu importe sa taille, et meme pours les particulieurs qui gerent leur propre messagerie. Les e-mails sont souvent ciblees par les attaques de phishing, de compromission de comptes, et de spam. Pour lutter contre ces menaces, il est essentiel de mettre en place des mécanismes d&rsquo;authentification et de sécurité. C&rsquo;est là qu&rsquo;interviennent SPF, DKIM et DMARC. Les trois mousquettaires de la sécurité des e-mails.</p>
+<h2 id="spf-sender-policy-framework">SPF (Sender Policy Framework)</h2>
+<h3 id="comprendre-spf">Comprendre SPF</h3>
+<p>Le SPF, ou Sender Policy Framework, est un mécanisme d&rsquo;authentification qui permet de vérifier que le serveur SMTP est autorisé à envoyer des e-mails au nom d&rsquo;un domaine spécifique. Il fonctionne en utilisant des enregistrements DNS pour déclarer quels serveurs sont autorisés ou non, a envoyer des e-mails pour un domaine donné. Sinon ça serait trop facile d&rsquo;envoyer des <em><strong>@gouv.fr</strong></em> depuis mon propre serveur SMTP.</p>
+<h3 id="mise-en-place-de-spf">Mise en Place de SPF</h3>
+<h4 id="étape-1--enregistrement-dns-spf">Étape 1 : Enregistrement DNS SPF</h4>
+<p>La première étape pour mettre en place SPF consiste à ajouter un enregistrement DNS SPF a notre domaine. Cet enregistrement indique les serveurs autorisés à envoyer des e-mails pour notre domaine.</p>
+<p>Pour ajouter un enregistrement DNS SPF, suivez ces étapes :</p>
+<ol>
+<li>
+<p>Connectez-vous à votre compte de gestion de domaine ou à votre service DNS ex:OVH,GoogleDomains&hellip;</p>
+</li>
+<li>
+<p>Recherchez la section &ldquo;Gestion des enregistrements DNS&rdquo; ou similaire.</p>
+</li>
+<li>
+<p>Créez un nouvel enregistrement TXT et ajoutez la valeur SPF. Par exemple :</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>v<span style="color:#f92672">=</span>spf1 a mx ip4:192.0.2.1 include:_spf.makhal.fr ~all
+</span></span></code></pre></div><p>Explication des éléments de l&rsquo;enregistrement SPF :</p>
+<ul>
+<li><code>v=spf1</code> : Indique que c&rsquo;est un enregistrement SPF de version 1.</li>
+<li><code>a</code> : Autorise le domaine à envoyer des e-mails depuis son adresse IP.</li>
+<li><code>mx</code> : Autorise le domaine à envoyer des e-mails depuis ses enregistrements MX.</li>
+<li><code>ip4:192.0.2.1</code> : Autorise le domaine à envoyer des e-mails depuis l&rsquo;adresse IP 192.0.2.1.</li>
+<li><code>include:_spf.makhal.fr</code> : Autorise le domaine à inclure d&rsquo;autres règles SPF depuis le domaine <code>_spf.makhal.fr</code>.</li>
+<li><code>~all</code> : Indique que toute autre adresse IP doit être marquée comme &ldquo;soft fail&rdquo; (échec léger). Vous pouvez également utiliser <code>-all</code> pour un &ldquo;hard fail&rdquo; (échec strict).</li>
+</ul>
+<ol start="4">
+<li>Enregistrez l&rsquo;enregistrement SPF.</li>
+</ol>
+<h4 id="étape-2--configuration-du-serveur-de-messagerie">Étape 2 : Configuration du Serveur de Messagerie</h4>
+<p>Après avoir configuré l&rsquo;enregistrement DNS SPF, vous devez configurer votre serveur de messagerie pour utiliser SPF lors de la réception d&rsquo;e-mails. La configuration peut varier en fonction du serveur de messagerie que vous utilisez. Voici comment configurer SPF pour Postfix.</p>
+<h3 id="spf-avec-plus-de-details">SPF avec plus de details</h3>
+<p>Le mécanisme SPF est basé sur la vérification de l&rsquo;enveloppe de l&rsquo;e-mail, qui comprend les adresses IP source du serveur SMTP. Lorsqu&rsquo;un serveur de messagerie reçoit un e-mail, il vérifie si l&rsquo;adresse IP source est autorisée dans l&rsquo;enregistrement DNS SPF du domaine du destinataire. Si l&rsquo;adresse IP est autorisée, l&rsquo;e-mail passe la vérification SPF.</p>
+<p>SPF permet de spécifier différents mécanismes d&rsquo;autorisation, tels que a (autorisation de l&rsquo;adresse IP du domaine), mx (autorisation des enregistrements MX du domaine), ip4 (autorisation d&rsquo;une adresse IP spécifique), et bien d&rsquo;autres. Vous pouvez également spécifier des mécanismes de rejet, tels que -all (rejet strict) et ~all (rejet léger). Si aucune règle n&rsquo;est spécifiée, SPF utilise la règle par défaut <code>?all</code> (ne pas rejeter). Cela signifie que si aucune règle n&rsquo;est spécifiée, l&rsquo;e-mail passera la vérification SPF. C&rsquo;est pourquoi il est important de spécifier une règle de rejet.</p>
+<p>Egalement, SPF permet d&rsquo;inclure d&rsquo;autres règles SPF depuis un autre domaine. Cela permet de réutiliser les règles SPF existantes. Par exemple, si vous souhaitez utiliser les règles SPF de Google, vous pouvez inclure <code>_spf.gouv.fr</code> dans votre enregistrement SPF. Cela permet d&rsquo;inclure les règles SPF de Google dans votre enregistrement SPF.</p>
+<h2 id="dkim-domainkeys-identified-mail">DKIM (DomainKeys Identified Mail)</h2>
+<h3 id="comprendre-dkim">Comprendre DKIM</h3>
+<p>DKIM est un autre mécanisme d&rsquo;authentification essentiel pour securiser nos e-mails. Il permet de vérifier l&rsquo;authenticité de l&rsquo;e-mail en vérifiant une signature cryptographique attachée à l&rsquo;en-tête du mail.</p>
+<h3 id="mise-en-place-de-dkim">Mise en Place de DKIM</h3>
+<h4 id="étape-1--génération-des-clés-dkim">Étape 1 : Génération des Clés DKIM</h4>
+<p>La première étape pour mettre en place DKIM est de générer les paires de clés publiques et privées. Ces clés sont utilisées pour créer et vérifier la signature DKIM.</p>
+<p>Pour générer les clés DKIM, suivez ces étapes :</p>
+<ol>
+<li>Installez OpenDKIM si ce n&rsquo;est pas déjà fait :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install opendkim opendkim-tools
+</span></span></code></pre></div><ol start="2">
+<li>Générez les paires de clés DKIM :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo opendkim-genkey -b <span style="color:#ae81ff">2048</span> -d votredomaine.com -D /etc/opendkim/keys -s mail
+</span></span></code></pre></div><blockquote>
+<p>Remarque: Vous pouvez utiliser votre propre wildcard si vous le voulez.</p>
+</blockquote>
+<ol start="3">
+<li>Vous trouverez les clés générées dans le répertoire spécifié (<code>/etc/opendkim/keys</code> dans cet exemple).</li>
+</ol>
+<h4 id="étape-2--configuration-dopendkim">Étape 2 : Configuration d&rsquo;OpenDKIM</h4>
+<ol>
+<li>Ouvrez le fichier de configuration d&rsquo;OpenDKIM :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/opendkim.conf
+</span></span></code></pre></div><ol start="2">
+<li>Assurez-vous que les lignes suivantes sont correctement configurées :</li>
+</ol>
+<pre tabindex="0"><code>Domain                  votredomaine.com
+KeyFile                 /etc/opendkim/keys/mail.private
+Selector                mail
+</code></pre><h4 id="étape-3--intégration-dopendkim-avec-postfix">Étape 3 : Intégration d&rsquo;OpenDKIM avec Postfix</h4>
+<ol>
+<li>Ouvrez le fichier de configuration principal de Postfix :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/postfix/main.cf
+</span></span></code></pre></div><ol start="2">
+<li>Ajoutez les directives suivantes pour activer OpenDKIM :</li>
+</ol>
+<pre tabindex="0"><code>milter_default_action = accept
+milter_protocol = 6
+smtpd_milters = inet:localhost:12301
+non_smtpd_milters = inet:localhost:12301
+</code></pre><ol start="3">
+<li>Redémarrez OpenDKIM et Postfix :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl restart opendkim
+</span></span><span style="display:flex;"><span>sudo systemctl restart postfix
+</span></span></code></pre></div><h3 id="dkim-pour-les-pros">DKIM pour les pros&hellip;</h3>
+<p>DKIM repose sur un système de clés publiques et privées. Lorsqu&rsquo;un serveur de messagerie envoie un e-mail, il signe l&rsquo;e-mail avec sa clé privée. Le destinataire peut ensuite vérifier la signature à l&rsquo;aide de la clé publique publiée dans l&rsquo;enregistrement DNS du domaine expéditeur.</p>
+<p>Cela garantit que l&rsquo;e-mail n&rsquo;a pas été altéré en transit et qu&rsquo;il provient bien de l&rsquo;expéditeur prétendu. Si la signature est valide, le destinataire peut avoir confiance en l&rsquo;authenticité de l&rsquo;e-mail.</p>
+<h2 id="dmarc-domain-based-message-authentication-reporting-and-conformance">DMARC (Domain-based Message Authentication, Reporting, and Conformance)</h2>
+<h3 id="comprendre-dmarc">Comprendre DMARC</h3>
+<p>DMARC est une politique de sécurité des e-mails qui va au-delà de SPF et DKIM. Il permet aux propriétaires de domaines de spécifier comment les e-mails non authentifiés doivent être traités par les serveurs de messagerie.</p>
+<h3 id="mise-en-place-de-dmarc">Mise en Place de DMARC</h3>
+<h4 id="étape-1--ajout-de-lenregistrement-dmarc-dns">Étape 1 : Ajout de l&rsquo;Enregistrement DMARC DNS</h4>
+<p>La première étape pour mettre en place DMARC est d&rsquo;ajouter un enregistrement DNS DMARC à votre domaine.</p>
+<p>Voici un exemple d&rsquo;enregistrement DMARC :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_dmarc.votredomaine.com IN TXT <span style="color:#e6db74">&#34;v=DMARC1; p=quarantine; rua=mailto:rapports@votredomaine.com&#34;</span>
+</span></span></code></pre></div><p>Explications des éléments de l&rsquo;enregistrement DMARC :</p>
+<ul>
+<li><code>v=DMARC1</code> : Indique qu&rsquo;il s&rsquo;agit d&rsquo;un enregistrement DMARC de version 1.</li>
+<li><code>p=quarantine</code> : Spécifie l&rsquo;action à prendre pour les e-mails qui ne passent pas les vérifications SPF et DKIM. &ldquo;quarantine&rdquo; signifie de les marquer comme spam.</li>
+<li><code>rua=mailto:rapports@votredomaine.com</code> : Spécifie l&rsquo;adresse e-mail à laquelle envoyer les rapports.</li>
+</ul>
+<h4 id="étape-2--interprétation-des-rapports-dmarc">Étape 2 : Interprétation des Rapports DMARC</h4>
+<p>DMARC génère des rapports qui vous donnent des informations sur les e-mails envoyés depuis votre domaine, y compris ceux qui ont échoué aux vérifications SPF et DKIM. Ces rapports peuvent être précieux pour surveiller et améliorer la configuration de vos politiques de sécurité des e-mails.</p>
+<h3 id="comprendre-dmarc-en-profondeur">Comprendre DMARC en Profondeur</h3>
+<p>DMARC fonctionne en utilisant SPF et DKIM pour authentifier les e-mails. Si un e-mail échoue à ces vérifications, DMARC spécifie comment le destinataire doit gérer cet e-mail. Les actions possibles sont <code>none</code> (ne rien faire), <code>quarantine</code> (marquer comme spam) et <code>reject</code> (rejeter complètement l&rsquo;e-mail).</p>
+<p>DMARC permet également de spécifier où envoyer les rapports de conformité et de défaillance. Cela vous permet de surveiller et d&rsquo;ajuster vos politiques de sécurité des e-mails en fonction des résultats.</p>
+<hr>
+<p>Avec SPF, DKIM et DMARC en place, on a pu mettre en œuvre une solide stratégie de sécurité des e-mails. Ces mécanismes travaillent ensemble pour authentifier et protéger les mails de notre boite contre les usurpations d&rsquo;identité, les attaques de phishing et les spams.</p>
+<hr>
+
+        </p>
+        
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/docker/docker-swarm/">
+            &#8592;
+            :
+            Docker Swarm
+        </a>
+    </p>
+    <p class="prev-post-date">
+        octobre 23, 2023
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/docker/docker_1/">
+            :
+            Docker partie 1
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            février 10, 2024
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>
