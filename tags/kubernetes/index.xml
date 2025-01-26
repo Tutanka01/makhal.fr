@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubernetes on makhal.fr</title>
-    <link>http://localhost:1313/tags/kubernetes/</link>
+    <link>https://makhal.fr/tags/kubernetes/</link>
     <description>Recent content in Kubernetes on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
     <lastBuildDate>Mon, 02 Dec 2024 04:12:10 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://makhal.fr/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Le debut d&#39;une grande aventure K8s</title>
-      <link>http://localhost:1313/posts/k8s/k8s1-3/</link>
+      <link>https://makhal.fr/posts/k8s/k8s1-3/</link>
       <pubDate>Mon, 02 Dec 2024 04:12:10 +0100</pubDate>
-      <guid>http://localhost:1313/posts/k8s/k8s1-3/</guid>
+      <guid>https://makhal.fr/posts/k8s/k8s1-3/</guid>
       <description>Nous allons déployer une application simple sur un cluster K8s</description>
     </item>
     <item>
       <title>Kubernetes Partie 2</title>
-      <link>http://localhost:1313/posts/k8s/k8s1-2/</link>
+      <link>https://makhal.fr/posts/k8s/k8s1-2/</link>
       <pubDate>Sat, 21 Sep 2024 13:56:10 +0100</pubDate>
-      <guid>http://localhost:1313/posts/k8s/k8s1-2/</guid>
+      <guid>https://makhal.fr/posts/k8s/k8s1-2/</guid>
       <description>Ici vous trouverez une explication plus detaille a propos des elements qui composent K8s</description>
     </item>
     <item>
       <title>Kubernetes Partie 1</title>
-      <link>http://localhost:1313/posts/k8s/k8s1-1/</link>
+      <link>https://makhal.fr/posts/k8s/k8s1-1/</link>
       <pubDate>Sun, 19 May 2024 12:05:49 +0100</pubDate>
-      <guid>http://localhost:1313/posts/k8s/k8s1-1/</guid>
+      <guid>https://makhal.fr/posts/k8s/k8s1-1/</guid>
       <description>Dans ce post, je vous présente Kubernetes :D</description>
     </item>
   </channel>

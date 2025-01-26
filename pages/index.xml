@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on makhal.fr</title>
-    <link>http://localhost:1313/pages/</link>
+    <link>https://makhal.fr/pages/</link>
     <description>Recent content in Pages on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
     <lastBuildDate>Wed, 25 Sep 2024 17:29:57 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/pages/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://makhal.fr/pages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>http://localhost:1313/pages/about/</link>
+      <link>https://makhal.fr/pages/about/</link>
       <pubDate>Wed, 25 Sep 2024 17:29:57 +0200</pubDate>
-      <guid>http://localhost:1313/pages/about/</guid>
+      <guid>https://makhal.fr/pages/about/</guid>
       <description>&lt;h1 id=&#34;mohamad-el-akhal-el-bouzidi&#34;&gt;Mohamad El Akhal El Bouzidi&lt;/h1&gt;&#xA;&lt;p&gt;Salut ! Je m&amp;rsquo;appelle Mohamad El Akhal El Bouzidi, et je suis un passionné de tout ce qui touche à l&amp;rsquo;informatique, particulièrement la cybersécurité et l&amp;rsquo;univers Linux. Actuellement étudiant en BUT Réseaux et Télécommunications avec une spécialisation en Cybersécurité, j&amp;rsquo;ai la chance de combiner théorie et pratique en travaillant en alternance comme Administrateur Systèmes et Réseaux chez Aditu.&lt;/p&gt;&#xA;&lt;p&gt;Mon parcours n’est pas juste guidé par les lignes de code ou les configurations réseau, mais par une vraie passion pour la sécurité informatique et un désir profond de contribuer positivement à ce domaine en constante évolution. J&amp;rsquo;aime découvrir comment les systèmes fonctionnent, trouver des moyens de les sécuriser, et surtout, partager mes connaissances avec ceux qui s&amp;rsquo;intéressent aussi à ce domaine fascinant.&lt;/p&gt;</description>
     </item>
   </channel>

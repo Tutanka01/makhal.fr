@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Détecteur d&#39;anomalies réseau IA pour Proxmox</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, proxmox, sentinelbox, IA'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/cyber/ai/sentinel/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Détecteur d&#39;anomalies réseau IA pour Proxmox">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Détecteur d&#39;anomalies réseau IA pour Proxmox">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/cyber/ai/sentinel/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/cyber/ai/sentinel/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/cyber/ai/sentinel/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> About </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> About </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Détecteur d&#39;anomalies réseau IA pour Proxmox</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            janvier 26, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/proxmox">proxmox</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/sentinelbox">sentinelbox</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/ia">IA</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p>Aujourd&rsquo;hui, je vais vous donner un retour d&rsquo;expérience complet sur un projet qui me tient à cœur : <strong>SentinelBox</strong> (le nom est mauvais oui, mais j&rsquo;ai du en trouver un&hellip;). Ici, je vais créer de A à Z un modèle d&rsquo;IA pour détecter les anomalies réseau sur un cluster Proxmox.</p>
+<p>Ce sera un article long et technique, mais je vais quand meme essayer de faire quelque chose de ludique. On va passer par la mise en place de l&rsquo;infrastructure Proxmox jusqu&rsquo;à la création du modèle d&rsquo;IA, et même sa mise en production avec Prometheus et Grafana. Je vous promets, ça va être une aventure où j&rsquo;apprendrai autant que vous, enfin je l&rsquo;espère en tout cas. Bon, assez de blabla, c&rsquo;est parti !</p>
+<blockquote>
+<p><strong>Disclaimer</strong> : Je ne suis pas un expert en IA, vraiment pas. Je suis juste un simple étudiant avec des idées, qui aime bien les partager. Si vous voyez des erreurs ou des points à améliorer, n’hésitez pas à me le dire, je suis là pour apprendre.</p>
+</blockquote>
+<h2 id="introduction"><strong>Introduction</strong></h2>
+<p>Ces dernières années, avec l’émergence de technologies comme ChatGPT, Gemini et d’autres, j’ai commencé à m’intéresser aux IA, surtout au côté <em><strong>LLM</strong></em> (Large Language Model – ce qui permet de générer du texte en fonction des inputs utilisateurs) et au <em><strong>NLP</strong></em> (Natural Language Processing). J’ai donc suivi quelques cours sur YouTube, lu des articles sur Medium et ailleurs et meme des theses sur <em><strong>arxive</strong></em>. Et franchement, c’est super intéressant.</p>
+<p>Même si je ne pense pas faire de l’IA mon métier, je me suis senti obligé d’en apprendre davantage. Dans cet article, je vais vous montrer comment j’ai réussi à créer un modèle d’IA pour détecter des anomalies réseau sur un cluster Proxmox. Ce modèle est assez modeste, entraîné sur un dataset que j’ai trouvé sur internet (je vais aussi vous expliquer comment créer votre propre dataset si besoin).</p>
+<p>Je préfère vous prévenir : les concepts peuvent paraître complexes, mais l’application que je vais vous présenter dans cet article tient en à peine 40 lignes de Python.</p>
+<p>Alors, pas de panique, on va y aller doucement !</p>
+<h2 id="lidee-du-projet">L&rsquo;idee du projet</h2>
+<p>L’objectif de ce projet est de déployer un système intelligent de détection d’anomalies réseau sur un cluster Proxmox, en combinant intelligence artificielle et quelque outils du monde des SysAdmin.</p>
+<p>L’idée centrale est de capturer le trafic réseau du cluster via des outils comme <em><strong>tcpdump</strong></em> et <em><strong>FluentD</strong></em>, puis de l’analyser en temps réel à l’aide d’un modèle d’IA entraîné pour distinguer les comportements normaux des activités suspectes (scans non autorisés, tentatives de DDoS, etc.). Le modèle, développé avec TensorFlow et des techniques de machine learning simplifiées, sera hébergé dans un conteneur Docker pour faciliter son déploiement et sa scalabilité .</p>
+<p>Le déploiement sur Docker facilite une future migration vers Kubernetes – idéal pour surveiller des clusters géants !.</p>
+<p>Les prédictions du modèle seront ensuite transmises à Prometheus pour l’agrégation des métriques, puis visualisées sur un dashboard Grafana. Enfin, un système d’alerte sera mis en place pour notifier les administrateurs en cas de détection d’anomalies (bonus).</p>
+<p>Voila une idee que j&rsquo;ai eu, je ne sais pas si c&rsquo;est faisable, mais je vais essayer de le faire. Ce post sera soit le recit d&rsquo;une reussite, soit le recit d&rsquo;un parcours d&rsquo;apprentissage, dans les deux cas j&rsquo;apprendrais moi, et vous aussi.</p>
+<h2 id="notre-infrastructure">Notre infrastructure</h2>
+<p>Pour ce projet, j&rsquo;ai decide de prendre un cluster Proxmox que j&rsquo;ai sous la main, c&rsquo;est un total de deux serveurs <em><strong>Lenovo ThinkCenter</strong></em>. Avec chaqu&rsquo;un 8go de RAM, donc rien de spectaculaire, mais c&rsquo;est suffisant pour ce que je veux faire.</p>
+<p>Voila un petit diagramme de notre infra:</p>
+<div class="mermaid">
+graph LR
+    subgraph Internet["Internet Cloud"]
+        I((Internet))
+    end
+
+    subgraph Network["Network Infrastructure"]
+        Router[Router]
+    end
+
+    subgraph Proxmox_Cluster["Proxmox Cluster"]
+        subgraph Server1["Lenovo ThinkCenter #1"]
+            PVE1[Proxmox VE]
+            Ubuntu1[Ubuntu VM]
+            PVE1 --> Ubuntu1
+        end
+
+        subgraph Server2["Lenovo ThinkCenter #2"]
+            PVE2[Proxmox VE]
+            Ubuntu2[Ubuntu VM]
+            PVE2 --> Ubuntu2
+        end
+
+        %% Cluster connection
+        PVE1 <--> |Cluster Link| PVE2
+    end
+
+    %% Network connections
+    Router -->|vmbr0| PVE1
+    Router -->|vmbr0| PVE2
+    Router -->|WAN| I
+    Ubuntu1 -.->|Network| I
+    Ubuntu2 -.->|Network| I
+
+    %% Styling
+    classDef server fill:#000,stroke:#000,stroke-width:2px;
+    classDef vm fill:#000,stroke:#000,stroke-width:1px;
+    classDef network fill:#000,stroke:#000,stroke-width:2px;
+    classDef internet fill:#000,stroke:#000,stroke-width:2px;
+
+    class PVE1,PVE2 server;
+    class Ubuntu1,Ubuntu2 vm;
+    class Router network;
+    class I internet;
+</div>
+<p>Donc une infra plutot classique avec un cluster Proxmox, un routeur et une connexion internet pour chaque VM. Si vous voulez plus de details sur comment est-ce que j&rsquo;ai mis en place ce cluster, n&rsquo;hesitez pas a me le dire, je ferais un autre article pour expliquer tout ça (parce que le router c&rsquo;est une VM dans mon pc perso, donc j&rsquo;en ai des choses a dire dessus).</p>
+<h2 id="installation-et-configuration-de-la-vm">Installation et configuration de la VM</h2>
+<p>Pour ce projet, j&rsquo;ai decide de creer une seule VM ubuntu 24.04 sur l&rsquo;ensemble de mon cluster. Cette VM sera notre machine de travail, c&rsquo;est ici que nous allons deployer notre modele IA, et les differents outils comme Prometheus et Grafana.</p>
+<p>ça sera une VM ubuntu 24.04 avec 2go de RAM et 40go de disque et 2 coeurs CPU, rien de special.</p>
+<p>Voila la config materielle de ma VM, vue depuis Proxmox :</p>
+<p><img src="/images/AI/ai1.png" alt="AI 1"></p>
+<p>Avant de commencer a capturer des paquets pour notre modele IA, on va d&rsquo;abord configurer la VM.</p>
+<p>On va installer Docker dessus, c&rsquo;est ce qui va nous permettre d&rsquo;heberger notre modele IA ainsi que grafana et prometheus. Pour cela on va suivre la documentation officielle de Docker, et on va l&rsquo;installer en utilisant le script officiel :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://get.docker.com -o get-docker.sh
+</span></span><span style="display:flex;"><span>sudo sh get-docker.sh
+</span></span></code></pre></div><p>Et juste avec cela, vous avez docker et meme docker compose de installer sur votre VM !</p>
+<h2 id="capturer-les-paquets-réseau">Capturer les paquets réseau</h2>
+<p>Maintenant passons a une etape un peu plus drole, nous devons maintenant capturer les paquets réseau qui circulent, pour essayer de definir ce qui est normal pour que apres notre modele IA puisse detecter ce qui n&rsquo;est pas normal.</p>
+<p>Pour cela on va utiliser l&rsquo;outil incontestable <em><strong>tcpdump</strong></em>, c&rsquo;est un outil qui permet de capturer les paquets réseau sur une interface donnee. On va donc capturer les paquets réseau sur l&rsquo;interface reseau du <em><strong>Proxmox</strong></em>, c&rsquo;est a dire <em><strong>vmbr0</strong></em>. Puis cette capture on va la sauvegarder dans un fichier <em><strong>.pcap</strong></em> pour pouvoir l&rsquo;analyser et utiliser plus tard.</p>
+<p>La syntaxe de tcpdump n&rsquo;est pas complique, on va juste lui dire de capturer les paquets sur l&rsquo;interface <em><strong>vmbr0</strong></em> et de les sauvegarder dans un fichier <em><strong>.pcap</strong></em> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo tcpdump -i vmbr0 -s <span style="color:#ae81ff">0</span> -w capture.pcap
+</span></span></code></pre></div><p>Lorsque on lance cette commande vous verrez quelque chose qui ressemble a cela :</p>
+<p><img src="/images/AI/ai2.png" alt="AI 2"></p>
+<p>Comme vous voyez dans l&rsquo;image j&rsquo;ai laisse tourner la commande pendant quelques minutes et j&rsquo;ai reussi a recuperer <em><strong>10414</strong></em> paquets.</p>
+<p>C&rsquo;est pas mal, mais c&rsquo;est pas assez pour entrainer un modele IA. Pour entrainer une modele IA il faut des milliers pour ne pas dire des millions de paquets. Donc pour cela on va utiliser un dataset que j&rsquo;ai trouve sur internet, c&rsquo;est un dataset qui contient des métriques agrégées (durée, nombre de paquets, etc.) pour chaque connexion, idéales pour entraîner notre modèle sans surcharge, ou il y a eu un scan de ports, c&rsquo;est tout ce qu&rsquo;il nous faut. Pour pouvoir differencier les paquets normaux des paquets anormaux.</p>
+<h2 id="entraîner-le-modèle-ia">Entraîner le modèle IA</h2>
+<p>Bon, là, on arrive à la partie vraiment sympa, le cœur du projet : <strong>l&rsquo;entraînement de notre intelligence artificielle !</strong></p>
+<p>Pour faire ça, on va sortir l&rsquo;artillerie lourde, enfin façon de parler, on va plutôt utiliser des outils : <strong>TensorFlow</strong>, et plus précisément un autre sous-librairie dedans qui s&rsquo;appelle <strong>TensorFlow Decision Forests</strong>.  Ces noms peuvent faire un peu peur au début, mais en fait, c&rsquo;est pas si compliqué que ça.  En gros, ce sont des librairies, qui vont nous aider à construire et à apprendre à notre modèle IA à faire son boulot de détection réseau.</p>
+<p><strong>Pourquoi on choisit TensorFlow et Decision Forests ?</strong></p>
+<p>Alors, TensorFlow, c&rsquo;est un peu le <strong>&ldquo;must-have&rdquo;</strong> dans le monde de l&rsquo;IA en ce moment.  C&rsquo;est un outil super puissant que Google a mis à disposition de tout le monde gratuitement.  C&rsquo;est un peu comme avoir une super boîte à outils remplie d&rsquo;outils géniaux pour construire toutes sortes de modèles IA, du plus simple au plus fou.  Pour nous, c&rsquo;est parfait, parce que c&rsquo;est solide, ça marche bien, et il y a plein de documentation si jamais on est bloqué.  En plus, TensorFlow, ça va nous servir non seulement pour entraîner notre IA, mais aussi pour la faire tourner après, quand elle sera en mode &ldquo;surveillance&rdquo; dans notre docker.</p>
+<p>Et dans TensorFlow, on va se concentrer sur un truc qui s&rsquo;appelle <strong>Decision Forests</strong>, ou en français &ldquo;Forêts d&rsquo;Arbres Décisionnels&rdquo;.  C&rsquo;est un peu technique comme nom, mais l&rsquo;idée est assez simple à comprendre.  Imagine que tu veux prendre une décision, par exemple, &ldquo;est-ce que ce trafic réseau est normal ou bizarre ?&rdquo;.  Tu peux te poser une série de questions : &ldquo;Est-ce que ça vient de cette adresse IP ?  Est-ce que ça utilise ce type de protocole ?  Est-ce que la taille des paquets est inhabituelle ?&rdquo;.  Un <strong>arbre de décision</strong>, c&rsquo;est un peu comme un arbre de questions comme ça.</p>
+<p>Et une <strong>forêt d&rsquo;arbres</strong>, c&rsquo;est plein d&rsquo;arbres qui donnent leur avis, et à la fin, on prend la décision majoritaire.</p>
+<p>Pourquoi on utilise ça, les forêts d&rsquo;arbres ?  Il y a plusieurs raisons :</p>
+<ul>
+<li><strong>C&rsquo;est assez rapide :</strong>  Pour entraîner ce type de modèle, ça va plutôt vite, même avec pas mal de données.  C&rsquo;est pratique, on n&rsquo;a pas besoin d&rsquo;attendre des heures.</li>
+<li><strong>C&rsquo;est pas hyper compliqué :</strong>  Comparé à d&rsquo;autres trucs d&rsquo;IA super complexes, les forêts d&rsquo;arbres, c&rsquo;est plus simple à comprendre et à mettre en place.  Pour commencer, c&rsquo;est top, on se prend pas trop la tête.</li>
+<li><strong>Ça marche bien avec nos données :</strong>  Les infos qu&rsquo;on va récupérer du trafic réseau, ça se présente souvent en tableaux, avec des colonnes (l&rsquo;adresse IP, le port, le protocole&hellip;).  Et les arbres de décision, ils sont super à l&rsquo;aise avec ce genre de données en tableau.</li>
+<li><strong>C&rsquo;est fort pour détecter les trucs bizarres :</strong>  Les forêts d&rsquo;arbres, ça apprend bien à voir ce qui est &ldquo;normal&rdquo; dans le trafic réseau.  Après, si y&rsquo;a un truc qui sort de l&rsquo;ordinaire, un truc qui ne ressemble pas à ce qu&rsquo;il a appris comme &ldquo;normal&rdquo;, hop, il peut nous le signaler comme une anomalie potentielle.</li>
+</ul>
+<p>Du coup, pour notre AI, on va utiliser un modèle qu&rsquo;on appelle <strong>Random Forest</strong>, c&rsquo;est un type de forêt d&rsquo;arbres très populaire et efficace.  C&rsquo;est un peu comme si on avait plein de petits détectives (les arbres) qui regardent chacun le trafic réseau sous un angle différent, et à la fin, ils mettent leurs conclusions en commun pour dire &ldquo;attention, là, y&rsquo;a un truc louche !&rdquo; ou &ldquo;tranquille, tout est normal&rdquo;.  C&rsquo;est plus solide qu&rsquo;un seul détective, forcément.</p>
+<p><strong>Nos données d&rsquo;entraînement, le fameux CIC-IDS2017</strong></p>
+<p>Pour que notre IA apprenne à détecter les anomalies, il faut lui montrer des exemples, lui donner des &ldquo;cours&rdquo;.  Pour ça, on va utiliser un dataset, un jeu de données, qui s&rsquo;appelle <strong>CIC-IDS2017</strong>.  C&rsquo;est un dataset un peu connu dans le monde de la sécurité réseau.  En gros, c&rsquo;est un enregistrement de trafic réseau, où il y a du trafic normal, mais aussi plein d&rsquo;attaques différentes (des attaques pour bloquer un serveur, des tentatives d&rsquo;intrusion, des scans de ports&hellip;).  C&rsquo;est pas le dataset parfait, il commence à dater un peu, mais pour nous, c&rsquo;est <strong>parfait pour démarrer et pour tester notre idée</strong>.  Ça va nous donner une base pour apprendre à notre modèle ce qui est normal et ce qui ne l&rsquo;est pas.</p>
+<p>Pour telecharger ce dataset vous l&rsquo;aurez sous format <em><strong>.parquet</strong></em> dans le lient suivant : <a href="https://www.kaggle.com/datasets/dhoogla/cicids2017/data">https://www.kaggle.com/datasets/dhoogla/cicids2017/data</a></p>
+<p>Et après ça, on a notre dataset nickel pour commencer à entraîner notre IA !</p>
+<h3 id="le-code-python-pour-entraîner-notre-ia">Le code Python pour entraîner notre IA</h3>
+<p>Le code Python que nous allons utiliser ressemble a cela :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> tensorflow <span style="color:#66d9ef">as</span> tf
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> tensorflow_decision_forests <span style="color:#66d9ef">as</span> tfdf
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.metrics <span style="color:#f92672">import</span> classification_report
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1. Charger les données</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_parquet(<span style="color:#e6db74">&#39;Portscan-Friday-no-metadata.parquet&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Prétraitement</span>
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;Label&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;Label&#39;</span>]<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Benign&#39;</span> <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>features <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>drop(<span style="color:#e6db74">&#39;Label&#39;</span>, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>labels <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;Label&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Split des données</span>
+</span></span><span style="display:flex;"><span>X_train, X_test, y_train, y_test <span style="color:#f92672">=</span> train_test_split(features, labels, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. Conversion pour TensorFlow</span>
+</span></span><span style="display:flex;"><span>train_ds <span style="color:#f92672">=</span> tfdf<span style="color:#f92672">.</span>keras<span style="color:#f92672">.</span>pd_dataframe_to_tf_dataset(
+</span></span><span style="display:flex;"><span>    X_train<span style="color:#f92672">.</span>join(y_train), 
+</span></span><span style="display:flex;"><span>    label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Label&#39;</span>,
+</span></span><span style="display:flex;"><span>    task<span style="color:#f92672">=</span>tfdf<span style="color:#f92672">.</span>keras<span style="color:#f92672">.</span>Task<span style="color:#f92672">.</span>CLASSIFICATION
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 5. Entraînement du modèle</span>
+</span></span><span style="display:flex;"><span>model <span style="color:#f92672">=</span> tfdf<span style="color:#f92672">.</span>keras<span style="color:#f92672">.</span>RandomForestModel(
+</span></span><span style="display:flex;"><span>    num_trees<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>,
+</span></span><span style="display:flex;"><span>    max_depth<span style="color:#f92672">=</span><span style="color:#ae81ff">12</span>,
+</span></span><span style="display:flex;"><span>    task<span style="color:#f92672">=</span>tfdf<span style="color:#f92672">.</span>keras<span style="color:#f92672">.</span>Task<span style="color:#f92672">.</span>CLASSIFICATION,
+</span></span><span style="display:flex;"><span>    verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>fit(train_ds)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 6. Sauvegarde pour TensorFlow Serving</span>
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>save(<span style="color:#e6db74">&#39;saved_model&#39;</span>, save_format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;tf&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 7. Évaluation</span>
+</span></span><span style="display:flex;"><span>test_ds <span style="color:#f92672">=</span> tfdf<span style="color:#f92672">.</span>keras<span style="color:#f92672">.</span>pd_dataframe_to_tf_dataset(
+</span></span><span style="display:flex;"><span>    X_test<span style="color:#f92672">.</span>join(y_test),
+</span></span><span style="display:flex;"><span>    label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Label&#39;</span>,
+</span></span><span style="display:flex;"><span>    task<span style="color:#f92672">=</span>tfdf<span style="color:#f92672">.</span>keras<span style="color:#f92672">.</span>Task<span style="color:#f92672">.</span>CLASSIFICATION
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>y_pred <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>predict(test_ds)
+</span></span><span style="display:flex;"><span>y_pred <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span> <span style="color:#66d9ef">if</span> p <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0.5</span> <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> y_pred]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Rapport de classification:&#34;</span>)
+</span></span><span style="display:flex;"><span>print(classification_report(y_test, y_pred))
+</span></span></code></pre></div><p>Une petite explication du code s&rsquo;impose :</p>
+<ol>
+<li>Tout d&rsquo;abord <strong>il charge les données :</strong>  Il prend notre dataset CIC-IDS2017 (le fichier Parquet) il faudra bien entendu l&rsquo;importer dans google collab.</li>
+<li><strong>Il prépare un peu les données :</strong>  Il fait un peu de ménage, il transforme une colonne qui dit si c&rsquo;est normal ou une attaque en chiffres (0 et 1, plus simple pour l&rsquo;IA).</li>
+<li><strong>Il sépare les données :</strong>  Il coupe notre dataset en deux tas.  Un tas pour l&rsquo;entraînement, pour que l&rsquo;IA apprenne, et un autre tas pour tester après, pour voir si l&rsquo;IA a bien compris la leçon.</li>
+<li><strong>Il entraîne le modèle Random Forest :</strong>  Là, c&rsquo;est le moment où l&rsquo;IA apprend vraiment !  Avec <code>tensorflow_decision_forests</code>, on lui dit &ldquo;entraîne-toi sur ces données, apprends à reconnaître le trafic normal et anormal&rdquo;.  On lui donne quelques réglages, comme le nombre de &ldquo;détectives&rdquo; (d&rsquo;arbres) et leur profondeur de réflexion (la profondeur des arbres).</li>
+<li><strong>Il teste le modèle :</strong>  Une fois entraîné, on lui donne le tas de données qu&rsquo;il n&rsquo;a jamais vu (l&rsquo;autre moitie du dataset).  On regarde s&rsquo;il arrive à bien détecter les anomalies, si ses prédictions sont justes.</li>
+<li><strong>Il sauvegarde le modèle :</strong>  Si l&rsquo;examen est réussi, on enregistre notre modèle IA entraîné.  On le met dans une boîte (un format spécial, <code>saved_model</code>) pour pouvoir le réutiliser après dans notre container Docker.</li>
+</ol>
+<p>Ce code nous allons le lancer dans google collab (Un genre de jupyter notebook ou google nous donne gratuitement une grande puissance de calcul, c&rsquo;est beaucoup utilise par les gens qui font du Data science et meme de l&rsquo;IA). Ce qui va nous permettre de profiter de la puissance de google collab pour entrainer notre modele.</p>
+<p>Avant de lancer le code bien entendu il faut installer les dependances, pour cela il va suffir de mettre un bloc de code au dessus du code python qui ressemble a cela :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>!pip install tensorflow_decision_forests pyarrow scikit-learn
+</span></span></code></pre></div><p>Et voila, il va suffir maintenant d&rsquo;executer le code de toutes les cellules, dans le menu <em>Execution</em>. Et vous devriez voir quelque chome comme cela :</p>
+<p><img src="/images/AI/ai3.png" alt="AI 3"></p>
+<p>Ici on peut voir que notre modele a une Précision Globale (accuracy) de <em><strong>99.97%</strong></em>, ce qui est excellent !! Donc Seulement 7 erreurs sur 23 905 tests. Ce qui est juste incroyble.</p>
+<p>Voilà !  Après tout ça, on a notre modèle IA entraîné et emballé, <strong>prêt à être lâché sur notre réseau Proxmox pour faire son boulot !</strong>.</p>
+<p>Maintenant, la prochaine grosse étape, c&rsquo;est de <strong>sortir notre modèle IA de Google Colab et de le mettre au travail dans notre VM Proxmox</strong>.  Parce que pour l&rsquo;instant, il est un peu au chaud dans le cloud de Google, mais nous, on veut qu&rsquo;il surveille <em>notre</em> réseau, <em>notre</em> Proxmox.</p>
+<h2 id="déploiement-du-modèle-dans-notre-vm">Déploiement du modèle dans notre VM</h2>
+<p>Alors, la première chose qu&rsquo;on va faire, c&rsquo;est de se connecter en SSH à notre VM Ubuntu qu&rsquo;on a préparée.  Une fois qu&rsquo;on est connecté en ligne de commande dans notre VM, on va commencer par créer un petit coin où ranger tous les fichiers de notre projet SentinelBox. On va faire ça avec une commande toute simple :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir sentinelbox <span style="color:#f92672">&amp;&amp;</span> cd sentinelbox
+</span></span></code></pre></div><p>En gros, avec cette ligne, on crée un dossier qu&rsquo;on a appelé <code>sentinelbox</code>.</p>
+<p>Maintenant, on va utiliser Docker pour heberger tous les outils qu&rsquo;on va utiliser. Si vous n&rsquo;avez jamais entendu de docker de votre vie, j&rsquo;ai une serie ou je presente Docker :</p>
+<p><a href="/posts/docker/docker_1/">Docker partie 1</a></p>
+<p>En résumé si jamais vous ne voulez pas aller voir mon post, Docker, c&rsquo;est un peu comme des boîtes, des &ldquo;containers&rdquo;, dans lesquelles on va pouvoir mettre notre modèle IA, Prometheus, Grafana, et tout ce dont on a besoin pour SentinelBox.  L&rsquo;avantage, c&rsquo;est que chaque boîte est isolée, bien rangée, et surtout, <strong>super facile à installer et à lancer</strong>.  Plus besoin de se prendre la tête avec des installations compliquées, Docker fait presque tout le boulot pour nous.</p>
+<p>Pour piloter tout ça avec Docker, on va utiliser un outil qui s&rsquo;appelle <strong>Docker Compose</strong>.  Docker Compose, c&rsquo;est un peu le chef d&rsquo;orchestre de nos containers Docker.  Avec un simple fichier de configuration, qu&rsquo;on va créer juste après, Docker Compose va se charger de lancer tous nos containers dans le bon ordre, de les connecter entre eux, et de faire en sorte que tout fonctionne ensemble comme sur des roulettes.</p>
+<p>Alors, la première chose à faire, c&rsquo;est de créer ce fameux fichier de configuration pour Docker Compose.  On va l&rsquo;appeler <code>compose.yaml</code>. Dans le dossier <code>sentinelbox</code> qu&rsquo;on vient de créer :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nano compose.yaml
+</span></span></code></pre></div><p>Et là, dans ce fichier vide, on va coller notre docker compose. Accroche-vous, je vous montre le code, et après je vous explique ce que ça fait :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">tensorflow-serving</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">tensorflow/serving:latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;8501:8501&#34;</span> <span style="color:#75715e"># Port pour les requêtes gRPC et REST</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./models:/models </span> <span style="color:#75715e"># Monte un volume local pour les modèles</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">MODEL_NAME</span>: <span style="color:#ae81ff">sentinel_model</span> <span style="color:#75715e"># Nom du modèle (important pour les requêtes)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">prometheus</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">prom/prometheus:latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;9090:9090&#34;</span> <span style="color:#75715e"># Port d&#39;accès à l&#39;interface Prometheus</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./prometheus.yml:/etc/prometheus/prometheus.yml</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">depends_on</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">tensorflow-serving</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">grafana</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">grafana/grafana:latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;3000:3000&#34;</span> <span style="color:#75715e"># Port d&#39;accès à l&#39;interface Grafana</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">grafana-data:/var/lib/grafana</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">depends_on</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">prometheus</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">grafana-data</span>: <span style="color:#75715e"># Volume pour persister les données Grafana</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">models</span>: <span style="color:#75715e"># Volume pour les modèles</span>
+</span></span></code></pre></div><p>Bon, ça peut paraître un peu barbare comme ça, mais en fait, c&rsquo;est assez logique.  On va décortiquer ça ensemble :</p>
+<ul>
+<li><strong><code>services:</code> :</strong>  Là, on dit à Docker Compose qu&rsquo;on va lancer plusieurs &ldquo;services&rdquo;, plusieurs boîtes Docker, qui vont travailler ensemble.  Dans notre cas, on en a trois principaux :
+<ul>
+<li><strong><code>tensorflow-serving:</code> :</strong>  C&rsquo;est ici qu&rsquo;on va mettre notre modèle IA !  <code>tensorflow-serving</code> c&rsquo;est un outil de Google fait exprès pour faire tourner des modèles TensorFlow comme le nôtre.
+<ul>
+<li><code>image: tensorflow/serving:latest-cpu</code> :  Ça dit à Docker de prendre une image Docker déjà toute prête qui contient TensorFlow Serving.</li>
+<li><code>ports: - &quot;8501:8501&quot;</code> :  Ça, c&rsquo;est pour dire que notre container TensorFlow Serving va être accessible depuis l&rsquo;extérieur de la VM sur le port 8501. On utilisera ce port pour envoyer des données à notre modèle IA pour qu&rsquo;il les analyse.</li>
+<li><code>volumes: - ./models:/models</code> :  Là, c&rsquo;est super important !  On dit à Docker de connecter un dossier de notre VM, <code>./models</code> (le dossier <code>models</code> qui est dans le même répertoire que <code>docker-compose.yml</code>), à un dossier à l&rsquo;intérieur du container, <code>/models</code>.  En gros, tout ce qu&rsquo;on mettra dans le dossier <code>models</code> de notre VM sera accessible par TensorFlow Serving dans son container.  C&rsquo;est là qu&rsquo;on va mettre notre modèle IA !</li>
+<li><code>environment: MODEL_NAME: sentinel_model</code> :  Ça, c&rsquo;est une petite variable d&rsquo;environnement qu&rsquo;on donne à TensorFlow Serving.  On lui dit que le nom de notre modèle, c&rsquo;est <code>sentinel_model</code>.  On aura besoin de ce nom plus tard.</li>
+</ul>
+</li>
+<li><strong><code>prometheus:</code> :</strong>  Prometheus, c&rsquo;est un outil qu&rsquo;on va utiliser pour surveiller le fonctionnement de SentinelBox.  Il va collecter des informations (des &ldquo;métriques&rdquo;) sur TensorFlow Serving, pour qu&rsquo;on puisse voir si tout va bien, s&rsquo;il y a des erreurs, etc.
+<ul>
+<li><code>image: prom/prometheus:latest</code> :  Comme pour TensorFlow Serving, on prend une image Docker Prometheus déjà prête.</li>
+<li><code>ports: - &quot;9090:9090&quot;</code> :  Prometheus sera accessible sur le port 9090. On utilisera un navigateur web pour voir son interface.</li>
+<li><code>volumes: - ./prometheus.yml:/etc/prometheus/prometheus.yml</code> :  Là aussi, on connecte un fichier de notre VM, <code>./prometheus.yml</code> (qu&rsquo;on va créer après), à un fichier de configuration de Prometheus dans le container, <code>/etc/prometheus/prometheus.yml</code>.  C&rsquo;est dans <code>prometheus.yml</code> qu&rsquo;on va dire à Prometheus quoi surveiller.</li>
+<li><code>depends_on: - tensorflow-serving</code> :  Ça, c&rsquo;est pour dire à Docker Compose que Prometheus doit démarrer <strong>après</strong> TensorFlow Serving.  Parce que Prometheus a besoin de TensorFlow Serving pour faire son boulot de surveillance.</li>
+</ul>
+</li>
+<li><strong><code>grafana:</code> :</strong>  Grafana, c&rsquo;est l&rsquo;outil qui va nous permettre de visualiser les informations collectées par Prometheus.  On va créer des jolis graphiques, des tableaux de bord, pour voir en un coup d&rsquo;œil ce qui se passe dans SentinelBox.
+<ul>
+<li><code>image: grafana/grafana:latest</code> :  Image Docker Grafana toute prête.</li>
+<li><code>ports: - &quot;3000:3000&quot;</code> :  Grafana accessible sur le port 3000. Interface web aussi.</li>
+<li><code>volumes: - grafana-data:/var/lib/grafana</code> :  Ici, au lieu de connecter un fichier précis, on utilise un &ldquo;volume nommé&rdquo; Docker, <code>grafana-data</code>.  Docker va créer un espace de stockage spécial pour Grafana, et il conservera les données de Grafana même si on arrête et redémarre le container.  C&rsquo;est pratique pour garder nos tableaux de bord configurés.</li>
+<li><code>depends_on: - prometheus</code> :  Grafana démarre après Prometheus, logique, il a besoin de Prometheus pour afficher des données.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>volumes:</code> :</strong>  En bas, on définit les &ldquo;volumes nommés&rdquo; qu&rsquo;on utilise, ici juste <code>grafana-data</code>.  Et on redéfinit aussi <code>models</code>, même si c&rsquo;est pas obligatoire ici, c&rsquo;est plus propre.</li>
+</ul>
+<p>Bon, je sais, ça fait beaucoup d&rsquo;infos d&rsquo;un coup.  Mais l&rsquo;idée principale, c&rsquo;est que ce fichier <code>docker-compose.yml</code>, c&rsquo;est la recette complète pour lancer notre SentinelBox avec Docker.  On va avoir trois containers qui tournent ensemble : TensorFlow Serving (avec notre IA), Prometheus (pour la surveillance), et Grafana (pour la visualisation).</p>
+<p>Maintenant on va <em><strong>pull</strong></em> toutes les images de notre compose, pour cela il faut simplement taper la commande :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker compose pull
+</span></span></code></pre></div><p>Vous aurez quelque chose quiva ressembler a cela :</p>
+
+
+<style>
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 850px; /* Limite la largeur maximale de la vidéo */
+    height: auto;
+    margin: 0 auto; /* Centre la vidéo horizontalement */
+  }
+
+  .video-container video {
+    width: 100%; /* La vidéo prendra 100% de la largeur du conteneur */
+    height: auto; /* La hauteur sera ajustée proportionnellement */
+  }
+</style>
+
+<div class="video-container">
+  <video src="/images/AI/dockerpull.mp4" controls></video>
+</div>
+
+<h2 id="déploiement-du-modèle-dans-notre-vm-suite-et-fin-">Déploiement du modèle dans notre VM (suite et fin !)</h2>
+<p>Mettons maintenant notre modèle IA au bon endroit pour que <code>TensorFlow Serving</code> puisse le trouver.  Comme nous l&rsquo;avons vu dans notre fichier <code>compose.yaml</code>, nous avons défini un volume qui lie un dossier local de notre VM, <code>./models</code>,  au dossier <code>/models</code> à l&rsquo;intérieur du container <code>tensorflow-serving</code>.</p>
+<p>Il faut donc créer ce dossier <code>models</code> à la racine de votre dossier <code>sentinelbox</code>, si ce n&rsquo;est pas déjà fait.  Ensuite, à l&rsquo;intérieur de ce dossier <code>models</code>, nous devons créer un sous-dossier nommé <code>sentinel_model</code>.  Cette structure, <code>models/sentinel_model/1/</code>, est la convention attendue par TensorFlow Serving pour organiser les versions de modèles.</p>
+<p>Si vous avez bien suivi, nous avons entraîné notre modèle IA dans Google Colab et nous l&rsquo;avons sauvegardé dans un dossier nommé <code>saved_model</code>.  Il faut maintenant <strong>copier le contenu du dossier <code>saved_model</code> (tout le contenu, pas le dossier lui-même)</strong> dans le dossier <code>models/sentinel_model/1/</code> de votre VM.</p>
+<p>Vous pouvez utiliser <code>scp</code>, ou votre outil de transfert de fichiers préféré pour réaliser cette opération.  Assurez-vous de bien copier tous les fichiers et dossiers qui se trouvent à l&rsquo;intérieur de <code>saved_model</code> dans <code>models/1/</code>.</p>
+<p>Une fois cette copie effectuée, vérifiez que la structure de vos dossiers ressemble bien à ceci :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── compose.yaml
+</span></span><span style="display:flex;"><span>├── models
+</span></span><span style="display:flex;"><span>│   └── sentinel_model
+</span></span><span style="display:flex;"><span>│       └── <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>│           ├── assets
+</span></span><span style="display:flex;"><span>│           │   ├── e6004b5eb87f4508data_spec.pb
+</span></span><span style="display:flex;"><span>│           │   ├── e6004b5eb87f4508done
+</span></span><span style="display:flex;"><span>│           │   ├── e6004b5eb87f4508header.pb
+</span></span><span style="display:flex;"><span>│           │   ├── e6004b5eb87f4508nodes-00000-of-00001
+</span></span><span style="display:flex;"><span>│           │   └── e6004b5eb87f4508random_forest_header.pb
+</span></span><span style="display:flex;"><span>│           ├── fingerprint.pb
+</span></span><span style="display:flex;"><span>│           ├── keras_metadata.pb
+</span></span><span style="display:flex;"><span>│           ├── saved_model.pb
+</span></span><span style="display:flex;"><span>│           └── variables
+</span></span><span style="display:flex;"><span>│               ├── variables.data-00000-of-00001
+</span></span><span style="display:flex;"><span>│               └── variables.index
+</span></span><span style="display:flex;"><span>└── prometheus.yml
+</span></span></code></pre></div><p>(La présence du dossier <code>assets</code> peut varier en fonction de votre modèle et de la manière dont il a été sauvegardé).  L&rsquo;important est de voir <code>saved_model.pb</code> et le dossier <code>variables</code> dans <code>models/1/</code>.</p>
+<p>Bien entendu il ne faut oublier le <code>prometheus.yml</code> sinon le container prometheus va refuser de demarrer le contenu de ce fichier sera le suivant :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>     <span style="color:#f92672">global</span>:
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">scrape_interval</span>:     <span style="color:#ae81ff">15s</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">evaluation_interval</span>: <span style="color:#ae81ff">15s</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">scrape_configs</span>:
+</span></span><span style="display:flex;"><span>       - <span style="color:#f92672">job_name</span>: <span style="color:#e6db74">&#39;tensorflow-serving&#39;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">static_configs</span>:
+</span></span><span style="display:flex;"><span>           - <span style="color:#f92672">targets</span>: [<span style="color:#e6db74">&#39;tensorflow-serving:8501&#39;</span>] <span style="color:#75715e"># Nom du service Docker et port TensorFlow Serving</span>
+</span></span></code></pre></div><p>Rien de bien complique donc je me reserve le fait de le commenter :) &hellip;</p>
+<p><strong>Lancement de SentinelBox avec Docker Compose</strong></p>
+<p>Dans le même répertoire <code>sentinelbox</code> où se trouvent votre fichier <code>compose.yaml</code> et votre dossier <code>models</code>, il suffit de lancer la commande magique :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker compose up -d
+</span></span></code></pre></div><p><code>docker compose up</code>, c&rsquo;est la commande qui dit à Docker Compose de démarrer tous les services définis dans <code>compose.yaml</code>.  L&rsquo;option <code>-d</code> permet de lancer les containers en mode &ldquo;detached&rdquo;, c&rsquo;est-à-dire en arrière-plan.  Votre terminal sera donc libéré, et les containers continueront de tourner en tâche de fond.</p>
+<p>Docker Compose va maintenant se charger de :</p>
+<ol>
+<li>Créer les volumes Docker (comme <code>grafana-data</code>).</li>
+<li>Lancer le container <code>tensorflow-serving</code> en utilisant l&rsquo;image <code>tensorflow/serving:latest</code> et en montant le volume <code>./models:/models</code>.</li>
+<li>Lancer le container <code>prometheus</code> en utilisant l&rsquo;image <code>prom/prometheus:latest</code>, en montant le volume <code>./prometheus.yml:/etc/prometheus/prometheus.yml</code> et en s&rsquo;assurant qu&rsquo;il démarre après <code>tensorflow-serving</code>.</li>
+<li>Lancer le container <code>grafana</code> en utilisant l&rsquo;image <code>grafana/grafana:latest</code>, en utilisant le volume <code>grafana-data</code> et en s&rsquo;assurant qu&rsquo;il démarre après <code>prometheus</code>.</li>
+</ol>
+<p>Vous devriez voir un affichage dans votre terminal qui indique la création des containers et leur démarrage.  Pour vérifier que tout s&rsquo;est bien passé, vous pouvez utiliser la commande :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker compose ps
+</span></span></code></pre></div><p>Et vous devriez voir quelque chose qui ressemble a cela :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>NAME                               IMAGE                       COMMAND                  SERVICE              CREATED          STATUS          PORTS
+</span></span><span style="display:flex;"><span>sentinelbox-grafana-1              grafana/grafana:latest      <span style="color:#e6db74">&#34;/run.sh&#34;</span>                grafana              <span style="color:#ae81ff">22</span> minutes ago   Up <span style="color:#ae81ff">21</span> minutes   0.0.0.0:3000-&gt;3000/tcp, :::3000-&gt;3000/tcp
+</span></span><span style="display:flex;"><span>sentinelbox-prometheus-1           prom/prometheus:latest      <span style="color:#e6db74">&#34;/bin/prometheus --c…&#34;</span>   prometheus           <span style="color:#ae81ff">22</span> minutes ago   Up <span style="color:#ae81ff">21</span> minutes   0.0.0.0:9090-&gt;9090/tcp, :::9090-&gt;9090/tcp
+</span></span><span style="display:flex;"><span>sentinelbox-tensorflow-serving-1   tensorflow/serving:latest   <span style="color:#e6db74">&#34;/usr/bin/tf_serving…&#34;</span>   tensorflow-serving   <span style="color:#ae81ff">22</span> minutes ago   Up <span style="color:#ae81ff">21</span> minutes   8500/tcp, 0.0.0.0:8501-&gt;8501/tcp, :::8501-&gt;8501/tcp
+</span></span></code></pre></div><blockquote>
+<p>Attention ! Pour le container tensorflow-serving j&rsquo;ai du changer le type de CPU par host sur proxmox, sinon le docker refusait de demarrer !</p>
+</blockquote>
+<p>Cette commande vous donnera l&rsquo;état des containers lancés par Docker Compose.  Vous devriez voir <code>tensorflow-serving</code>, <code>prometheus</code> et <code>grafana</code> avec le statut &ldquo;Up&rdquo; ou &ldquo;running&rdquo;.  Si jamais un container a un problème, son statut vous l&rsquo;indiquera, et vous pourrez examiner les logs avec la commande <code>docker compose logs &lt;nom_du_service&gt;</code> (par exemple, <code>docker compose logs tensorflow-serving</code>).</p>
+<h2 id="test-du-modele">Test du modele</h2>
+<p>Maintenant, il nous reste encore une chose à faire avant d’aller sur Grafana : <em><strong>tester</strong></em> le modèle.</p>
+<p>Pour cela, nous avons une magnifique API qui va nous permettre de discuter avec notre modèle d’IA et ainsi obtenir une réponse pour savoir s’il détecte ce type de trafic comme malicieux ou non.</p>
+<p>Pour le tester, nous allons utiliser une commande curl. Cette commande va envoyer un paquet créé par nous-mêmes, uniquement à des fins de test.</p>
+<p>Voici à quoi ressemble la commande curl :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -d <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;instances&#34;: [
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;ACK_Flag_Count&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Active_Max&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Active_Mean&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Active_Min&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Active_Std&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Avg_Bwd_Segment_Size&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Avg_Fwd_Segment_Size&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Avg_Packet_Size&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Bwd_Avg_Bulk_Rate&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Bwd_Avg_Bytes/Bulk&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Bwd_Avg_Packets/Bulk&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Bwd_Header_Length&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Bwd_IAT_Max&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Bwd_IAT_Mean&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Bwd_IAT_Min&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Bwd_IAT_Std&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Bwd_IAT_Total&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Bwd_PSH_Flags&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Bwd_Packet_Length_Max&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Bwd_Packet_Length_Mean&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Bwd_Packet_Length_Min&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Bwd_Packet_Length_Std&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Bwd_Packets/s&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Bwd_Packets_Length_Total&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Bwd_URG_Flags&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;CWE_Flag_Count&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Down/Up_Ratio&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;ECE_Flag_Count&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;FIN_Flag_Count&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Flow_Bytes/s&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Flow_Duration&#34;: 1200000,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Flow_IAT_Max&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Flow_IAT_Mean&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Flow_IAT_Min&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Flow_IAT_Std&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Flow_Packets/s&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_Act_Data_Packets&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_Avg_Bulk_Rate&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_Avg_Bytes/Bulk&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_Avg_Packets/Bulk&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_Header_Length&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_IAT_Max&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_IAT_Mean&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_IAT_Min&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_IAT_Std&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_IAT_Total&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_PSH_Flags&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_Packet_Length_Max&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_Packet_Length_Mean&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_Packet_Length_Min&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_Packet_Length_Std&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_Packets/s&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_Packets_Length_Total&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_Seg_Size_Min&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Fwd_URG_Flags&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Idle_Max&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Idle_Mean&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Idle_Min&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Idle_Std&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Init_Bwd_Win_Bytes&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Init_Fwd_Win_Bytes&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;PSH_Flag_Count&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Packet_Length_Max&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Packet_Length_Mean&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Packet_Length_Min&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Packet_Length_Std&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Packet_Length_Variance&#34;: 0.0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Protocol&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;RST_Flag_Count&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;SYN_Flag_Count&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Subflow_Bwd_Bytes&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Subflow_Bwd_Packets&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Subflow_Fwd_Bytes&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Subflow_Fwd_Packets&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Total_Backward_Packets&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Total_Fwd_Packets&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;URG_Flag_Count&#34;: 0
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        ]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    http://localhost:8501/v1/models/sentinel_model:predict
+</span></span></code></pre></div><p>Oui je sais elle est tres longue, mais pour faire marcher les predictions du modele on doit mettre toutes les valeurs aves lesquelles il a ete entraine, peut etre il y a un moyen de ne mettre que certains champs, mais j&rsquo;ai pas su comment faire&hellip;</p>
+<p>En tout cas dans l&rsquo;etat ça marche, donc voila a quoi ressemble le retour que vous devriez avoir :</p>
+
+
+<style>
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 850px; /* Limite la largeur maximale de la vidéo */
+    height: auto;
+    margin: 0 auto; /* Centre la vidéo horizontalement */
+  }
+
+  .video-container video {
+    width: 100%; /* La vidéo prendra 100% de la largeur du conteneur */
+    height: auto; /* La hauteur sera ajustée proportionnellement */
+  }
+</style>
+
+<div class="video-container">
+  <video src="/images/AI/predic.mp4" controls></video>
+</div>
+
+<p>ça marche !!!</p>
+<p><img src="/images/AI/xCSs2rQ.gif" alt="alt text"></p>
+<p>Avec ce résultat, on peut déduire que le paquet envoyé a 0,08 (ou 8 %) de chances d’être malicieux. C’est logique, car j’ai utilisé des valeurs aléatoires, et la majorité sont des zéros.</p>
+<p>Donc, jusque-là, notre modèle fonctionne et est bien en vie !</p>
+<h2 id="et-maintenant-">Et maintenant ?</h2>
+<p>Félicitations ! Si tout s&rsquo;est déroulé comme prévu, vous avez maintenant SentinelBox qui tourne sur votre VM Proxmox, grâce à Docker Compose.  Nous avons déployé notre modèle IA, Prometheus pour la surveillance, et Grafana pour la visualisation.</p>
+<p>Dans le prochain article, nous allons enfin pouvoir accéder aux interfaces web de Prometheus et Grafana pour vérifier que tout fonctionne correctement.  Nous allons également commencer à configurer Prometheus pour qu&rsquo;il surveille TensorFlow Serving, et Grafana pour visualiser les métriques.  Et bien sûr, l&rsquo;étape cruciale, nous allons envoyer du trafic réseau à notre SentinelBox pour voir si notre IA de détection d&rsquo;anomalies fait bien son travail (en dehors des donnees de test)</p>
+<p>Si vous avez des remarques ou des suggestions, n&rsquo;hesitez pas a m&rsquo;en faire part !</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/sysadmin/proxmox-cloud-init/">
+            &#8592;
+            :
+            Proxmox Cloud-Init le guide complet
+        </a>
+    </p>
+    <p class="prev-post-date">
+        janvier 21, 2025
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>
