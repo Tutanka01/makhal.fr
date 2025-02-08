@@ -2,16 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://makhal.fr/tags/docker/</loc>
+    <lastmod>2025-02-08T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/mail/</loc>
+    <lastmod>2025-02-08T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/mailcow/</loc>
+    <lastmod>2025-02-08T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/posts/sysadmin/mailcow/</loc>
+    <lastmod>2025-02-08T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/</loc>
+    <lastmod>2025-02-08T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/posts/</loc>
+    <lastmod>2025-02-08T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/sysadmin/</loc>
+    <lastmod>2025-02-08T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/</loc>
+    <lastmod>2025-02-08T08:10:45+02:00</lastmod>
+  </url><url>
     <loc>https://makhal.fr/posts/cyber/ai/sentinel/</loc>
     <lastmod>2025-01-26T08:05:49+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/ia/</loc>
-    <lastmod>2025-01-26T08:05:49+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/</loc>
-    <lastmod>2025-01-26T08:05:49+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/posts/</loc>
     <lastmod>2025-01-26T08:05:49+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/proxmox/</loc>
@@ -20,16 +38,10 @@
     <loc>https://makhal.fr/tags/sentinelbox/</loc>
     <lastmod>2025-01-26T08:05:49+01:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/</loc>
-    <lastmod>2025-01-26T08:05:49+01:00</lastmod>
-  </url><url>
     <loc>https://makhal.fr/tags/cloud-init/</loc>
     <lastmod>2025-01-21T18:10:45+02:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/posts/sysadmin/proxmox-cloud-init/</loc>
-    <lastmod>2025-01-21T18:10:45+02:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/sysadmin/</loc>
     <lastmod>2025-01-21T18:10:45+02:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/virtualisation/</loc>
@@ -51,9 +63,6 @@
     <lastmod>2024-12-08T11:01:10+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/devops/</loc>
-    <lastmod>2024-12-02T04:12:10+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/docker/</loc>
     <lastmod>2024-12-02T04:12:10+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/kubernetes/</loc>
@@ -132,9 +141,6 @@
     <lastmod>2024-02-10T06:16:53+02:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/posts/old/messagerie/dmark_dkim_spf/</loc>
-    <lastmod>2024-01-28T08:47:49+02:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/mail/</loc>
     <lastmod>2024-01-28T08:47:49+02:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/postfix/</loc>

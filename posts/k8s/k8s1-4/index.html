@@ -17,19 +17,19 @@
     
 
     
-    <title>Le deploiement sur Kubernetes</title>
+    <title>GitOps avec Kubernetes</title>
     <meta name="description" content="">
-    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, kubernetes, docker, devops'>
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, kubernetes, docker, devops, gitops'>
 
     <meta property="og:url" content="http://localhost:1313/posts/k8s/k8s1-4/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Le deploiement sur Kubernetes">
+    <meta property="og:title" content="GitOps avec Kubernetes">
     <meta property="og:description" content="">
     <meta property="og:image" content="http://localhost:1313/images/avatar.jpg">
     <meta property="og:image:secure_url" content="http://localhost:1313/images/avatar.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Le deploiement sur Kubernetes">
+    <meta name="twitter:title" content="GitOps avec Kubernetes">
     <meta name="twitter:description" content="">
     <meta property="twitter:domain" content="http://localhost:1313/posts/k8s/k8s1-4/">
     <meta property="twitter:url" content="http://localhost:1313/posts/k8s/k8s1-4/">
@@ -146,10 +146,10 @@
 <main id="content">
     <div class="post container">
     <div class="post-header-section">
-        <h1>Le deploiement sur Kubernetes</h1>
+        <h1>GitOps avec Kubernetes</h1>
         <small role="doc-subtitle"></small>
         <p class="post-date">
-            janvier 7, 2025
+            janvier 28, 2025
         </p>
 
         <ul class="post-tags">
@@ -160,92 +160,14 @@
         
             <li class="post-tag"><a href="http://localhost:1313/tags/devops">devops</a></li>
         
+            <li class="post-tag"><a href="http://localhost:1313/tags/gitops">gitops</a></li>
+        
         </ul>
     </div>
 
     <div class="post-content">
         <p>
-            <p>Taches a faire pour ce post :</p>
-<ul>
-<li><input disabled="" type="checkbox"> Parler des fichiers yaml</li>
-<li><input disabled="" type="checkbox"> Parler des commandes kubectl un peu plus en detail</li>
-<li><input disabled="" type="checkbox"> Commencer a deployer l&rsquo;application qu&rsquo;on a cree</li>
-</ul>
-<h2 id="introduction">Introduction</h2>
-<p>Bonjour a tous et bienvenus dans cet nouvel article qui est la continuite de notre serie sur Kubernetes. Dans cet article on va finalement deployer notre application  que nous avons cree dans le <a href="/posts/k8s/k8s1-3">post</a> precedent et on va la deployer sur notre cluster. Si vous n&rsquo;avez pas encore lu l&rsquo;article precedent, je vous invite a le faire en cliquant <a href="/posts/k8s/k8s1-3">ici</a>.</p>
-<p>Dans cet article on va parler des commandes qui vont nous permettre d&rsquo;interagir avec notre cluster Kubernetes, ces commandes la vont nous permettre de deployer notre application, de la mettre a jour, de la supprimer, etc. Mais vu qu&rsquo;on est feignant, on va aussi parler des fichiers yaml qui vont nous permettre de faire tout ca de maniere plus simple et plus organisee.</p>
-<h2 id="les-types-dobjet-kubernetes">Les types d&rsquo;objet Kubernetes</h2>
-<p>Avant de commencer a parler des commandes et des fichiers yaml, je suis oblige de vous faire passer un peu de theorie. Kubernetes est compose de differentes &ldquo;choses&rdquo; qu&rsquo;on peut creer.</p>
-<p>Ces choses la sont appelees des objets Kubernetes, et il y a plusieurs types d&rsquo;objets Kubernetes, chaque objet Kubernetes a un role bien defini dans le cluster. Voila une liste des objets Kubernetes les plus utilises :</p>
-<ul>
-<li>
-<p><strong>Pod</strong> : Un pod est l&rsquo;objet le plus basique sur Kubernetes, c&rsquo;est un conteneur ou un groupe de conteneurs qui partagent un meme espace de stockage, un meme reseau et un meme cycle de vie.</p>
-</li>
-<li>
-<p><strong>Service</strong> : Un service est un objet Kubernetes qui va permettre de faire communiquer les differents pods entre eux, il va permettre de faire du load balancing, de la decouverte de services, etc.</p>
-</li>
-<li>
-<p><strong>Deployment</strong> : Un deployment est un objet Kubernetes qui va permettre de deployer des pods, il va permettre de definir le nombre de replicas qu&rsquo;on veut, il va permettre de definir des strategies de deploiement, etc.</p>
-</li>
-</ul>
-<blockquote>
-<p>Nous en tant que admin du cluster on ne va jamais creer des pods directement, on va toujours creer des deployments qui vont creer des pods pour nous.</p>
-</blockquote>
-<h2 id="les-fichiers-yaml">Les fichiers yaml</h2>
-<p>Les fichiers yaml c&rsquo;est un standard pour definir des configurations, ces fichiers yaml vous pouvez les trouver un peu partout dans le monde du devops, que ce soit pour definir des configurations d&rsquo;applications, des configurations CI/CD&hellip; et bien evidemment des configurations Kubernetes.</p>
-<p>Les fichiers yaml ont plusiers caracteristiques, qui sont propres a yaml uniquement, comme par exemple la possibilite de definir des listes, des dictionnaires, des variables, des references, etc. C&rsquo;est un format tres flexible et tres puissant. Ce format a quand meme plusiers inconvenients, comme par exemple le fait qu&rsquo;il est tres sensible a l&rsquo;indentation, vraiment tres sensible, donc il faut faire tres attention a ça.</p>
-<p>Sur Kubernetes les fichiers yaml sont tres importants, car c&rsquo;est grace a ces fichiers que vous allez pouvoir deployer vos applications, definir vos services, vos secrets, vos volumes, etc. Donc il est tres important de bien comprendre comment fonctionne les fichiers yaml sur Kubernetes. Voila un exemple d&rsquo;un deploiemnt tres basique sur Kubernetes :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx-deployment</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">selector</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">matchLabels</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">app</span>: <span style="color:#ae81ff">nginx</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">template</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">metadata</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">labels</span>:
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">app</span>: <span style="color:#ae81ff">nginx</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">spec</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">containers</span>:
-</span></span><span style="display:flex;"><span>            - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx</span>
-</span></span></code></pre></div><p>Dans cet exemple j&rsquo;ai simplement defini un deployment qui va deployer un pod avec un container nginx. Pour vous faire comprendre, je vais vous expliquer ligne par ligne ce que fait ce fichier yaml :</p>
-<ul>
-<li><code>apiVersion: apps/v1</code> : Cette ligne est specifique aux fichiers yaml ou on definit des deploiemnts, elle indique la version de l&rsquo;api Kubernetes qu&rsquo;on utilise. l&rsquo;apiVersion va changer en fonction de l&rsquo;objet Kubernetes qu&rsquo;on veut creer. Voila un tableau qui resume les apiVersions pour les objets les plus utilises sur Kubernetes :</li>
-</ul>
-<table>
-  <thead>
-      <tr>
-          <th>Objet Kubernetes</th>
-          <th>apiVersion</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Pod</td>
-          <td>v1</td>
-      </tr>
-      <tr>
-          <td>Service</td>
-          <td>v1</td>
-      </tr>
-      <tr>
-          <td>Deployment</td>
-          <td>apps/v1</td>
-      </tr>
-      <tr>
-          <td>StatefulSet</td>
-          <td>apps/v1</td>
-      </tr>
-      <tr>
-          <td>DaemonSet</td>
-          <td>apps/v1</td>
-      </tr>
-  </tbody>
-</table>
+            <p>Bonjour a tous, dnas ce p</p>
 
         </p>
         
@@ -271,14 +193,14 @@
                 
 <div class="prev-post">
     <p>
-        <a href="/posts/cyber/poc/analyse-ransom/">
+        <a href="/posts/cyber/ai/sentinel/">
             &#8592;
             :
-            Analyse d&#39;une attaque de ransomware
+            Détecteur d&#39;anomalies réseau IA pour Proxmox
         </a>
     </p>
     <p class="prev-post-date">
-        décembre 9, 2024
+        janvier 26, 2025
     </p>
 </div>
 

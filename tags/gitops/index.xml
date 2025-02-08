@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gitops on makhal.fr</title>
+    <link>http://localhost:1313/tags/gitops/</link>
+    <description>Recent content in Gitops on makhal.fr</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Tue, 28 Jan 2025 04:12:10 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gitops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitOps avec Kubernetes</title>
+      <link>http://localhost:1313/posts/k8s/k8s1-4/</link>
+      <pubDate>Tue, 28 Jan 2025 04:12:10 +0100</pubDate>
+      <guid>http://localhost:1313/posts/k8s/k8s1-4/</guid>
+      <description>Dans cet article, nous allons voir comment mettre en place un pipeline GitOps avec Kubernetes.</description>
+    </item>
+  </channel>
+</rss>
