@@ -59,7 +59,7 @@
     </script>
     
     
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
     
     
 </head>
@@ -174,8 +174,7 @@
 <p>L&rsquo;idée derrière cet article est de vous guider à travers toutes les étapes d&rsquo;une cyberattaque de type ransomware, de sa conception à son analyse. Pour rendre cela plus concret, j&rsquo;ai imaginé un scénario fictif, soutenu par des machines réelles et des configurations bien établies.</p>
 <p>À la fin, nous utiliserons Wazuh pour analyser ce qui s&rsquo;est réellement passé et comprendre comment détecter efficacement ce genre d&rsquo;attaques grâce à ses outils puissants.</p>
 <blockquote>
-<p><em><strong>Note importante</strong></em> : Ce projet est à but exclusivement éducatif. Je décline toute responsabilité quant à l&rsquo;utilisation malveillante des informations ou du code présentés dans cet article.</p>
-</blockquote>
+<p><em><strong>Note importante</strong></em> : Ce projet est à but exclusivement éducatif. Je décline toute responsabilité quant à l&rsquo;utilisation malveillante des informations ou du code présentés dans cet article.</p></blockquote>
 <h2 id="scenario">Scenario</h2>
 <p>Un utilisateur nommé Mohamad reçoit un email alléchant l&rsquo;informant qu&rsquo;il a gagné un lot de délicieux pains au chocolat. Ravi, il suit les instructions et télécharge un fichier Excel à remplir pour obtenir son prix. Mais en l&rsquo;ouvrant, il découvre une mauvaise surprise : tous les fichiers de son dossier Documents sont chiffrés. Un message apparaît, exigeant une rançon pour récupérer ses données.</p>
 <p>Ce scénario va nous permettre d&rsquo;explorer les étapes suivantes :</p>
@@ -260,16 +259,14 @@ Service Relation Client</p>
 </span></span><span style="display:flex;"><span>    shellApp.Run tempFilePath, <span style="color:#ae81ff">1</span>, False
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> Sub
 </span></span></code></pre></div><blockquote>
-<p>Voila le lient du script original : <a href="https://raw.githubusercontent.com/ravi5hanka/Excel-Malware-Maverick/refs/heads/main/excel-macro-MAL.vba">Excel Macro</a></p>
-</blockquote>
+<p>Voila le lient du script original : <a href="https://raw.githubusercontent.com/ravi5hanka/Excel-Malware-Maverick/refs/heads/main/excel-macro-MAL.vba">Excel Macro</a></p></blockquote>
 <p>Donc rien de compliqué : cette macro va s&rsquo;exécuter dès qu&rsquo;on ouvre le fichier Excel. Elle va télécharger un fichier <em><strong>JeSuisSimpa.exe</strong></em> depuis le serveur de notre attaquant et l&rsquo;exécuter. Je vous laisse imaginer ce que fait ce fichier <em><strong>JeSuisSimpa.exe</strong></em>. (Je vais vous spoiler : il chiffre tous les fichiers de la victime).</p>
 <p>Mais cette attaque dépend d&rsquo;un critère <em><strong>essentiel</strong></em> : que notre victime ait activé les macros <em><strong>VBA</strong></em> sur son <em>Excel</em>. Donc, soit elle appuie sur le bouton Activer les macros, soit elle a déjà activé n&rsquo;importe quelle macro dans le passé, et dans ce cas, la macro s&rsquo;exécutera automatiquement sans même lui demander sa permission.</p>
 <h2 id="etape-3--le-ransomware">Etape 3 : Le ransomware</h2>
 <p>Ah, le ransomware ! Je sais que vous avez tous attendu cette étape avec impatience. Le ransomware est au cœur de notre attaque, c&rsquo;est lui qui va chiffrer tous les fichiers de notre victime et lui demander une rançon pour les récupérer.</p>
 <p>Pour notre scénario, j&rsquo;ai décidé de créer un ransomware très basique. Bien entendu, je ne vais pas utiliser des ransomwares créés par les grands criminels, qui, par ailleurs, sont facilement trouvables sur Internet. Au contraire, je vais écrire mon propre ransomware pour que vous puissiez voir à quel point il est facile de créer un code pouvant causer de nombreux dégâts.</p>
 <blockquote>
-<p><em><strong>Note</strong></em> : S&rsquo;il vous plaît, je vous en prie, ne développez pas ce code sur votre machine personnelle, et encore moins ne l&rsquo;exécutez. Une fausse commande peut arriver très rapidement, et vous pourriez perdre tous vos fichiers. Même si, comme vous allez le voir, je vais afficher la clé de déchiffrement, je vous assure que ce n&rsquo;est pas une bonne idée.</p>
-</blockquote>
+<p><em><strong>Note</strong></em> : S&rsquo;il vous plaît, je vous en prie, ne développez pas ce code sur votre machine personnelle, et encore moins ne l&rsquo;exécutez. Une fausse commande peut arriver très rapidement, et vous pourriez perdre tous vos fichiers. Même si, comme vous allez le voir, je vais afficher la clé de déchiffrement, je vous assure que ce n&rsquo;est pas une bonne idée.</p></blockquote>
 <p>Pour créer notre ransomware, je vais utiliser Python et plus précisément la librairie <em><strong>cryptography</strong></em>. Celle-ci va nous permettre de chiffrer les fichiers dans un répertoire de données. Avant de commencer à coder, je vous présente la logique globale de notre ransomware :</p>
 <p>Génération de la clef :</p>
 <ul>

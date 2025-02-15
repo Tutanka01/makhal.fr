@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>C&#39;est quoi un système distribué ?</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, sysadmin, Infra, secops, devops'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/sysadmin/distibuted-systems/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="C&#39;est quoi un système distribué ?">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="C&#39;est quoi un système distribué ?">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/sysadmin/distibuted-systems/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/sysadmin/distibuted-systems/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/sysadmin/distibuted-systems/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> About </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> About </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>C&#39;est quoi un système distribué ?</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            février 15, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/sysadmin">sysadmin</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/infra">Infra</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/secops">secops</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/devops">devops</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p>Les systèmes distribués, sont au cœur de la plupart des applications modernes. Peu importe où vous allez sur internet, vous utilisez probablement un système distribué sans même le savoir. Mais c&rsquo;est ça la beauté de ces systèmes, ils sont transparents pour l&rsquo;utilisateur final.</p>
+<p>Mais au juste, c&rsquo;est quoi un système distribué ?</p>
+<p><img src="/images/sysadmin/distributed-systems/wall.png" alt="alt text"></p>
+<h2 id="quest-ce-quun-système-distribué-">Qu&rsquo;est-ce qu&rsquo;un système distribué ?</h2>
+<p>Avant de répondre à cette question, il faut comprendre d&rsquo;où vient ce concept. Au début, les ordinateurs étaient conçus pour être autonomes. Même les premiers serveurs web et bases de données, c&rsquo;était des machines qui tournaient toutes seules.</p>
+<p>Mais les besoins ont évolué. Une seule machine, ça ne suffit plus. Ces serveurs doivent répondre à une demande de plus en plus grande chaque jour, et ils ont des limites, par définition. Ils ne peuvent pas gérer tout le stockage, tous les calculs, ou garantir une disponibilité parfaite tout seuls.</p>
+<p>Les données deviennent de plus en plus volumineuses, la demande de rapidité, et l&rsquo;exigence des utilisateurs quant à la disponibilité des services, ont poussé les entreprises à revoir leur architecture et d&rsquo;innover dans la matière. C&rsquo;est là que les systèmes distribués sont nés.</p>
+<p>Un système distribué est un ensemble de composants informatiques autonomes (ordinateurs, serveurs, etc.) situés sur différents nœuds d&rsquo;un réseau, qui communiquent et coordonnent leurs actions en s&rsquo;échangeant des messages, afin d&rsquo;apparaître comme un système unique et cohérent pour l&rsquo;utilisateur final.</p>
+<p>La création de ce genre de système a permis d&rsquo;accélérer les traitements, de réduire les coûts, et d&rsquo;améliorer la disponibilité des services. Mais néanmoins, cela a aussi apporté son lot de problèmes.</p>
+<h2 id="quels-sont-les-avantages-des-systèmes-distribués-">Quels sont les avantages des systèmes distribués ?</h2>
+<p>L&rsquo;une des raisons principales pour lesquelles on adore les systèmes distribués dans le monde de l&rsquo;IT, c&rsquo;est la redondance. Tout bon sysadmin le sait : une machine, ça peut lâcher n&rsquo;importe quand. Si nous avons qu&rsquo;un seul serveur et qu&rsquo;il tombe, c&rsquo;est fini, plus de service. Avec un système distribué, si une machine tombe, les autres peuvent prendre le relais. L&rsquo;idée, c&rsquo;est d&rsquo;avoir un système tolérant aux pannes. Idéalement, chaque machine devrait être indépendante et pouvoir tourner sans les autres. Mais en réalité, c&rsquo;est plus compliqué que ça, et ça dépend beaucoup de comment le système est architecturé. Il y a souvent des dépendances, même si on essaie de les minimiser.</p>
+<p>La scalabilité, c&rsquo;est aussi un énorme concept dans les systèmes distribués. Comme on l&rsquo;a dit, on ne peut pas booster une seule machine à l&rsquo;infini – rajouter des disques durs, de la RAM, ça a des limites. C&rsquo;est ce qu&rsquo;on appelle scaler verticalement. Mais avec les systèmes distribués, on peut scaler horizontalement, et ajouter un très, très grand nombre de serveurs. Surtout dans notre ère où le cloud comme AWS, a rendu ça très simple. En quelques clics, on peut avoir une nouvelle instance de serveur qui tourne. C&rsquo;est ça qui permet à des entreprises comme Netflix et Facebook de gérer des milliards d&rsquo;utilisateurs en même temps.</p>
+<p>Par exemple lorsque Netflix sort une nouvelle série, ils savent que des millions de personnes vont la regarder en même temps. Et pour éviter que le service tombe en panne, donc des clients malheureux, ils ajoutent des serveurs, c&rsquo;est ce qu&rsquo;on appelle des nœuds, pour pouvoir répondre à la demande. Une fois la demande passée, ils peuvent retirer ces serveurs, et ainsi économiser de l&rsquo;argent. C&rsquo;est ce qu&rsquo;on appelle le scaling horizontal, et de l&rsquo;infrastructure on demand.</p>
+<p>Mais cela ne veut pas dire que les systèmes distribués sont la solution à tout. Ils ont aussi des inconvénients. Beaucoup d&rsquo;inconvénients.</p>
+<h2 id="quels-sont-les-inconvénients-des-systèmes-distribués-">Quels sont les inconvénients des systèmes distribués ?</h2>
+<p>Le premier inconvénient majeur, c&rsquo;est la complexité. Plus on a de machines, plus c&rsquo;est un cauchemar à gérer. Il ne suffit pas qu&rsquo;elles communiquent : il faut gérer la latence du réseau, détecter les pannes partielles (quand certaines machines répondent et d&rsquo;autres non), et s&rsquo;assurer que tout le monde est d&rsquo;accord. Déployer des mises à jour sur des centaines ou des milliers de serveurs sans tout casser, c&rsquo;est un défi en soi. Et la sécurité ? Avec autant de nœuds, la surface d&rsquo;attaque est énorme. Si un nœud tombe en panne, il faut le remplacer immédiatement, et de manière transparente pour l&rsquo;utilisateur. Heureusement, on a des outils de monitoring, de déploiement automatisé, bref, tout l&rsquo;arsenal DevOps, pour nous aider.</p>
+<p>Et puis, il y a la consistance des données. Imaginez que nous avons des copies de données sur plusieurs nœuds (c&rsquo;est la réplication). Le défi, c&rsquo;est de garantir que toutes ces copies restent synchronisées, surtout quand plusieurs utilisateurs modifient les mêmes données en même temps. Par exemple, si deux personnes mettent à jour le solde d&rsquo;un compte bancaire en même temps sur deux nœuds différents, comment peut-on s&rsquo;assurer que le résultat final est correct ? C&rsquo;est là qu&rsquo;on parle de consistance forte (tout le monde voit la même chose au même moment) ou de consistance éventuelle (les données finiront par être cohérentes, mais il peut y avoir un délai). C&rsquo;est un problème fondamental des systèmes distribués, et il n&rsquo;y a pas de solution miracle.</p>
+<h2 id="théorème-de-cap">Théorème de CAP</h2>
+<p>Avant de conclure, j&rsquo;aimerais vous donner un avant-goût de la théorie des systèmes distribués. Il y a un théorème très connu, appelé le théorème de CAP (ou théorème de Brewer), qui dit que dans un système distribué, on ne peut garantir que deux des trois propriétés suivantes :</p>
+<ul>
+<li>
+<p>Cohérence (Consistency) : C&rsquo;est le &ldquo;C&rdquo; de CAP. Ça veut dire que tous les nœuds voient les mêmes données au même moment. Si vous faites une lecture, vous êtes sûr d&rsquo;obtenir la dernière version écrite. C&rsquo;est comme si vous aviez une seule copie des données, même si en réalité, il y en a plusieurs.</p>
+</li>
+<li>
+<p>Disponibilité (Availability) : C&rsquo;est le &ldquo;A&rdquo;. Ça signifie que chaque requête reçoit une réponse, sans garantie que cette réponse contienne la dernière version écrite. En gros, le système répond toujours, même s&rsquo;il n&rsquo;est pas sûr d&rsquo;avoir les données les plus récentes.</p>
+</li>
+<li>
+<p>Tolérance au partitionnement (Partition tolerance) : C&rsquo;est le &ldquo;P&rdquo;. C&rsquo;est un peu plus technique, mais imaginez que le réseau entre vos nœuds tombe en panne (une &ldquo;partition&rdquo;). La tolérance au partitionnement signifie que le système continue de fonctionner malgré cette coupure. Les nœuds de chaque côté de la partition peuvent continuer à travailler indépendamment.</p>
+</li>
+</ul>
+<p>Alors, quel est le piège ? Le piège, c&rsquo;est qu&rsquo;on ne peut pas avoir les trois en même temps. Il faut choisir. Si vous voulez la cohérence et la disponibilité, vous sacrifiez la tolérance au partitionnement (ce qui est impossible dans un système réellement distribué, où les pannes réseau sont inévitables). Si vous voulez la cohérence et la tolérance au partitionnement, vous sacrifiez la disponibilité (le système peut refuser de répondre pour éviter de donner des données obsolètes). Et si vous voulez la disponibilité et la tolérance au partitionnement, vous sacrifiez la cohérence (vous acceptez que les données puissent être temporairement incohérentes).</p>
+<p>C&rsquo;est un compromis fondamental. Il n&rsquo;y a pas de &ldquo;bonne&rdquo; réponse. Le choix dépend de votre application. Pour une banque, la cohérence est souvent primordiale (on ne veut pas perdre d&rsquo;argent !). Pour un réseau social, la disponibilité peut être plus importante (on préfère que le site réponde, même si les données ne sont pas parfaitement à jour).</p>
+<p>Le théorème CAP, c&rsquo;est un peu la &ldquo;loi de la gravité&rdquo; des systèmes distribués. On ne peut pas l&rsquo;ignorer. Il faut comprendre les compromis qu&rsquo;il implique pour concevoir des systèmes robustes et adaptés à nos besoins. C&rsquo;est un sujet fascinant, et on pourrait en parler pendant des heures&hellip; mais ce sera pour un prochain post !</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Jusqu&rsquo;à là, je vous remercie d&rsquo;avoir lu cet article. J&rsquo;espère que vous avez appris quelque chose sur les systèmes distribués. C&rsquo;est un sujet vaste et complexe, mais aussi passionnant. Si vous avez des questions, n&rsquo;hésitez pas à me les poser directement sur LinkedIn. Je serais ravi de vous répondre.</p>
+<p>À bientôt !</p>
+
+        </p>
+        
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/sysadmin/mailcow/">
+            &#8592;
+            :
+            Mailcow le serveur mail tout-en-un
+        </a>
+    </p>
+    <p class="prev-post-date">
+        février 8, 2025
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Distributed Systems on makhal.fr</title>
+    <link>http://localhost:1313/tags/distributed-systems/</link>
+    <description>Recent content in Distributed Systems on makhal.fr</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Sat, 15 Feb 2025 08:10:45 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/distributed-systems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tout ce que vous devez savoir sur les systèmes distribués</title>
+      <link>http://localhost:1313/posts/sysadmin/distibuted-systems/</link>
+      <pubDate>Sat, 15 Feb 2025 08:10:45 +0200</pubDate>
+      <guid>http://localhost:1313/posts/sysadmin/distibuted-systems/</guid>
+      <description>Dans cet article, nous allons vous expliquer ce qu&amp;rsquo;est un système distribué, pourquoi il est important et comment il fonctionne.</description>
+    </item>
+  </channel>
+</rss>

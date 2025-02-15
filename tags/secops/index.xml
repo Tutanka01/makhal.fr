@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SecOPS on makhal.fr</title>
+    <title>Secops on makhal.fr</title>
     <link>https://makhal.fr/tags/secops/</link>
-    <description>Recent content in SecOPS on makhal.fr</description>
+    <description>Recent content in Secops on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Thu, 22 Aug 2024 09:05:49 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 15 Feb 2025 08:10:45 +0200</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/secops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#39;est quoi un système distribué ?</title>
+      <link>https://makhal.fr/posts/sysadmin/distibuted-systems/</link>
+      <pubDate>Sat, 15 Feb 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/sysadmin/distibuted-systems/</guid>
+      <description>Ici je vais vous expliquer ce qu&amp;rsquo;est un système distribué. Et quelques exemples.</description>
+    </item>
     <item>
       <title>Découverte de Wazuh Partie 4</title>
       <link>https://makhal.fr/posts/cyber/decouverte_siem_4/</link>

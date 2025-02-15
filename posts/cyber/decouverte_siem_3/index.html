@@ -59,7 +59,7 @@
     </script>
     
     
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
     
     
 </head>
@@ -185,8 +185,7 @@
 <p><img src="/images/SIEM/Ajout-agent/Ajout_agent2.png" alt="Ajout Agent 2"></p>
 <p>Tout d&rsquo;abord, il faudra sélectionner l&rsquo;OS de notre agent. Pour nous, notre premier agent sera un Windows 10. Ici, nous sélectionnons <em><strong>MSI 32/64 bits</strong></em>. Puis, dans <em><strong>Server Address</strong></em>, il faut mettre l&rsquo;adresse du Wazuh-Manager !</p>
 <blockquote>
-<p>Si jamais vous êtes sur différents nœuds, l&rsquo;adresse sera forcément différente de celle de votre Dashboard, faites attention !!</p>
-</blockquote>
+<p>Si jamais vous êtes sur différents nœuds, l&rsquo;adresse sera forcément différente de celle de votre Dashboard, faites attention !!</p></blockquote>
 <p>Si nous descendons un peu plus bas, nous devons remplir ces deux champs :</p>
 <p><img src="/images/SIEM/Ajout-agent/Ajout_agent3.png" alt="Ajout Agent 3"></p>
 <p>Ici, nous devons d&rsquo;abord donner un nom <em><strong>UNIQUE</strong></em> à notre agent. Une fois que vous aurez décidé quel nom mettre, il faudra l&rsquo;assigner au groupe Windows créé un peu plus haut.</p>
@@ -213,8 +212,7 @@
 <h2 id="première-découverte-des-fonctionnalités-wazuh">Première découverte des fonctionnalités Wazuh</h2>
 <p>Maintenant que nous avons nos agents qui envoient des logs de nos machines vers le <em><strong>wazuh-server</strong></em>, nous pouvons commencer à découvrir à vol d&rsquo;oiseau (pas dans les détails) toutes les fonctionnalités que Wazuh peut nous proposer.</p>
 <blockquote>
-<p>Ne vous inquiétez pas, plus tard dans de futurs posts, nous irons 1000 fois plus dans les détails.</p>
-</blockquote>
+<p>Ne vous inquiétez pas, plus tard dans de futurs posts, nous irons 1000 fois plus dans les détails.</p></blockquote>
 <p>Tout d&rsquo;abord, nous allons nous diriger vers la page principale de notre Wazuh-Dashboard en appuyant simplement sur le logo en haut à droite.</p>
 <p><img src="/images/SIEM/Wazuh-Dashboards/Dashboard-Principal-1.png" alt="Dashboard Principal"></p>
 <p>J&rsquo;ai entouré en rouge tous les éléments que je considère importants. Bien entendu, je ne peux pas tout montrer. De plus, je n&rsquo;ai pas d&rsquo;environnement Office 365 sous la main, donc nous allons nous concentrer principalement sur les fonctionnalités de base.</p>
@@ -231,8 +229,7 @@
 <p>Entre autres, définissent cette note.</p>
 <p>Passons maintenant à autre chose, parlons de la partie <em><strong>Vulnerability Detection</strong></em>. Ici, nous allons pouvoir savoir si une de nos machines est exposée à une vulnérabilité, que ce soit à cause d&rsquo;un logiciel installé sur la machine ou de l&rsquo;OS lui-même. Cependant, il faut activer cette fonctionnalité <em><strong>manuellement</strong></em> car elle consomme pas mal de ressources sur l&rsquo;hôte et sur le serveur.</p>
 <blockquote>
-<p>Cela était nécessaire seulement sur les anciennes versions. Pour la nouvelle version de Wazuh, le <em><strong>Vulnerability Detection</strong></em> est activé par défaut !</p>
-</blockquote>
+<p>Cela était nécessaire seulement sur les anciennes versions. Pour la nouvelle version de Wazuh, le <em><strong>Vulnerability Detection</strong></em> est activé par défaut !</p></blockquote>
 <p>Une fois que nous l&rsquo;aurons soit activée, soit constatée qu&rsquo;elle l&rsquo;est par défaut, nous allons aller dans l&rsquo;onglet <em><strong>Vulnerability Detection</strong></em> :</p>
 <p><img src="/images/SIEM/Wazuh-Dashboards/VulnDect-Dashboard.png" alt="Dashboard Vulnérabilité"></p>
 <p>Là, nous constatons que ma machine (Debian/Linux), fraîchement déployée, a plus de 63 vulnérabilités critiques ?! Bon, faisons comme si de rien n&rsquo;était.</p>
@@ -249,8 +246,7 @@
 <p>Donc, rien à prendre à la légère. Si nous allons dans le module <em><strong>Threat Hunting</strong></em> de Wazuh, nous trouvons un très beau Dashboard qui nous montre les alertes principales que Wazuh considère comme importantes :</p>
 <p><img src="/images/SIEM/Wazuh-Dashboards/Th-Hunt-Dashboard-1.png" alt="Threat Hunting 1"></p>
 <blockquote>
-<p>Bien entendu, tous les Dashboards sont personnalisables, donc encore un point positif pour Wazuh !</p>
-</blockquote>
+<p>Bien entendu, tous les Dashboards sont personnalisables, donc encore un point positif pour Wazuh !</p></blockquote>
 <p>Dans ce genre de Dashboard, on peut voir les alertes, les connexions réussies, le top des agents ayant des alertes, entre autres&hellip;</p>
 <p>Et ce qui est très sympa avec Wazuh, c&rsquo;est qu&rsquo;il fait une corrélation entre l&rsquo;alerte et une règle <em><strong>Mitre ATT&amp;CK</strong></em>, ce qui peut grandement nous aider à mieux classifier les alertes.</p>
 <h2 id="conclusion">Conclusion</h2>

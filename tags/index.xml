@@ -6,8 +6,36 @@
     <description>Recent content in Tags on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sat, 08 Feb 2025 08:10:45 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 15 Feb 2025 08:10:45 +0200</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Devops</title>
+      <link>https://makhal.fr/tags/devops/</link>
+      <pubDate>Sat, 15 Feb 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/tags/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Infra</title>
+      <link>https://makhal.fr/tags/infra/</link>
+      <pubDate>Sat, 15 Feb 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/tags/infra/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Secops</title>
+      <link>https://makhal.fr/tags/secops/</link>
+      <pubDate>Sat, 15 Feb 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/tags/secops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sysadmin</title>
+      <link>https://makhal.fr/tags/sysadmin/</link>
+      <pubDate>Sat, 15 Feb 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/tags/sysadmin/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Docker</title>
       <link>https://makhal.fr/tags/docker/</link>
@@ -30,17 +58,17 @@
       <description></description>
     </item>
     <item>
-      <title>Sysadmin</title>
-      <link>https://makhal.fr/tags/sysadmin/</link>
-      <pubDate>Sat, 08 Feb 2025 08:10:45 +0200</pubDate>
-      <guid>https://makhal.fr/tags/sysadmin/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>IA</title>
       <link>https://makhal.fr/tags/ia/</link>
       <pubDate>Sun, 26 Jan 2025 08:05:49 +0100</pubDate>
       <guid>https://makhal.fr/tags/ia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Machine Learning</title>
+      <link>https://makhal.fr/tags/machine-learning/</link>
+      <pubDate>Sun, 26 Jan 2025 08:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/tags/machine-learning/</guid>
       <description></description>
     </item>
     <item>
@@ -100,13 +128,6 @@
       <description></description>
     </item>
     <item>
-      <title>Devops</title>
-      <link>https://makhal.fr/tags/devops/</link>
-      <pubDate>Mon, 02 Dec 2024 04:12:10 +0100</pubDate>
-      <guid>https://makhal.fr/tags/devops/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Kubernetes</title>
       <link>https://makhal.fr/tags/kubernetes/</link>
       <pubDate>Mon, 02 Dec 2024 04:12:10 +0100</pubDate>
@@ -132,13 +153,6 @@
       <link>https://makhal.fr/tags/pulumi/</link>
       <pubDate>Wed, 30 Oct 2024 06:40:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/pulumi/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SecOPS</title>
-      <link>https://makhal.fr/tags/secops/</link>
-      <pubDate>Thu, 22 Aug 2024 09:05:49 +0100</pubDate>
-      <guid>https://makhal.fr/tags/secops/</guid>
       <description></description>
     </item>
     <item>

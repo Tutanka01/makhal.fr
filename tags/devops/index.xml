@@ -6,8 +6,15 @@
     <description>Recent content in Devops on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Mon, 02 Dec 2024 04:12:10 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 15 Feb 2025 08:10:45 +0200</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#39;est quoi un système distribué ?</title>
+      <link>https://makhal.fr/posts/sysadmin/distibuted-systems/</link>
+      <pubDate>Sat, 15 Feb 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/sysadmin/distibuted-systems/</guid>
+      <description>Ici je vais vous expliquer ce qu&amp;rsquo;est un système distribué. Et quelques exemples.</description>
+    </item>
     <item>
       <title>Le debut d&#39;une grande aventure K8s</title>
       <link>https://makhal.fr/posts/k8s/k8s1-3/</link>

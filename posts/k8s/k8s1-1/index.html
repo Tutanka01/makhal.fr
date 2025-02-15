@@ -59,7 +59,7 @@
     </script>
     
     
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
     
     
 </head>
@@ -200,15 +200,13 @@
 <h2 id="avant-de-commencer">Avant de commencer</h2>
 <p>Bien entendu, pour pouvoir utiliser Kubernetes, il faut avoir des connaissances en conteneurisation et en conteneurs. Si vous n&rsquo;avez pas ces connaissances, je vous conseille de lire mon post sur Docker, qui est un outil qui permet de créer des conteneurs. Et qui est très utilisé dans le monde de Kubernetes.</p>
 <blockquote>
-<p><a href="https://makhal.fr/posts/docker/docker_1/">Docker pour les débutants</a></p>
-</blockquote>
+<p><a href="https://makhal.fr/posts/docker/docker_1/">Docker pour les débutants</a></p></blockquote>
 <h2 id="comment-ça-marche-">Comment ça marche ?</h2>
 <p>Maintenant que vous savez ce que c&rsquo;est et pourquoi c&rsquo;est utile, on va voir comment ça marche. Pour cela je vais suivre une methode appele &ldquo;top-down approach&rdquo;, qui consiste a regarder les choses en plusieurs etapes, vue d&rsquo;oiseux, vue de haut d&rsquo;un immeuble, vu a pied, et ainsi de suite. Cela j&rsquo;ai trouve c&rsquo;est la meilleure façon d&rsquo;apprendre car elle va donner l&rsquo;eau a la bouche aux gens qui debutent pour aller encore plus en detail.</p>
 <p>Kubernets c&rsquo;est base sur un fonctionnement simple, on a un Patron et on a des Employes. Le patron s&rsquo;appelle &ldquo;Control-Plane&rdquo; ce control-plane est ni plus ni moins qu&rsquo;un serveur, virtualise ou non, qui va gerer tout ce qui se passe dans sa propriete (cluster), il va s&rsquo;occuper de trois choses principalement, avant de parler de ça je vous laisse une petite image qui l&rsquo;explique :</p>
 <p><img src="/images/k8s/diagramme_k8s.png" alt="Image_k8s_1"></p>
 <blockquote>
-<p><a href="https://www.cncf.io/wp-content/uploads/2020/09/Kubernetes-architecture-diagram-1-1-1024x698.png">Source</a></p>
-</blockquote>
+<p><a href="https://www.cncf.io/wp-content/uploads/2020/09/Kubernetes-architecture-diagram-1-1-1024x698.png">Source</a></p></blockquote>
 <p>On constate qu&rsquo;il y a trois elements <strong>ESSENTIELS</strong> :</p>
 <ul>
 <li>

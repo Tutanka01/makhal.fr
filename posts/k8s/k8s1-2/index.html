@@ -59,7 +59,7 @@
     </script>
     
     
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
     
     
 </head>
@@ -185,8 +185,7 @@
 <p>Par exemple, etcd va stocker des valeurs de cette façon :</p>
 <p><img src="/images/k8s/k8s2/key-value.PNG" alt="Key-value schema"></p>
 <blockquote>
-<p><a href="https://en.wikipedia.org/wiki/Key%E2%80%93value_database">Source</a></p>
-</blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Key%E2%80%93value_database">Source</a></p></blockquote>
 <p>Donc, etcd, c&rsquo;est une base de données. Par ailleurs, vous pouvez, si vous le voulez, installer etcd en standalone, c&rsquo;est-à-dire sans avoir besoin de Kubernetes, et l&rsquo;utiliser comme vous utiliseriez MongoDB ou une autre base de données NoSQL.</p>
 <p>Je vais le répéter à nouveau : etcd, c&rsquo;est le cœur de Kubernetes. Sans etcd, les autres éléments ne sauraient pas comment suivre les changements et répondre aux demandes de l&rsquo;administrateur. Par exemple, si l&rsquo;on veut ajouter un nouveau Pod, notre demande va être envoyée depuis l&rsquo;ApiServer à l&rsquo;etcd où la valeur du Pod va être ajoutée. Vu que le scheduler est là à regarder tout changement qui se passe dans l&rsquo;ApiServer, il va se rendre compte qu&rsquo;il y a un Pod qui n&rsquo;a pas de nœud attribué, donc il va faire son boulot et dire à un nœud de créer ce Pod. Puis, l&rsquo;ApiServer va mettre à jour l&rsquo;etcd pour indiquer où se trouve le Pod créé.</p>
 <p>Il existe des commandes pour maîtriser etcd, comme <em><strong>etcdctl</strong></em>. Cette commande permet de parler directement avec le service etcd et de récupérer toutes les infos qu&rsquo;on veut. Voici quelques commandes qui peuvent être utilisées pour déboguer :</p>
@@ -232,16 +231,14 @@
 <p>Cette image explique très bien le processus d&rsquo;un controller :</p>
 <p><img src="/images/k8s/k8s2/controller.png" alt="controllers"></p>
 <blockquote>
-<p><a href="https://k21academy.com/docker-kubernetes/kubernetes-operator/">Source</a></p>
-</blockquote>
+<p><a href="https://k21academy.com/docker-kubernetes/kubernetes-operator/">Source</a></p></blockquote>
 <h2 id="kubelet">Kubelet</h2>
 <p>Finalement, le dernier, mais pas le moins important, le <em><strong>Kubelet</strong></em>. Le Kubelet est le service de Kubernetes qui permet à un nœud de rejoindre un cluster.</p>
 <p>C&rsquo;est le service qui va faire tout le travail brut, c&rsquo;est-à-dire que c&rsquo;est lui qui va dire à son container-runtime, du genre Docker ou Podman, de pull l&rsquo;image du Pod et de créer le container. Également, le Kubelet est là pour surveiller l&rsquo;état des Pods qui sont à l&rsquo;intérieur de lui.</p>
 <p>Ci-dessous, une image qui représente cela :</p>
 <p><img src="/images/k8s/k8s2/kubelet.png" alt="Kubelet"></p>
 <blockquote>
-<p><a href="https://www.optiv.com/insights/source-zero/blog/kubernetes-attack-surface">Source</a></p>
-</blockquote>
+<p><a href="https://www.optiv.com/insights/source-zero/blog/kubernetes-attack-surface">Source</a></p></blockquote>
 <h1 id="conclusion">Conclusion</h1>
 <p>Kubernetes est un outil puissant qui révolutionne la gestion des conteneurs et des applications en environnement distribué. Dans cette deuxième partie, nous avons exploré en détail les composants essentiels de Kubernetes, tels qu&rsquo;etcd, l&rsquo;API Server, le Kube-Scheduler, le Controller-Manager, et le Kubelet. Chacun de ces éléments joue un rôle crucial dans le fonctionnement d&rsquo;un cluster, assurant une orchestration efficace et fiable des ressources.</p>
 <p>En comprenant ces composants et leur interaction, vous serez mieux préparé à déployer et à gérer vos applications dans Kubernetes. N&rsquo;oubliez pas que la maîtrise de cet outil nécessite du temps et de la pratique, mais avec patience et persévérance, vous pourrez tirer pleinement parti de sa puissance. Dans les prochaines parties, nous approfondirons d&rsquo;autres fonctionnalités et concepts avancés, vous permettant de renforcer vos compétences et d&rsquo;optimiser votre utilisation de Kubernetes. Restez à l&rsquo;écoute !</p>

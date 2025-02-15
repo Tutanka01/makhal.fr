@@ -59,7 +59,7 @@
     </script>
     
     
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
     
     
 </head>
@@ -193,8 +193,7 @@
 <p>Nous allons maintenant se concentrer dans la partie Wazuh-Indexer.</p>
 <p>On télécharge un ficher de conf préremplie de plus que le script qui va nous servir a créer nos, certificats internes. Pour permettre la connexion par https entre les differents services</p>
 <blockquote>
-<p>Attention ! En environnement de production il faudra utiliser les certificats SSL qui seront valides par les authorites de certification pour éviter tout problème dans le futur.</p>
-</blockquote>
+<p>Attention ! En environnement de production il faudra utiliser les certificats SSL qui seront valides par les authorites de certification pour éviter tout problème dans le futur.</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -sO https://packages.wazuh.com/4.7/wazuh-certs-tool.sh
 </span></span><span style="display:flex;"><span>curl -sO https://packages.wazuh.com/4.7/config.yml
 </span></span></code></pre></div><p>Une fois que nous avons fait ceci, nous allons modifier le fichier config.yaml pour lui indiquer quels seront les serveurs a qui on doit crer les certificats, vu qu&rsquo;on a un seul serveur cela va grandemment nous simplfier la tache.</p>
