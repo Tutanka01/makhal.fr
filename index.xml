@@ -6,8 +6,22 @@
     <description>Recent content on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sat, 15 Feb 2025 08:10:45 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 02 Mar 2025 07:09:10 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Déployer Pi-hole sur Kubernetes</title>
+      <link>https://makhal.fr/posts/k8s/k8s1-pi-hole/</link>
+      <pubDate>Sun, 02 Mar 2025 07:09:10 +0100</pubDate>
+      <guid>https://makhal.fr/posts/k8s/k8s1-pi-hole/</guid>
+      <description>Déploiement de Pi-hole sur k8s avec MetalLB et Longhorn pour un filtrage DNS efficace et sécurisé</description>
+    </item>
+    <item>
+      <title>KASM - Navigateur et OS jetables</title>
+      <link>https://makhal.fr/posts/sysadmin/kasm-post/</link>
+      <pubDate>Wed, 19 Feb 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/sysadmin/kasm-post/</guid>
+      <description>On va découvrir comment mettre en place un navigateur et un OS jetable avec Kasm</description>
+    </item>
     <item>
       <title>C&#39;est quoi un système distribué ?</title>
       <link>https://makhal.fr/posts/sysadmin/distibuted-systems/</link>
@@ -62,7 +76,7 @@
       <link>https://makhal.fr/pages/about/</link>
       <pubDate>Wed, 25 Sep 2024 17:29:57 +0200</pubDate>
       <guid>https://makhal.fr/pages/about/</guid>
-      <description>&lt;h1 id=&#34;mohamad-el-akhal-el-bouzidi&#34;&gt;Mohamad El Akhal El Bouzidi&lt;/h1&gt;&#xA;&lt;p&gt;Salut ! Je m&amp;rsquo;appelle Mohamad El Akhal El Bouzidi, et je suis un passionné de tout ce qui touche à l&amp;rsquo;informatique, particulièrement la cybersécurité et l&amp;rsquo;univers Linux. Actuellement étudiant en BUT Réseaux et Télécommunications avec une spécialisation en Cybersécurité, j&amp;rsquo;ai la chance de combiner théorie et pratique en travaillant en alternance comme Administrateur Systèmes et Réseaux chez Aditu.&lt;/p&gt;&#xA;&lt;p&gt;Mon parcours n’est pas juste guidé par les lignes de code ou les configurations réseau, mais par une vraie passion pour la sécurité informatique et un désir profond de contribuer positivement à ce domaine en constante évolution. J&amp;rsquo;aime découvrir comment les systèmes fonctionnent, trouver des moyens de les sécuriser, et surtout, partager mes connaissances avec ceux qui s&amp;rsquo;intéressent aussi à ce domaine fascinant.&lt;/p&gt;</description>
+      <description>Mohamad El Akhal El Bouzidi Salut ! Je m&amp;rsquo;appelle Mohamad El Akhal El Bouzidi, et je suis un passionné de tout ce qui touche à l&amp;rsquo;informatique, particulièrement la cybersécurité et l&amp;rsquo;univers Linux. Actuellement étudiant en BUT Réseaux et Télécommunications avec une spécialisation en Cybersécurité, j&amp;rsquo;ai la chance de combiner théorie et pratique en travaillant en alternance comme Administrateur Systèmes et Réseaux chez Aditu.&#xA;Mon parcours n’est pas juste guidé par les lignes de code ou les configurations réseau, mais par une vraie passion pour la sécurité informatique et un désir profond de contribuer positivement à ce domaine en constante évolution.</description>
     </item>
     <item>
       <title>Kubernetes Partie 2</title>
@@ -167,7 +181,7 @@
       <link>https://makhal.fr/index-about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://makhal.fr/index-about/</guid>
-      <description>&lt;h1 id=&#34;a-propos-de-moi&#34;&gt;A propos de moi&lt;/h1&gt;&#xA;&lt;p&gt;Je suis Mohamad El Akhal El Bouzidi, étudiant en 3ème année de BUT Réseaux et Télécoms et alternant spécialisé en cybersécurité chez Aditu&lt;/p&gt;</description>
+      <description>A propos de moi Je suis Mohamad El Akhal El Bouzidi, étudiant en 3ème année de BUT Réseaux et Télécoms et alternant spécialisé en cybersécurité chez Aditu</description>
     </item>
   </channel>
 </rss>

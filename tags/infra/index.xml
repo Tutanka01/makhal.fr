@@ -6,8 +6,15 @@
     <description>Recent content in Infra on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sat, 15 Feb 2025 08:10:45 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 19 Feb 2025 08:10:45 +0200</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/infra/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KASM - Navigateur et OS jetables</title>
+      <link>https://makhal.fr/posts/sysadmin/kasm-post/</link>
+      <pubDate>Wed, 19 Feb 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/sysadmin/kasm-post/</guid>
+      <description>On va découvrir comment mettre en place un navigateur et un OS jetable avec Kasm</description>
+    </item>
     <item>
       <title>C&#39;est quoi un système distribué ?</title>
       <link>https://makhal.fr/posts/sysadmin/distibuted-systems/</link>

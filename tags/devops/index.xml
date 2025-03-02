@@ -6,8 +6,22 @@
     <description>Recent content in Devops on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sat, 15 Feb 2025 08:10:45 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 02 Mar 2025 07:09:10 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Déployer Pi-hole sur Kubernetes</title>
+      <link>https://makhal.fr/posts/k8s/k8s1-pi-hole/</link>
+      <pubDate>Sun, 02 Mar 2025 07:09:10 +0100</pubDate>
+      <guid>https://makhal.fr/posts/k8s/k8s1-pi-hole/</guid>
+      <description>Déploiement de Pi-hole sur k8s avec MetalLB et Longhorn pour un filtrage DNS efficace et sécurisé</description>
+    </item>
+    <item>
+      <title>KASM - Navigateur et OS jetables</title>
+      <link>https://makhal.fr/posts/sysadmin/kasm-post/</link>
+      <pubDate>Wed, 19 Feb 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/sysadmin/kasm-post/</guid>
+      <description>On va découvrir comment mettre en place un navigateur et un OS jetable avec Kasm</description>
+    </item>
     <item>
       <title>C&#39;est quoi un système distribué ?</title>
       <link>https://makhal.fr/posts/sysadmin/distibuted-systems/</link>

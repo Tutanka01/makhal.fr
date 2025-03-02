@@ -95,7 +95,7 @@
                 </div>
             
                 <div class="nav-link">
-                    <a href="https://makhal.fr/pages/about/"> About </a>
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
                 </div>
             
                 <div class="nav-link">
@@ -129,7 +129,7 @@
                     </li>
                 
                     <li class="nav-item">
-                        <a href="https://makhal.fr/pages/about/"> About </a>
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
                     </li>
                 
                     <li class="nav-item">
@@ -190,11 +190,14 @@ Pour cela, nous allons utiliser la commande suivante :</p>
 </span></span><span style="display:flex;"><span>    allow-query <span style="color:#f92672">{</span> localhost; LAN; <span style="color:#f92672">}</span>;
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>;
 </span></span></code></pre></div><blockquote>
-<p><code>acl LAN*</code> : C&rsquo;est une liste d&rsquo;adresses IP qui sont autorisées à faire des requêtes DNS sur notre serveur DNS. Dans notre cas, nous avons autorisé les machines du réseau local à faire des requêtes DNS sur notre serveur DNS.</p></blockquote>
+<p><code>acl LAN*</code> : C&rsquo;est une liste d&rsquo;adresses IP qui sont autorisées à faire des requêtes DNS sur notre serveur DNS. Dans notre cas, nous avons autorisé les machines du réseau local à faire des requêtes DNS sur notre serveur DNS.</p>
+</blockquote>
 <blockquote>
-<p>Sur le champ <strong>options</strong>, nous avons ajouté <code>bash allow-query { localhost; LAN; };</code> pour autoriser les requêtes DNS sur notre serveur DNS.</p></blockquote>
+<p>Sur le champ <strong>options</strong>, nous avons ajouté <code>bash allow-query { localhost; LAN; };</code> pour autoriser les requêtes DNS sur notre serveur DNS.</p>
+</blockquote>
 <blockquote>
-<p><code>directory &quot;/var/cache/bind&quot;;</code> : C&rsquo;est le repertoire ou Bind9 va stocker les fichiers de cache.</p></blockquote>
+<p><code>directory &quot;/var/cache/bind&quot;;</code> : C&rsquo;est le repertoire ou Bind9 va stocker les fichiers de cache.</p>
+</blockquote>
 <p>Pour verifier que notre configuration est correcte, nous allons utiliser la commande suivante :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo named-checkconf
 </span></span></code></pre></div><p>Avec cette commande on peut specifier le fichier de configuration que l&rsquo;on veut verifier, dans notre cas, nous allons verifier le fichier <strong><em>/etc/bind/named.conf.options</em></strong>.</p>

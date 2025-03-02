@@ -95,7 +95,7 @@
                 </div>
             
                 <div class="nav-link">
-                    <a href="https://makhal.fr/pages/about/"> About </a>
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
                 </div>
             
                 <div class="nav-link">
@@ -129,7 +129,7 @@
                     </li>
                 
                     <li class="nav-item">
-                        <a href="https://makhal.fr/pages/about/"> About </a>
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
                     </li>
                 
                     <li class="nav-item">
@@ -196,7 +196,8 @@
 <p>C&rsquo;est pas beau ça ?</p>
 <p>Bon, fini de rigoler, on retourne à notre session SSH et on commence par l&rsquo;installation du paquet Wazuh-Dashboard.</p>
 <blockquote>
-<p>Je continue en supposant que tout est fait sur la même VM, mais si jamais vous voulez le faire sur différents nœuds, il faudra bien entendu ré-importer tous les certificats et dépôts !</p></blockquote>
+<p>Je continue en supposant que tout est fait sur la même VM, mais si jamais vous voulez le faire sur différents nœuds, il faudra bien entendu ré-importer tous les certificats et dépôts !</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get -y install wazuh-dashboard
 </span></span></code></pre></div><p>Une fois que l&rsquo;installation de Wazuh-Dashboard est terminée, nous allons modifier ce fichier <code>/etc/wazuh-dashboard/opensearch_dashboards.yml</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">server.host: 192.168.222.145</span>
@@ -230,7 +231,8 @@
 <h2 id="wazuh-server">Wazuh-Server</h2>
 <p>Maintenant qu&rsquo;on a tous les prérequis pour notre SOC maison, nous allons installer maintenant le cerveau des opérations, c&rsquo;est-à-dire le Wazuh-Server. Pour ce faire :</p>
 <blockquote>
-<p>Vu qu&rsquo;on est toujours sur la même VM, pas la peine de ré-importer les dépôts :)</p></blockquote>
+<p>Vu qu&rsquo;on est toujours sur la même VM, pas la peine de ré-importer les dépôts :)</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get -y install wazuh-manager
 </span></span></code></pre></div><p>Et on le démarre avec systemctl :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl daemon-reload
@@ -274,7 +276,8 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/var/ossec/bin/wazuh-keystore -f indexer -k username -v &lt;INDEXER_USERNAME&gt;
 </span></span><span style="display:flex;"><span>/var/ossec/bin/wazuh-keystore -f indexer -k password -v &lt;INDEXER_PASSWORD&gt;
 </span></span></code></pre></div><blockquote>
-<p>Le mot de passe par défaut est admin:admin</p></blockquote>
+<p>Le mot de passe par défaut est admin:admin</p>
+</blockquote>
 <p>On édite le fichier : <code>/var/ossec/etc/ossec.conf</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">&lt;indexer&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">&lt;enabled&gt;yes&lt;/enabled&gt;</span>
@@ -304,7 +307,8 @@
 <p><img src="/images/SIEM/Dashboard2.png" alt="Exemple de Dashboard 2"></p>
 <p>On est accueilli par cette magnifique interface.</p>
 <blockquote>
-<p>Le mot de passe pour y accéder est toujours admin:admin</p></blockquote>
+<p>Le mot de passe pour y accéder est toujours admin:admin</p>
+</blockquote>
 <p>Lorsque l&rsquo;on entre, un petit check se fait pour voir si tout est en ordre, et si tout est bon, on a cette encore plus incroyable interface :</p>
 <p><img src="/images/SIEM/Dashboard3.png" alt="Exemple de Dashboard 3"></p>
 <p>Le seul bémol avec cette interface est le grand avertissement qui nous dit que nous n&rsquo;avons pas encore d&rsquo;agents, mais nous allons corriger cela dans le prochain post, où l&rsquo;on ajoutera notre premier hôte, tant Windows que Linux, et on va faire nos premières démos avec Wazuh !!</p>

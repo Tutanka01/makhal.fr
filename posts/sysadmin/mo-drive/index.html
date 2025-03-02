@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Cloud storage from scratch</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, sysadmin, cloud, Infra'>
+
+    <meta property="og:url" content="http://localhost:1313/posts/sysadmin/mo-drive/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cloud storage from scratch">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://localhost:1313/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="http://localhost:1313/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cloud storage from scratch">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="http://localhost:1313/posts/sysadmin/mo-drive/">
+    <meta property="twitter:url" content="http://localhost:1313/posts/sysadmin/mo-drive/">
+    <meta name="twitter:image" content="http://localhost:1313/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="http://localhost:1313/posts/sysadmin/mo-drive/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="http://localhost:1313/">
+                    <img src="http://localhost:1313//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:1313/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="http://localhost:1313/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:1313/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Cloud storage from scratch</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            février 22, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/sysadmin">sysadmin</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/cloud">cloud</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/infra">Infra</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p>N&rsquo;avez-vous jamais rêvé de créer votre propre Cloud ? De quitter Google Drive, Dropbox, OneDrive, et même des solutions Open Source comme NextCloud, pour <em>votre</em> propre solution de stockage de fichiers ?</p>
+<p>Dans cet article, on va s&rsquo;amuser à créer un super système de stockage. On commence petit, mais au fil de ce post (ou de cette série de posts !), on va imaginer que notre cloud est utilisé par des millions de personnes.  L&rsquo;objectif ? Un vrai système distribué de stockage de fichiers.</p>
+<p>On ne va pas seulement parler de <em>system design</em>. On va aussi plonger dans l&rsquo;implémentation et la sécurité.  De la conception à la mise en place, ce sera un projet complet, de A à Z.</p>
+<h2 id="scénario--notre-fil-conducteur">Scénario : Notre Fil Conducteur</h2>
+<p>Pour garder le cap, il nous faut un scénario solide. Imaginons qu&rsquo;on est une startup qui lance son propre service de stockage cloud.  Pour commencer, on vise la simplicité : un formulaire avec nom, prénom, et le fichier à uploader.  Ce fichier sera stocké sur le serveur lui-même.  On générera un lien de téléchargement que l&rsquo;utilisateur pourra conserver ou partager.</p>
+<p>Un scénario simple, certes, mais un excellent point de départ pour notre projet !</p>
+<h2 id="architecture--les-fondations">Architecture : Les Fondations</h2>
+<p>Nous avons notre fil conducteur.  Le scénario défini implique deux composants principaux :</p>
+<ul>
+<li>Un serveur web pour recevoir les requêtes et les fichiers.</li>
+<li>Un serveur de base de données pour stocker les métadonnées des fichiers.</li>
+</ul>
+<p>Pourquoi ces deux composants ? Pourquoi ne pas tout stocker dans la base de données ?  Ou, à l&rsquo;inverse, tout sur le serveur web ?</p>
+<p>Commençons par les fichiers.  Il faut savoir qu&rsquo;il est très peu pratique, voire déconseillé, de stocker de gros fichiers directement dans une base de données. Ce n&rsquo;est pas fait pour ça, comme l&rsquo;expliquent <a href="https://stackoverflow.com/questions/8952/storing-a-file-in-a-database-as-opposed-to-the-file-system">cet article Stack Overflow</a> et <a href="https://softwareengineering.stackexchange.com/questions/150669/is-it-a-bad-practice-to-store-large-files-10-mb-in-a-database">cette discussion</a>.  Il est crucial de séparer les responsabilités.  Imaginez qu&rsquo;un utilisateur uploade un fichier de 16 Go !  Ce n&rsquo;est pas gérable directement dans une base de données.  Comme le mentionne <a href="https://softwareengineering.stackexchange.com/questions/150669/is-it-a-bad-practice-to-store-large-files-10-mb-in-a-database">ce lien</a>, plus la base de données grossit, plus elle devient complexe à gérer.  Et pour notre petite startup, on veut éviter les complications inutiles dès le départ.</p>
+<p>Alors, pourquoi une base de données (BDD) ? Pourquoi ne pas tout conserver sur le serveur web ?  Excellente question !  Techniquement, on <em>pourrait</em> stocker les fichiers <em>et</em> leurs métadonnées sur le serveur web.  Mais rappelez-vous du scénario : on doit conserver le nom, le prénom, et associer ces informations au fichier.  Il faut générer un lien, ce qui implique une <em>relation</em> entre ces données.  C&rsquo;est là que la BDD intervient. On <em>pourrait</em> utiliser un fichier JSON, mais ce serait peu pratique et, soyons honnêtes, assez moche.  Une BDD est la solution propre et efficace.</p>
+<p>Voici donc à quoi ressemble notre architecture initiale :</p>
+
+
+<div style="display: flex; justify-content: center;">
+<div class="mermaid">
+graph TD
+    A[Client] <--> B(Serveur Web)
+    B <--> C(Serveur de Base de Données)
+</div>
+</div>
+
+<p>Côté réseau, c&rsquo;est minimaliste pour l&rsquo;instant : une adresse IP pour chaque serveur, et c&rsquo;est tout.</p>
+<p>C&rsquo;est modeste, et je doute que des hackers russes cherchent à nous pirater immédiatement.  Mais dans le futur, nous nous pencherons sur la sécurisation de notre système.</p>
+<p>Maintenant que l&rsquo;architecture est définie, passons aux choses sérieuses : les choix techniques !</p>
+<h2 id="choix-techniques--le-cœur-du-système">Choix Techniques : Le Cœur du Système</h2>
+<p>Nous avons identifié nos deux composants principaux : un serveur web et un serveur de base de données.</p>
+<p>Pour le serveur web, le choix est simple : Apache2.  C&rsquo;est un serveur web extrêmement populaire, fiable et facile à configurer.  Je pense que nous sommes tous d&rsquo;accord pour dire que, dans notre cas d&rsquo;utilisation, Apache2 est un excellent choix.</p>
+<p>La base de données, en revanche, c&rsquo;est une autre paire de manches.  J&rsquo;ai passé beaucoup de temps à y réfléchir, car c&rsquo;est un choix <em>fondamental</em>.  La base de données va nous accompagner tout au long du projet, et en changer en cours de route serait très compliqué.  Il faut donc faire le bon choix dès le départ.</p>
+<p>Il existe différents types de bases de données : les bases de données relationnelles classiques, les bases de données relationnelles orientées colonnes, et les bases de données orientées documents (NoSQL).</p>
+<p>Avant de choisir, décrivons brièvement chaque type :</p>
+<ul>
+<li>
+<p><strong>Relationnelle (Classique) :</strong> Le type le plus répandu, utilisé dans de nombreuses applications.  On y trouve des tables, des lignes et des colonnes. Les colonnes représentent les attributs (par exemple, nom, prénom), et les lignes, les données elles-mêmes.  Ce type de base de données convient bien aux données structurées.  Cependant, elles peuvent devenir lentes lorsqu&rsquo;il y a un grand nombre de lignes.  Imaginez une table d&rsquo;un million de lignes : pour récupérer une seule information, il faut parcourir chaque ligne jusqu&rsquo;à trouver la bonne.  Ce n&rsquo;est donc pas optimal pour les requêtes de lecture.</p>
+</li>
+<li>
+<p><strong>Relationnelle Orientée Colonnes :</strong>  L&rsquo;architecture est similaire à celle d&rsquo;une base de données relationnelle classique, mais la <em>façon</em> dont les données sont lues diffère.  Ce type de base de données est très performant pour les lectures.  Pourquoi ?  Imaginons une table avec les colonnes <code>nom</code>, <code>prenom</code>, <code>email</code>, et <code>age</code>.  Si on ne veut récupérer que les noms, on ne lit <em>que</em> la colonne <code>nom</code>, et pas les autres.  C&rsquo;est beaucoup plus rapide.  C&rsquo;est impossible avec une base de données relationnelle classique, où l&rsquo;on doit lire <em>toutes</em> les colonnes de chaque ligne.</p>
+</li>
+<li>
+<p><strong>Orientée Documents (NoSQL):</strong> Ces bases de données stockent les données dans des documents (généralement au format JSON). Chaque document peut avoir une structure différente, c&rsquo;est donc idéal si les données ne sont pas parfaitement structurées ou si elles changent dans le temps. Elles sont aussi conçues pour la scalabilité horizontale (répartition sur plusieurs serveurs). En terme de performance, elles excellent sur les requêtes qui demandent un document entier. Pour les exemples de ce type de BDD, il y a MongoDB, CouchDB, ou Amazon DynamoDB. Et pour notre projet, ça peut etre pertinent, car au debut, les donnees sont structurees, mais on pourrait avoir besoin d&rsquo;ajouter des tags ou des métadonnées, ce que ce genre de BDD gère très bien.</p>
+</li>
+</ul>
+<p>Je pense que vous connaissez déjà mon choix : une base de données orientée documents.  Pourquoi ?  Parce que je veux que notre système soit scalable.  Certes je suis sysadmin d&rsquo;une toute petite startup, mais le jour ou ça va devenir une multinationale, je vous promets je vais jamais arreter de me remercier d&rsquo;avoir choisi une BDD NoSQL.  Parce que niveau scalabilite, les bases de donnees orientees documents sont imbattables (meme si Cassandra et les BDD orientees colonnes sont pas mal non plus).</p>
+<p>Pour notre projet, je vais choisir MongoDB.  C&rsquo;est une base de données NoSQL très populaire, plutot bien documentée, et qui a fait ses preuves.</p>
+<p>Voici donc notre architecture, avec nos choix techniques :</p>
+
+
+<div style="display: flex; justify-content: center;">
+<div class="mermaid">
+graph TD
+    A[Client] <--> B(Apache2)
+    B <--> C(MongoDB)
+</div>
+</div>
+
+<h2 id="implémentation--le-code">Implémentation : Le Code</h2>
+<p>Pour le code de notre fameux serveur, je vais utiliser PHP.  Pourquoi PHP ?  Parce que c&rsquo;est un langage que je connais bien, et qui est plutot robuste pour ce genre d&rsquo;application.</p>
+<p>Donc fini de parler, et voila le code php pour notre serveur web :</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/sysadmin/kasm-post/">
+            &#8592;
+            :
+            KASM - Navigateur et OS jetables
+        </a>
+    </p>
+    <p class="prev-post-date">
+        février 19, 2025
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

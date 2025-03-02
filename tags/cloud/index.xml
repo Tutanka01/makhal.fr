@@ -6,14 +6,14 @@
     <description>Recent content in Cloud on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Wed, 25 Sep 2024 20:05:49 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 22 Feb 2025 08:10:45 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Vagrant</title>
-      <link>http://localhost:1313/posts/docs/vagrant_doc/</link>
-      <pubDate>Wed, 25 Sep 2024 20:05:49 +0100</pubDate>
-      <guid>http://localhost:1313/posts/docs/vagrant_doc/</guid>
-      <description>Dans cette courte doc je presente Vagrant et son utilisation</description>
+      <title>Cloud storage from scratch</title>
+      <link>http://localhost:1313/posts/sysadmin/mo-drive/</link>
+      <pubDate>Sat, 22 Feb 2025 08:10:45 +0200</pubDate>
+      <guid>http://localhost:1313/posts/sysadmin/mo-drive/</guid>
+      <description>Dans cet article, on va parler Conception, architecture et implémentation d&amp;rsquo;un systeme de stockage cloud</description>
     </item>
   </channel>
 </rss>
