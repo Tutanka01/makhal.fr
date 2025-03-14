@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://makhal.fr/posts/cyber/poc/defenderui/</loc>
+    <lastmod>2025-03-14T06:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/cyber/</loc>
+    <lastmod>2025-03-14T06:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/endpoint/</loc>
+    <lastmod>2025-03-14T06:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/</loc>
+    <lastmod>2025-03-14T06:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/posts/</loc>
+    <lastmod>2025-03-14T06:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/</loc>
+    <lastmod>2025-03-14T06:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/windows/</loc>
+    <lastmod>2025-03-14T06:01:10+01:00</lastmod>
+  </url><url>
     <loc>https://makhal.fr/posts/k8s/k8s1-pi-hole/</loc>
     <lastmod>2025-03-02T07:09:10+01:00</lastmod>
   </url><url>
@@ -12,15 +33,6 @@
     <lastmod>2025-03-02T07:09:10+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/kubernetes/</loc>
-    <lastmod>2025-03-02T07:09:10+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/</loc>
-    <lastmod>2025-03-02T07:09:10+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/posts/</loc>
-    <lastmod>2025-03-02T07:09:10+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/</loc>
     <lastmod>2025-03-02T07:09:10+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/infra/</loc>
@@ -72,9 +84,6 @@
     <lastmod>2025-01-21T18:10:45+02:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/posts/cyber/poc/ransom-poc/</loc>
-    <lastmod>2024-12-08T11:01:10+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/cyber/</loc>
     <lastmod>2024-12-08T11:01:10+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/poc/</loc>
@@ -167,10 +176,10 @@
     <loc>https://makhal.fr/tags/docker-swarm/</loc>
     <lastmod>2023-10-23T06:16:53+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/bind9/</loc>
+    <loc>https://makhal.fr/posts/old/bind9/</loc>
     <lastmod>2023-10-15T09:10:45+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/posts/old/bind9/</loc>
+    <loc>https://makhal.fr/tags/bind9/</loc>
     <lastmod>2023-10-15T09:10:45+02:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/dns/</loc>

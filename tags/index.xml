@@ -6,236 +6,250 @@
     <description>Recent content in Tags on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sun, 02 Mar 2025 07:09:10 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 14 Mar 2025 06:01:10 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cyber</title>
+      <link>https://makhal.fr/tags/cyber/</link>
+      <pubDate>Fri, 14 Mar 2025 06:01:10 +0100</pubDate>
+      <guid>https://makhal.fr/tags/cyber/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Endpoint</title>
+      <link>https://makhal.fr/tags/endpoint/</link>
+      <pubDate>Fri, 14 Mar 2025 06:01:10 +0100</pubDate>
+      <guid>https://makhal.fr/tags/endpoint/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>https://makhal.fr/tags/windows/</link>
+      <pubDate>Fri, 14 Mar 2025 06:01:10 +0100</pubDate>
+      <guid>https://makhal.fr/tags/windows/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Devops</title>
       <link>https://makhal.fr/tags/devops/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 02 Mar 2025 07:09:10 +0100</pubDate>
       <guid>https://makhal.fr/tags/devops/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
       <link>https://makhal.fr/tags/docker/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 02 Mar 2025 07:09:10 +0100</pubDate>
       <guid>https://makhal.fr/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Kubernetes</title>
       <link>https://makhal.fr/tags/kubernetes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 02 Mar 2025 07:09:10 +0100</pubDate>
       <guid>https://makhal.fr/tags/kubernetes/</guid>
       <description></description>
     </item>
     <item>
       <title>Infra</title>
       <link>https://makhal.fr/tags/infra/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 19 Feb 2025 08:10:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/infra/</guid>
       <description></description>
     </item>
     <item>
       <title>Secops</title>
       <link>https://makhal.fr/tags/secops/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 19 Feb 2025 08:10:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/secops/</guid>
       <description></description>
     </item>
     <item>
       <title>Sysadmin</title>
       <link>https://makhal.fr/tags/sysadmin/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 19 Feb 2025 08:10:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/sysadmin/</guid>
       <description></description>
     </item>
     <item>
       <title>Mail</title>
       <link>https://makhal.fr/tags/mail/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 08 Feb 2025 08:10:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/mail/</guid>
       <description></description>
     </item>
     <item>
       <title>Mailcow</title>
       <link>https://makhal.fr/tags/mailcow/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 08 Feb 2025 08:10:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/mailcow/</guid>
       <description></description>
     </item>
     <item>
       <title>IA</title>
       <link>https://makhal.fr/tags/ia/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 26 Jan 2025 08:05:49 +0100</pubDate>
       <guid>https://makhal.fr/tags/ia/</guid>
       <description></description>
     </item>
     <item>
       <title>Machine Learning</title>
       <link>https://makhal.fr/tags/machine-learning/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 26 Jan 2025 08:05:49 +0100</pubDate>
       <guid>https://makhal.fr/tags/machine-learning/</guid>
       <description></description>
     </item>
     <item>
       <title>Proxmox</title>
       <link>https://makhal.fr/tags/proxmox/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 26 Jan 2025 08:05:49 +0100</pubDate>
       <guid>https://makhal.fr/tags/proxmox/</guid>
       <description></description>
     </item>
     <item>
       <title>Sentinelbox</title>
       <link>https://makhal.fr/tags/sentinelbox/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 26 Jan 2025 08:05:49 +0100</pubDate>
       <guid>https://makhal.fr/tags/sentinelbox/</guid>
       <description></description>
     </item>
     <item>
       <title>Cloud-Init</title>
       <link>https://makhal.fr/tags/cloud-init/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 21 Jan 2025 18:10:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/cloud-init/</guid>
       <description></description>
     </item>
     <item>
       <title>Virtualisation</title>
       <link>https://makhal.fr/tags/virtualisation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 21 Jan 2025 18:10:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/virtualisation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cyber</title>
-      <link>https://makhal.fr/tags/cyber/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://makhal.fr/tags/cyber/</guid>
       <description></description>
     </item>
     <item>
       <title>POC</title>
       <link>https://makhal.fr/tags/poc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 08 Dec 2024 11:01:10 +0100</pubDate>
       <guid>https://makhal.fr/tags/poc/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
       <link>https://makhal.fr/tags/python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 08 Dec 2024 11:01:10 +0100</pubDate>
       <guid>https://makhal.fr/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Ransomware</title>
       <link>https://makhal.fr/tags/ransomware/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 08 Dec 2024 11:01:10 +0100</pubDate>
       <guid>https://makhal.fr/tags/ransomware/</guid>
       <description></description>
     </item>
     <item>
       <title>Azure</title>
       <link>https://makhal.fr/tags/azure/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 30 Oct 2024 06:40:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/azure/</guid>
       <description></description>
     </item>
     <item>
       <title>IAC</title>
       <link>https://makhal.fr/tags/iac/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 30 Oct 2024 06:40:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/iac/</guid>
       <description></description>
     </item>
     <item>
       <title>Pulumi</title>
       <link>https://makhal.fr/tags/pulumi/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 30 Oct 2024 06:40:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/pulumi/</guid>
       <description></description>
     </item>
     <item>
       <title>SIEM</title>
       <link>https://makhal.fr/tags/siem/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 22 Aug 2024 09:05:49 +0100</pubDate>
       <guid>https://makhal.fr/tags/siem/</guid>
       <description></description>
     </item>
     <item>
       <title>Wazuh</title>
       <link>https://makhal.fr/tags/wazuh/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 22 Aug 2024 09:05:49 +0100</pubDate>
       <guid>https://makhal.fr/tags/wazuh/</guid>
       <description></description>
     </item>
     <item>
       <title>Ccna</title>
       <link>https://makhal.fr/tags/ccna/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 21 Apr 2024 21:40:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/ccna/</guid>
       <description></description>
     </item>
     <item>
       <title>Cisco</title>
       <link>https://makhal.fr/tags/cisco/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 21 Apr 2024 21:40:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/cisco/</guid>
       <description></description>
     </item>
     <item>
       <title>Ios</title>
       <link>https://makhal.fr/tags/ios/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 21 Apr 2024 21:40:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/ios/</guid>
       <description></description>
     </item>
     <item>
       <title>Tftp</title>
       <link>https://makhal.fr/tags/tftp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 21 Apr 2024 21:40:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/tftp/</guid>
       <description></description>
     </item>
     <item>
       <title>Postfix</title>
       <link>https://makhal.fr/tags/postfix/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 28 Jan 2024 08:47:49 +0200</pubDate>
       <guid>https://makhal.fr/tags/postfix/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker-Swarm</title>
       <link>https://makhal.fr/tags/docker-swarm/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 23 Oct 2023 06:16:53 +0200</pubDate>
       <guid>https://makhal.fr/tags/docker-swarm/</guid>
       <description></description>
     </item>
     <item>
       <title>Bind9</title>
       <link>https://makhal.fr/tags/bind9/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 15 Oct 2023 09:10:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/bind9/</guid>
       <description></description>
     </item>
     <item>
       <title>Dns</title>
       <link>https://makhal.fr/tags/dns/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 15 Oct 2023 09:10:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/dns/</guid>
       <description></description>
     </item>
     <item>
       <title>About</title>
       <link>https://makhal.fr/tags/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 14 Oct 2023 16:10:25 +0200</pubDate>
       <guid>https://makhal.fr/tags/about/</guid>
       <description></description>
     </item>
     <item>
       <title>Cv</title>
       <link>https://makhal.fr/tags/cv/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 14 Oct 2023 16:10:25 +0200</pubDate>
       <guid>https://makhal.fr/tags/cv/</guid>
       <description></description>
     </item>

@@ -200,8 +200,7 @@
 </div>
 
 <blockquote>
-<p><strong>Note :</strong> Je vais déployer Mailcow dans mon HomeLab, donc je vais utiliser une VM sur mon Proxmox avec un DNS local. Ceci n&rsquo;est pas un tuto pour le déploiement en production, mais vous pouvez l&rsquo;adapter pour votre cas. Un prochain post sera consacré à la mise en place de Mailcow en production.</p>
-</blockquote>
+<p><strong>Note :</strong> Je vais déployer Mailcow dans mon HomeLab, donc je vais utiliser une VM sur mon Proxmox avec un DNS local. Ceci n&rsquo;est pas un tuto pour le déploiement en production, mais vous pouvez l&rsquo;adapter pour votre cas. Un prochain post sera consacré à la mise en place de Mailcow en production.</p></blockquote>
 <h2 id="mise-en-place">Mise en place</h2>
 <p>Avant de commencer à manipuler notre VM et installer Docker et Mailcow à l&rsquo;intérieur, nous devons nous assurer que la configuration DNS est correcte. Moi, je suis dans mon HomeLab, donc je n&rsquo;ai pas de serveur DNS public. J&rsquo;utilise PiHole pour le DNS. Si jamais vous voulez un tuto pour déployer PiHole, n&rsquo;hésitez pas à me le demander.</p>
 <p>Donc, on va se rendre sur notre PiHole, et on va ajouter un enregistrement A dans le DNS local, pour pointer un domaine vers notre VM qui va héberger Mailcow :<br>
@@ -254,8 +253,7 @@
 <p><img src="/images/sysadmin/mailcow/add-domain.png" alt="Add domain"></p>
 <p>Dans ce menu vraiment très complet, il faudra définir le domaine, des étiquettes pour organiser si jamais vous avez plusieurs domaines. Et surtout, le sélecteur DKIM, et la taille de clé qu&rsquo;il va générer pour ce DKIM.</p>
 <blockquote>
-<p>Si vous ne savez pas ce que c&rsquo;est DKIM ou même SPF, je vous invite à lire mon post sur <a href="/posts/old/messagerie/dmark_dkim_spf">les différents protocoles de sécurisation mail</a>.</p>
-</blockquote>
+<p>Si vous ne savez pas ce que c&rsquo;est DKIM ou même SPF, je vous invite à lire mon post sur <a href="/posts/old/messagerie/dmark_dkim_spf">les différents protocoles de sécurisation mail</a>.</p></blockquote>
 <p>Une fois que vous avez rempli tout ça, vous pouvez cliquer sur <code>Ajouter le domaine et redémarrer SOGo</code>, et vous aurez votre domaine dans la liste des domaines.</p>
 <p><img src="/images/sysadmin/mailcow/add-domain-2.png" alt="add-domain"></p>
 <p>Aussi, si vous appuyez sur le bouton <code>DNS</code>, vous aurez les enregistrements DNS à ajouter pour que votre domaine soit bien configuré. Dans mon cas, je suis dans mon HomeLab, donc je n&rsquo;ai pas besoin de les ajouter. Mais voilà à quoi ça ressemble :</p>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows on makhal.fr</title>
-    <link>http://localhost:1313/tags/windows/</link>
+    <link>https://makhal.fr/tags/windows/</link>
     <description>Recent content in Windows on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Tue, 10 Sep 2024 09:05:49 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Mar 2025 06:01:10 +0100</lastBuildDate>
+    <atom:link href="https://makhal.fr/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Detection et  </title>
-      <link>http://localhost:1313/posts/cyber/decouverte_siem_5/</link>
-      <pubDate>Tue, 10 Sep 2024 09:05:49 +0100</pubDate>
-      <guid>http://localhost:1313/posts/cyber/decouverte_siem_5/</guid>
-      <description>On verra dans ce post la puissance de Wazuh en important de nouvelles règles et des démos</description>
+      <title>Booster Defender gratuitement avec Defender UI</title>
+      <link>https://makhal.fr/posts/cyber/poc/defenderui/</link>
+      <pubDate>Fri, 14 Mar 2025 06:01:10 +0100</pubDate>
+      <guid>https://makhal.fr/posts/cyber/poc/defenderui/</guid>
+      <description>Les antivirus c&amp;rsquo;est cher, Defender c&amp;rsquo;est gratuit. Mais comment l&amp;rsquo;ameliorer ?</description>
     </item>
   </channel>
 </rss>
