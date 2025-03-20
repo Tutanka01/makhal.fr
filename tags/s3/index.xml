@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>S3 on makhal.fr</title>
+    <link>http://localhost:2495/tags/s3/</link>
+    <description>Recent content in S3 on makhal.fr</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Sun, 16 Mar 2025 08:10:45 +0200</lastBuildDate>
+    <atom:link href="http://localhost:2495/tags/s3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Votre propre stockage S3</title>
+      <link>http://localhost:2495/posts/sysadmin/mini-io/</link>
+      <pubDate>Sun, 16 Mar 2025 08:10:45 +0200</pubDate>
+      <guid>http://localhost:2495/posts/sysadmin/mini-io/</guid>
+      <description>Dans cet article, nous allons voir comment mettre en place un stockage S3 sur votre propre serveur.</description>
+    </item>
+  </channel>
+</rss>

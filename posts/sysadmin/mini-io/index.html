@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=2495&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Votre propre stockage S3</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, sysadmin, s3, stockage'>
+
+    <meta property="og:url" content="http://localhost:2495/posts/sysadmin/mini-io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Votre propre stockage S3">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://localhost:2495/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="http://localhost:2495/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Votre propre stockage S3">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="http://localhost:2495/posts/sysadmin/mini-io/">
+    <meta property="twitter:url" content="http://localhost:2495/posts/sysadmin/mini-io/">
+    <meta name="twitter:image" content="http://localhost:2495/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="http://localhost:2495/posts/sysadmin/mini-io/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="http://localhost:2495/">
+                    <img src="http://localhost:2495//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:2495/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="http://localhost:2495/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="http://localhost:2495/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="http://localhost:2495/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:2495/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:2495/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="http://localhost:2495/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Votre propre stockage S3</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            mars 16, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="http://localhost:2495/tags/sysadmin">sysadmin</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:2495/tags/s3">s3</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:2495/tags/stockage">stockage</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p>S3 de chez AWS est un service de stockage d&rsquo;objets qui permet de stocker et de récupérer des données à partir de n&rsquo;importe où sur le web. Il est conçu pour offrir une durabilité de 99,999999999% et une disponibilité de 99,99%.</p>
+<blockquote>
+<p>Oui ça fait beaucoup de 9, mais c&rsquo;est pour dire que c&rsquo;est fiable.</p></blockquote>
+<p>Mais le probleme, c&rsquo;est que c&rsquo;est cher. Meme des fois tres cher, surtout si vous voulez recuperer ces fichiers. Egalement les types de Bucket S3 sont nombreux et il est parfois difficile de s&rsquo;y retrouver.</p>
+<p><img src="/images/sysadmin/mini-io/tarifs-aws.png" alt="Aws Tarifs"></p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/cyber/poc/defenderui/">
+            &#8592;
+            :
+            Booster Defender gratuitement avec Defender UI
+        </a>
+    </p>
+    <p class="prev-post-date">
+        mars 14, 2025
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/docs/nix/nixos-1/">
+            :
+            NixOS mon homlab reproductible
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            mars 19, 2025
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>NixOS mon homelab reproductible</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, sysadmin, nixos, homelab'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/docs/nix/nixos-1/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NixOS mon homelab reproductible">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NixOS mon homelab reproductible">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/docs/nix/nixos-1/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/docs/nix/nixos-1/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/docs/nix/nixos-1/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>NixOS mon homelab reproductible</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            mars 20, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/sysadmin">sysadmin</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/nixos">nixos</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/homelab">homelab</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p><img src="/images/doc/nix/NixOS_logo.svg" alt="NIX logo"></p>
+<p>Les systèmes d&rsquo;exploitation, c&rsquo;est un peu comme une maison. On a les fondations et des murs au début, puis au fur et à mesure on ajoute des meubles, des objets, des photos, des plantes, bref on personnalise notre espace de vie. Mais un jour, on déménage, et on doit tout recommencer. On ne pourra jamais retrouver exactement la même maison avec les mêmes objets.</p>
+<p>Un OS c&rsquo;est pareil, on installe des logiciels, on configure des services, on personnalise notre environnement de travail. Mais un jour, on doit réinstaller notre système, pour x ou y raison, et on doit tout recommencer. Réfléchir au nom du logiciel qu&rsquo;on ouvre une fois par an, se rappeler de tous les outils qu&rsquo;on a installé, avec un cas comme ça, on ne peut pas simplement commencer à travailler.</p>
+<p>C&rsquo;est là que NixOS intervient. NixOS est un système de <em>package manager</em> et un système d&rsquo;exploitation. Il permet de déclarer l&rsquo;état désiré du système, et de le reproduire à l&rsquo;identique sur n&rsquo;importe quelle machine. Avec un seul fichier de configuration, on peut installer et configurer notre système, et le déployer sur n&rsquo;importe quelle machine. Et dupliquer notre environnement de travail devient un jeu d&rsquo;enfant.</p>
+<h2 id="installation">Installation</h2>
+<p>NixOS est un système d&rsquo;exploitation à part entière, il faut donc l&rsquo;installer.  Vous avez plusieurs options pour installer NixOS : en <em>dual boot</em> sur votre machine physique, dans une machine virtuelle, ou même sur un Raspberry Pi ! Pour cet article, et pour mon homelab, je vais l&rsquo;installer dans une machine virtuelle.</p>
+<p>Pour cela, il suffit de télécharger l&rsquo;image ISO sur le <a href="https://nixos.org/download/">site officiel</a> de NixOS.  Pour moi, je vais la lancer dans mon homelab, sur une machine virtuelle Proxmox.</p>
+<p>Pour rappel, voilà à quoi ressemble mon homelab Proxmox :</p>
+<div class="mermaid">
+graph TD
+    %% Éléments principaux simplifiés
+    Internet((Internet))
+    PC[PC Mohamad]
+    Switch[Switch]
+
+    %% Architecture simplifiée
+    subgraph Proxmox1[Serveur Proxmox 1]
+        Master[Kubernetes Master Node]
+    end
+
+    subgraph Proxmox2[Serveur Proxmox 2]
+        Worker1[Kubernetes Worker 1]
+        Worker2[Kubernetes Worker 2]
+    end
+
+    %% Connexions simplifiées et directes
+    Internet --> PC
+    PC --> Switch
+    Switch --> Proxmox1
+    Switch --> Proxmox2
+
+    %% Relations Kubernetes claires
+    Master --> Worker1
+    Master --> Worker2
+
+    %% Application Pi-Hole sur les deux workers
+    Worker1 --> PiHole1[Pi-Hole 1]
+    Worker2 --> PiHole2[Pi-Hole 2]
+
+    %% Load Balancer MetalLB
+    Switch --> LB[MetalLB Load Balancer]
+    LB --> Worker1
+    LB --> Worker2
+
+    %% Styling adapté aux couleurs de votre site
+    classDef proxmox fill:#FF9966,stroke:#333,stroke-width:1px,color:#000
+    classDef k8s fill:#4169E1,stroke:#fff,color:#fff,stroke-width:1px
+    classDef network fill:#87CEFA,stroke:#333,stroke-width:1px,color:#000
+    classDef internet fill:#58D68D,stroke:#333,stroke-width:1px,color:#000
+    classDef client fill:#F4D03F,stroke:#333,stroke-width:1px,color:#000
+    classDef pihole fill:#AA4444,stroke:#fff,color:#fff,stroke-width:1px
+    classDef loadbalancer fill:#90EE90,stroke:#333,color:#000,stroke-width:1px
+
+    class Proxmox1,Proxmox2 proxmox
+    class Master,Worker1,Worker2 k8s
+    class Switch network
+    class Internet internet
+    class PC client
+    class PiHole1,PiHole2 pihole
+    class LB loadbalancer
+</div>
+<p>Donc pour résumer, une machine virtuelle sur Proxmox, avec un disque dur de 30Go, et 4Go de RAM.</p>
+<p>Si jamais vous le souhaitez, voilà la commande pour créer une machine virtuelle avec Proxmox :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>qm create <span style="color:#ae81ff">115</span> --name VM-Test --memory <span style="color:#ae81ff">4096</span> --cores <span style="color:#ae81ff">2</span> --net0 virtio,bridge<span style="color:#f92672">=</span>vmbr0 --scsihw virtio-scsi-pci --ide2 local-lvm:cloudinit --boot c --agent enabled<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --ostype l26
+</span></span><span style="display:flex;"><span>qm set <span style="color:#ae81ff">115</span> --scsi0 local-lvm:30G
+</span></span><span style="display:flex;"><span>qm set <span style="color:#ae81ff">115</span> --cdrom local:iso/nix-os.iso
+</span></span><span style="display:flex;"><span>qm start <span style="color:#ae81ff">115</span>
+</span></span></code></pre></div><p>Ou sinon vous pouvez le faire directement depuis l&rsquo;interface web de Proxmox.</p>
+<p>Et en suivant attentivement les étapes d&rsquo;installation classiques, vous devriez arriver à installer NixOS très facilement. Pour plus de détails sur l&rsquo;installation, vous pouvez consulter la <a href="https://nixos.org/manual/nixos/stable/index.html#sec-installation">documentation officielle</a>.</p>
+<p><img src="/images/doc/nix/accueil.png" alt="Acceueil nix"></p>
+<h2 id="configuration--on-décore-notre-maison-">Configuration : On Décore Notre Maison !</h2>
+<p>Maintenant que NixOS est installé, laissons de côté les fondations pour passer à la décoration intérieure !  On va enfin pouvoir définir les meubles, les objets, les plantes, bref tout ce qui fait notre environnement de travail.  Et avec NixOS, tout ça se passe dans un seul endroit : le fichier de configuration.</p>
+<p>Ce fichier magique, c&rsquo;est celui-ci :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vim /etc/nixos/configuration.nix
+</span></span></code></pre></div><p>Avant de plonger dans les détails, je veux vous montrer la puissance de Nix avec un exemple simple. Par défaut, il n&rsquo;y a pas de serveur SSH installé.  Pour l&rsquo;installer, devinez quoi ? Il suffit de rajouter quelques lignes dans notre fichier de configuration :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nix" data-lang="nix"><span style="display:flex;"><span>services<span style="color:#f92672">.</span>openssh <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  enable <span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>  ports <span style="color:#f92672">=</span> [ <span style="color:#ae81ff">22</span> ];
+</span></span><span style="display:flex;"><span>  settings <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>      PasswordAuthentication <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>      AllowUsers <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;mohamad&#34;</span>];
+</span></span><span style="display:flex;"><span>      UseDns <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>      X11Forwarding <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>      PermitRootLogin <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;prohibit-password&#34;</span>;
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><blockquote>
+<p>Bien sûr, il faut remplacer <code>mohamad</code> par votre nom d&rsquo;utilisateur.</p></blockquote>
+<p>Voilà à quoi ça ressemble dans mon fichier de config :</p>
+<p><img src="/images/doc/nix/ssh.png" alt="NixOS-ssh"></p>
+<p>Et pour que SSH fonctionne, il faut aussi ouvrir le port 22 dans le firewall. On ajoute donc cette ligne :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nix" data-lang="nix"><span style="display:flex;"><span>networking<span style="color:#f92672">.</span>firewall<span style="color:#f92672">.</span>allowedTCPPorts <span style="color:#f92672">=</span> [ <span style="color:#ae81ff">22</span> ];
+</span></span></code></pre></div><p>Une fois ces modifications faites, il ne reste plus qu&rsquo;à appliquer la configuration avec cette commande :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nixos-rebuild switch
+</span></span></code></pre></div>
+
+<style>
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 850px; /* Limite la largeur maximale de la vidéo */
+    height: auto;
+    margin: 0 auto; /* Centre la vidéo horizontalement */
+  }
+
+  .video-container video {
+    width: 100%; /* La vidéo prendra 100% de la largeur du conteneur */
+    height: auto; /* La hauteur sera ajustée proportionnellement */
+  }
+</style>
+
+<div class="video-container">
+  <video controls src="/images/doc/nix/ssh-install.mp4" title="Title"></video>
+</div>
+
+<p>Et en quelques secondes, BIM ! Un serveur SSH qui tourne sur votre machine, configuré exactement comme vous l&rsquo;avez défini.  La magie de la configuration déclarative !</p>
+<blockquote>
+<p>Votre sortie console sera un peu différente de la mienne, car j&rsquo;avais déjà le paquet SSH installé et lancé. Pas de reboot entre temps pour moi ! :)</p></blockquote>
+<h3 id="ajout-de-paquets--on-remplit-les-étagères">Ajout de paquets : On Remplit les Étagères</h3>
+<p>Pour ajouter des paquets, c&rsquo;est tout aussi simple que pour SSH.  On ajoute une ligne dans le fichier de configuration, et hop !</p>
+<p>Pour cet article, on va installer un outil qu&rsquo;on connaît tous, <code>nmap</code>. Voici la ligne à rajouter :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nix" data-lang="nix"><span style="display:flex;"><span>environment<span style="color:#f92672">.</span>systemPackages <span style="color:#f92672">=</span> <span style="color:#66d9ef">with</span> pkgs; [
+</span></span><span style="display:flex;"><span>    nmap
+</span></span><span style="display:flex;"><span>  ];
+</span></span></code></pre></div><p>Avec ça, vous installez <code>nmap</code> globalement sur NixOS, disponible pour tous les utilisateurs.  Mais si vous voulez limiter l&rsquo;installation à un seul utilisateur, vous pouvez utiliser cette ligne :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nix" data-lang="nix"><span style="display:flex;"><span>users<span style="color:#f92672">.</span>users<span style="color:#f92672">.</span>mohamad<span style="color:#f92672">.</span>packages <span style="color:#f92672">=</span> <span style="color:#66d9ef">with</span> pkgs; [
+</span></span><span style="display:flex;"><span>    nmap
+</span></span><span style="display:flex;"><span>  ];
+</span></span></code></pre></div><p>Voici ce que ça donne dans mon fichier de configuration avec <code>nmap</code> :</p>
+<p><img src="/images/doc/nix/nmap.png" alt="Nmap"></p>
+<p>Et pour appliquer les changements, toujours la même commande :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nixos-rebuild switch
+</span></span></code></pre></div><p>Admirez la vitesse d&rsquo;installation :</p>
+
+
+<style>
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 850px; /* Limite la largeur maximale de la vidéo */
+    height: auto;
+    margin: 0 auto; /* Centre la vidéo horizontalement */
+  }
+
+  .video-container video {
+    width: 100%; /* La vidéo prendra 100% de la largeur du conteneur */
+    height: auto; /* La hauteur sera ajustée proportionnellement */
+  }
+</style>
+
+<div class="video-container">
+  <video controls src="/images/doc/nix/nmap.mp4" title="Title"></video>
+</div>
+
+<p>En moins de 30 secondes, <code>nmap</code> est installé et prêt à l&rsquo;emploi.  C&rsquo;est quand même super pratique, non ?</p>
+<h3 id="et-le-reste--tout-est-configurable-">Et le Reste ? TOUT est Configurable !</h3>
+<p>Avec NixOS, <strong>tout est configurable</strong>. Absolument tout !  Si vous avez une âme de bidouilleur et que vous voulez passer une année sabbatique devant votre écran, apprendre à configurer NixOS est une excellente idée.  Parce qu&rsquo;avec NixOS, les configurations éparpillées dans des dossiers <code>/etc/</code>, c&rsquo;est terminé !</p>
+<p><strong>Un seul fichier pour gouverner le système</strong>, c&rsquo;est ça la philosophie de NixOS.  On a une vue d&rsquo;ensemble de notre système, on sait exactement ce qui est installé, ce qui tourne, et comment c&rsquo;est configuré.  Modifier son système devient simple et transparent.</p>
+<p>Quelques exemples rapides pour vous donner une idée :</p>
+<ul>
+<li><strong>Changer le nom de la machine :</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nix" data-lang="nix"><span style="display:flex;"><span>networking<span style="color:#f92672">.</span>hostName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;nixos-homelab&#34;</span>;
+</span></span></code></pre></div><ul>
+<li><strong>Changer le fuseau horaire :</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nix" data-lang="nix"><span style="display:flex;"><span>time<span style="color:#f92672">.</span>timeZone <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Europe/Paris&#34;</span>;
+</span></span></code></pre></div><ul>
+<li><strong>Configurer un serveur web (basique) :</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nix" data-lang="nix"><span style="display:flex;"><span>  networking<span style="color:#f92672">.</span>firewall<span style="color:#f92672">.</span>allowedTCPPorts <span style="color:#f92672">=</span> [ <span style="color:#ae81ff">80</span> ]; <span style="color:#75715e"># On ouvre juste le port 80 pour commencer</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  services<span style="color:#f92672">.</span>nginx<span style="color:#f92672">.</span>enable <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>; <span style="color:#75715e"># On active Nginx</span>
+</span></span><span style="display:flex;"><span>  services<span style="color:#f92672">.</span>nginx<span style="color:#f92672">.</span>virtualHosts<span style="color:#f92672">.</span><span style="color:#e6db74">&#34;mon-site.local&#34;</span> <span style="color:#f92672">=</span> { <span style="color:#75715e"># On configure un virtual host</span>
+</span></span><span style="display:flex;"><span>    root <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/var/www/mon-site&#34;</span>; <span style="color:#75715e"># Le dossier racine du site</span>
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  systemd<span style="color:#f92672">.</span>tmpfiles<span style="color:#f92672">.</span>rules <span style="color:#f92672">=</span> [ <span style="color:#75715e"># On crée le dossier racine du site</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;d /var/www/mon-site&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;f /var/www/mon-site/index.html - - - - &lt;h1&gt;Hello NixOS !&lt;/h1&gt;&#34;</span> <span style="color:#75715e"># Un petit index.html pour tester</span>
+</span></span><span style="display:flex;"><span>  ];
+</span></span></code></pre></div><p>Vous voyez l&rsquo;idée ?  On peut configurer des services complexes comme un serveur web, mais aussi des détails plus fins comme le nom de la machine ou le fuseau horaire.  C&rsquo;est ça la beauté de NixOS : <strong>la granularité et la cohérence de la configuration</strong>.</p>
+<p>C&rsquo;est particulièrement utile dans un homelab, quand on teste plein de choses, qu&rsquo;on apprend de nouvelles technologies, qu&rsquo;on casse des trucs&hellip;  On peut se permettre d&rsquo;expérimenter sans crainte de tout casser, car on sait qu&rsquo;on peut revenir en arrière en un clin d&rsquo;œil.  Et même en production, déployer un nouveau service ou un serveur devient beaucoup plus rapide et serein.</p>
+<h3 id="catastrophe---ou-pas">Catastrophe ! &hellip; ou pas</h3>
+<p>NixOS est un système d&rsquo;exploitation reproductible, je le répète !  Et ça, ça veut dire que si vous faites une boulette dans votre fichier de configuration, pas de panique !  Vous pouvez <strong>toujours revenir en arrière</strong>.  C&rsquo;est un peu comme un bouton &ldquo;undo&rdquo; pour votre système d&rsquo;exploitation.</p>
+<p>Imaginons, je fais une bêtise et je désactive SSH et je verrouille le port 22.  Voici les modifications (volontairement mauvaises !) que je vais faire dans mon fichier de configuration :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nix" data-lang="nix"><span style="display:flex;"><span>services<span style="color:#f92672">.</span>openssh <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  enable <span style="color:#f92672">=</span><span style="color:#66d9ef">false</span>; <span style="color:#75715e"># On désactive SSH (la GROSSE erreur !)</span>
+</span></span><span style="display:flex;"><span>  ports <span style="color:#f92672">=</span> [ <span style="color:#ae81ff">22</span> ];
+</span></span><span style="display:flex;"><span>  settings <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>      PasswordAuthentication <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>      AllowUsers <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;mohamad&#34;</span>];
+</span></span><span style="display:flex;"><span>      UseDns <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>      X11Forwarding <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>      PermitRootLogin <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;prohibit-password&#34;</span>;
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>networking<span style="color:#f92672">.</span>firewall<span style="color:#f92672">.</span>allowedTCPPorts <span style="color:#f92672">=</span> [ ]; <span style="color:#75715e"># On ferme TOUS les ports TCP (la DOUBLE GROSSE erreur !)</span>
+</span></span></code></pre></div><p>J&rsquo;applique les changements, comme d&rsquo;habitude :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nixos-rebuild switch
+</span></span></code></pre></div><p>Et là&hellip; c&rsquo;est le drame ! Je n&rsquo;ai plus accès à ma machine en SSH.  Panique à bord ?  <strong>Absolument pas !</strong>  Avec NixOS, c&rsquo;est super simple de réparer les erreurs.  Il suffit de redémarrer la machine et de choisir de booter sur la <strong>génération système précédente</strong>.  NixOS garde en mémoire chaque configuration précédente, comme des points de sauvegarde.</p>
+<p>Regardez comme c&rsquo;est facile :</p>
+
+
+<style>
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 850px; /* Limite la largeur maximale de la vidéo */
+    height: auto;
+    margin: 0 auto; /* Centre la vidéo horizontalement */
+  }
+
+  .video-container video {
+    width: 100%; /* La vidéo prendra 100% de la largeur du conteneur */
+    height: auto; /* La hauteur sera ajustée proportionnellement */
+  }
+</style>
+
+<div class="video-container">
+  <video controls src="/images/doc/nix/boot.mp4" title="Title"></video>
+</div>
+
+<p>Et voilà !  En moins d&rsquo;une minute, j&rsquo;ai récupéré l&rsquo;accès à ma machine, comme si de rien n&rsquo;était.  C&rsquo;est pas génial, ça ?  Cette fonctionnalité de <em>rollback</em> est vraiment un game-changer, surtout quand on expérimente ou qu&rsquo;on fait des mises à jour un peu risquées.  <strong>La sérénité, ça n&rsquo;a pas de prix !</strong></p>
+<h2 id="est-ce-vraiment-mieux-que-les-autres-solutions-">Est-ce Vraiment Mieux que les Autres Solutions ?</h2>
+<p>NixOS, c&rsquo;est cool, c&rsquo;est reproductible, c&rsquo;est déclaratif&hellip; Mais soyons honnêtes, il existe d&rsquo;autres outils pour automatiser et gérer la configuration de nos systèmes : Ansible, Docker, et j&rsquo;en passe.  Alors, <strong>est-ce que NixOS est vraiment <em>mieux</em> ?</strong>  Et surtout, est-ce que c&rsquo;est pertinent pour un homelab ?</p>
+<p>La réponse, comme souvent, est : <strong>ça dépend</strong>.  Mais dans le contexte d&rsquo;un homelab, je pense que NixOS a de sérieux arguments à faire valoir.  Comparons un peu avec les alternatives courantes :</p>
+<ul>
+<li>
+<p><strong>Ansible : L&rsquo;orchestrateur de configuration.</strong> Ansible est super pour automatiser la configuration de serveurs <em>existants</em>.  Vous avez déjà vos machines en place (Debian, Ubuntu, etc.), et Ansible va vous permettre de déployer des applications, configurer des services, etc., de manière automatisée et reproductible.  <strong>La force d&rsquo;Ansible, c&rsquo;est sa capacité à gérer des systèmes <em>existants</em> et hétérogènes</strong>.  Par contre, Ansible ne gère pas <em>tout</em> le système d&rsquo;exploitation en profondeur.  Il va configurer des applications <em>au-dessus</em> d&rsquo;un OS déjà en place.  Avec NixOS, <strong>on configure <em>tout</em> : du kernel aux applications, en passant par les services système</strong>.  C&rsquo;est une approche plus <em>holistique</em>.  Pour un homelab où on construit souvent des systèmes de zéro, NixOS est plus adapté.</p>
+</li>
+<li>
+<p><strong>Docker (et les conteneurs) : L&rsquo;isolation applicative.</strong> Docker, c&rsquo;est génial pour isoler des applications dans des conteneurs et les déployer de manière portable.  C&rsquo;est parfait pour des applications web, des bases de données, etc.  <strong>Docker se concentre sur l&rsquo;isolation et la distribution des <em>applications</em></strong>.  NixOS, lui, se concentre sur la <strong>configuration du <em>système d&rsquo;exploitation</em></strong>.  Les deux ne sont pas mutuellement exclusifs !  On peut tout à fait utiliser Docker <em>dans</em> NixOS.  D&rsquo;ailleurs, NixOS gère très bien Docker.  Mais si votre besoin est de configurer <em>l&rsquo;ensemble</em> de votre système (pas juste des applications isolées), NixOS va plus loin que Docker.  Pour un homelab, on a souvent besoin des deux : des conteneurs pour certaines applications, et un système d&rsquo;exploitation bien configuré et reproductible pour héberger tout ça.  NixOS peut être la base solide pour construire cet environnement.</p>
+</li>
+</ul>
+<p><strong>Alors, &ldquo;mieux&rdquo;, c&rsquo;est peut-être un mot trop fort.</strong>  Mais dans un contexte homelab, NixOS apporte des avantages uniques :</p>
+<ul>
+<li><strong>Reproductibilité <em>totale</em> :</strong>  On peut recréer son système à l&rsquo;identique, sur n&rsquo;importe quelle machine, à partir d&rsquo;un seul fichier de configuration.  C&rsquo;est super pratique pour tester, dupliquer des environnements, ou simplement pour ne pas perdre des heures à reconfigurer son système après une réinstallation.</li>
+<li><strong>Gestion de configuration <em>granulaire</em> et <em>cohérente</em> :</strong> On configure <em>tout</em> le système, de manière déclarative, dans un seul fichier.  On a une vue d&rsquo;ensemble et on évite les configurations éparpillées et les incohérences.</li>
+<li><strong>Rollback <em>facile</em> et <em>sécurisé</em> :</strong>  On peut expérimenter sans crainte de tout casser, grâce aux générations système et au rollback en un clic.  C&rsquo;est un gain de temps et de sérénité énorme.</li>
+<li><strong>Communauté <em>passionnée</em> et <em>active</em> :</strong> La communauté NixOS est super accueillante et il y a plein de ressources disponibles (documentation, forums, etc.).  C&rsquo;est important quand on débute avec un nouveau système.</li>
+</ul>
+<p><strong>Bien sûr, NixOS a aussi une courbe d&rsquo;apprentissage.</strong>  La syntaxe Nix peut paraître un peu déroutante au début, et il faut changer ses habitudes de configuration.  Mais <strong>l&rsquo;investissement en vaut vraiment la peine</strong>, surtout si vous passez du temps à bidouiller votre homelab et que vous cherchez un système fiable, reproductible et agréable à utiliser.</p>
+<p><strong>Alors, prêt à décorer votre homelab avec NixOS ?</strong> N&rsquo;hésitez pas à télécharger l&rsquo;ISO, à tester dans une machine virtuelle, et à partager vos impressions en m&rsquo;envoyant un message sur LinedIn !  Et si vous avez des questions, la communauté NixOS est là pour vous aider !</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/cyber/poc/defenderui/">
+            &#8592;
+            :
+            Booster Defender gratuitement avec Defender UI
+        </a>
+    </p>
+    <p class="prev-post-date">
+        mars 14, 2025
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>
