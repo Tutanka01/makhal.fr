@@ -6,8 +6,15 @@
     <description>Recent content on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Thu, 20 Mar 2025 06:40:45 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 23 Mar 2025 06:01:10 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kiwix - Le savoir à portée de main</title>
+      <link>https://makhal.fr/posts/docs/kiwix/kiwix/</link>
+      <pubDate>Sun, 23 Mar 2025 06:01:10 +0100</pubDate>
+      <guid>https://makhal.fr/posts/docs/kiwix/kiwix/</guid>
+      <description>Imaginez : tout le savoir humain dans votre poche, sans Wi-Fi ni 4G. Possible ? Oui, avec Kiwix.</description>
+    </item>
     <item>
       <title>NixOS mon homelab reproductible</title>
       <link>https://makhal.fr/posts/docs/nix/nixos-1/</link>

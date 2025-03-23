@@ -6,8 +6,22 @@
     <description>Recent content in Tags on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Thu, 20 Mar 2025 06:40:45 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 23 Mar 2025 06:01:10 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cyber</title>
+      <link>https://makhal.fr/tags/cyber/</link>
+      <pubDate>Sun, 23 Mar 2025 06:01:10 +0100</pubDate>
+      <guid>https://makhal.fr/tags/cyber/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kiwix</title>
+      <link>https://makhal.fr/tags/kiwix/</link>
+      <pubDate>Sun, 23 Mar 2025 06:01:10 +0100</pubDate>
+      <guid>https://makhal.fr/tags/kiwix/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Homelab</title>
       <link>https://makhal.fr/tags/homelab/</link>
@@ -27,13 +41,6 @@
       <link>https://makhal.fr/tags/sysadmin/</link>
       <pubDate>Thu, 20 Mar 2025 06:40:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/sysadmin/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cyber</title>
-      <link>https://makhal.fr/tags/cyber/</link>
-      <pubDate>Fri, 14 Mar 2025 06:01:10 +0100</pubDate>
-      <guid>https://makhal.fr/tags/cyber/</guid>
       <description></description>
     </item>
     <item>

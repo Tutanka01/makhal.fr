@@ -2,10 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://makhal.fr/tags/homelab/</loc>
-    <lastmod>2025-03-20T06:40:45+02:00</lastmod>
+    <loc>https://makhal.fr/tags/cyber/</loc>
+    <lastmod>2025-03-23T06:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/kiwix/</loc>
+    <lastmod>2025-03-23T06:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/posts/docs/kiwix/kiwix/</loc>
+    <lastmod>2025-03-23T06:01:10+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/</loc>
+    <lastmod>2025-03-23T06:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/posts/</loc>
+    <lastmod>2025-03-23T06:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/</loc>
+    <lastmod>2025-03-23T06:01:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/homelab/</loc>
     <lastmod>2025-03-20T06:40:45+02:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/nixos/</loc>
@@ -14,19 +29,10 @@
     <loc>https://makhal.fr/posts/docs/nix/nixos-1/</loc>
     <lastmod>2025-03-20T06:40:45+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/posts/</loc>
-    <lastmod>2025-03-20T06:40:45+02:00</lastmod>
-  </url><url>
     <loc>https://makhal.fr/tags/sysadmin/</loc>
     <lastmod>2025-03-20T06:40:45+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/</loc>
-    <lastmod>2025-03-20T06:40:45+02:00</lastmod>
-  </url><url>
     <loc>https://makhal.fr/posts/cyber/poc/defenderui/</loc>
-    <lastmod>2025-03-14T06:01:10+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/cyber/</loc>
     <lastmod>2025-03-14T06:01:10+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/endpoint/</loc>
