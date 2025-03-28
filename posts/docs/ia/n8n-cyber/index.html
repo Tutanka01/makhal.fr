@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Agent IA n8n : Analysez les URLs (Partie 1)</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, IA, n8n'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/docs/ia/n8n-cyber/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Agent IA n8n : Analysez les URLs (Partie 1)">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Agent IA n8n : Analysez les URLs (Partie 1)">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/docs/ia/n8n-cyber/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/docs/ia/n8n-cyber/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/docs/ia/n8n-cyber/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Agent IA n8n : Analysez les URLs (Partie 1)</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            mars 26, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/ia">IA</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/n8n">n8n</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/cyber">cyber</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p><img src="/images/doc/n8n/logo.png" alt="alt text"></p>
+<p>Impossible d&rsquo;y échapper ces derniers temps, les IA sont partout dans les discussions, et oui, moi inclus ! L&rsquo;image qu&rsquo;on en a souvent, c&rsquo;est le style ChatGPT : une fenêtre de chat où on discute avec une intelligence artificielle. C&rsquo;est sympa, c&rsquo;est clair, mais avouons-le, ça reste un peu limité pour certaines choses.</p>
+<p>Parce que, soyons honnêtes, et si on voulait que l&rsquo;IA fasse <em>plus</em> ? Genre, lire nos mails à notre place ? Ajouter automatiquement ce rendez-vous galère dans le calendrier ? Voire nous préparer le café ? Bon, d&rsquo;accord, pour le café, on n&rsquo;y est pas encore tout à fait, mais pour le reste, c&rsquo;est carrément jouable !</p>
+<p>C&rsquo;est là qu&rsquo;interviennent les <strong>agents IA</strong>. C&rsquo;est quoi le truc ? Imaginez une IA qui ne fait pas que discuter. Elle a accès à des infos (vos mails, votre calendrier, des API, etc.) et elle peut <em>agir</em> en fonction de ces infos, prendre des décisions. Exemple tout bête : un client vous envoie un mail pour caler un RDV le 25 mars à 14h. Votre agent IA perso lit le mail, vérifie votre calendrier, ajoute le rendez-vous et, cerise sur le gâteau, répond au client pour confirmer. Pas mal, non ?</p>
+<p>&ldquo;Attendez,&rdquo; vous allez me dire, &ldquo;c&rsquo;est juste une automatisation comme on en fait depuis des lustres, non ?&rdquo; Pas tout à fait ! La grosse différence, c&rsquo;est qu&rsquo;avec une automatisation classique, il faut prévoir <em>tous</em> les cas de figure, le moindre petit détail, et tout coder soi-même. C&rsquo;est souvent rigide. Avec un agent IA, la philosophie est différente : on lui définit sa <strong>mission</strong> (son rôle, ce qu&rsquo;il doit accomplir), on lui donne accès aux <strong>outils</strong> dont il a besoin (l&rsquo;accès aux mails, au calendrier, à une API externe&hellip;), et ensuite&hellip; il se débrouille pour atteindre l&rsquo;objectif en raisonnant un peu comme un humain (enfin, presque !). C&rsquo;est beaucoup plus flexible et puissant.</p>
+<p>Intriguant, n&rsquo;est-ce pas ? Pour que tout ça devienne plus concret et moins abstrait, je vous propose de mettre les mains dans le cambouis. Dans cette série  d&rsquo;articles, on va construire ensemble un agent IA simple mais pratique avec l&rsquo;outil <strong>n8n</strong>. Sa mission ? Analyser les URLs un peu louches que je pourrais croiser, directement depuis une discussion <strong>Telegram</strong>. Pour ça, il utilisera l&rsquo;<strong>API de VirusTotal</strong> et une IA nous donnera même son avis sur la marche à suivre. Prêts ?</p>
+<h2 id="n8n">n8n</h2>
+<p>Mais c&rsquo;est quoi, n8n ? C&rsquo;est un outil d&rsquo;automatisation qui permet de créer des workflows (des enchaînements d&rsquo;actions) sans écrire (presque) une seule ligne de code. Il existe déjà depuis un bon moment. Mais récemment, ils ont ajouté la possibilité d&rsquo;intégrer des <strong>agents IA</strong>. Et c&rsquo;est <em>exactement</em> ce qui nous intéresse ici.</p>
+<p>Avant, une automatisation un peu complexe pouvait vite ressembler à ça :</p>
+<p><img src="/images/doc/n8n/comparaison.png" alt="Comparaison"></p>
+<p>Donc avec plein de nœuds, de connexions, des IF et des ELSE partout&hellip; bref, un vrai plat de spaghettis parfois. Avec un agent IA, l&rsquo;idée c&rsquo;est de simplifier et ça ressemble plutôt à ça :</p>
+<p><img src="/images/doc/n8n/comparaison-2.png" alt="Comparaison-2"></p>
+<p>On donne à l&rsquo;agent un objectif et un set d&rsquo;outils, et il se charge de les utiliser au mieux pour faire le job. C&rsquo;est beaucoup plus simple à concevoir et bien plus flexible.</p>
+<blockquote>
+<p>Si vous ne comprenez pas tout de suite la différence, pas de panique, on va voir ça ensemble pas à pas. C&rsquo;est en faisant qu&rsquo;on comprend le mieux !</p></blockquote>
+<p>Tout d&rsquo;abord, il faut savoir que n8n est un outil <strong>open-source</strong>. Ça veut dire que vous pouvez l&rsquo;installer gratos sur votre propre serveur, regarder le code, le modifier&hellip; Déjà, rendez-vous compte que c&rsquo;est un outil puissant, <em>très</em> puissant, et qu&rsquo;il est open-source !! C&rsquo;est pour ça qu&rsquo;on adore nos communautés devs et open source.</p>
+<p>Également, n8n propose une <a href="https://n8n.io/">version cloud</a>, qui elle est payante. Ça permet d&rsquo;avoir ses automatisations en ligne sans se prendre la tête avec un serveur. C&rsquo;est pratique, mais ce n&rsquo;est pas ce qu&rsquo;on va utiliser ici. Nous, on va l&rsquo;installer sur notre propre serveur en utilisant la technologie qu&rsquo;on aime tous : <strong>Docker</strong>.</p>
+<blockquote>
+<p>Si vous ne connaissez pas encore Docker ou que vous avez besoin d&rsquo;un rappel, je vous invite à lire <a href="/posts/docker/docker_1/">cet article</a> pour comprendre les bases. On va utiliser <code>docker compose</code> ici.</p></blockquote>
+<h2 id="installation-de-n8n">Installation de n8n</h2>
+<p>Déjà, pour l&rsquo;installer, il faut être sûr d&rsquo;avoir un serveur avec Docker et Docker Compose d&rsquo;installés. Si ce n&rsquo;est pas le cas, je vous renvoie à nouveau vers <a href="/posts/docker/docker_1/">cet article</a> qui explique comment faire.</p>
+<p>Pour information, le serveur sur lequel je vais installer n8n se trouve dans mon fameux cluster Proxmox, plus précisément sur une VM Debian 12 avec 4 Go de RAM et 2 vCPU. J&rsquo;y ai déjà plusieurs autres services qui tournent dessus, mais n8n n&rsquo;est vraiment pas gourmand en ressources.</p>
+<p>Voici mon cluster Proxmox :</p>
+<div class="mermaid">
+graph TD
+    %% Éléments principaux simplifiés
+    Internet((Internet))
+    PC[PC Mohamad]
+    Switch[Switch]
+
+    %% Architecture simplifiée
+    subgraph Proxmox1[Serveur Proxmox 1]
+        Master[Kubernetes Master Node]
+    end
+
+    subgraph Proxmox2[Serveur Proxmox 2]
+        Worker1[Kubernetes Worker 1]
+        Worker2[Kubernetes Worker 2]
+    end
+
+    %% Connexions simplifiées et directes
+    Internet --> PC
+    PC --> Switch
+    Switch --> Proxmox1
+    Switch --> Proxmox2
+
+    %% Relations Kubernetes claires
+    Master --> Worker1
+    Master --> Worker2
+
+    %% Application Pi-Hole sur les deux workers
+    Worker1 --> PiHole1[Pi-Hole 1]
+    Worker2 --> PiHole2[Pi-Hole 2]
+
+    %% Load Balancer MetalLB
+    Switch --> LB[MetalLB Load Balancer]
+    LB --> Worker1
+    LB --> Worker2
+
+    %% Styling adapté aux couleurs de votre site
+    classDef proxmox fill:#FF9966,stroke:#333,stroke-width:1px,color:#000
+    classDef k8s fill:#4169E1,stroke:#fff,color:#fff,stroke-width:1px
+    classDef network fill:#87CEFA,stroke:#333,stroke-width:1px,color:#000
+    classDef internet fill:#58D68D,stroke:#333,stroke-width:1px,color:#000
+    classDef client fill:#F4D03F,stroke:#333,stroke-width:1px,color:#000
+    classDef pihole fill:#AA4444,stroke:#fff,color:#fff,stroke-width:1px
+    classDef loadbalancer fill:#90EE90,stroke:#333,color:#000,stroke-width:1px
+
+    class Proxmox1,Proxmox2 proxmox
+    class Master,Worker1,Worker2 k8s
+    class Switch network
+    class Internet internet
+    class PC client
+    class PiHole1,PiHole2 pihole
+    class LB loadbalancer
+</div>
+<p>Pour installer n8n, rien de plus simple. Il suffit de créer un fichier <code>compose.yaml</code> (ou <code>docker-compose.yaml</code>) avec le contenu suivant :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">n8n</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">n8nio/n8n</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">n8n</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">80</span>:<span style="color:#ae81ff">5678</span> <span style="color:#75715e"># Mappe le port 5678 de n8n sur le port 80 de votre serveur</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># Remplacez &#39;http://n8n.makhal.lan/&#39; par l&#39;URL publique de votre serveur n8n !</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">WEBHOOK_URL=http://n8n.makhal.lan/</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">N8N_HOST=n8n</span> <span style="color:#75715e"># Nom d&#39;hôte interne pour n8n</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">N8N_PORT=5678</span> <span style="color:#75715e"># Port interne de n8n</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">N8N_PROTOCOL=http</span> <span style="color:#75715e"># Protocole interne</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">NODE_ENV=production</span> <span style="color:#75715e"># Mode de fonctionnement</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">N8N_SECURE_COOKIE=false</span> <span style="color:#75715e"># Pour simplifier en http local, mettez à true si vous passez en https</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">n8n:/home/node/.n8n</span> <span style="color:#75715e"># Stockage persistant des données n8n</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">n8n</span>: <span style="color:#75715e"># Déclare le volume Docker</span>
+</span></span></code></pre></div><p>Donc on a un service <code>n8n</code> qui utilise l&rsquo;image officielle <code>n8nio/n8n</code> et qui expose le port interne <code>5678</code> sur le port <code>80</code> de notre serveur hôte.
+<strong>Attention :</strong> Le paramètre <code>WEBHOOK_URL</code> est <strong>super important</strong>. Il permet à n8n de savoir quelle est son adresse publique pour générer correctement les URLs (notamment pour les webhooks). <strong>Il faut absolument le remplacer par l&rsquo;URL ou l&rsquo;adresse IP publique de votre serveur n8n</strong>, par exemple <code>http://mon-super-serveur.com/</code> ou <code>http://192.168.1.XX/</code>.</p>
+<p>Ensuite, placez-vous dans le dossier où vous avez créé le fichier <code>compose.yaml</code> et lancez la commande suivante :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker compose compose.yaml up -d
+</span></span></code></pre></div><p>Et voilà ! n8n est installé et devrait être en train de démarrer en arrière-plan (<code>-d</code>). Il suffit de vous rendre sur l&rsquo;URL que vous avez configurée (celle de votre serveur, sur le port 80 si vous avez gardé le mapping par défaut) pour accéder à l&rsquo;interface web.</p>
+<p>La première fois, n8n va vous demander de créer un compte &ldquo;Owner&rdquo;. Ce compte est local à votre instance et vous permettra de sauvegarder vos workflows et de gérer votre n8n.</p>
+<p>Une fois connecté(e), vous devriez voir une interface qui ressemble à ça :</p>
+<p><img src="/images/doc/n8n/interface.png" alt="Interface"></p>
+<h2 id="création-de-notre-premier-agent-ia">Création de notre premier agent IA</h2>
+<p>Avant de commencer cette partie, il y a bien entendu un petit prérequis : il faut avoir une <strong>clé API</strong> d&rsquo;une IA compatible.</p>
+<p>Peu importe laquelle en théorie : Mistral, Gemini, OpenAI (ChatGPT), Claude, etc. Il suffirait de s&rsquo;inscrire sur leur site officiel, parfois de sortir la carte bleue, et de récupérer la fameuse clé API.</p>
+<p>Mais avant de foncer tête baissée sur les sites officiels, laissez-moi vous filer un super tuyau : <strong><a href="https://openrouter.ai/">OpenRouter</a></strong>. C&rsquo;est une sorte de <strong>concentrateur d&rsquo;API IA</strong>. L&rsquo;avantage ? Vous vous inscrivez une fois, vous récupérez une clé API OpenRouter, et cette seule clé vous donne accès à des <em>dizaines</em> de modèles IA différents, y compris des modèles open source ou moins connus.</p>
+<p>Le plus cool ? OpenRouter propose souvent des <strong>crédits gratuits</strong> au démarrage et permet d&rsquo;accéder à certains modèles marqués comme <strong>&ldquo;Free&rdquo;</strong> (souvent des modèles open source ou avec des limitations) sans avoir à enregistrer de carte bancaire. C&rsquo;est donc parfait pour tester et bidouiller sans se ruiner !</p>
+<p>Pour créer votre clé API OpenRouter (sans CB, on a dit !) :</p>
+<ol>
+<li>
+<p>Inscrivez-vous sur <a href="https://openrouter.ai/">OpenRouter.ai</a>.</p>
+</li>
+<li>
+<p>Une fois connecté(e), allez dans votre compte (en haut à droite) puis sur l&rsquo;onglet <strong>Keys</strong>.</p>
+<p><img src="/images/doc/n8n/openrouter.png" alt="OpenRouter"></p>
+</li>
+<li>
+<p>Cliquez sur <strong>Create Key</strong>.</p>
+<p><img src="/images/doc/n8n/openrouter-2.png" alt="openrouter-2"></p>
+</li>
+<li>
+<p>Donnez un nom à votre clé (par exemple, &ldquo;n8n-test&rdquo;), laissez les limites par défaut pour l&rsquo;instant, et cliquez sur <strong>Create</strong>.</p>
+</li>
+<li>
+<p><strong>Copiez immédiatement la clé qui s&rsquo;affiche et sauvegardez-la précieusement quelque part !</strong> Elle ne sera plus affichée ensuite.</p>
+</li>
+</ol>
+<p>Voilà, vous avez votre sésame ! Revenons à n8n.</p>
+<p>Pour créer notre agent IA, dans l&rsquo;interface n8n, cliquez sur le gros bouton <code>Create Workflow</code>.</p>
+<p><img src="/images/doc/n8n/n8n-1.png" alt="N8n-1"></p>
+<p>Vous allez tomber sur un canvas (une zone de travail) vide. C&rsquo;est ici que la magie va opérer.</p>
+<p>Cliquez sur le bouton <code>Add first step</code> ou sur le <code>+</code> au milieu. Une fenêtre s&rsquo;ouvre avec une barre de recherche. Tapez <code>AI</code> ou <code>Agent</code>. Vous allez voir qu&rsquo;on peut vraiment faire de tout avec n8n (mails, Telegram, SMS, Jira, Gitlab&hellip;). C&rsquo;est assez fou, surtout quand on se rappelle que c&rsquo;est open source !</p>
+<p>Ici, cherchez et sélectionnez le nœud <strong><code>AI Agent</code></strong>. C&rsquo;est lui le chef d&rsquo;orchestre de notre future IA.</p>
+<p><img src="/images/doc/n8n/n8n-2.png" alt="n8n-2"></p>
+<p>Une fois que vous aurez cliqué dessus, vous aurez une interface de configuration un peu dense qui va s&rsquo;afficher.</p>
+<p><img src="/images/doc/n8n/n8n-3.png" alt="alt text"></p>
+<p>Pas de panique ! Pour l&rsquo;instant, on ne touche à rien ici, on va juste configurer l&rsquo;essentiel. Cliquez en dehors de cette fenêtre pour revenir au canvas.</p>
+<p>Maintenant, sur le nœud <code>AI Agent</code> qui est apparu sur votre canvas, cliquez sur l&rsquo;option <strong><code>Chat Model</code></strong>. Un panneau de configuration va s&rsquo;ouvrir sur la droite. C&rsquo;est ici qu&rsquo;on va dire à notre agent avec quelle IA il doit discuter.</p>
+<p><img src="/images/doc/n8n/n8n-4.png" alt="alt text"></p>
+<p>Dans la liste déroulante <code>Chat Model Provider</code>, choisissez <strong><code>OpenRouter</code></strong>.
+Ensuite, pour <code>Credentials for OpenRouter API</code>, cliquez sur <code>- Create New -</code>.</p>
+<p><img src="/images/doc/n8n/n8n-5.png" alt="alt text"></p>
+<p>Une petite fenêtre s&rsquo;ouvre. Donnez un nom à cette configuration de clé (par exemple, &ldquo;Ma Clé OpenRouter&rdquo;) et collez la fameuse clé API OpenRouter que vous avez sauvegardée tout à l&rsquo;heure dans le champ <code>API Key</code>. Cliquez sur <strong>Save</strong>.</p>
+<p>Une fois la clé enregistrée, vous verrez qu&rsquo;un nouveau champ est apparu juste en dessous : <strong><code>Model</code></strong>. C&rsquo;est ici qu&rsquo;on choisit <em>précisément</em> le cerveau de notre IA parmi tous ceux proposés par OpenRouter.</p>
+<p>Faites attention, la liste est longue ! Pour notre test (et pour rester dans le gratuit), cherchez un modèle avec <code>Free</code> à côté. Par exemple (et c&rsquo;est celui qu&rsquo;on va prendre pour ce tuto, même s&rsquo;il est expérimental à la date d&rsquo;écriture) : <strong><code>google/gemini-2.5-pro-exp-03-25:free</code></strong>. (Toujours plus long les noms chez Google !)</p>
+<p><img src="/images/doc/n8n/n8n-6.png" alt="alt text"></p>
+<p>Sélectionnez-le.</p>
+<p>Maintenant, pour vérifier que tout fonctionne, on va tester la connexion avec l&rsquo;IA. En haut à droite du panneau de configuration du nœud <code>AI Agent</code>, cliquez sur le petit bouton de <strong>Chat</strong> (l&rsquo;icône de bulle de discussion).</p>
+<p><img src="/images/doc/n8n/n8n-7.png" alt="alt text"></p>
+<p>Une fenêtre de chat s&rsquo;ouvre. Posez une question simple, comme &ldquo;Bonjour, qui es-tu ?&rdquo; ou &ldquo;Que peux-tu faire ?&rdquo;. Si tout est bien configuré, l&rsquo;IA devrait vous répondre via le modèle Gemini sélectionné !</p>
+
+
+<style>
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 850px; /* Limite la largeur maximale de la vidéo */
+    height: auto;
+    margin: 0 auto; /* Centre la vidéo horizontalement */
+  }
+
+  .video-container video {
+    width: 100%; /* La vidéo prendra 100% de la largeur du conteneur */
+    height: auto; /* La hauteur sera ajustée proportionnellement */
+  }
+</style>
+
+<div class="video-container">
+  <video controls src="/images/doc/n8n/n8n-8.mp4" title="Test du Chat AI Agent"></video>
+</div>
+
+<p>Et pour être doublement sûr de ne pas avoir de mauvaise surprise sur la facture (même si on a choisi Free), faisons un petit saut sur la page <strong>Usage</strong> de votre compte OpenRouter. Vous devriez voir apparaître votre appel API avec un coût de&hellip; 0.00$ !</p>
+<p><img src="/images/doc/n8n/openrouter-verif.png" alt="alt text"></p>
+<p>Donc 0.00$, c&rsquo;est bien gratuit, on est bons !</p>
+<p>Et voilà ! On a posé les bases : n8n est installé, on a une clé API gratuite via OpenRouter, et on a configuré notre nœud <code>AI Agent</code> pour utiliser un modèle spécifique. Pour l&rsquo;instant, comme vous l&rsquo;avez vu, ça se comporte comme un simple chatbot. Dans la prochaine partie, on va lui donner des <em>outils</em> et une <em>mission</em> pour qu&rsquo;il devienne un véritable <strong>agent</strong> capable d&rsquo;agir ! C&rsquo;est là que ça va devenir vraiment intéressant.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Et voilà, les bases sont posées ! n8n tourne, l&rsquo;IA est connectée via OpenRouter, et notre premier chat fonctionne. C&rsquo;est un super début !</p>
+<p>Mais le vrai fun arrive dans la Partie 2 : on va brancher Telegram, utiliser VirusTotal, et transformer notre IA en un véritable agent qui analyse les URLs pour nous. Accrochez-vous !</p>
+<p>Merci d&rsquo;avoir lu jusqu&rsquo;ici ! Si vous avez des questions ou envie d&rsquo;échanger, n&rsquo;hésitez pas à me contacter sur LinkedIn. À très vite pour la suite !</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/docs/kiwix/kiwix/">
+            &#8592;
+            :
+            Kiwix - Le savoir à portée de main
+        </a>
+    </p>
+    <p class="prev-post-date">
+        mars 23, 2025
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/docs/ia/images-ia/">
+            :
+            Midjourney, DALL-E... Superbes, mais où vont vos données ?
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            mars 28, 2025
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

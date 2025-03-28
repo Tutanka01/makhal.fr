@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Deploiement de notre agent IA n8n (Partie 2)</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, IA, n8n'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/docs/ia/n8n-cyber-2/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Deploiement de notre agent IA n8n (Partie 2)">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Deploiement de notre agent IA n8n (Partie 2)">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/docs/ia/n8n-cyber-2/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/docs/ia/n8n-cyber-2/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/docs/ia/n8n-cyber-2/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Deploiement de notre agent IA n8n (Partie 2)</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            mars 28, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/ia">IA</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/n8n">n8n</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/cyber">cyber</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p>Dans la suite de mon <a href="/posts/docs/ia/n8n-cyber/">dernier article</a>. On va integrer VirusTotal a notre agent n8n pour analyser des urls.</p>
+<p>Je vous rappelle le but de notre agent qui va nous servir a analyser les urls des sites louches que je croise depuis mon telephone en envoyant un simple message telegram. Donc il me repondra avec des informations sur le site. Et les conseils specifiques pour ce site. Donc un genre de majordome virtuel qui va me dire si y aller ou pas.</p>
+<h2 id="integration-de-virustotal">Integration de VirusTotal</h2>
+<p>Pour ceux qui ne connaissent pas VirusTotal, c&rsquo;est un service qui permet d&rsquo;analyser des fichiers et des urls pour detecter des malwares. Donc il va envoyer ses urls ou fichiers a plusieurs antivirus pour les analyser. Et on aura une interface web unifie pour voir les resultats.</p>
+<p>Par exemple :</p>
+<p><img src="/images/doc/n8n/post2/virustotal.png" alt="alt text"></p>
+<p>Donc il nous donne un score, qui signifie le nombre de moteurs d&rsquo;antivirus qui ont detecte un malware. Donc plus le score est eleve, plus c&rsquo;est plaussible qu&rsquo;il soit dangereux.</p>
+<p>Pour n8n, ils ont deja un module pour VirusTotal. Pour l&rsquo;utiliser, toujours pareil, on va aller dans le petit plus en haut a droute, puis on va chercher VirusTotal. Et on va le connecter a notre agent.</p>
+<p><img src="/images/doc/n8n/post2/n8n-1.png" alt="alt text"></p>
+<p>Ensuite vous aurez ce menu qui va s&rsquo;afficher :</p>
+<p><img src="/images/doc/n8n/post2/n8n-2.png" alt="alt text"></p>
+<p>La partie qui nous interesse ici, c&rsquo;est <code>Credential for VirusTotal</code>. VirusTotal va nous demander une clef API pour pouvoir utiliser leur service. Pour creer cette clef, tout a fait gratuite, mais avec des restrictions, il faut creer un compte sur <a href="https://www.virustotal.com/">leur site</a>. Et cliquer sur API Key</p>
+<p><img src="/images/doc/n8n/post2/web-virus.png" alt="alt text"></p>
+<p>Une fois dedans vous pourrez creer une clef API. Et vous la copiez dans le champ presente tout a l&rsquo;heure.</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/docs/ia/images-ia/">
+            &#8592;
+            :
+            Midjourney, DALL-E... Superbes, mais où vont vos données ?
+        </a>
+    </p>
+    <p class="prev-post-date">
+        mars 28, 2025
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

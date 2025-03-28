@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EasyDiffusion on makhal.fr</title>
+    <link>http://localhost:1313/tags/easydiffusion/</link>
+    <description>Recent content in EasyDiffusion on makhal.fr</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Fri, 28 Mar 2025 06:40:45 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/easydiffusion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Midjourney, DALL-E... Superbes, mais où vont vos données ?</title>
+      <link>http://localhost:1313/posts/docs/ia/images-ia/</link>
+      <pubDate>Fri, 28 Mar 2025 06:40:45 +0200</pubDate>
+      <guid>http://localhost:1313/posts/docs/ia/images-ia/</guid>
+      <description>Marre que vos créations IA partent aux US ? Découvrez comment générer des images en local avec Stable Diffusion et EasyDiffusion, pour garder le contrôle.</description>
+    </item>
+  </channel>
+</rss>
