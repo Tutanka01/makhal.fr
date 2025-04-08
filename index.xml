@@ -6,14 +6,21 @@
     <description>Recent content on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Fri, 28 Mar 2025 06:40:45 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 07 Apr 2025 08:05:49 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Deploiement de notre agent IA n8n (Partie 2)</title>
+      <title>Sandbox Evasion : Théorie, techniques et pratique</title>
+      <link>https://makhal.fr/posts/cyber/sandbox-evasion/sandbox-evasion-1/</link>
+      <pubDate>Mon, 07 Apr 2025 08:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/posts/cyber/sandbox-evasion/sandbox-evasion-1/</guid>
+      <description>On découvre le concept de l&amp;rsquo;évasion de sandbox, et on fait un peu de pratique</description>
+    </item>
+    <item>
+      <title>Agent IA n8n prend vie avec VirusTotal (Partie 2)</title>
       <link>https://makhal.fr/posts/docs/ia/n8n-cyber-2/</link>
-      <pubDate>Fri, 28 Mar 2025 06:40:45 +0200</pubDate>
+      <pubDate>Wed, 02 Apr 2025 06:40:45 +0200</pubDate>
       <guid>https://makhal.fr/posts/docs/ia/n8n-cyber-2/</guid>
-      <description>Un agent IA avec n8n qui va analyser les urls des sites louches que je croise</description>
+      <description>Intégration de VirusTotal pour l&amp;rsquo;analyse d&amp;rsquo;URL par chat, avec un agent IA.</description>
     </item>
     <item>
       <title>Midjourney, DALL-E... Superbes, mais où vont vos données ?</title>

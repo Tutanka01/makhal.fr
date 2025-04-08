@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Phishing on makhal.fr</title>
+    <link>http://localhost:1313/tags/phishing/</link>
+    <description>Recent content in Phishing on makhal.fr</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Tue, 01 Apr 2025 08:05:49 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/phishing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vol de cookies de session</title>
+      <link>http://localhost:1313/posts/cyber/phish-cookies/phishing-cookies/</link>
+      <pubDate>Tue, 01 Apr 2025 08:05:49 +0100</pubDate>
+      <guid>http://localhost:1313/posts/cyber/phish-cookies/phishing-cookies/</guid>
+      <description>&lt;p&gt;Les cookies, ne sont pas uniquement celles qu&amp;rsquo;on prend avec le café, mais aussi celles qui sont utilisées pour se connecter à des sites web. Dans le monde de l&amp;rsquo;informatique, ces cookes sont les clefs d&amp;rsquo;accès à nos comptes en ligne. Ils contiennent des informations de session qui permettent aux sites web de nous identifier et de nous authentifier sans avoir à entrer nos identifiants à chaque fois.&lt;/p&gt;&#xA;&lt;p&gt;Cependant, ces cookies peuvent être la cible de cybercriminels qui cherchent à voler nos informations personnelles. Dans cet article, nous allons explorer comment les cookies de session peuvent être volés et comment se protéger contre cette menace.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

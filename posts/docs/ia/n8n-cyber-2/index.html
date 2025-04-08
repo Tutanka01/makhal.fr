@@ -17,19 +17,19 @@
     
 
     
-    <title>Deploiement de notre agent IA n8n (Partie 2)</title>
+    <title>Agent IA n8n prend vie avec VirusTotal (Partie 2)</title>
     <meta name="description" content="">
     <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, IA, n8n'>
 
     <meta property="og:url" content="https://makhal.fr/posts/docs/ia/n8n-cyber-2/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Deploiement de notre agent IA n8n (Partie 2)">
+    <meta property="og:title" content="Agent IA n8n prend vie avec VirusTotal (Partie 2)">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
     <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Deploiement de notre agent IA n8n (Partie 2)">
+    <meta name="twitter:title" content="Agent IA n8n prend vie avec VirusTotal (Partie 2)">
     <meta name="twitter:description" content="">
     <meta property="twitter:domain" content="https://makhal.fr/posts/docs/ia/n8n-cyber-2/">
     <meta property="twitter:url" content="https://makhal.fr/posts/docs/ia/n8n-cyber-2/">
@@ -99,6 +99,10 @@
                 </div>
             
                 <div class="nav-link">
+                    <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
                     <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
                 </div>
             
@@ -133,6 +137,10 @@
                     </li>
                 
                     <li class="nav-item">
+                        <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
                         <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
                     </li>
                 
@@ -146,10 +154,10 @@
 <main id="content">
     <div class="post container">
     <div class="post-header-section">
-        <h1>Deploiement de notre agent IA n8n (Partie 2)</h1>
+        <h1>Agent IA n8n prend vie avec VirusTotal (Partie 2)</h1>
         <small role="doc-subtitle"></small>
         <p class="post-date">
-            mars 28, 2025
+            avril 2, 2025
         </p>
 
         <ul class="post-tags">
@@ -165,20 +173,196 @@
 
     <div class="post-content">
         <p>
-            <p>Dans la suite de mon <a href="/posts/docs/ia/n8n-cyber/">dernier article</a>. On va integrer VirusTotal a notre agent n8n pour analyser des urls.</p>
-<p>Je vous rappelle le but de notre agent qui va nous servir a analyser les urls des sites louches que je croise depuis mon telephone en envoyant un simple message telegram. Donc il me repondra avec des informations sur le site. Et les conseils specifiques pour ce site. Donc un genre de majordome virtuel qui va me dire si y aller ou pas.</p>
-<h2 id="integration-de-virustotal">Integration de VirusTotal</h2>
-<p>Pour ceux qui ne connaissent pas VirusTotal, c&rsquo;est un service qui permet d&rsquo;analyser des fichiers et des urls pour detecter des malwares. Donc il va envoyer ses urls ou fichiers a plusieurs antivirus pour les analyser. Et on aura une interface web unifie pour voir les resultats.</p>
-<p>Par exemple :</p>
+            <p>Salut à tous et bienvenue dans la <strong>Partie 2</strong> de notre aventure pour construire un agent IA avec n8n ! Dans le <a href="/posts/docs/ia/n8n-cyber/">premier article</a>, nous avons posé des bases solides :</p>
+<ul>
+<li>Installation de n8n via Docker.</li>
+<li>Configuration du nœud <code>AI Agent</code> avec un modèle IA via OpenRouter.</li>
+<li>Test de la communication basique avec notre IA.</li>
+</ul>
+<p>On avait donc un &ldquo;cerveau&rdquo; prêt à réfléchir. Maintenant, il est temps de lui donner des outils pour <em>agir</em> et accomplir sa mission !</p>
+<p>Pour rappel, notre objectif est de créer un assistant personnel qui, sur simple demande via <strong>Telegram</strong>, peut analyser une URL suspecte que l&rsquo;on croise (surtout en mobilité !) et nous donner un verdict rapide ainsi que des conseils. Un peu comme un majordome virtuel spécialisé en cybersécurité !</p>
+<p>Pour y arriver, notre agent a besoin d&rsquo;accéder à des outils externes. La première pièce essentielle de ce puzzle, c&rsquo;est un service capable d&rsquo;évaluer la réputation d&rsquo;une URL. Et pour ça, l&rsquo;outil roi est sans conteste <strong>VirusTotal</strong>.</p>
+<h2 id="intégration-de-virustotal--donner-des-yeux-et-un-cerveau-analytique-à-notre-workflow">Intégration de VirusTotal : Donner des yeux (et un cerveau analytique) à notre Workflow</h2>
+<p>Pour ceux qui découvriraient VirusTotal, c&rsquo;est une plateforme en ligne (appartenant à Google) absolument géniale qui permet d&rsquo;analyser fichiers et URLs. Elle soumet ce que vous lui donnez à des dizaines de moteurs antivirus et autres outils d&rsquo;analyse de sécurité, puis vous présente un rapport consolidé.</p>
+<p>Par exemple, voici le résultat d&rsquo;une analyse d&rsquo;URL sur leur site :</p>
 <p><img src="/images/doc/n8n/post2/virustotal.png" alt="alt text"></p>
-<p>Donc il nous donne un score, qui signifie le nombre de moteurs d&rsquo;antivirus qui ont detecte un malware. Donc plus le score est eleve, plus c&rsquo;est plaussible qu&rsquo;il soit dangereux.</p>
-<p>Pour n8n, ils ont deja un module pour VirusTotal. Pour l&rsquo;utiliser, toujours pareil, on va aller dans le petit plus en haut a droute, puis on va chercher VirusTotal. Et on va le connecter a notre agent.</p>
-<p><img src="/images/doc/n8n/post2/n8n-1.png" alt="alt text"></p>
-<p>Ensuite vous aurez ce menu qui va s&rsquo;afficher :</p>
-<p><img src="/images/doc/n8n/post2/n8n-2.png" alt="alt text"></p>
-<p>La partie qui nous interesse ici, c&rsquo;est <code>Credential for VirusTotal</code>. VirusTotal va nous demander une clef API pour pouvoir utiliser leur service. Pour creer cette clef, tout a fait gratuite, mais avec des restrictions, il faut creer un compte sur <a href="https://www.virustotal.com/">leur site</a>. Et cliquer sur API Key</p>
+<p>Le &ldquo;score&rdquo; (ici 42/95) indique combien de moteurs de sécurité ont classé l&rsquo;URL comme malveillante. Plus le chiffre du haut est élevé, plus il y a de chances que le site soit dangereux. C&rsquo;est un incontournable dans le monde de la cybersécurité.</p>
+<h3 id="adapter-notre-approche--agent-ia-vs-workflow-linéaire">Adapter notre approche : Agent IA vs Workflow Linéaire</h3>
+<p>Idéalement, avec le concept d&rsquo;&ldquo;Agent IA&rdquo;, on aimerait que notre nœud <code>AI Agent</code> puisse directement <em>appeler</em> un outil &ldquo;VirusTotal&rdquo; quand il reçoit une URL. C&rsquo;était mon plan initial.</p>
+<p><strong>MAIS (et c&rsquo;est important) :</strong> Lors de mes tests, j&rsquo;ai constaté que le nœud <code>AI Agent</code> de n8n (à l&rsquo;heure actuelle) avait du mal à considérer le nœud VirusTotal (ou même un nœud HTTP Request configuré pour appeler l&rsquo;API VT) comme un &ldquo;outil&rdquo; qu&rsquo;il pouvait utiliser de manière autonome. Il refusait de coopérer comme je l&rsquo;espérais ! 🤷‍♂️</p>
+<p>Pas de panique ! C&rsquo;est souvent ça l&rsquo;informatique : on s&rsquo;adapte. J&rsquo;ai donc opté pour une approche légèrement différente, mais tout aussi efficace : un <strong>workflow plus linéaire</strong>.
+L&rsquo;idée :</p>
+<ol>
+<li>L&rsquo;URL arrive (pour l&rsquo;instant via un chat de test, plus tard via Telegram).</li>
+<li>Elle passe d&rsquo;abord par les nœuds n8n dédiés à VirusTotal pour être analysée.</li>
+<li>Le <em>résultat</em> de l&rsquo;analyse VirusTotal est ensuite envoyé au nœud <code>AI Agent</code>.</li>
+<li>L&rsquo;Agent IA n&rsquo;a plus qu&rsquo;à lire ce rapport JSON et à le résumer/interpréter pour nous donner ses recommandations.</li>
+</ol>
+<p>Ça fonctionne très bien, mais c&rsquo;est bon de savoir pourquoi on a fait ce choix technique. C&rsquo;est moins un agent &ldquo;décideur&rdquo; et plus une chaîne de traitement avec une IA à la fin pour la partie &ldquo;compréhension et conseil&rdquo;.</p>
+<h3 id="prérequis--obtenir-une-clé-api-virustotal">Prérequis : Obtenir une Clé API VirusTotal</h3>
+<p>Avant de configurer les nœuds dans n8n, il nous faut un moyen de nous authentifier auprès de VirusTotal. Comme beaucoup de services, VT utilise une <strong>clé API</strong>. La bonne nouvelle, c&rsquo;est qu&rsquo;on peut en obtenir une gratuitement, même si elle vient avec certaines limitations (nombre d&rsquo;appels par minute/jour, suffisant pour notre usage perso).</p>
+<p>Voici comment faire :</p>
+<ol>
+<li>
+<p>Allez sur <a href="https://www.virustotal.com/">le site de VirusTotal</a> et créez un compte (ou connectez-vous si vous en avez déjà un).</p>
+</li>
+<li>
+<p>Une fois connecté, cliquez sur votre icône de profil en haut à droite, puis sélectionnez <code>API Key</code> dans le menu déroulant.</p>
 <p><img src="/images/doc/n8n/post2/web-virus.png" alt="alt text"></p>
-<p>Une fois dedans vous pourrez creer une clef API. Et vous la copiez dans le champ presente tout a l&rsquo;heure.</p>
+</li>
+<li>
+<p>Sur la page API, vous verrez votre clé API personnelle. <strong>Copiez-la précieusement !</strong></p>
+<p><img src="/images/doc/n8n/post2/virus-2.png" alt="alt text"></p>
+</li>
+</ol>
+<p>Cette clé, on va l&rsquo;utiliser dans n8n pour que nos nœuds VirusTotal puissent faire des requêtes en notre nom.</p>
+<h3 id="configuration-des-nœuds-virustotal-dans-n8n">Configuration des Nœuds VirusTotal dans n8n</h3>
+<p>Ok, maintenant qu&rsquo;on a notre clé API et qu&rsquo;on est clairs sur l&rsquo;approche linéaire, configurons nos nœuds VirusTotal dans n8n. Il en faut deux : un pour <em>lancer</em> l&rsquo;analyse, un autre pour <em>récupérer</em> les résultats.</p>
+<p><strong>Étape 1 : Configurer les Credentials dans n8n</strong></p>
+<p>Avant même de configurer les opérations, enregistrons notre clé API VirusTotal dans n8n pour pouvoir la réutiliser facilement.</p>
+<ol>
+<li>
+<p>Ajoutez un nœud &ldquo;VirusTotal&rdquo; à votre workflow (clic sur <code>+</code>, cherchez &ldquo;VirusTotal&rdquo;).</p>
+</li>
+<li>
+<p>Dans le panneau de configuration qui s&rsquo;ouvre, repérez la section <code>Credentials for VirusTotal</code>. Cliquez sur <code>- Create New -</code>.</p>
+<p><img src="/images/doc/n8n/post2/n8n-2.png" alt="alt text"></p>
+</li>
+<li>
+<p>Une petite fenêtre apparaît. Donnez un nom reconnaissable à cette clé (ex: &ldquo;Ma Clé VirusTotal&rdquo;) et <strong>collez la clé API</strong> que vous venez de copier depuis le site de VirusTotal dans le champ <code>API Key</code>.</p>
+</li>
+<li>
+<p>Cliquez sur <strong>Save</strong>.</p>
+</li>
+</ol>
+<p>Voilà ! n8n connaît maintenant votre clé et vous pourrez la sélectionner directement dans tous les nœuds VirusTotal que vous utiliserez.</p>
+<p><strong>Étape 2 : Lancer l&rsquo;analyse VirusTotal (1er Nœud - POST Request)</strong></p>
+<p>Maintenant, configurons notre premier nœud VirusTotal pour qu&rsquo;il <em>soumette</em> l&rsquo;URL à VirusTotal pour analyse. C&rsquo;est une requête POST vers <code>https://www.virustotal.com/api/v3/urls</code>.</p>
+<ol>
+<li>
+<p>Assurez-vous que le nœud VirusTotal est bien sur votre canvas.</p>
+</li>
+<li>
+<p>Dans sa configuration :</p>
+<ul>
+<li><strong>Credentials for VirusTotal :</strong> Sélectionnez la clé que vous venez d&rsquo;enregistrer (&ldquo;Ma Clé VirusTotal&rdquo;).</li>
+<li><strong>Resource :</strong> Choisissez <code>URL</code>.</li>
+<li><strong>Operation :</strong> Choisissez <code>Scan URL</code>. (Cela configure implicitement la méthode en POST et l&rsquo;URL de l&rsquo;API correctement).</li>
+</ul>
+</li>
+<li>
+<p><strong>Configurer le Corps de la Requête (Body) - C&rsquo;EST LA PARTIE IMPORTANTE !</strong></p>
+<ul>
+<li>Juste en dessous des options principales, activez l&rsquo;interrupteur <strong><code>Send Body</code></strong>.</li>
+<li>Pour <strong><code>Body Content Type</code></strong>, sélectionnez <code>Form-Data</code>. C&rsquo;est ce que l&rsquo;API VirusTotal attend pour cette requête.</li>
+<li>Dans la section <strong><code>Body Parameters</code></strong> qui apparaît :
+<ul>
+<li>Cliquez sur <code>Add Parameter</code>.</li>
+<li>Dans <strong><code>Name</code></strong>, tapez exactement <code>url</code> (en minuscules).</li>
+<li>Dans <strong><code>Value</code></strong>, c&rsquo;est ici qu&rsquo;on va mettre l&rsquo;URL à analyser, récupérée depuis notre chat de test. Utilisez l&rsquo;expression <code>{{ $json.chatInput }}</code> (ou glissez-déposez la variable <code>chatInput</code> depuis le panneau INPUT à gauche). Cette expression prend simplement le texte que l&rsquo;utilisateur a envoyé dans le chat.</li>
+</ul>
+</li>
+</ul>
+<p>C&rsquo;est <em>exactement</em> ce que montre cette capture d&rsquo;écran :
+<img src="/images/doc/n8n/post2/n8n-8.png" alt="Configuration du Body pour le POST VirusTotal"></p>
+</li>
+</ol>
+<p>Ce premier nœud va donc envoyer une requête POST à VirusTotal avec l&rsquo;URL à analyser dans le corps <code>Form-Data</code> et récupérer un ID d&rsquo;analyse unique en retour.</p>
+<p><strong>Étape 3 : Récupérer le résultat de l&rsquo;analyse (2ème Nœud - GET Request)</strong></p>
+<p>L&rsquo;analyse VT n&rsquo;étant pas instantanée, il nous faut un deuxième nœud pour aller chercher le rapport une fois qu&rsquo;il est prêt. C&rsquo;est une requête GET.</p>
+<ol>
+<li>
+<p>Ajoutez un <em>autre</em> nœud &ldquo;VirusTotal&rdquo;. (Astuce : vous pouvez copier/coller le premier nœud et juste modifier sa configuration).</p>
+</li>
+<li>
+<p>Dans la configuration de ce <em>deuxième</em> nœud :</p>
+<ul>
+<li><strong>Credentials for VirusTotal :</strong> Sélectionnez à nouveau votre clé enregistrée.</li>
+<li><strong>Resource :</strong> Choisissez <code>Analysis</code> (ou <code>URL Report</code>, vérifiez le nom exact).</li>
+<li><strong>Operation :</strong> Choisissez <code>Get Report</code> (ou <code>Get Analysis</code>).</li>
+<li><strong>Analysis ID :</strong> C&rsquo;est le champ clé ! Il faut lui passer l&rsquo;ID renvoyé par le premier nœud VirusTotal (le nœud POST). Utilisez une expression JSONata qui pointe vers cet ID. Si votre premier nœud s&rsquo;appelle &ldquo;VirusTotal&rdquo;, ça ressemblera à <code>{{ $node[&quot;VirusTotal&quot;].json.data.id }}</code>. Utilisez le sélecteur d&rsquo;expression pour trouver facilement la bonne variable.</li>
+</ul>
+<p><img src="/images/doc/n8n/post2/n8n-14.png" alt="alt text"></p>
+<ul>
+<li>Pour ce nœud GET, pas besoin de configurer le <code>Body</code>.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Étape 4 : Relier le tout (pour l&rsquo;instant)</strong></p>
+<p>Connectez vos nœuds dans cet ordre : Nœud de Démarrage (Chat Input pour le test) -&gt; Premier Nœud VT (Scan URL - POST) -&gt; Deuxième Nœud VT (Get Report - GET).</p>
+<p><img src="/images/doc/n8n/post2/n8n-3.png" alt="alt text"></p>
+<p>Maintenant, la sortie du deuxième nœud VirusTotal contient le rapport JSON complet de l&rsquo;analyse. C&rsquo;est ce trésor qu&rsquo;on va donner à manger à notre Agent IA.</p>
+<h3 id="dire-à-lagent-ia-quoi-faire-avec-le-rapport">Dire à l&rsquo;Agent IA quoi faire avec le Rapport</h3>
+<p>Il suffit maintenant de connecter la sortie du nœud &ldquo;Get Report&rdquo; à l&rsquo;entrée du nœud &ldquo;AI Agent&rdquo; que nous avions configuré dans la Partie 1. L&rsquo;agent recevra donc le JSON complet de VirusTotal comme donnée d&rsquo;entrée (<code>input data</code>).</p>
+<p>Il faut juste adapter un tout petit peu le début de notre super prompt pour qu&rsquo;il colle à cette réalité :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>You will receive a URL analysis report in JSON format AS INPUT.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Your task is to provide the user with a clear and simplified summary of the key information about this URL, including:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Its reputation (benign, suspicious, malicious, etc.).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Detection engines that flagged it.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Any suspicious activities associated with it (e.g., phishing, malware, scam).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Any other relevant data extracted from the report.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Then, provide practical recommendations on how the user can protect themselves from potential threats linked to this URL. Your advice should be precise and actionable (e.g., avoid visiting the site, block it at the DNS level, use browser security extensions, etc.).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Be concise and direct, avoiding unnecessary jargon.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>You response will be fully written in the French language
+</span></span></code></pre></div><p>Ce prompt reste excellent et dit précisément à l&rsquo;IA comment traiter le JSON qu&rsquo;elle reçoit.</p>
+<h3 id="le-test-final-">Le Test Final !</h3>
+<p>Maintenant, on peut lancer le chat de test, lui envoyer une URL (pourquoi pas une bien louche trouvée sur URLHaus comme dans mon test), et voir la magie opérer !</p>
+
+
+<style>
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 850px; /* Limite la largeur maximale de la vidéo */
+    height: auto;
+    margin: 0 auto; /* Centre la vidéo horizontalement */
+  }
+
+  .video-container video {
+    width: 100%; /* La vidéo prendra 100% de la largeur du conteneur */
+    height: auto; /* La hauteur sera ajustée proportionnellement */
+  }
+</style>
+
+<div class="video-container">
+  <video controls src="/images/doc/n8n/post2/url.mp4" title="Test du Workflow VT + IA"></video>
+</div>
+
+<p>Comme on le voit dans la vidéo, le workflow se déroule : l&rsquo;URL est envoyée, analysée par les deux nœuds VT, le résultat JSON est passé à l&rsquo;IA, et l&rsquo;IA nous sort un résumé et des conseils clairs en français, basés sur le prompt !</p>
+<p>Voici le genre de résultat qu&rsquo;on obtient (testé avec une URL d&rsquo;URLHaus) :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Voici un résumé de l&#39;analyse de l&#39;URL fournie :
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Résumé de l&#39;Analyse VirusTotal
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Réputation : Cette URL est considérée comme malveillante.
+</span></span><span style="display:flex;"><span>Détections : Sur 97 moteurs de sécurité analysés, 7 ont signalé cette URL comme problématique :
+</span></span><span style="display:flex;"><span>6 moteurs l&#39;ont classée comme malveillante (Lionic, BitDefender, ESET, Fortinet, G-Data, URLhaus).
+</span></span><span style="display:flex;"><span>1 moteur l&#39;a classée comme suspicieuse (URLQuery).
+</span></span><span style="display:flex;"><span>Activités Suspectes : Plusieurs détections indiquent que l&#39;URL est associée à des logiciels malveillants (malware).
+</span></span><span style="display:flex;"><span>Autres Informations : Bien que la majorité des moteurs n&#39;aient pas détecté de menace (61 l&#39;ont jugée inoffensive et 29 n&#39;avaient pas d&#39;avis), les détections positives par des moteurs de sécurité réputés suffisent à considérer cette URL comme dangereuse.
+</span></span><span style="display:flex;"><span>Recommandations de Sécurité
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Compte tenu des résultats, il est fortement recommandé de NE PAS visiter cette URL. Voici des mesures concrètes pour vous protéger :
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Évitez l&#39;accès : Ne cliquez sur aucun lien pointant vers cette URL, que ce soit dans un email, sur un site web ou via une messagerie.
+</span></span><span style="display:flex;"><span>Bloquez l&#39;URL : Si possible, utilisez les fonctionnalités de votre logiciel de sécurité (antivirus, pare-feu) ou des extensions de navigateur spécialisées pour bloquer l&#39;accès à cette adresse.
+</span></span><span style="display:flex;"><span>Maintenez vos outils à jour : Assurez-vous que votre système d&#39;exploitation, votre navigateur et votre logiciel antivirus sont à jour avec les derniers correctifs de sécurité.
+</span></span><span style="display:flex;"><span>Utilisez des extensions de sécurité : Envisagez d&#39;utiliser des extensions de navigateur qui bloquent les sites malveillants connus, les publicités intrusives et les scripts potentiellement dangereux.
+</span></span><span style="display:flex;"><span>Restez vigilant : Soyez toujours prudent avec les liens et les pièces jointes, surtout s&#39;ils proviennent de sources inconnues ou non sollicitées.
+</span></span><span style="display:flex;"><span>En résumé, traitez cette URL comme une menace confirmée et prenez les mesures nécessaires pour éviter toute interaction avec elle.
+</span></span></code></pre></div><p>Franchement, c&rsquo;est super complet et efficace, non ? Notre IA fait un excellent boulot pour transformer le JSON brut de VirusTotal en conseils pratiques !</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Et voilà ! Notre workflow a fait un sacré bond en avant.</p>
+<p>Qu&rsquo;est-ce qu&rsquo;il manque pour atteindre notre objectif final ? Remplacer notre simple &ldquo;Chat Input&rdquo; de test par une véritable intégration Telegram ! C&rsquo;est exactement ce qu&rsquo;on fera dans la Partie 3 : créer le bot Telegram, configurer le trigger n8n, et boucler la boucle pour rendre notre agent utilisable depuis notre téléphone.</p>
+<p>Merci d&rsquo;avoir suivi cette partie technique jusqu&rsquo;au bout ! Si vous avez des questions ou si vous voulez partager vos propres expériences avec n8n et l&rsquo;IA, retrouvez-moi sur LinkedIn. À très vite pour la dernière étape !</p>
 
         </p>
         
@@ -216,6 +400,19 @@
 </div>
 
 
+
+<div class="next-post">
+    <p>
+        <a href="/posts/cyber/sandbox-evasion/sandbox-evasion-1/">
+            :
+            Sandbox Evasion : Théorie, techniques et pratique
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            avril 7, 2025
+        </p>
+</div>
 
 
             

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Telegram on makhal.fr</title>
+    <link>http://localhost:1313/tags/telegram/</link>
+    <description>Recent content in Telegram on makhal.fr</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Wed, 02 Apr 2025 06:40:45 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/telegram/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notre Agent IA n8n prend vie avec VirusTotal (Partie 2)</title>
+      <link>http://localhost:1313/posts/docs/ia/n8n-cyber-2/</link>
+      <pubDate>Wed, 02 Apr 2025 06:40:45 +0200</pubDate>
+      <guid>http://localhost:1313/posts/docs/ia/n8n-cyber-2/</guid>
+      <description>Suite de la création de notre agent IA avec n8n : intégration de VirusTotal pour l&amp;rsquo;analyse d&amp;rsquo;URL et préparation de l&amp;rsquo;interaction Telegram.</description>
+    </item>
+  </channel>
+</rss>

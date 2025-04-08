@@ -6,26 +6,33 @@
     <description>Recent content in Tags on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Fri, 28 Mar 2025 06:40:45 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 07 Apr 2025 08:05:49 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cyber</title>
       <link>https://makhal.fr/tags/cyber/</link>
-      <pubDate>Fri, 28 Mar 2025 06:40:45 +0200</pubDate>
+      <pubDate>Mon, 07 Apr 2025 08:05:49 +0100</pubDate>
       <guid>https://makhal.fr/tags/cyber/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sandbox</title>
+      <link>https://makhal.fr/tags/sandbox/</link>
+      <pubDate>Mon, 07 Apr 2025 08:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/tags/sandbox/</guid>
       <description></description>
     </item>
     <item>
       <title>IA</title>
       <link>https://makhal.fr/tags/ia/</link>
-      <pubDate>Fri, 28 Mar 2025 06:40:45 +0200</pubDate>
+      <pubDate>Wed, 02 Apr 2025 06:40:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/ia/</guid>
       <description></description>
     </item>
     <item>
       <title>N8n</title>
       <link>https://makhal.fr/tags/n8n/</link>
-      <pubDate>Fri, 28 Mar 2025 06:40:45 +0200</pubDate>
+      <pubDate>Wed, 02 Apr 2025 06:40:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/n8n/</guid>
       <description></description>
     </item>
