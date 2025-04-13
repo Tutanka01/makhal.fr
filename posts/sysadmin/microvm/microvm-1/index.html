@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>MicroVM - À la découverte</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, microVM, sysadmin, infra'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/sysadmin/microvm/microvm-1/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MicroVM - À la découverte">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MicroVM - À la découverte">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/sysadmin/microvm/microvm-1/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/sysadmin/microvm/microvm-1/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/sysadmin/microvm/microvm-1/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>MicroVM - À la découverte</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            avril 13, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/microvm">microVM</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/sysadmin">sysadmin</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/infra">infra</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p>Bonjour à tous ! Ce week-end, j&rsquo;ai découvert un concept dont je n&rsquo;avais jamais entendu parler auparavant : les <strong>microVMs</strong>.</p>
+<p>C&rsquo;est très connu dans le petit monde des fournisseurs cloud (cloud providers), mais pour nous, simples mortels, c&rsquo;est un peu plus obscur. La quantité de contenu disponible en français sur le sujet est assez faible, à l&rsquo;exception de cet excellent article de <a href="https://une-tasse-de.cafe/blog/firecracker/">Quentin Joly</a> qui va assez vite sur la théorie et passe directement à la pratique.</p>
+<p>C&rsquo;est pourquoi je vais essayer de vous faire un tour d&rsquo;horizon complet sur ce sujet : le pourquoi, le comment et comment on peut les utiliser.</p>
+<h2 id="quest-ce-quune-microvm-">Qu&rsquo;est-ce qu&rsquo;une microVM ?</h2>
+<p>Avant de répondre à cette question, revenons aux bases. Quelle est la différence entre une <strong>VM</strong> (Machine Virtuelle) et un <strong>conteneur</strong> ?</p>
+<p><img src="/images/sysadmin/microVM/comparatif.png" alt="Comparaison architecture VM vs Conteneur"></p>
+<p>Comme vous le voyez sur cette image, une <strong>VM</strong> est un système d&rsquo;exploitation complet qui tourne sur un hyperviseur ou VMM (Virtual Machine Monitor). Elle (la VM) a son propre noyau, ses propres pilotes (drivers) et tout le système d&rsquo;exploitation. On peut dire qu&rsquo;elle est indépendante du système hôte. L&rsquo;avantage des VMs est évident : c&rsquo;est <strong>très sécurisé</strong>, et on peut faire tourner n&rsquo;importe quel OS. Mais l&rsquo;un des inconvénients majeurs, c&rsquo;est leur <strong>poids</strong>. Il faut beaucoup de ressources pour faire tourner une VM, et son démarrage est <strong>plutôt lent</strong> (le temps de boot).</p>
+<p>Un <strong>conteneur</strong>, par contre, s&rsquo;appuie sur un moteur de conteneurs (Docker, podman, systemd&hellip;) et <strong>partage le noyau de l&rsquo;hôte</strong>. Il n&rsquo;a pas besoin de ses propres pilotes ni d&rsquo;un système d&rsquo;exploitation complet embarqué. Il n&rsquo;embarque qu&rsquo;un minimum du système d&rsquo;exploitation nécessaire à l&rsquo;application. C&rsquo;est pourquoi c&rsquo;est beaucoup plus <strong>rapide</strong> et <strong>léger</strong>. Plus besoin de virtualiser le matériel (hardware) ; on <strong>isole plutôt les processus au niveau de l&rsquo;OS</strong> (via des <em>namespaces</em>, <em>cgroups</em>&hellip; c&rsquo;est un sujet à part entière).</p>
+<p>L&rsquo;inconvénient (le &lsquo;catch&rsquo;) des conteneurs, c&rsquo;est le risque de <strong>failles de sécurité</strong>. Et comme le conteneur partage le noyau de l&rsquo;hôte, si un conteneur est compromis, il peut potentiellement compromettre l&rsquo;hôte lui-même. Et par conséquent, tous les autres conteneurs qui tournent sur cet hôte&hellip;</p>
+<p>Alors, dans tout ça, les <strong>microVMs</strong>, c&rsquo;est quoi exactement ? D&rsquo;abord, commençons par dire que ce sont des machines virtuelles <strong>vraiment très légères</strong>. Elles sont construites sur le même principe que les VMs classiques. Donc avec leur propre noyau, leur propre système de fichiers, etc.</p>
+<p>Mais pourquoi sont-elles plus légères que les VMs classiques ? Parce que dans une VM classique, on prépare la VM pour qu&rsquo;elle puisse faire tourner un système complet avec tous ses composants : pilotes (drivers), périphériques variés, ports USB, série, etc. Dans une <strong>microVM, on va à l&rsquo;essentiel</strong>. Le VMM (l&rsquo;hyperviseur) n&rsquo;émule que les composants matériels <strong>strictement nécessaires</strong> à son fonctionnement : CPU, mémoire, un réseau minimaliste (souvent via virtIO), mais pas de carte graphique émulée, pas d&rsquo;USB, pas de BIOS traditionnel&hellip; C&rsquo;est réduit au strict minimum.</p>
+<p>Les avantages sont donc évidents. Une microVM démarre en <strong>quelques centaines de millisecondes</strong> (parfois à peine 200ms selon la configuration), contre plusieurs secondes pour une VM classique. Et comparé aux conteneurs, c&rsquo;est beaucoup plus <strong>sécurisé</strong>. Chaque microVM est isolée comme une VM classique : elle a son propre espace d&rsquo;adressage mémoire et une isolation matérielle forte. Elles n&rsquo;ont aucune &lsquo;conscience&rsquo; de tourner sur un hôte mutualisé. Donc, si jamais une microVM est compromise, <strong>seule elle est affectée</strong>, pas l&rsquo;hôte ni les autres microVMs. C&rsquo;est donc beaucoup plus sécurisé que les conteneurs.</p>
+<p>Le monde des VMs est <strong>sécurisé mais lent</strong>. Le monde des conteneurs est <strong>rapide mais potentiellement vulnérable</strong>.
+Il fallait quelque chose entre les deux, capable de démarrer en quelques millisecondes, tout en restant hermétique au reste du système.
+C’est exactement ce que les microVMs promettent.</p>
+<p>Et ce besoin pressant, c’est justement ce qu’AWS a rencontré avec Lambda&hellip;</p>
+<h2 id="lorigine-des-microvms---aws-lambda">L&rsquo;origine des microVMs - AWS Lambda</h2>
+<p>AWS Lambda est un service de calcul <em>serverless</em> qui vous permet d&rsquo;exécuter du code sans avoir à gérer l&rsquo;infrastructure sous-jacente. C&rsquo;est ce qu&rsquo;on appelle de la <strong>FaaS</strong> (Function as a Service). Donc, moi, le client, je ne paie que le temps de calcul utilisé par ma fonction (mon code) et je n&rsquo;ai pas à me soucier de l&rsquo;infrastructure sous-jacente ; c&rsquo;est une sorte de boîte noire (&lsquo;black box&rsquo;) pour moi.</p>
+<p>Si vous comprenez un peu le fonctionnement, vous réalisez qu&rsquo;il faut que le code s&rsquo;exécute <strong>très rapidement</strong> : dès qu&rsquo;un événement déclenche la fonction, le serveur doit répondre quasi instantanément.</p>
+<p>C&rsquo;est là qu&rsquo;intervient le concept de <strong>&lsquo;cold start&rsquo;</strong> (démarrage à froid). C&rsquo;est le délai nécessaire pour que l&rsquo;environnement d&rsquo;exécution de la fonction soit prêt et que le code commence à s&rsquo;exécuter lorsqu&rsquo;elle n&rsquo;était pas déjà &lsquo;chaude&rsquo;. Donc, plus ce temps de démarrage (&lsquo;cold start&rsquo;) est court, plus l&rsquo;utilisateur final reçoit sa réponse rapidement.</p>
+<p>Vous vous en doutez, AWS faisait face à un défi de taille : comment minimiser ce &lsquo;cold start&rsquo; sans compromettre la sécurité de l&rsquo;infrastructure mutualisée ?</p>
+<p>Quand j&rsquo;ai découvert ce problème, ma première réaction a été : &ldquo;Mais c&rsquo;est simple, utilisez des conteneurs, et c&rsquo;est réglé, non ?&rdquo; Pas si simple que ça&hellip; Si vous avez suivi, vous savez que les conteneurs partagent le noyau de l&rsquo;hôte. Or, sur les serveurs où tourne AWS Lambda, s&rsquo;exécute le code de milliers de clients différents. Si l&rsquo;un d&rsquo;eux trouvait une faille dans l&rsquo;isolation du conteneur (via un &lsquo;zero-day&rsquo; par exemple), il pourrait potentiellement compromettre l&rsquo;hôte. Et par conséquent, compromettre le code et les données de tous les autres clients tournant sur cet hôte. AWS avait donc un gros problème de sécurité potentiel.</p>
+<p>C&rsquo;est pourquoi, au début d&rsquo;AWS Lambda, ils utilisaient des VMs classiques. Mais, comme nous l&rsquo;avons vu, les VMs sont plus lourdes et leur temps de démarrage (donc le &lsquo;cold start&rsquo;) était trop long. C&rsquo;était un vrai problème pour l&rsquo;expérience utilisateur et l&rsquo;efficacité du service.</p>
+<p>Donc après une dure réflexion, et après un <a href="https://github.com/google/crosvm">premier projet</a> réussi fait par Google, AWS a <strong>forké</strong> le projet et a créé <strong>Firecracker</strong>. Firecracker est un VMM (Virtual Machine Monitor) léger, spécifiquement conçu pour créer et gérer des microVMs sécurisées et rapides.</p>
+<h2 id="notre-première-microvm-avec-firecracker">Notre première microVM avec Firecracker</h2>
+<p>Lancer notre première microVM avec Firecracker est en fait très simple. Firecracker n&rsquo;est qu&rsquo;un simple binaire exécutable utilisable sur Linux (x86_64 ou aarch64/ARM64). Il a très peu de dépendances externes&hellip;</p>
+<p>Pour commencer, vous pouvez utiliser une VM Debian ou Ubuntu, ou directement votre machine physique si elle tourne sous Linux. Il faut d&rsquo;abord télécharger le binaire fourni par AWS (qui, par ailleurs, offre une excellente documentation : <a href="https://github.com/firecracker-microvm/firecracker/blob/main/docs/getting-started.md#getting-the-firecracker-binary">Getting Started with Firecracker</a>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>release_url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://github.com/firecracker-microvm/firecracker/releases&#34;</span>
+</span></span><span style="display:flex;"><span>latest<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>basename <span style="color:#66d9ef">$(</span>curl -fsSLI -o /dev/null -w  %<span style="color:#f92672">{</span>url_effective<span style="color:#f92672">}</span> <span style="color:#e6db74">${</span>release_url<span style="color:#e6db74">}</span>/latest<span style="color:#66d9ef">))</span>
+</span></span><span style="display:flex;"><span>arch<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>uname -m<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Make sure to adjust the architecture if needed (e.g., aarch64 instead of x86_64)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$arch<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;x86_64&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    curl -L <span style="color:#e6db74">${</span>release_url<span style="color:#e6db74">}</span>/download/<span style="color:#e6db74">${</span>latest<span style="color:#e6db74">}</span>/firecracker-<span style="color:#e6db74">${</span>latest<span style="color:#e6db74">}</span>-<span style="color:#e6db74">${</span>arch<span style="color:#e6db74">}</span>.tgz | tar -xz
+</span></span><span style="display:flex;"><span>    mv ./release-<span style="color:#e6db74">${</span>latest<span style="color:#e6db74">}</span>-<span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span>/firecracker-<span style="color:#e6db74">${</span>latest<span style="color:#e6db74">}</span>-<span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span> ./firecracker
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$arch<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;aarch64&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    curl -L <span style="color:#e6db74">${</span>release_url<span style="color:#e6db74">}</span>/download/<span style="color:#e6db74">${</span>latest<span style="color:#e6db74">}</span>/firecracker-<span style="color:#e6db74">${</span>latest<span style="color:#e6db74">}</span>-<span style="color:#e6db74">${</span>arch<span style="color:#e6db74">}</span>.tgz | tar -xz
+</span></span><span style="display:flex;"><span>    mv ./firecracker-<span style="color:#e6db74">${</span>latest<span style="color:#e6db74">}</span>-<span style="color:#e6db74">${</span>arch<span style="color:#e6db74">}</span> ./firecracker
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Unsupported architecture: </span>$arch<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clean up the extracted directory if it exists</span>
+</span></span><span style="display:flex;"><span>rm -rf ./release-<span style="color:#e6db74">${</span>latest<span style="color:#e6db74">}</span>-<span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><p>On télécharge donc le binaire et on le décompresse. Ensuite, déplaçons l&rsquo;exécutable <code>firecracker</code> dans un dossier inclus dans notre <code>PATH</code>, par exemple <code>/usr/local/bin</code> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mv ./firecracker /usr/local/bin/
+</span></span></code></pre></div><p>Firecracker utilise KVM (Kernel-based Virtual Machine) pour la virtualisation matérielle. Avant de créer notre première microVM, il faut donc s&rsquo;assurer que KVM est bien activé et fonctionnel sur notre machine hôte.</p>
+<p>Pour cela, sur Debian/Ubuntu, on peut installer les paquets nécessaires et vérifier les permissions :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils cpu-checker
+</span></span></code></pre></div><blockquote>
+<p>(Note : tous ces paquets ne sont pas strictement nécessaires pour Firecracker seul, notamment <code>libvirt-*</code>. <code>qemu-kvm</code> peut être utile pour les outils ou pour vérifier KVM. L&rsquo;essentiel est que le module KVM soit chargé et que l&rsquo;utilisateur exécutant Firecracker ait les droits sur <code>/dev/kvm</code>).</p></blockquote>
+<p>On peut vérifier que le module KVM est bien chargé et que notre utilisateur a les permissions nécessaires (il doit faire partie du groupe <code>kvm</code>) :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Vérifie si KVM est supporté et activé</span>
+</span></span><span style="display:flex;"><span>sudo kvm-ok 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Vérifie les permissions (l&#39;utilisateur courant doit pouvoir lire/écrire)</span>
+</span></span><span style="display:flex;"><span>ls -l /dev/kvm 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ajoute l&#39;utilisateur courant au groupe kvm si nécessaire (déconnexion/reconnexion requise après)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># sudo usermod -aG kvm $USER </span>
+</span></span></code></pre></div><p>Maintenant que Firecracker est installé et que KVM est prêt, créons notre première microVM ! D&rsquo;abord, lançons le processus Firecracker dans un terminal. Il attendra des instructions via une API REST sur un socket Unix :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Créez un socket pour l&#39;API</span>
+</span></span><span style="display:flex;"><span>rm -f /tmp/firecracker.socket 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Lancez Firecracker</span>
+</span></span><span style="display:flex;"><span>firecracker --api-sock /tmp/firecracker.socket
+</span></span></code></pre></div><p><em>(Laissez ce terminal ouvert)</em></p>
+<p>Ensuite, dans un <strong>deuxième terminal</strong>, nous allons configurer et démarrer notre microVM en envoyant des requêtes à cette API. Il existe deux façons principales d&rsquo;interagir avec l&rsquo;API de Firecracker : en envoyant directement des requêtes HTTP (via <code>curl</code> par exemple) ou en lui fournissant un fichier de configuration JSON au démarrage. J&rsquo;ai trouvé l&rsquo;approche par appels API directs (avec <code>curl</code>) plus didactique pour commencer.</p>
+<p>Préparons d&rsquo;abord les répertoires et téléchargeons un noyau et un système de fichiers minimalistes fournis par l&rsquo;équipe Firecracker :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Créez un répertoire pour les fichiers de la microVM</span>
+</span></span><span style="display:flex;"><span>mkdir -p /var/lib/firecracker/hello <span style="color:#f92672">&amp;&amp;</span> cd /var/lib/firecracker/hello
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Téléchargez l&#39;image du kernel et le rootfs (système de fichiers racine)</span>
+</span></span><span style="display:flex;"><span>arch<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>kernel_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello-vmlinux.bin&#34;</span>
+</span></span><span style="display:flex;"><span>rootfs_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello-rootfs.ext4&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$arch<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;x86_64&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    curl -o $kernel_path https://s3.amazonaws.com/spec.ccfc.min/img/quickstart_guide/x86_64/kernels/vmlinux.bin
+</span></span><span style="display:flex;"><span>    curl -o $rootfs_path https://s3.amazonaws.com/spec.ccfc.min/img/quickstart_guide/x86_64/fsfiles/hello-rootfs.ext4
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$arch<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;aarch64&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    curl -o $kernel_path https://s3.amazonaws.com/spec.ccfc.min/img/quickstart_guide/aarch64/kernels/vmlinux.bin
+</span></span><span style="display:flex;"><span>    curl -o $rootfs_path https://s3.amazonaws.com/spec.ccfc.min/img/quickstart_guide/aarch64/fsfiles/hello-rootfs.ext4
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Unsupported architecture: </span>$arch<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p>Maintenant, configurons la source de démarrage (le noyau) via l&rsquo;API (toujours depuis le deuxième terminal) :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Chemin absolu vers les fichiers</span>
+</span></span><span style="display:flex;"><span>kernel_full_path<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>realpath $kernel_path<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>rootfs_full_path<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>realpath $rootfs_path<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configure la source de boot</span>
+</span></span><span style="display:flex;"><span>curl --unix-socket /tmp/firecracker.socket -i <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -X PUT <span style="color:#e6db74">&#39;http://localhost/boot-source&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H <span style="color:#e6db74">&#39;Accept: application/json&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -d <span style="color:#e6db74">&#34;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        \&#34;kernel_image_path\&#34;: \&#34;</span><span style="color:#e6db74">${</span>kernel_full_path<span style="color:#e6db74">}</span><span style="color:#e6db74">\&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        \&#34;boot_args\&#34;: \&#34;console=ttyS0 reboot=k panic=1 pci=off\&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }&#34;</span>
+</span></span></code></pre></div><p>Configurons ensuite le disque racine (rootfs) :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Configure le disque racine</span>
+</span></span><span style="display:flex;"><span>curl --unix-socket /tmp/firecracker.socket -i <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -X PUT <span style="color:#e6db74">&#39;http://localhost/drives/rootfs&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H <span style="color:#e6db74">&#39;Accept: application/json&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -d <span style="color:#e6db74">&#34;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        \&#34;drive_id\&#34;: \&#34;rootfs\&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        \&#34;path_on_host\&#34;: \&#34;</span><span style="color:#e6db74">${</span>rootfs_full_path<span style="color:#e6db74">}</span><span style="color:#e6db74">\&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        \&#34;is_root_device\&#34;: true,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        \&#34;is_read_only\&#34;: false
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }&#34;</span>
+</span></span></code></pre></div><blockquote>
+<p>Script inspiré de celui de <a href="https://une-tasse-de.cafe/blog/firecracker/">Quentin Joly</a>, qui est très bien fait !</p></blockquote>
+<p>Et enfin, démarrons l&rsquo;instance :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Démarre la microVM</span>
+</span></span><span style="display:flex;"><span>curl --unix-socket /tmp/firecracker.socket -i <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -X PUT <span style="color:#e6db74">&#39;http://localhost/actions&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H  <span style="color:#e6db74">&#39;Accept: application/json&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H  <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -d <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        \&#34;action_type\&#34;: \&#34;InstanceStart\&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }&#39;</span>
+</span></span></code></pre></div><p>Et voilà ! En quelques millisecondes (regardez le <strong>premier terminal</strong> où tourne <code>firecracker</code>), vous devriez voir les messages de démarrage du noyau Linux :</p>
+<p><img src="/images/sysadmin/microVM/terminal.png" alt="Terminal affichant le démarrage de la microVM Firecracker"></p>
+<p>Une microVM fonctionnelle !</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Voilà, c&rsquo;est tout pour cette introduction aux microVMs. J&rsquo;espère que ce tour d&rsquo;horizon vous a permis de mieux comprendre ce que sont les microVMs, pourquoi elles existent, et comment faire vos premiers pas avec Firecracker.</p>
+<p>Dans un prochain article, j&rsquo;appliquerai cette idée de microVM dans un projet plus pratique qui, je pense, vous plaira.</p>
+<p>D&rsquo;ici là, n&rsquo;hésitez pas à me faire part de vos retours ou questions, par exemple via LinkedIn</p>
+
+        </p>
+        
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/cyber/sandbox-evasion/sandbox-evasion-1/">
+            &#8592;
+            :
+            Sandbox Evasion : Théorie, techniques et pratique
+        </a>
+    </p>
+    <p class="prev-post-date">
+        avril 7, 2025
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

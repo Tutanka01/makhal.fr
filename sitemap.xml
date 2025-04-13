@@ -2,22 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://makhal.fr/tags/cyber/</loc>
-    <lastmod>2025-04-07T08:05:49+01:00</lastmod>
+    <loc>https://makhal.fr/tags/infra/</loc>
+    <lastmod>2025-04-13T08:10:45+02:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/</loc>
-    <lastmod>2025-04-07T08:05:49+01:00</lastmod>
+    <lastmod>2025-04-13T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/microvm/</loc>
+    <lastmod>2025-04-13T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/posts/sysadmin/microvm/microvm-1/</loc>
+    <lastmod>2025-04-13T08:10:45+02:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/posts/</loc>
+    <lastmod>2025-04-13T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/sysadmin/</loc>
+    <lastmod>2025-04-13T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/</loc>
+    <lastmod>2025-04-13T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/cyber/</loc>
     <lastmod>2025-04-07T08:05:49+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/sandbox/</loc>
     <lastmod>2025-04-07T08:05:49+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/posts/cyber/sandbox-evasion/sandbox-evasion-1/</loc>
-    <lastmod>2025-04-07T08:05:49+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/</loc>
     <lastmod>2025-04-07T08:05:49+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/posts/docs/ia/n8n-cyber-2/</loc>
@@ -53,9 +65,6 @@
     <loc>https://makhal.fr/posts/docs/nix/nixos-1/</loc>
     <lastmod>2025-03-20T06:40:45+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/sysadmin/</loc>
-    <lastmod>2025-03-20T06:40:45+02:00</lastmod>
-  </url><url>
     <loc>https://makhal.fr/posts/cyber/poc/defenderui/</loc>
     <lastmod>2025-03-14T06:01:10+01:00</lastmod>
   </url><url>
@@ -76,9 +85,6 @@
   </url><url>
     <loc>https://makhal.fr/tags/kubernetes/</loc>
     <lastmod>2025-03-02T07:09:10+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/infra/</loc>
-    <lastmod>2025-02-19T08:10:45+02:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/posts/sysadmin/kasm-post/</loc>
     <lastmod>2025-02-19T08:10:45+02:00</lastmod>

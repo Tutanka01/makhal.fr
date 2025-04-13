@@ -6,8 +6,15 @@
     <description>Recent content in Infra on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Wed, 19 Feb 2025 08:10:45 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 13 Apr 2025 08:10:45 +0200</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/infra/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MicroVM - À la découverte</title>
+      <link>https://makhal.fr/posts/sysadmin/microvm/microvm-1/</link>
+      <pubDate>Sun, 13 Apr 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/sysadmin/microvm/microvm-1/</guid>
+      <description>On découvre ensemble les microVMs, une alternative aux VMs classiques et quelques applications.</description>
+    </item>
     <item>
       <title>KASM - Navigateur et OS jetables</title>
       <link>https://makhal.fr/posts/sysadmin/kasm-post/</link>
