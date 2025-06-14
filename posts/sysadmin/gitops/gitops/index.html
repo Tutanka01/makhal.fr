@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>C&#39;est quoi GitOps au juste ?</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, gitops, devops'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/sysadmin/gitops/gitops/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="C&#39;est quoi GitOps au juste ?">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="C&#39;est quoi GitOps au juste ?">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/sysadmin/gitops/gitops/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/sysadmin/gitops/gitops/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/sysadmin/gitops/gitops/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>C&#39;est quoi GitOps au juste ?</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            mai 16, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/gitops">gitops</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/devops">devops</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p>Bonjour à tous, aujourd&rsquo;hui on va parler un peu d&rsquo;un terme qui est très important dans le petit monde du DevOps, et qui est surtout, au-delà même du DevOps, une façon de travailler qui est de plus en plus populaire : le GitOps.</p>
+<p><img src="/images/sysadmin/GitOps/gitops-logo.png" alt="GitOps Logo"></p>
+<p>Vous en entendez peut-être parler à droite à gauche, et vous vous demandez si c&rsquo;est encore un buzzword à la mode ou un vrai game-changer. Accrochez-vous, parce qu&rsquo;on va décortiquer ça ensemble, et vous allez voir que c&rsquo;est plutôt la deuxième option !</p>
+<h2 id="pour-commencer--pourquoi-diable-parler-de-git-">Pour commencer : Pourquoi diable parler de Git ?</h2>
+<p>Avant de se jeter la tête la première dans GitOps, il faut qu&rsquo;on ait tous les bases concernant un outil fondamental, la pierre angulaire de tout ça : <em><strong>Git</strong></em>.</p>
+<p>Pour que vous compreniez bien ce qu&rsquo;est Git, et pourquoi c&rsquo;est si crucial, on va faire un petit cours d&rsquo;histoire express. Déjà, il faut savoir qu&rsquo;avant Git (et même encore parfois aujourd&rsquo;hui, soyons honnêtes), les développeurs, et même nous les Ops quand on scriptait, on travaillait un peu&hellip; à l&rsquo;arrache. Chacun sur sa machine, les modifs étaient individuelles, un vrai casse-tête à suivre, et n&rsquo;essayez même pas d&rsquo;imaginer fusionner les changements de plusieurs personnes sans sueurs froides. Les <code>_v2_final_vraiment_final.sh</code>, ça vous dit quelque chose :) ?</p>
+<p>Bien sûr, il existait déjà des systèmes de gestion de versions, comme CVS ou SVN. C&rsquo;était mieux que rien, mais ils avaient leurs limites, surtout pour gérer les conflits quand plusieurs personnes bossaient en même temps ou pour travailler de manière vraiment distribuée.</p>
+<p>Et là, boom !</p>
+<p><img src="/images/sysadmin/GitOps/giphy.gif" alt="alt text"></p>
+<p>En 2005, Linus Torvalds, le papa de Linux, débarque avec Git. L&rsquo;objectif ? Gérer le code source du noyau Linux, un monstre de complexité avec des milliers de contributeurs. Si vous voulez la petite histoire sympa sur comment Linus a eu cette idée (et franchement, c&rsquo;est passionnant de voir son parcours pour ce projet), je vous conseille cet article : <a href="https://www.linuxjournal.com/content/git-origin-story">A Git Origin Story</a>.</p>
+<p>Pour la faire courte si vous êtes pressés : Linus utilisait un système commercial nommé BitKeeper. Commercial, donc un peu l&rsquo;ennemi juré de l&rsquo;esprit Open Source. Imaginez le tollé chez les puristes du noyau Linux de voir le &ldquo;père&rdquo; de l&rsquo;Open Source utiliser un outil proprio pour le plus grand projet Open Source du monde ! Suite à des embrouilles sur les licences, Linus, fidèle à lui-même, a dit &ldquo;Ok, je vais faire le mien, et il sera meilleur&rdquo;. Et c&rsquo;est comme ça que Git est né : rapide, performant, et surtout, distribué.</p>
+<p>En résumé, Git, c&rsquo;est un système de gestion de versions décentralisé. Chaque personne qui bosse sur le projet a une copie complète de tout l&rsquo;historique sur sa machine. Ça permet de suivre chaque modification (qui, quoi, quand, pourquoi), de gérer facilement plusieurs versions d&rsquo;un projet en parallèle avec les branches, de collaborer à plusieurs sans (trop) se marcher sur les pieds, et bien sûr, de revenir en arrière si on fait une bêtise (le fameux <code>git revert</code> salvateur !).</p>
+<p>Aujourd&rsquo;hui, Git, c&rsquo;est la base. C&rsquo;est un des premiers trucs qu&rsquo;on apprend a l&rsquo;ecole, ou même en autodidacte quand on touche au code.</p>
+<p>&ldquo;Ok, c&rsquo;est bien beau ton histoire de Git pour les devs,&rdquo; vous me dites, &ldquo;mais nous, les sysadmins, les DevOps tendance Ops, les SRE, en quoi ça nous concerne directement ?&rdquo; Patience, on y arrive ! C&rsquo;est justement là que ça devient intéressant pour nous.</p>
+<h2 id="gitops--alors-cest-quoi-le-truc-">GitOps : Alors, c&rsquo;est quoi le truc ?</h2>
+<p>Traditionnellement, et avouons-le, c&rsquo;est encore souvent le cas, on gère nos serveurs &ldquo;à l&rsquo;ancienne&rdquo;. On se connecte en SSH, on tape des commandes, on installe des paquets, on modifie des fichiers de conf, on déploie nos services&hellip; tout ça à la main. On a un serveur, on le bichonne, on le met à jour, et on espere que tout se passe bien et qu&rsquo;on n&rsquo;oublie rien.</p>
+<p>Le problème ? Ce n&rsquo;est pas fiable, c&rsquo;est difficile à reproduire à l&rsquo;identique, et surtout, ça ne scale absolument pas. Imaginez devoir faire la même config sur 10, 50, ou 100 serveurs&hellip; l&rsquo;horreur, et la porte ouverte aux erreurs humaines. &ldquo;Ça marche sur ma machine&rdquo; version serveur, en somme.</p>
+<p>Pour nous aider, on a vu arriver des outils d&rsquo;automatisation géniaux comme Ansible, Puppet, Chef, ou encore Terraform pour l&rsquo;Infrastructure as Code (IaC). Avec Ansible, on écrit des playbooks pour décrire les tâches à faire. Avec Terraform, on décrit l&rsquo;état désiré de notre infrastructure. C&rsquo;est déjà un pas de géant ! On code notre infra, c&rsquo;est cool.</p>
+<p>Et naturellement, comme c&rsquo;est du code, on s&rsquo;est dit : &ldquo;Tiens, mais si on mettait nos playbooks Ansible et nos fichiers Terraform dans Git ?&rdquo;. Et là, bingo ! On gagne une traçabilité impeccable, sachant qui a changé quoi et quand sur la définition de notre infra. On obtient aussi un historique complet, permettant de revenir à une version précédente si une mise à jour a tout cassé. Et enfin, la collaboration devient bien plus simple, permettant de travailler à plusieurs sur la même infra, avec des revues de code  oui, des revues de code pour l&rsquo;infra !</p>
+<p>Ça, c&rsquo;est déjà super. C&rsquo;est faire de l&rsquo;Infrastructure as Code versionnée avec Git. Mais GitOps, ça va encore un cran plus loin.</p>
+<p>GitOps, c&rsquo;est une méthodologie, un ensemble de pratiques, qui utilise Git comme unique source de vérité (Single Source of Truth) pour piloter de manière automatisée la configuration et le déploiement d&rsquo;infrastructure et d&rsquo;applications.</p>
+<p>La phrase clé ici, c&rsquo;est &ldquo;piloter de manière automatisée&rdquo;.
+Avec GitOps, l&rsquo;état désiré de votre système est décrit de manière déclarative dans un ou plusieurs dépôts Git. Cet état dans Git devient la SEULE source de vérité ; si ce n&rsquo;est pas dans Git, ça ne devrait pas exister en production, ou alors c&rsquo;est une dérive ! Ensuite, des agents automatisés observent en permanence ce dépôt. Dès qu&rsquo;un changement est fait dans la branche principale, ces agents s&rsquo;en rendent compte et appliquent automatiquement ces changements à votre infrastructure pour qu&rsquo;elle corresponde à ce qui est décrit dans Git. Enfin, ces agents s&rsquo;assurent aussi que l&rsquo;état réel ne dévie pas de l&rsquo;état désiré. S&rsquo;il y a une modif manuelle non désirée, l&rsquo;agent peut la corriger ou vous alerter.</p>
+<p><img src="/images/sysadmin/GitOps/image.png" alt="alt text"></p>
+<p>Imaginez un thermostat : vous réglez la température désirée (ce qui est dans Git). Le thermostat (l&rsquo;agent GitOps) mesure la température actuelle de la pièce (l&rsquo;état réel de votre infra) et allume ou éteint le chauffage (applique les changements) pour maintenir la température désirée. C&rsquo;est exactement ça, mais pour toute votre stack technique !</p>
+<p>Donc, pour bien saisir la différence : faire de l&rsquo;IaC avec Git, c&rsquo;est écrire votre infra en code et la versionner. Pour appliquer, vous faites souvent un <code>git pull</code> puis un <code>terraform apply</code> ou <code>ansible-playbook</code> manuellement ou via un script de CI/CD simple. Avec GitOps, vous écrivez aussi votre infra en code et la versionnez, mais ensuite, des processus automatisés et continus prennent le relais pour que l&rsquo;état réel de votre système converge en permanence vers ce qui est dans Git. Git devient véritablement le cockpit de votre infrastructure.</p>
+<h2 id="les-piliers-fondamentaux-du-gitops">Les Piliers Fondamentaux du GitOps</h2>
+<p>Pour que ça soit vraiment du GitOps, et pas juste &ldquo;on met nos trucs dans Git&rdquo;, il y a quelques principes clés à respecter. On parle souvent de quatre piliers.</p>
+<p>Premièrement, votre système doit être décrit de manière déclarative. On ne s&rsquo;attarde pas sur le comment faire les choses (l&rsquo;approche impérative : &ldquo;installe ce paquet, puis configure ce fichier&hellip;&rdquo;), mais on se concentre sur quel état on veut atteindre (l&rsquo;approche déclarative : &ldquo;je veux Nginx version X, avec tel fichier de conf&hellip;&rdquo;). Kubernetes avec ses manifestes YAML est l&rsquo;exemple parfait, mais Terraform suit aussi cette logique.</p>
+<p>Deuxièmement, l&rsquo;état désiré du système est versionné dans Git, qui est l&rsquo;unique source de vérité. Tout ce qui définit votre environnement  configurations d&rsquo;applications, d&rsquo;infrastructure, politiques réseau  doit résider dans Git. Pour changer quelque chose, on modifie le code dans Git, jamais directement sur un serveur. Git devient la référence absolue.</p>
+<p>Troisièmement, les changements approuvés dans Git sont appliqués automatiquement à l&rsquo;environnement. Une fois qu&rsquo;une modification est validée, typiquement via une Pull Request ou Merge Request, et fusionnée dans la branche principale (comme <code>main</code> ou <code>master</code>), un processus automatisé prend le relais pour déployer ces changements. Cela élimine les interventions manuelles risquées.</p>
+<p>Enfin, quatrièmement, des agents ou workers/runners assurent la conformité et alertent en cas de dérive, c&rsquo;est le principe de convergence. Des outils spécifiques, les fameux agents GitOps, tournent en continu pour comparer l&rsquo;état réel de votre système avec l&rsquo;état désiré dans Git. S&rsquo;ils détectent une différence, ce qu&rsquo;on appelle un &ldquo;drift&rdquo;, l&rsquo;agent tente de réconcilier l&rsquo;état réel avec l&rsquo;état désiré, ou au minimum, il vous alerte. Cela garantit que votre système reste toujours conforme à ce que vous avez défini.
+Si vous cochez ces quatre cases, alors félicitations, vous êtes en plein dans une démarche GitOps !</p>
+<h2 id="concrètement-ça-ressemble-à-quoi-un-workflow-gitops-">Concrètement, ça ressemble à quoi un workflow GitOps ?</h2>
+<p>Ok, la théorie c&rsquo;est bien, mais comment ça se passe en vrai ?</p>
+<p><img src="/images/sysadmin/GitOps/1746084360976.png" alt="alt text"></p>
+<p>Imaginons que vous voulez mettre à jour la version d&rsquo;une application qui tourne sur votre cluster Kubernetes.
+Le processus commence par une demande de changement. Un développeur, ou un membre de l&rsquo;équipe Ops, souhaite déployer la version <code>v1.2.0</code> de l&rsquo;application <code>super-appli</code>.
+Ensuite, vient la modification déclarative. Cette personne ne se connecte pas directement au cluster Kubernetes. Au lieu de cela, elle se rend dans le dépôt Git qui contient les manifestes YAML de <code>super-appli</code>. Là, elle modifie le fichier <code>deployment.yaml</code> pour changer, par exemple, <code>image: super-appli:v1.1.0</code> en <code>image: super-appli:v1.2.0</code>.</p>
+<p>Après la modification, c&rsquo;est l&rsquo;étape du commit et du push. Elle enregistre son changement avec un message clair (<code>git commit -m &quot;feat: upgrade super-appli to v1.2.0&quot;</code>) et le pousse sur une nouvelle branche (<code>git push origin feature/upgrade-super-appli</code>).
+S&rsquo;ensuit la création d&rsquo;une Pull Request (ou Merge Request, selon la plateforme Git). Elle ouvre une PR de sa branche <code>feature/upgrade-super-appli</code> vers la branche principale, disons <code>main</code>.</p>
+<p>C&rsquo;est alors le moment de la revue et de la CI (Continuous Integration). D&rsquo;autres membres de l&rsquo;équipe examinent la PR pour discuter du changement et s&rsquo;assurer de sa validité. Parallèlement, des tests automatisés peuvent se lancer, comme le linting des fichiers YAML, des vérifications de politiques de sécurité, voire un déploiement sur un environnement de test éphémère.</p>
+<p>Si tout est validé, la PR est approuvée et fusionnée dans la branche <code>main</code>. C&rsquo;est cet acte de fusion qui va effectivement déclencher le déploiement.
+C&rsquo;est là que l&rsquo;Agent GitOps entre en jeu. Un outil comme Argo CD ou FluxCD, configuré pour surveiller la branche <code>main</code> de ce dépôt, détecte le nouveau commit. Il &ldquo;voit&rdquo; que le manifeste <code>deployment.yaml</code> a été modifié.
+L&rsquo;agent procède alors à la synchronisation. Il compare l&rsquo;état désiré (le YAML dans Git) avec l&rsquo;état actuel dans le cluster Kubernetes et constate la différence de version de l&rsquo;image.
+Vient ensuite l&rsquo;application des changements.</p>
+<p>L&rsquo;agent applique la modification au cluster Kubernetes, qui va alors initier un déploiement progressif (rolling update) de <code>super-appli</code> vers la nouvelle version <code>v1.2.0</code>.
+Enfin, le monitoring continu prend le relais. L&rsquo;agent continue de surveiller. Si une modification manuelle non autorisée venait à altérer le déploiement dans Kubernetes, l&rsquo;agent le détecterait et, selon sa configuration, pourrait soit corriger automatiquement pour revenir à l&rsquo;état de Git, soit alerter l&rsquo;équipe.
+Et voilà ! Le changement est en production, de manière tracée, validée et automatisée, sans avoir eu à taper la moindre commande <code>kubectl apply -f</code> en croisant les doigts.</p>
+<h2 id="quels-sont-les-avantages-concrets-de-cette-approche-">Quels sont les avantages concrets de cette approche ?</h2>
+<p>Vous commencez à le voir, adopter GitOps, ce n&rsquo;est pas juste pour faire joli sur un PowerPoint. Ça apporte de vrais bénéfices tangibles au quotidien.
+D&rsquo;abord, on gagne énormément en fiabilité et en stabilité. Grâce à Git, l&rsquo;état de votre système est entièrement défini et versionné, ce qui assure une reproductibilité parfaite : vous pouvez recréer un environnement à l&rsquo;identique n&rsquo;importe quand. Les rollbacks deviennent un jeu d&rsquo;enfant ; si un déploiement tourne mal, un simple <code>git revert</code> sur le commit problématique permet à l&rsquo;agent GitOps de ramener le système à son état stable précédent. C&rsquo;est presque magique ! De plus, l&rsquo;automatisation inhérente réduit drastiquement les erreurs humaines, qui sont si fréquentes lors d&rsquo;interventions manuelles.</p>
+<p>Ensuite, la productivité des équipes s&rsquo;en trouve améliorée. Les déploiements deviennent plus rapides et peuvent être plus fréquents car le processus est automatisé et sécurisé, ce qui donne plus de confiance pour livrer. Cela peut aussi ouvrir la voie au self-service pour les développeurs, de manière contrôlée : ils peuvent proposer des changements sur leurs applications via des Pull Requests, en utilisant le même workflow que pour leur code applicatif, tandis que les Ops gardent le contrôle final via la validation des PRs et les politiques établies.</p>
+<p>L&rsquo;expérience des développeurs et des Ops s&rsquo;améliore également. Les développeurs utilisent un outil qu&rsquo;ils connaissent et maîtrisent parfaitement, Git. De leur côté, les Ops peuvent enfin se concentrer sur des tâches à plus forte valeur ajoutée, comme l&rsquo;amélioration de la plateforme et l&rsquo;optimisation des processus, plutôt que de passer leur temps sur des déploiements manuels répétitifs et stressants.</p>
+<p>Sur le plan de la sécurité et de la conformité, les gains sont significatifs. L&rsquo;historique Git fournit un audit trail complet et immuable, indiquant qui a changé quoi, quand, et (si les messages de commit sont bien rédigés) pourquoi. C&rsquo;est une mine d&rsquo;or pour les audits de sécurité ou de conformité. La validation des changements via les Pull Requests permet des revues par les pairs, y compris par les équipes de sécurité, avant toute mise en production. Et le mécanisme de convergence aide à la prévention de la dérive de configuration, l&rsquo;agent s&rsquo;assurant en permanence que l&rsquo;état réel correspond à ce qui a été approuvé dans Git.</p>
+<p>La gestion des environnements multiples (développement, staging, production) est aussi grandement simplifiée. On peut utiliser des stratégies basées sur des branches Git différentes, des répertoires distincts au sein d&rsquo;un même dépôt, ou même des dépôts séparés, et laisser les agents GitOps s&rsquo;occuper de la synchronisation spécifique à chaque environnement.</p>
+<p>Enfin, GitOps offre une excellente scalabilité. Que vous ayez à gérer 10 ou 1000 services, un seul ou cinquante clusters Kubernetes, le principe fondamental reste le même. Git et les agents automatisés se chargent d&rsquo;absorber une grande partie de la complexité inhérente à la taille.
+Bref, c&rsquo;est une approche qui tend à rendre la gestion de nos systèmes modernes beaucoup plus sereine, prédictible et efficace.</p>
+<h2 id="et-les-outils-dans-tout-ça--quels-sont-les-champions-du-gitops-">Et les outils dans tout ça ? Quels sont les champions du GitOps ?</h2>
+<p>On a parlé d&rsquo; &ldquo;agents GitOps&rdquo;, mais qui sont-ils concrètement ? Sur le marché, et particulièrement dans l&rsquo;écosystème Kubernetes, deux grands acteurs se distinguent nettement.
+Le premier est Argo CD, un projet hébergé par la CNCF (Cloud Native Computing Foundation). Il est très populaire et apprécié notamment pour son interface utilisateur graphique assez léchée qui permet de bien visualiser l&rsquo;état des applications. Argo CD fonctionne sur un modèle de pull : il est installé directement dans votre cluster Kubernetes et va régulièrement &ldquo;tirer&rdquo; (pull) les configurations depuis les dépôts Git que vous lui indiquez.
+L&rsquo;autre champion est FluxCD, également un projet de la CNCF. Il fut même le premier projet incubé par la fondation spécifiquement pour le GitOps ! FluxCD est reconnu pour sa puissance et sa flexibilité, et est souvent perçu comme ayant une approche peut-être un peu plus &ldquo;native Kubernetes&rdquo; dans sa philosophie. Lui aussi opère sur un modèle de pull, surveillant les dépôts Git pour appliquer les changements.</p>
+<p>Ces outils sont conçus pour faire le gros du travail : surveiller vos dépôts Git et appliquer les configurations  qu&rsquo;il s&rsquo;agisse de manifestes Kubernetes bruts, de charts Helm, ou de configurations Kustomize  à vos clusters. Ce sont eux qui animent la boucle de réconciliation continue, garantissant que votre infrastructure reflète fidèlement ce qui est défini dans Git.</p>
+<p>Il est important de souligner que, bien que GitOps soit très étroitement associé à Kubernetes, le concept n&rsquo;est pas exclusivement lié à cet orchestrateur. On pourrait tout à fait imaginer et mettre en œuvre des systèmes GitOps pour gérer des parcs de machines virtuelles avec Terraform, par exemple, en ayant un orchestrateur personnalisé qui lirait l&rsquo;état désiré depuis Git. Cependant, il est indéniable que Kubernetes constitue le terrain de jeu naturel et le plus mature pour l&rsquo;application des pratiques GitOps aujourd&rsquo;hui.</p>
+<p>On ne va pas se lancer dans un tutoriel complet sur Argo CD ou FluxCD ici, cela mériterait un article dédié (et qui sait, peut-être une idée pour un prochain post ?). Mais il est essentiel de comprendre que ce sont ces outils qui transforment la théorie du GitOps en une réalité opérationnelle efficace.</p>
+<h2 id="pour-conclure-pour-linstant-">Pour conclure (pour l&rsquo;instant !)</h2>
+<p>Alors, le GitOps, simple effet de mode passager ou véritable révolution dans nos métiers ? J&rsquo;espère sincèrement qu&rsquo;après cette exploration, vous penchez plutôt pour la deuxième option.
+C&rsquo;est une évolution logique et puissante de l&rsquo;Infrastructure as Code, combinée aux meilleures pratiques DevOps. En plaçant Git au centre de toutes les opérations, comme unique et incontestable source de vérité, et en automatisant la synchronisation constante de l&rsquo;état désiré avec l&rsquo;état réel de nos systèmes, on gagne énormément en fiabilité, en vélocité et, il faut le dire, en sérénité.</p>
+<p>C&rsquo;est un véritable changement de paradigme : on ne &ldquo;pousse&rdquo; plus activement des configurations sur nos serveurs ou clusters. Au lieu de cela, on déclare un état cible dans Git, et on laisse le système, via ses agents automatisés, converger intelligemment vers cet état.</p>
+<p>Bien sûr, la mise en place d&rsquo;une stratégie GitOps demande un certain investissement initial. Il faut bien structurer ses dépôts Git, choisir et configurer l&rsquo;agent GitOps adapté à ses besoins, et accompagner les équipes dans l&rsquo;adoption de ces nouvelles pratiques. Mais les bénéfices à long terme sont considérables, surtout lorsqu&rsquo;on opère dans des environnements techniques complexes et en constante évolution, comme c&rsquo;est si souvent le cas aujourd&rsquo;hui.</p>
+<p>Dans un prochain article, on pourrait peut-être plonger les mains dans le cambouis avec un exemple pratique, en montant un workflow GitOps avec Argo CD ou FluxCD sur un petit cluster Kubernetes. Qu&rsquo;est-ce que vous en dites ? Ça vous brancherait ?</p>
+<p>En attendant, j&rsquo;espère que cette introduction vous a été utile et vous a bien éclairé sur ce qu&rsquo;est le GitOps. Si vous avez des questions, des remarques, ou si vous voulez partager votre propre expérience avec ces pratiques, n&rsquo;hésitez surtout pas à le faire dans les commentaires ci-dessous !</p>
+
+        </p>
+        
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/sysadmin/unikernel/unikernel-1/">
+            &#8592;
+            :
+            Unikernels : OS ultra-léger, ultra-sécurisé
+        </a>
+    </p>
+    <p class="prev-post-date">
+        mai 3, 2025
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/sysadmin/authelia/authelia/">
+            :
+            Authelia &#43; Traefik : sécurisez tous vos services web
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            mai 28, 2025
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

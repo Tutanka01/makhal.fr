@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Unikernels : OS ultra-léger, ultra-sécurisé</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, sysadmin, unikernel, infra'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/sysadmin/unikernel/unikernel-1/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Unikernels : OS ultra-léger, ultra-sécurisé">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Unikernels : OS ultra-léger, ultra-sécurisé">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/sysadmin/unikernel/unikernel-1/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/sysadmin/unikernel/unikernel-1/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/sysadmin/unikernel/unikernel-1/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Unikernels : OS ultra-léger, ultra-sécurisé</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            mai 3, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/sysadmin">sysadmin</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/unikernel">unikernel</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/infra">infra</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p>Bonjour à tous ! Comme toujours, le week-end est pour moi un moment de réflexion et d’expérimentation. Cela fait déjà quelques week-ends que je me penche sur les unikernels. J’ai essayé de comprendre leur fonctionnement pour voir si cela vaut vraiment le coup ou non et, aujourd’hui, je vais vous faire un petit retour d’expérience.</p>
+<h1 id="quest-ce-quun-unikernel-">Qu’est-ce qu’un unikernel ?</h1>
+<p>Avant de répondre à cette question, je vous invite à lire mon article sur les micro-VMs, dans lequel j’explique ce qui existait auparavant : les VMs classiques, les conteneurs, puis les micro-VMs. Je ne vais donc pas m’attarder là-dessus ici.</p>
+<p>Je vais tout de même vous rappeler brièvement ce qu’est une micro-VM. En gros, il s’agit d’une machine virtuelle ultra-légère : le VMM ne simule que les ressources dont j’ai réellement besoin. Par exemple, si je n’ai pas besoin de carte réseau, je n’en simule pas. Le support des périphériques est également réduit. Résultat : une machine virtuelle bien plus légère qu’une VM classique et, par conséquent, beaucoup plus rapide à démarrer.</p>
+<p>Mais les micro-vms ça reste quand meme des Vm&rsquo;s, vous avez toujours un système d&rsquo;exploitation (OS) complet qui tourne dedans, avec son kernel généraliste. Et ça, ça veut dire un &ldquo;overhead&rdquo; : plein de fonctions, de pilotes, de services présents dans ce kernel et cet OS que votre application n&rsquo;utilisera jamais, mais qui sont là, qui prennent de la place et consomment des ressources que votre application aurait pu utiliser. C&rsquo;est un peu comme avoir une énorme boîte à outils de plombier juste pour planter un clou.</p>
+<p>C&rsquo;est là que des chercheurs (et maintenant pas mal de monde !) se sont dit : et si on créait un système qui ne contiendrait que mon application et strictement les briques systèmes (les fonctions de l&rsquo;OS, comme la gestion du réseau, de la mémoire&hellip;) dont elle a réellement besoin ? L&rsquo;idée, c&rsquo;est de virer tout le superflu du système d&rsquo;exploitation traditionnel pour ne garder que l&rsquo;essentiel.</p>
+<p>Comment on fait ça ? Eh bien, au lieu d&rsquo;installer une application sur un OS existant, on va construire une image très spéciale. On prend le code de notre application, et on le compile directement avec les bibliothèques systèmes nécessaires. Imaginez que vous construisez une voiture : au lieu de prendre un châssis standard et d&rsquo;y ajouter votre moteur, vous construisez un véhicule unique où le moteur et seulement les pièces de châssis indispensables sont fusionnés dès le départ.</p>
+<p><img src="/images/sysadmin/unikernel/microKernel.png" alt="alt text"></p>
+<p>Le résultat, c&rsquo;est l&rsquo;unikernel : une image unique, auto-suffisante. Elle contient à la fois votre code applicatif et les fonctions systèmes indispensables qui faisaient avant partie du gros OS/Kernel généraliste. Il n&rsquo;y a plus vraiment de séparation nette entre l&rsquo;application et l&rsquo;&ldquo;OS&rdquo; en dessous, parce qu&rsquo;il n&rsquo;y a plus d&rsquo;OS complet &ldquo;en dessous&rdquo; au sens où on l&rsquo;entend habituellement !</p>
+<p>L&rsquo;image présentée un peu plus haut illustre bien ça : on zappe les couches séparées traditionnelles (Application qui tourne sur un OS, qui lui-même utilise un Kernel) pour avoir cette entité unique &ldquo;Application + ses dépendances systèmes minimales&rdquo; qui cause directement avec l&rsquo;hyperviseur.</p>
+<p>Donc en résumé, l&rsquo;idée c&rsquo;est vraiment que l&rsquo;application et les morceaux d&rsquo;OS essentiels qu&rsquo;elle utilise ne fassent plus qu&rsquo;UN.</p>
+<h2 id="comment-ça-marche-">Comment ça marche ?</h2>
+<p>Si vous avez bien suivi jusqu&rsquo;à là, votre tête est sûrement pleine de questions. Comment mon système peut-il fonctionner sans un OS complet ? Comment je fais pour gérer le réseau, le stockage, la mémoire sans ce bon vieux kernel Linux ou Windows ? Et surtout, comment on fabrique ce &ldquo;machin&rdquo; ?</p>
+<p>Accrochez-vous, c&rsquo;est là que ça devient vraiment intéressant et différent de ce qu&rsquo;on connaît ! La clé, ce n&rsquo;est pas d&rsquo;installer une application <em>sur</em> un OS allégé, mais de construire un système minimaliste taillé sur mesure <em>pour</em> l&rsquo;application !!</p>
+<h3 id="le-build">Le &ldquo;Build&rdquo;</h3>
+<p>Pour faire ça, on ne lance pas juste un <code>gcc</code> ou un <code>go build</code> classique sur notre code et c&rsquo;est tout. Non, on utilise des outils et des frameworks spécialisés dédiés aux unikernels. Vous avez peut-être entendu parler de projets comme <a href="https://mirage.io/">MirageOS</a>, <a href="https://unikraft.org/">Unikraft</a>, IncludeOS, ou Nanos.</p>
+<p>Ces outils sont la baguette magique. Ils fournissent les fonctions de base qu&rsquo;on trouve normalement dans un OS (gérer le réseau, la mémoire, les fichiers&hellip;) non pas comme un gros bloc monolithique (le kernel), mais sous forme de bibliothèques (des &ldquo;libs&rdquo;, comme celles que vous ajoutez à votre projet pour faire du JSON ou des appels HTTP !). On parle parfois de &ldquo;Library OS&rdquo;.</p>
+<p>C&rsquo;est qui est vraiment pas mal, c&rsquo;est que lors de la compilation (le &ldquo;build&rdquo;) de votre unikernel :</p>
+<ol>
+<li>Vous dites à l&rsquo;outil : &ldquo;Mon application a besoin de parler en TCP/IP et d&rsquo;accéder à des données embarquées&rdquo;.</li>
+<li>L&rsquo;outil va chercher <em>uniquement</em> les bibliothèques systèmes correspondantes (une lib pour TCP/IP minimaliste, une lib pour accéder aux données mises dans l&rsquo;image).</li>
+<li>Il prend ensuite votre code applicatif.</li>
+<li>Et il lie (&ldquo;linke&rdquo;) tout ça ensemble : votre code + les bibliothèques systèmes choisies.</li>
+</ol>
+<p>Le résultat ? Une image unique et autonome qui contient <em>tout</em> ce qu&rsquo;il faut pour tourner, et <em>rien de plus</em>. Tout ce qui n&rsquo;est pas explicitement nécessaire (le pilote pour l&rsquo;USB dont vous n&rsquo;avez pas besoin, le support multi-utilisateurs, le shell&hellip;) n&rsquo;est tout simplement pas inclus dans l&rsquo;image finale !</p>
+<h3 id="et-concrètement-pour-le-système-de-fichiers-et-le-réseau-">Et concrètement, pour le Système de Fichiers et le Réseau ?</h3>
+<p>Maintenant qu&rsquo;on a compris le principe de la construction par bibliothèques, voyons comment ça s&rsquo;applique :</p>
+<p>Système de fichiers (FS) : Dans beaucoup de cas simples (servir une page web statique, une API simple), l&rsquo;unikernel n&rsquo;a même pas besoin d&rsquo;une bibliothèque de système de fichiers complexe. Les données nécessaires (la page HTML, la config) sont souvent directemment mises dans l&rsquo;image lors de la compilation. L&rsquo;application y accède comme si c&rsquo;était en mémoire, souvent en lecture seule.</p>
+<blockquote>
+<p><em>Mais attention :</em> Si votre application <em>doit</em> écrire des fichiers (logs, données&hellip;), ce n&rsquo;est pas interdit ! Il suffit de le dire à l&rsquo;outil de build, qui inclura alors la bibliothèque nécessaire pour parler à un système de fichiers (qui peut être un simple disque virtuel exposé par l&rsquo;hyperviseur). C&rsquo;est juste qu&rsquo;on ne l&rsquo;inclut pas par défaut si ce n&rsquo;est pas requis.</p></blockquote>
+<p>Réseau : C&rsquo;est exactement la même idée. Oubliez la pile réseau complète d&rsquo;un OS classique avec ses milliers d&rsquo;options. Ici, on lie une bibliothèque réseau minimaliste (une implémentation TCP/IP souvent très optimisée) qui fournit juste les fonctions dont l&rsquo;application a besoin (écouter sur un port, envoyer des données&hellip;). Cette bibliothèque est conçue pour communiquer directement avec la carte réseau virtuelle fournie par l&rsquo;hyperviseur (le VMM, comme Firecracker, QEMU, etc.), en général via une interface standardisée comme <code>virtio-net</code>. Moins de couches, moins de détours, potentiellement plus rapide !</p>
+<h3 id="la-philosophie--minimalisme-à-tous-les-étages">La philosophie : Minimalisme à tous les étages</h3>
+<p>Vous commencez à voir le schéma ? C&rsquo;est la même logique pour tout le reste :</p>
+<ul>
+<li>Gestion de la mémoire</li>
+<li>Gestion du temps CPU (&ldquo;scheduling&rdquo;)</li>
+<li>&hellip;</li>
+</ul>
+<p>Le principe fondamental est toujours :</p>
+<ol>
+<li>De quoi mon application a-t-elle <em>strictement</em> besoin ?</li>
+<li>On prend <em>seulement</em> les bibliothèques correspondantes.</li>
+<li>On compile tout ça ensemble en une image unique.</li>
+</ol>
+<p>C&rsquo;est cette approche radicale qui permet d&rsquo;obtenir des systèmes sans utilisateurs multiples, sans shell par défaut, sans la notion de processus multiples telle qu&rsquo;on la connaît sous Linux/Windows. L&rsquo;application <em>devient</em> le système.</p>
+<p>Et maintenant qu&rsquo;on a vu <em>comment</em> ça marche et ce que ça implique comme architecture interne, on peut commencer à parler des conséquences&hellip; notamment les avantages ! (Et oui, il y a aussi quelques inconvénients, on y viendra).</p>
+<h2 id="conclusion--unikernels-on-y-va-ou-pas-">Conclusion : Unikernels, on y va ou pas ?</h2>
+<p>Bon, on a fait le tour : les unikernels, c&rsquo;est l&rsquo;idée de fusionner votre application avec juste le strict minimum de l&rsquo;OS, le tout compilé en une seule image super optimisée. On a vu que ça se fait avec des outils spéciaux et une approche &ldquo;bibliothèque OS&rdquo;.</p>
+<p>Alors, le verdict rapide ? C&rsquo;est un peu les deux faces d&rsquo;une même pièce :</p>
+<p>Le bon côté : Une sécurité potentiellement béton (surface d&rsquo;attaque minuscule !), une légèreté et une vitesse de démarrage imbattables. Quand on a besoin de ça, c&rsquo;est difficile de faire mieux.</p>
+<p>Le mauvais côté: C&rsquo;est plus complexe à fabriquer et à débugger qu&rsquo;un bon vieux conteneur Docker. L&rsquo;outillage est plus jeune, demande un certain effort et tout ne tourne pas dessus &ldquo;out-of-the-box&rdquo;.</p>
+<p>En bref : Non, les unikernels ne vont pas remplacer toutes nos VMs et conteneurs demain matin. C&rsquo;est trop spécifique pour ça aujourd&rsquo;hui. MAIS, c&rsquo;est un outil extrêmement puissant pour des niches bien précises : sécurité absolue, performance extrême, edge computing, fonctions serverless ultra-rapides&hellip;</p>
+<p>C&rsquo;est une technologie à garder sérieusement dans un coin de sa tête pour les cas où les approches classiques montrent leurs limites. Perso, je trouve ça fascinant et je vais continuer à expérimenter ! Peut etre je vous ferais une vraie demo dans un futur article !</p>
+
+        </p>
+        
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/docker/swarm_vs_k8s/">
+            &#8592;
+            :
+            Swarm vs Kubernetes : lequel choisir ?
+        </a>
+    </p>
+    <p class="prev-post-date">
+        avril 26, 2025
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/sysadmin/gitops/gitops/">
+            :
+            C&#39;est quoi GitOps au juste ?
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            mai 16, 2025
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

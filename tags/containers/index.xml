@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Containers on makhal.fr</title>
+    <link>https://makhal.fr/tags/containers/</link>
+    <description>Recent content in Containers on makhal.fr</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Sat, 14 Jun 2025 08:10:45 +0200</lastBuildDate>
+    <atom:link href="https://makhal.fr/tags/containers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#39;est quoi vraiment un conteneur ?</title>
+      <link>https://makhal.fr/posts/sysadmin/antomie-container/antomie_container/</link>
+      <pubDate>Sat, 14 Jun 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/sysadmin/antomie-container/antomie_container/</guid>
+      <description>Namespaces, cgroups, et plus encore : plongeons dans l&amp;rsquo;anatomie d&amp;rsquo;un conteneur Linux.</description>
+    </item>
+  </channel>
+</rss>

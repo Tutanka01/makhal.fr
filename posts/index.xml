@@ -6,8 +6,43 @@
     <description>Recent content in Posts on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sun, 13 Apr 2025 08:10:45 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 14 Jun 2025 08:10:45 +0200</lastBuildDate>
     <atom:link href="https://makhal.fr/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#39;est quoi vraiment un conteneur ?</title>
+      <link>https://makhal.fr/posts/sysadmin/antomie-container/antomie_container/</link>
+      <pubDate>Sat, 14 Jun 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/sysadmin/antomie-container/antomie_container/</guid>
+      <description>Namespaces, cgroups, et plus encore : plongeons dans l&amp;rsquo;anatomie d&amp;rsquo;un conteneur Linux.</description>
+    </item>
+    <item>
+      <title>Authelia &#43; Traefik : sécurisez tous vos services web</title>
+      <link>https://makhal.fr/posts/sysadmin/authelia/authelia/</link>
+      <pubDate>Wed, 28 May 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/sysadmin/authelia/authelia/</guid>
+      <description>Dans cet article, nous allons découvrir et mettre en place Authelia avec Traefik</description>
+    </item>
+    <item>
+      <title>C&#39;est quoi GitOps au juste ?</title>
+      <link>https://makhal.fr/posts/sysadmin/gitops/gitops/</link>
+      <pubDate>Fri, 16 May 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/sysadmin/gitops/gitops/</guid>
+      <description>On découvre ensemble le concept de GitOps, de la théorie à la pratique, et comment il révolutionne la gestion des systemes modernes</description>
+    </item>
+    <item>
+      <title>Unikernels : OS ultra-léger, ultra-sécurisé</title>
+      <link>https://makhal.fr/posts/sysadmin/unikernel/unikernel-1/</link>
+      <pubDate>Sat, 03 May 2025 08:15:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/sysadmin/unikernel/unikernel-1/</guid>
+      <description>On explore ce que sont les unikernels, comment ils fonctionnent, et pourquoi ils méritent une place dans nos architectures</description>
+    </item>
+    <item>
+      <title>Swarm vs Kubernetes : lequel choisir ?</title>
+      <link>https://makhal.fr/posts/docker/swarm_vs_k8s/</link>
+      <pubDate>Sat, 26 Apr 2025 06:49:38 +0100</pubDate>
+      <guid>https://makhal.fr/posts/docker/swarm_vs_k8s/</guid>
+      <description>Kubernetes est partout, mais est-ce toujours le bon choix ? Explorons Docker Swarm, une alternative plus simple.</description>
+    </item>
     <item>
       <title>MicroVM - À la découverte</title>
       <link>https://makhal.fr/posts/sysadmin/microvm/microvm-1/</link>

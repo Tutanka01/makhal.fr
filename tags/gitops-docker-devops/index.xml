@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>[&#34;Gitops&#34;, &#34;Docker&#34;, &#34;Devops&#34;] on makhal.fr</title>
+    <link>http://localhost:1313/tags/gitops-docker-devops/</link>
+    <description>Recent content in [&#34;Gitops&#34;, &#34;Docker&#34;, &#34;Devops&#34;] on makhal.fr</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <atom:link href="http://localhost:1313/tags/gitops-docker-devops/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

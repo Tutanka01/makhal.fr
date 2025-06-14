@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Swarm vs Kubernetes : lequel choisir ?</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, docker, docker-swarm, kubernetes'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/docker/swarm_vs_k8s/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Swarm vs Kubernetes : lequel choisir ?">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Swarm vs Kubernetes : lequel choisir ?">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/docker/swarm_vs_k8s/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/docker/swarm_vs_k8s/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/docker/swarm_vs_k8s/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Swarm vs Kubernetes : lequel choisir ?</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            avril 26, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/docker">docker</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/docker-swarm">docker-swarm</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/kubernetes">kubernetes</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p>Bonjour à tous ! Aujourd&rsquo;hui, on va parler d&rsquo;orchestration de conteneurs. Vous connaissez sûrement Kubernetes, souvent présenté comme le roi incontesté dans ce domaine. On trouve des chiffres <a href="https://edgedelta.com/company/blog/kubernetes-adoption-statistics#:~:text=More%20than%2060%25%20of%20enterprises,developers%20globally%20are%20using%20Kubernetes.">sur internet</a> indiquant que plus de 60% des entreprises l&rsquo;utiliseraient.</p>
+<p>Pourtant, ce n&rsquo;est pas parce qu&rsquo;un outil est populaire qu&rsquo;il est adapté à tous les besoins. Se lancer dans Kubernetes peut représenter un investissement technique et financier important, surtout pour des projets qui n&rsquo;ont pas besoin de toute sa complexité. La plupart des entreprises, soyons honnêtes, n&rsquo;ont pas l&rsquo;échelle de Google ou Shopify. Utiliser Kubernetes pour une application simple, c&rsquo;est un peu comme acheter un camion de pompier pour éteindre une bougie. C&rsquo;est efficace, mais probablement surdimensionné.</p>
+<p>Heureusement, il existe des alternatives plus simples. Docker Swarm en fait partie. C&rsquo;est une solution d&rsquo;orchestration directement intégrée à Docker. Sa mise en place est bien plus directe que celle de Kubernetes, ce qui en fait un candidat intéressant pour les petites et moyennes structures.</p>
+<p>Dans ce post, je vais essayer de vous montrer pourquoi Docker Swarm peut être une excellente option et comment l&rsquo;utiliser simplement pour déployer vos applications.</p>
+<h2 id="pourquoi-kubernetes-nest-pas-toujours-la-réponse">Pourquoi Kubernetes n&rsquo;est pas toujours la réponse</h2>
+<p>Avant de plonger dans Swarm, prenons un peu de recul sur Kubernetes (ou K8s). C&rsquo;est un projet initialement développé par Google, basé sur leur expérience avec Borg, leur système interne massif pour gérer des millions de conteneurs. K8s a donc été pensé dès le départ pour des infrastructures d&rsquo;une échelle et d&rsquo;une complexité que la plupart d&rsquo;entre nous ne rencontreront jamais.</p>
+<p>Quand on conçoit un système pour gérer des services comme Gmail ou YouTube, la simplicité n&rsquo;est pas la priorité absolue. On ajoute de nombreuses couches et concepts : API server, etcd, kubelet, kube-proxy, scheduler, controller manager&hellip; La liste est longue. Le résultat est un outil extrêmement puissant, mais aussi intrinsèquement complexe. Google a ensuite donné K8s à la Cloud Native Computing Foundation (CNCF), et il est devenu le standard de fait, un peu par la force du marketing et de l&rsquo;effet d&rsquo;entraînement.</p>
+<p>Aujourd&rsquo;hui, K8s est partout. Il répond très bien à des besoins spécifiques d&rsquo;automatisation et de gestion à grande échelle. Mais est-il pertinent pour tout ? Imaginons un simple site web statique qui doit juste être toujours disponible. Déployer un cluster Kubernetes complet pour ça semble excessif. On se retrouverait à maintenir une infrastructure complexe dont on n&rsquo;utilise qu&rsquo;une fraction des capacités.</p>
+<p>Il ne faut pas non plus sous-estimer la courbe d&rsquo;apprentissage. Kubernetes est un outil professionnel avec ses propres concepts et configurations à maîtriser. Sans une équipe dédiée ou du temps conséquent à y investir, on risque de passer plus de temps à gérer le cluster qu&rsquo;à développer l&rsquo;application elle-même.</p>
+<p><img src="/images/Docker/swarmvsk8s/google-stats.png" alt="Graphique Google Trends montrant l&rsquo;intérêt de recherche constant pour &lsquo;kubernetes alternative&rsquo; sur 12 mois"></p>
+<p>D&rsquo;ailleurs, si on regarde les tendances de recherche Google, on voit bien que les gens cherchent activement des alternatives à Kubernetes. Cela suggère que sa complexité pousse certains à explorer d&rsquo;autres voies, même si l&rsquo;attrait de la tendance technologique reste fort.</p>
+<h2 id="docker-swarm--lalternative-simple-">Docker Swarm : l&rsquo;alternative simple ?</h2>
+<p>Alors, face à ce constat, que propose Docker Swarm ? C&rsquo;est une approche différente, bien plus intégrée à l&rsquo;écosystème Docker que vous utilisez peut-être déjà. On peut oublier la complexité des fichiers YAML à rallonge et les week-ends de débogage réseau. Swarm active un mode &ldquo;essaim&rdquo; sur votre Docker Engine.</p>
+<p>L&rsquo;idée est simple : regrouper plusieurs machines équipées de Docker pour former un cluster virtuel unique. Ce cluster peut alors exécuter vos conteneurs en assurant la haute disponibilité et le scaling, mais sans la complexité de K8s. Pour reprendre une image, si K8s est un cockpit d&rsquo;avion de ligne, Swarm serait plutôt le tableau de bord clair et fonctionnel d&rsquo;une voiture moderne. Ça fait le travail efficacement, sans nécessiter un diplôme d&rsquo;ingénieur pour comprendre comment ça fonctionne. Voyons comment cet &ldquo;outsider&rdquo; peut nous faciliter la vie.</p>
+<h2 id="comment-ça-marche-">Comment ça marche ?</h2>
+<p>La force de Swarm réside dans sa simplicité d&rsquo;utilisation. Il étend les commandes Docker habituelles à un contexte multi-machines. Pas besoin d&rsquo;installer une multitude de composants. Pour démarrer, il suffit d&rsquo;initialiser l&rsquo;essaim sur la machine qui jouera le rôle de &ldquo;Manager&rdquo;. Une seule commande suffit :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker swarm init --advertise-addr &lt;IP_DE_VOTRE_MANAGER&gt;
+</span></span><span style="display:flex;"><span>Swarm initialized: current node <span style="color:#f92672">(</span>xxxxxxx<span style="color:#f92672">)</span> is now a manager.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>To add a worker to this swarm, run the following command:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    docker swarm join --token SWMTKN-1-xxxxxxx &lt;IP_DE_VOTRE_MANAGER&gt;:2377
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>To add a manager to this swarm, run <span style="color:#e6db74">&#39;docker swarm join-token manager&#39;</span> and follow the instructions.
+</span></span></code></pre></div><p>Et voilà, votre Swarm est créé. La sortie vous donne même la commande <code>docker swarm join</code> à copier-coller sur d&rsquo;autres machines (les &ldquo;Workers&rdquo;) pour qu&rsquo;elles rejoignent le cluster. Docker gère la configuration sécurisée en arrière-plan.</p>
+<p>Une fois l&rsquo;essaim prêt, on déploie des applications via des <strong>Services</strong>. Un Service décrit comment votre application doit tourner : quelle image utiliser, combien de réplicas, quels ports ouvrir. Par exemple, pour lancer 3 instances Nginx :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker service create --name mon-web --replicas <span style="color:#ae81ff">3</span> -p 8080:80 nginx:latest
+</span></span><span style="display:flex;"><span>xxxxxxxxxxxx
+</span></span><span style="display:flex;"><span>overall progress: <span style="color:#ae81ff">3</span> out of <span style="color:#ae81ff">3</span> tasks
+</span></span><span style="display:flex;"><span>1/3: running   <span style="color:#f92672">[==================================================</span>&gt;<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>2/3: running   <span style="color:#f92672">[==================================================</span>&gt;<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>3/3: running   <span style="color:#f92672">[==================================================</span>&gt;<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>verify: Service converged
+</span></span></code></pre></div><p>Swarm va alors démarrer les conteneurs nécessaires, appelés <strong>Tasks</strong> (une Task est une instance de votre Service), et les répartir sur les différentes machines du cluster (les <strong>Nodes</strong>). Le port 8080 sera accessible sur n&rsquo;importe quel Node, avec une redirection automatique vers un conteneur actif. On peut vérifier l&rsquo;état des services avec <code>docker service ls</code> et voir où tournent les Tasks individuelles avec <code>docker service ps mon-web</code>. Les concepts clés (Service, Task, Node) sont peu nombreux et logiques. C&rsquo;est suffisant pour une orchestration sérieuse.</p>
+<h2 id="pourquoi-cest-souvent-suffisant-et-même-mieux-">Pourquoi c&rsquo;est souvent suffisant (et même mieux !)</h2>
+<p>Cette simplicité ne signifie pas que Swarm est limité. Il couvre très bien les besoins courants d&rsquo;orchestration. Vous avez besoin de plus de capacité ? La commande <code>docker service scale mon-web=5</code> ajuste le nombre de réplicas en quelques secondes. Pour déployer une nouvelle version sans coupure, <code>docker service update --image mon-image:nouvelle-version mon-service</code> effectue une mise à jour progressive (rolling update).</p>
+<p>La haute disponibilité est gérée nativement. Si un Node tombe, Swarm redéploie automatiquement les Tasks affectées sur les Nodes restants. Si un conteneur plante, il est redémarré. Tout cela sans intervention manuelle. Côté réseau, Swarm crée un réseau virtuel &ldquo;overlay&rdquo; qui permet aux conteneurs de communiquer entre eux facilement, même s&rsquo;ils sont sur des machines différentes.</p>
+<p>La gestion des secrets (mots de passe, clés API) et des configurations est aussi intégrée via <code>docker secret create</code> et <code>docker config create</code>. Et si vous utilisez déjà Docker Compose, vous pouvez déployer toute votre stack d&rsquo;un coup avec <code>docker stack deploy -c votre-compose.yaml nom-de-la-stack</code>. La transition est très naturelle. Pour beaucoup d&rsquo;applications, Swarm offre la puissance nécessaire sans la complexité associée à K8s.</p>
+<h2 id="mais-attends-on-ma-dit-que-swarm-était-mort-">Mais attends, on m&rsquo;a dit que Swarm était mort ?</h2>
+<p>C&rsquo;est une rumeur tenace, alimentée par l&rsquo;omniprésence de Kubernetes. Mettons les choses au clair : <strong>non, Docker Swarm n&rsquo;est pas mort</strong>. Il est vrai qu&rsquo;il fait moins parler de lui. Il n&rsquo;évolue pas à la vitesse de K8s et n&rsquo;a pas le même écosystème foisonnant d&rsquo;outils.</p>
+<p>Cependant, Swarm reste un projet <strong>stable, mature et maintenu</strong>, notamment par Mirantis qui a <a href="https://www.programmez.com/actualites/mirantis-retour-sur-le-rachat-de-docker-34320">repris la branche entreprise de Docker</a>. Il continue de recevoir des mises à jour et fait partie intégrante du Docker Engine. Son développement est plus calme car il se concentre sur sa mission : l&rsquo;orchestration simple et efficace. Le fait qu&rsquo;on en parle moins ne veut pas dire qu&rsquo;il n&rsquo;est pas utilisé. De nombreuses structures, surtout celles qui cherchent la simplicité, l&rsquo;utilisent en production tous les jours, discrètement.</p>
+<h2 id="swarm--le-bon-outil-pour-le-bon-usage">Swarm : le bon outil pour le bon usage</h2>
+<p>Finalement, le choix entre Swarm et Kubernetes dépend vraiment de vos besoins. <strong>Docker Swarm est particulièrement pertinent</strong> pour les PME, les équipes réduites, ou les développeurs qui veulent orchestrer leurs applications sans devenir des experts DevOps à plein temps. Si vous connaissez déjà Docker et Compose, passer à Swarm est une étape logique et rapide pour gérer vos applications web ou vos microservices.</p>
+<p>C&rsquo;est un excellent outil pour démarrer des projets rapidement, assurer la haute disponibilité sans complexité excessive, ou simplement pour avoir un environnement de production facile à gérer. Si votre besoin principal est de faire tourner des conteneurs de manière fiable et scalable sans vous perdre dans une myriade d&rsquo;outils et de concepts, alors Swarm est souvent le choix le plus pragmatique. Pas besoin du camion de pompier quand une lance à incendie suffit.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Voilà, c&rsquo;est tout pour cet article sur Docker Swarm. J&rsquo;espère que cela vous a donné une idée claire de ce qu&rsquo;est Swarm et pourquoi il peut être une alternative intéressante à Kubernetes. Si vous êtes déjà familier avec Docker, je vous encourage à l&rsquo;essayer. Vous pourriez être surpris par sa simplicité et son efficacité.</p>
+<p>Si vous avez des questions ou des retours d&rsquo;expérience à partager, n&rsquo;hésitez pas à m&rsquo;envoyer un message sur LinkedIN.</p>
+<p>Merci de m&rsquo;avoir lu, et à bientôt pour un prochain article !</p>
+
+        </p>
+        
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/sysadmin/microvm/microvm-1/">
+            &#8592;
+            :
+            MicroVM - À la découverte
+        </a>
+    </p>
+    <p class="prev-post-date">
+        avril 13, 2025
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/sysadmin/unikernel/unikernel-1/">
+            :
+            Unikernels : OS ultra-léger, ultra-sécurisé
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            mai 3, 2025
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

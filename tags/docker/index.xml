@@ -6,8 +6,15 @@
     <description>Recent content in Docker on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sun, 02 Mar 2025 07:09:10 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 26 Apr 2025 06:49:38 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Swarm vs Kubernetes : lequel choisir ?</title>
+      <link>https://makhal.fr/posts/docker/swarm_vs_k8s/</link>
+      <pubDate>Sat, 26 Apr 2025 06:49:38 +0100</pubDate>
+      <guid>https://makhal.fr/posts/docker/swarm_vs_k8s/</guid>
+      <description>Kubernetes est partout, mais est-ce toujours le bon choix ? Explorons Docker Swarm, une alternative plus simple.</description>
+    </item>
     <item>
       <title>Déployer Pi-hole sur Kubernetes</title>
       <link>https://makhal.fr/posts/k8s/k8s1-pi-hole/</link>

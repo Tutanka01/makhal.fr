@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>C&#39;est quoi vraiment un conteneur ?</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, sysadmin, devops, Linux, containers'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/sysadmin/antomie-container/antomie_container/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="C&#39;est quoi vraiment un conteneur ?">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="C&#39;est quoi vraiment un conteneur ?">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/sysadmin/antomie-container/antomie_container/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/sysadmin/antomie-container/antomie_container/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/sysadmin/antomie-container/antomie_container/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>C&#39;est quoi vraiment un conteneur ?</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            juin 14, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/sysadmin">sysadmin</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/devops">devops</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/linux">Linux</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/containers">containers</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p>Les conteneurs sont devenus incontournables dans notre petit monde de l&rsquo;IT. On en parle partout : Docker, Kubernetes, Podman… On les utilise pour déployer des applications, faciliter le développement et accélérer les mises en production.</p>
+<p>Mais est-ce qu&rsquo;on s&rsquo;est déjà vraiment demandé ce qu&rsquo;est un conteneur, au fond ? Pour beaucoup d&rsquo;entre nous, c&rsquo;est juste une boîte noire : on y met une application, et ça marche&hellip;</p>
+<p>Le problème, c&rsquo;est que derrière cette boîte noire se cachent des concepts techniques essentiels. Et dans un monde où tout devient de plus en plus automatisé (IA, ChatGPT, orchestrateurs, etc.), comprendre ces bases reste indispensable. Sinon, on risque de devenir de simples utilisateurs de solutions qu&rsquo;on ne maîtrise plus.</p>
+<h2 id="quest-ce-quun-conteneur-">Qu&rsquo;est-ce qu&rsquo;un conteneur ?</h2>
+
+
+<div class="image-container" style="text-align: center;">
+    <img src="/images/sysadmin/anatomie-container/16q5ebaotly71.webp" alt="What is a container ?" style="width: 70%; max-width: 500px;">
+</div>
+
+<p>En fait, dans notre imaginaire collectif, un conteneur, c&rsquo;est une sorte de VM, mais pas exactement. On sait tous que c&rsquo;est beaucoup plus léger, aussi que c&rsquo;est pas super secure&hellip; Mais au-delà de ces idées reçues, qu&rsquo;est-ce qui fait qu&rsquo;un conteneur est un conteneur ?</p>
+<p>Déjà sachez que les containers existent depuis longtemps, même depuis les années 70 !</p>
+<p>Simplement, un container est un processus isolé du reste du système. Il ne voit que ce qu&rsquo;on lui donne à voir, et il ne peut pas interférer avec les autrès processus du système. Par exemple on lui donne un nouveau &ldquo;/&rdquo;, on lui donne son propre PID 1, et même son propre réseau.</p>
+<p>A la base pour faire tout ça, on utilisait chroot. Cette commande ancestrale permet de changer la racine du système de fichiers pour un processus donné. Donc si vous avez votre processus qui tourne dans un chroot, il ne peut pas voir les fichiers en dehors de ce chroot. Voila une petite representation de ce que ça donne :</p>
+<p><img src="/images/sysadmin/anatomie-container/Chroot-1.png" alt="alt text"></p>
+<p>Mais comme vous le voyez, un chroot ne fait que changer la racine du système de fichiers. Dans notre contexte actuel, ça ne suffit pas. Imaginez un processus qui tourne dans un chroot, mais qui peut toujours voir tous les autrès processus du système, consommer toute la mémoire et le CPU, et même accéder au réseau.</p>
+<p>Ce n’est pas réellement isolé&hellip; Juste on a changé la racine du système de fichiers.</p>
+<p>C&rsquo;est pour cela qu&rsquo;on utilise pas directement chroot, mais plutot d&rsquo;autre mécanismes (qui utilisent toujours chroot en interne) pour faire des environnements isolés. Ces mécanismes sont les <strong>namespaces</strong> et les <strong>cgroups</strong>.</p>
+<h2 id="les-namespaces">Les namespaces</h2>
+<p><img src="/images/sysadmin/anatomie-container/namespaces.png" alt="Namespaces"></p>
+<p>La fonction des namespaces est de donner l&rsquo;illusion à chaque processus qu&rsquo;il dispose de son propre environnement système. Plus simplement, chaque processus peut avoir sa propre vue du système, indépendante de celle des autrès. Grâce aux namespaces, on contrôle précisément ce qu’un processus peut voir et ce qu’il peut faire.</p>
+<p>En réalité, un conteneur n&rsquo;est rien d&rsquo;autre qu&rsquo;un ensemble de namespaces combinés. Ce n&rsquo;est pas juste &ldquo;un namespace&rdquo;, mais plusieurs namespaces regroupés pour isoler différentes dimensions du système :</p>
+<ul>
+<li>les processus (PID),</li>
+<li>le système de fichiers (mount),</li>
+<li>le réseau (net),</li>
+<li>les utilisateurs (user),</li>
+<li>etc.</li>
+</ul>
+<p>Attention : les namespaces ne créent pas de nouveaux noyaux, ni ne virtualisent le matériel. Tout tourne sur le même noyau Linux partagé. Ce qu’ils font, c’est manipuler la perception qu’un processus a du système et de ses ressources.</p>
+<p><img src="/images/sysadmin/anatomie-container/9xdhjt.jpg" alt="alt text"></p>
+<h3 id="un-peu-de-pratique">Un peu de pratique</h3>
+<p>Pour illustrer le fonctionnement des namespaces, on va faire un petit exercice pratique. On va créer un conteneur minimaliste en utilisant les namespaces.</p>
+<p>D&rsquo;abord sur votre machine, lancez <code>ps aux</code>. Vous allez voir une liste très longue de processus en cours d&rsquo;execution.</p>
+<p><img src="/images/sysadmin/anatomie-container/psaux.png" alt="psaux"></p>
+<p>Maintenant lancez la commande suivante :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo unshare --fork --pid --mount-proc bash
+</span></span></code></pre></div><p>Cette commande va detacher notre processus du reste du système en créant un nouveau namespace, et en lui donnant son propre PID namespace.</p>
+<ul>
+<li>
+<p>&ndash;fork : Lance le programme spécifié (bash) comme un processus enfant direct. C&rsquo;est important pour que la magie du PID opère.</p>
+</li>
+<li>
+<p>&ndash;pid : Crée un nouveau namespace pour les PIDs.</p>
+</li>
+<li>
+<p>&ndash;mount-proc : C&rsquo;est le point crucial ! Par défaut, même dans un nouveau namespace, le système de fichiers /proc (qui est utilisé par des commandes comme ps) reste celui de l&rsquo;hôte. Cette option monte une nouvelle version de /proc qui correspond à notre nouveau namespace PID. Sans ça, ps continuerait de montrer les PIDs de l&rsquo;hôte.</p>
+</li>
+</ul>
+<p>Donc si maintenant vous lancez <code>ps aux</code> dans ce nouveau shell, vous verrez que la liste des processus est quasi vide, à part le shell lui-même et le ps que vous venez de lancer. Comme suit :</p>
+<p><img src="/images/sysadmin/anatomie-container/psaux2.png" alt="alt text"></p>
+<p>Donc si vous voyez bien, avant votre PID 1 etait le systemD, le processus qui permet de lancer tous les autrès processus du système. Maintenant, dans ce nouveau namespace, votre PID 1 est le bash que vous venez de lancer, donc le bash !!!</p>
+<p>Pour que vous soyez sur de ce que vous faites, lancez un nouveau <code>ps -aux</code> dans votre hote pendant que le shell est ouvert dans le namespace. Vous verrez que les PIDs sont différents.</p>
+<p><img src="/images/sysadmin/anatomie-container/explainps.png" alt="alt text"></p>
+<p>Ici vous voyez clairement que depuis notre hote, on peut voir le processus bash qui tourne dans le namespace, mais sous un PID différent (ici 1125).</p>
+<p>Depuis le namespace, les processus de l’hôte sont invisibles. En revanche, depuis l’hôte, on peut toujours voir les processus lancés dans les namespaces.</p>
+<p>On peut bien entendu, ajouter plus de namespaces pour isoler d&rsquo;autrès aspects du système. Par exemple, on peut ajouter un namespace de réseau pour isoler le réseau du conteneur, ou un namespace de montage pour isoler le système de fichiers.</p>
+<h2 id="les-cgroups">Les cgroups</h2>
+<p><img src="/images/sysadmin/anatomie-container/cgroups.png" alt="alt text"></p>
+<p>Jusqu&rsquo;a la vous avez compris que les namespaces permettent d&rsquo;isoler les processus. Donc si on fait une analogie, on a une grande maison (hote), et la maison on a des chambres (namespaces) ou les gens (processus) dedans chaque chambre ne peuvent pas se voir.</p>
+<p>Mais dans cette maison, il y a des ressources partagées : la cuisine (CPU), l&rsquo;eau (mémoire), l&rsquo;électricité (I/O). Mais si jamais quelqu&rsquo;un dans une chambre decide de laisser le robinet ouvert. Les autrès personnes dans les autrès chambres ne pourront plus utiliser l&rsquo;eau. C&rsquo;est la que les cgroups entrent en jeu.</p>
+<p>Les cgroups (Control Groups) sont un mécanisme qui permet de limiter, de prioriser et d&rsquo;isoler les ressources utilisées par les processus. Ils permettent de contrôler la quantité de ressources (CPU, mémoire, I/O, etc.) qu&rsquo;un groupe de processus peut utiliser.</p>
+<p>Et si jamais un processus dans un cgroup utilise trop de ressources, les cgroups peuvent le limiter ou même le killer pour éviter qu&rsquo;il n&rsquo;affecte les autrès processus. C&rsquo;est comme si on mettait un robinet sur chaque chambre avec un débitmètre.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Les conteneurs ne sont pas des machines virtuelles légères, ni des outils magiques, ils simplement des processus Linux, isolés et limités grâce à des mécanismes bien connus du noyau comme les namespaces et les cgroups.</p>
+<p>Comprendre ces bases permet non seulement de mieux maîtriser Docker, Kubernetes et leurs dérivés, mais aussi de mieux diagnostiquer, optimiser et sécuriser ses environnements de production.</p>
+<p>Dans un prochain article, on pourrait même aller plus loin : voir comment Docker ou containerd s’appuient sur ces briques pour créer nos fameux conteneurs.</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/sysadmin/authelia/authelia/">
+            &#8592;
+            :
+            Authelia &#43; Traefik : sécurisez tous vos services web
+        </a>
+    </p>
+    <p class="prev-post-date">
+        mai 28, 2025
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>
