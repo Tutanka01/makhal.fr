@@ -187,15 +187,15 @@
 
 <p>En fait, dans notre imaginaire collectif, un conteneur, c&rsquo;est une sorte de VM, mais pas exactement. On sait tous que c&rsquo;est beaucoup plus léger, aussi que c&rsquo;est pas super secure&hellip; Mais au-delà de ces idées reçues, qu&rsquo;est-ce qui fait qu&rsquo;un conteneur est un conteneur ?</p>
 <p>Déjà sachez que les containers existent depuis longtemps, même depuis les années 70 !</p>
-<p>Simplement, un container est un processus isolé du reste du système. Il ne voit que ce qu&rsquo;on lui donne à voir, et il ne peut pas interférer avec les autrès processus du système. Par exemple on lui donne un nouveau &ldquo;/&rdquo;, on lui donne son propre PID 1, et même son propre réseau.</p>
+<p>Simplement, un container est un processus isolé du reste du système. Il ne voit que ce qu&rsquo;on lui donne à voir, et il ne peut pas interférer avec les autres processus du système. Par exemple on lui donne un nouveau &ldquo;/&rdquo;, on lui donne son propre PID 1, et même son propre réseau.</p>
 <p>A la base pour faire tout ça, on utilisait chroot. Cette commande ancestrale permet de changer la racine du système de fichiers pour un processus donné. Donc si vous avez votre processus qui tourne dans un chroot, il ne peut pas voir les fichiers en dehors de ce chroot. Voila une petite representation de ce que ça donne :</p>
 <p><img src="/images/sysadmin/anatomie-container/Chroot-1.png" alt="alt text"></p>
-<p>Mais comme vous le voyez, un chroot ne fait que changer la racine du système de fichiers. Dans notre contexte actuel, ça ne suffit pas. Imaginez un processus qui tourne dans un chroot, mais qui peut toujours voir tous les autrès processus du système, consommer toute la mémoire et le CPU, et même accéder au réseau.</p>
+<p>Mais comme vous le voyez, un chroot ne fait que changer la racine du système de fichiers. Dans notre contexte actuel, ça ne suffit pas. Imaginez un processus qui tourne dans un chroot, mais qui peut toujours voir tous les autres processus du système, consommer toute la mémoire et le CPU, et même accéder au réseau.</p>
 <p>Ce n’est pas réellement isolé&hellip; Juste on a changé la racine du système de fichiers.</p>
 <p>C&rsquo;est pour cela qu&rsquo;on utilise pas directement chroot, mais plutot d&rsquo;autre mécanismes (qui utilisent toujours chroot en interne) pour faire des environnements isolés. Ces mécanismes sont les <strong>namespaces</strong> et les <strong>cgroups</strong>.</p>
 <h2 id="les-namespaces">Les namespaces</h2>
 <p><img src="/images/sysadmin/anatomie-container/namespaces.png" alt="Namespaces"></p>
-<p>La fonction des namespaces est de donner l&rsquo;illusion à chaque processus qu&rsquo;il dispose de son propre environnement système. Plus simplement, chaque processus peut avoir sa propre vue du système, indépendante de celle des autrès. Grâce aux namespaces, on contrôle précisément ce qu’un processus peut voir et ce qu’il peut faire.</p>
+<p>La fonction des namespaces est de donner l&rsquo;illusion à chaque processus qu&rsquo;il dispose de son propre environnement système. Plus simplement, chaque processus peut avoir sa propre vue du système, indépendante de celle des autres. Grâce aux namespaces, on contrôle précisément ce qu’un processus peut voir et ce qu’il peut faire.</p>
 <p>En réalité, un conteneur n&rsquo;est rien d&rsquo;autre qu&rsquo;un ensemble de namespaces combinés. Ce n&rsquo;est pas juste &ldquo;un namespace&rdquo;, mais plusieurs namespaces regroupés pour isoler différentes dimensions du système :</p>
 <ul>
 <li>les processus (PID),</li>
@@ -226,18 +226,18 @@
 </ul>
 <p>Donc si maintenant vous lancez <code>ps aux</code> dans ce nouveau shell, vous verrez que la liste des processus est quasi vide, à part le shell lui-même et le ps que vous venez de lancer. Comme suit :</p>
 <p><img src="/images/sysadmin/anatomie-container/psaux2.png" alt="alt text"></p>
-<p>Donc si vous voyez bien, avant votre PID 1 etait le systemD, le processus qui permet de lancer tous les autrès processus du système. Maintenant, dans ce nouveau namespace, votre PID 1 est le bash que vous venez de lancer, donc le bash !!!</p>
+<p>Donc si vous voyez bien, avant votre PID 1 etait le systemD, le processus qui permet de lancer tous les autres processus du système. Maintenant, dans ce nouveau namespace, votre PID 1 est le bash que vous venez de lancer, donc le bash !!!</p>
 <p>Pour que vous soyez sur de ce que vous faites, lancez un nouveau <code>ps -aux</code> dans votre hote pendant que le shell est ouvert dans le namespace. Vous verrez que les PIDs sont différents.</p>
 <p><img src="/images/sysadmin/anatomie-container/explainps.png" alt="alt text"></p>
 <p>Ici vous voyez clairement que depuis notre hote, on peut voir le processus bash qui tourne dans le namespace, mais sous un PID différent (ici 1125).</p>
 <p>Depuis le namespace, les processus de l’hôte sont invisibles. En revanche, depuis l’hôte, on peut toujours voir les processus lancés dans les namespaces.</p>
-<p>On peut bien entendu, ajouter plus de namespaces pour isoler d&rsquo;autrès aspects du système. Par exemple, on peut ajouter un namespace de réseau pour isoler le réseau du conteneur, ou un namespace de montage pour isoler le système de fichiers.</p>
+<p>On peut bien entendu, ajouter plus de namespaces pour isoler d&rsquo;autres aspects du système. Par exemple, on peut ajouter un namespace de réseau pour isoler le réseau du conteneur, ou un namespace de montage pour isoler le système de fichiers.</p>
 <h2 id="les-cgroups">Les cgroups</h2>
 <p><img src="/images/sysadmin/anatomie-container/cgroups.png" alt="alt text"></p>
 <p>Jusqu&rsquo;a la vous avez compris que les namespaces permettent d&rsquo;isoler les processus. Donc si on fait une analogie, on a une grande maison (hote), et la maison on a des chambres (namespaces) ou les gens (processus) dedans chaque chambre ne peuvent pas se voir.</p>
-<p>Mais dans cette maison, il y a des ressources partagées : la cuisine (CPU), l&rsquo;eau (mémoire), l&rsquo;électricité (I/O). Mais si jamais quelqu&rsquo;un dans une chambre decide de laisser le robinet ouvert. Les autrès personnes dans les autrès chambres ne pourront plus utiliser l&rsquo;eau. C&rsquo;est la que les cgroups entrent en jeu.</p>
+<p>Mais dans cette maison, il y a des ressources partagées : la cuisine (CPU), l&rsquo;eau (mémoire), l&rsquo;électricité (I/O). Mais si jamais quelqu&rsquo;un dans une chambre decide de laisser le robinet ouvert. Les autres personnes dans les autres chambres ne pourront plus utiliser l&rsquo;eau. C&rsquo;est la que les cgroups entrent en jeu.</p>
 <p>Les cgroups (Control Groups) sont un mécanisme qui permet de limiter, de prioriser et d&rsquo;isoler les ressources utilisées par les processus. Ils permettent de contrôler la quantité de ressources (CPU, mémoire, I/O, etc.) qu&rsquo;un groupe de processus peut utiliser.</p>
-<p>Et si jamais un processus dans un cgroup utilise trop de ressources, les cgroups peuvent le limiter ou même le killer pour éviter qu&rsquo;il n&rsquo;affecte les autrès processus. C&rsquo;est comme si on mettait un robinet sur chaque chambre avec un débitmètre.</p>
+<p>Et si jamais un processus dans un cgroup utilise trop de ressources, les cgroups peuvent le limiter ou même le killer pour éviter qu&rsquo;il n&rsquo;affecte les autres processus. C&rsquo;est comme si on mettait un robinet sur chaque chambre avec un débitmètre.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>Les conteneurs ne sont pas des machines virtuelles légères, ni des outils magiques, ils simplement des processus Linux, isolés et limités grâce à des mécanismes bien connus du noyau comme les namespaces et les cgroups.</p>
 <p>Comprendre ces bases permet non seulement de mieux maîtriser Docker, Kubernetes et leurs dérivés, mais aussi de mieux diagnostiquer, optimiser et sécuriser ses environnements de production.</p>
@@ -279,6 +279,19 @@
 </div>
 
 
+
+<div class="next-post">
+    <p>
+        <a href="/posts/sysadmin/observabilite/intro-observabilite/">
+            :
+            Observabilité : Le pilier oublié du DevOps
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            juin 21, 2025
+        </p>
+</div>
 
 
             

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kata-Containers on makhal.fr</title>
+    <link>http://localhost:1313/tags/kata-containers/</link>
+    <description>Recent content in Kata-Containers on makhal.fr</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Sun, 06 Jul 2025 08:10:45 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/kata-containers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kata Containers : le métis parfait du cloud</title>
+      <link>http://localhost:1313/posts/docs/katacontainers/kata-containers/</link>
+      <pubDate>Sun, 06 Jul 2025 08:10:45 +0200</pubDate>
+      <guid>http://localhost:1313/posts/docs/katacontainers/kata-containers/</guid>
+      <description>&lt;p&gt;Imaginez un monde, ou les machines virtuelles et les conteneurs cohabitent en harmonie. La securite parfaite des VM, la rapidite des conteneurs&amp;hellip; On ne prend que le postif de chaque coté.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/doc/katacontainers/katalogo.png&#34; alt=&#34;alt text&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Kata Containers est un projet&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>K3sup: k3s tout simplement</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, kubernetes, k3s, devops, k3sup'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/k8s/cncf/k3sup/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="K3sup: k3s tout simplement">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="K3sup: k3s tout simplement">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/k8s/cncf/k3sup/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/k8s/cncf/k3sup/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/k8s/cncf/k3sup/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>K3sup: k3s tout simplement</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            août 24, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/kubernetes">kubernetes</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/k3s">k3s</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/devops">devops</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/k3sup">k3sup</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p><img src="/images/k8s/cncf/k3sup/logo.png" alt="Logo k3sup"></p>
+<p>Aujourd&rsquo;hui on va parler de K3sup qui se lit &ldquo;Ketchup&rdquo;, c&rsquo;est un outil open source qui m&rsquo;a vraiment beaucoup aidé, car actuellement dans mon processus d&rsquo;apprentissage de Kubernetes. Je détruis et crée des clusters comme je respire. Si j&rsquo;ai un paramètre que j&rsquo;aime pas, je supprime simplement les VM&rsquo;s et je recommence.</p>
+<p>Certes c&rsquo;est pas la méthode la plus élégante, mais au moins j&rsquo;apprends en faisant. Et donc il y a une étape qui est très fastidieuse, c&rsquo;est l&rsquo;installation de k3s sur chaque nœud, à chaque fois que je crée un cluster. C&rsquo;est une étape vraiment pénible que je pourrais bien me passer de faire manuellement.</p>
+<p>Certes on peut automatiser l&rsquo;installation avec Ansible ou autre, mais pour l&rsquo;instant je veux garder la main sur mon hardware.</p>
+<p>K3sup est un outil qui permet d&rsquo;installer k3s sur n&rsquo;importe quel serveur distant en utilisant SSH. Il est super simple à utiliser et il fait tout le travail pour nous.</p>
+<h2 id="k3s--kubernetes-pour-les-humains-normaux">K3s : Kubernetes pour les humains normaux</h2>
+<p>Avant de plonger dans k3sup, il faut qu&rsquo;on parle un peu de k3s. Parce que bon, installer un outil pour gérer quelque chose qu&rsquo;on comprend pas, c&rsquo;est comme acheter une Ferrari pour aller chercher le pain&hellip; ça marche, mais c&rsquo;est peut-être pas le plus malin.</p>
+<h3 id="quest-ce-que-k3s-exactement-">Qu&rsquo;est-ce que K3s exactement ?</h3>
+<p>K3s, c&rsquo;est Kubernetes mais en version &ldquo;j&rsquo;ai pas envie de me prendre la tête&rdquo;. Développé par Rancher Labs (maintenant sous l&rsquo;aile de SUSE), c&rsquo;est une distribution Kubernetes certifiée qui pèse moins de 100 Mo. Pour vous donner une idée, Kubernetes vanilla avec tous ses composants peut facilement dépasser les 500 Mo.</p>
+<h3 id="les-particularités-techniques-de-k3s">Les particularités techniques de K3s</h3>
+<p>Ce qui rend k3s si léger, c&rsquo;est pas de la magie noire (même si parfois j&rsquo;ai l&rsquo;impression). Voici les choix techniques intelligents qui ont été faits :</p>
+<p><strong>SQLite par défaut au lieu d&rsquo;etcd</strong>
+Fini les clusters etcd à trois nœuds minimum pour avoir de la haute disponibilité. K3s utilise SQLite par défaut, ce qui simplifie drastiquement le déploiement. Pour les déploiements plus robustes, on peut toujours basculer sur etcd, MySQL ou PostgreSQL.</p>
+<p><strong>Packaging tout-en-un</strong>
+Tous les composants Kubernetes sont empaquetés dans un seul binaire. Exit les multiples containers et les dépendances complexes. Un seul fichier à déployer, point.</p>
+<p><strong>Suppression des composants legacy</strong>
+K3s fait le ménage dans Kubernetes en supprimant les composants obsolètes ou rarement utilisés. C&rsquo;est comme faire du tri dans son placard : on garde l&rsquo;essentiel et on jette ce qui sert jamais.</p>
+<p><strong>Intégration native de Flannel et Traefik</strong>
+Plus besoin de se prendre la tête avec la configuration réseau ou l&rsquo;ingress controller. K3s arrive avec Flannel (CNI) et Traefik v2 pré-configurés. C&rsquo;est du plug-and-play, comme disent les anglo-saxons.</p>
+<h3 id="cas-dusage-parfaits-pour-k3s">Cas d&rsquo;usage parfaits pour K3s</h3>
+<p>K3s brille particulièrement dans certains scénarios :</p>
+<ul>
+<li><strong>Edge computing</strong> : Parfait pour les déploiements sur des ressources limitées</li>
+<li><strong>Développement local</strong> : Plus léger que minikube ou kind pour vos tests</li>
+<li><strong>IoT</strong> : Oui, vous pouvez faire tourner Kubernetes sur un Raspberry Pi</li>
+<li><strong>CI/CD</strong> : Clusters éphémères pour vos pipelines de test</li>
+</ul>
+<h2 id="k3sup--lart-de-linstallation-sans-douleur">K3sup : L&rsquo;art de l&rsquo;installation sans douleur</h2>
+<p>Maintenant qu&rsquo;on a posé les bases avec k3s, parlons de k3sup. Si k3s c&rsquo;est Kubernetes simplifié, k3sup c&rsquo;est l&rsquo;installation de k3s simplifiée. C&rsquo;est de la simplification au carré, en quelque sorte.</p>
+<h3 id="la-philosophie-derrière-k3sup">La philosophie derrière k3sup</h3>
+<p>K3sup a été créé par Alex Ellis (oui, le même gars derrière OpenFaaS), et sa philosophie c&rsquo;est : &ldquo;pourquoi faire compliqué quand on peut faire simple ?&rdquo;. L&rsquo;idée c&rsquo;est d&rsquo;avoir un seul binaire qui fait tout le sale boulot pour nous.</p>
+<p>Concrètement, k3sup automatise :</p>
+<ul>
+<li>La connexion SSH vers vos serveurs</li>
+<li>L&rsquo;installation de k3s sur le nœud master</li>
+<li>La récupération du kubeconfig</li>
+<li>L&rsquo;ajout des worker nodes</li>
+<li>La configuration des tokens de sécurité</li>
+</ul>
+<h3 id="installation-de-k3sup">Installation de k3sup</h3>
+<p>Avant de pouvoir jouer avec, il faut d&rsquo;abord installer k3sup sur notre machine locale. Plusieurs options s&rsquo;offrent à nous :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Avec curl (la méthode rapide)</span>
+</span></span><span style="display:flex;"><span>curl -sLS https://get.k3sup.dev | sh
+</span></span><span style="display:flex;"><span>sudo install k3sup /usr/local/bin/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ou avec le gestionnaire de paquets de votre choix</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Homebrew (macOS/Linux)</span>
+</span></span><span style="display:flex;"><span>brew install k3sup
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Arch Linux</span>
+</span></span><span style="display:flex;"><span>yay -S k3sup
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ou téléchargement direct depuis GitHub</span>
+</span></span><span style="display:flex;"><span>wget https://github.com/alexellis/k3sup/releases/download/0.13.11/k3sup
+</span></span><span style="display:flex;"><span>chmod +x k3sup
+</span></span><span style="display:flex;"><span>sudo mv k3sup /usr/local/bin/
+</span></span></code></pre></div><h2 id="mise-en-place-de-lenvironnement">Mise en place de l&rsquo;environnement</h2>
+<p>Pour utiliser k3sup il faut bien entendu disposer de machines virtuelles ou physiques avec une distribution Linux, et avoir un accès SSH à ces machines.</p>
+<p>Moi j&rsquo;utilise des machines virtuelles Debian 12.</p>
+<p>Il faut sur chacune de ces machines installer sudo, et pouvoir se connecter avec une clé ssh. Donc un simple <code>ssh-copy-id user@ip</code> suffit. Pour sudo j&rsquo;ai remarqué une certaine limitation, par exemple si j&rsquo;utilise l&rsquo;utilisateur admin, je dois ajouter cet utilisateur au groupe sudoers. Mais en plus faire qu&rsquo;il puisse utiliser sudo sans mot de passe.</p>
+<h3 id="configuration-ssh-et-sudo">Configuration SSH et sudo</h3>
+<p>C&rsquo;est là que ça devient intéressant techniquement. K3sup a besoin de privilèges élevés pour installer les paquets et configurer les services système. Voici comment bien configurer vos machines :</p>
+<p><strong>Configuration sudo sans mot de passe :</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Ajout de l&#39;utilisateur au groupe sudo</span>
+</span></span><span style="display:flex;"><span>sudo usermod -aG sudo admin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configuration pour éviter la saisie de mot de passe</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;admin ALL=(ALL) NOPASSWD:ALL&#34;</span> | sudo tee /etc/sudoers.d/admin
+</span></span></code></pre></div><p>Si cette dernière commande retourne &ldquo;root&rdquo; sans demander de mot de passe, vous êtes prêts !</p>
+<h3 id="premier-déploiement">Premier déploiement</h3>
+<p>Maintenant, le moment magique où tout devient simple :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Installation du master node</span>
+</span></span><span style="display:flex;"><span>k3sup install --ip 192.168.1.100 --user admin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ajout d&#39;un worker node</span>
+</span></span><span style="display:flex;"><span>k3sup join --ip 192.168.1.101 --server-ip 192.168.1.100 --user admin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ajout d&#39;un autre worker</span>
+</span></span><span style="display:flex;"><span>k3sup join --ip 192.168.1.102 --server-ip 192.168.1.100 --user admin
+</span></span></code></pre></div><p>Et voilà ! En trois commandes, vous avez un cluster Kubernetes fonctionnel. Le kubeconfig est automatiquement téléchargé dans votre répertoire courant.</p>
+<h3 id="vérification-du-cluster">Vérification du cluster</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Export du kubeconfig</span>
+</span></span><span style="display:flex;"><span>export KUBECONFIG<span style="color:#f92672">=</span>./kubeconfig
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Vérification des nœuds</span>
+</span></span><span style="display:flex;"><span>kubectl get nodes -o wide
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check des pods système</span>
+</span></span><span style="display:flex;"><span>kubectl get pods -n kube-system
+</span></span></code></pre></div><p>Et validation finale !</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get nodes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NAME     STATUS   ROLES                       AGE    VERSION
+</span></span><span style="display:flex;"><span>k3s-1    Ready    control-plane,etcd,master   131m   v1.33.3+k3s1
+</span></span><span style="display:flex;"><span>k3s-2    Ready    control-plane,etcd,master   130m   v1.33.3+k3s1
+</span></span><span style="display:flex;"><span>k3s-3    Ready    control-plane,etcd,master   129m   v1.33.3+k3s1
+</span></span><span style="display:flex;"><span>k3s-cp   Ready    control-plane,etcd,master   138m   v1.33.3+k3s1
+</span></span></code></pre></div><p><img src="/images/k8s/cncf/k3sup/image.png" alt="alt text"></p>
+<h2 id="cas-dusage-avancés">Cas d&rsquo;usage avancés</h2>
+<p>K3sup ne se contente pas de faire de l&rsquo;installation basique. Il y a plein d&rsquo;options intéressantes pour les cas d&rsquo;usage plus spécifiques.</p>
+<h3 id="installation-avec-des-options-personnalisées">Installation avec des options personnalisées</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Installation avec désactivation de Traefik (si vous préférez nginx)</span>
+</span></span><span style="display:flex;"><span>k3sup install <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --ip 192.168.1.100 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --user admin <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --k3s-extra-args <span style="color:#e6db74">&#34;--disable traefik&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Installation avec un autre CNI</span>
+</span></span><span style="display:flex;"><span>k3sup install <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --ip 192.168.1.100 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --user admin <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --k3s-extra-args <span style="color:#e6db74">&#34;--flannel-backend=none --disable-network-policy&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --k3s-version v1.28.2+k3s1
+</span></span></code></pre></div><h3 id="gestion-des-contextes-multiples">Gestion des contextes multiples</h3>
+<p>Quand on jongle avec plusieurs clusters (et croyez-moi, ça arrive vite), il faut bien organiser ses kubeconfigs :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Sauvegarde du kubeconfig avec un nom spécifique</span>
+</span></span><span style="display:flex;"><span>k3sup install --ip 192.168.1.100 --user admin --local-path ~/.kube/config-prod
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fusion avec le kubeconfig existant</span>
+</span></span><span style="display:flex;"><span>KUBECONFIG<span style="color:#f92672">=</span>~/.kube/config:~/.kube/config-prod kubectl config view --flatten &gt; ~/.kube/config-merged
+</span></span><span style="display:flex;"><span>mv ~/.kube/config-merged ~/.kube/config
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Changement de contexte</span>
+</span></span><span style="display:flex;"><span>kubectl config get-contexts
+</span></span><span style="display:flex;"><span>kubectl config use-context k3s-prod
+</span></span></code></pre></div><h2 id="pourquoi-k3sup-plutôt-quansible-">Pourquoi k3sup plutôt qu&rsquo;Ansible ?</h2>
+<p>C&rsquo;est une question qu&rsquo;on me pose souvent. Ansible c&rsquo;est formidable pour l&rsquo;automatisation complexe, mais k3sup a ses avantages :</p>
+<p><strong>Simplicité d&rsquo;usage :</strong>
+Pas besoin d&rsquo;écrire des playbooks, d&rsquo;installer Python, ou de gérer des inventaires. Une commande et c&rsquo;est parti.</p>
+<p><strong>Spécialisation :</strong>
+K3sup fait une chose et la fait bien : installer k3s. C&rsquo;est le principe Unix appliqué aux outils DevOps.</p>
+<p><strong>Rapidité de déploiement :</strong>
+Pour du prototypage rapide ou des environments de test, k3sup est imbattable en termes de vitesse.</p>
+<p><strong>Courbe d&rsquo;apprentissage :</strong>
+Cinq minutes pour maîtriser k3sup vs plusieurs heures pour être à l&rsquo;aise avec Ansible.</p>
+<p>Cela dit, pour des déploiements complexes avec des configurations spécifiques, Ansible reste plus approprié. C&rsquo;est une question de contexte et d&rsquo;objectifs.</p>
+<h2 id="conclusion--lefficacité-avant-tout">Conclusion : L&rsquo;efficacité avant tout</h2>
+<p>K3sup représente parfaitement cette philosophie du &ldquo;fait le job simplement&rdquo;. Dans un écosystème Kubernetes souvent complexe et verbeux, avoir un outil qui fait exactement ce qu&rsquo;on attend de lui, sans fioritures inutiles, c&rsquo;est rafraîchissant.</p>
+<p>Mon retour d&rsquo;expérience après des mois d&rsquo;utilisation intensive : k3sup m&rsquo;a fait gagner un temps considérable dans mes cycles de développement et test. Plus de scripts bash foireux, plus d&rsquo;oublis de configuration, plus de frustration à chaque nouveau cluster.</p>
+<p>L&rsquo;outil n&rsquo;est pas parfait - il manque parfois quelques options de configuration avancées - mais pour 90% des cas d&rsquo;usage, il fait exactement ce qu&rsquo;il faut.</p>
+<p>Et puis avouons-le, il y a quelque chose de satisfaisant à voir un cluster Kubernetes se monter en quelques secondes avec une seule commande. C&rsquo;est la magie de l&rsquo;automatisation bien pensée.</p>
+<p><strong>Ressources utiles :</strong></p>
+<ul>
+<li><a href="https://github.com/alexellis/k3sup">Repository GitHub de k3sup</a></li>
+<li><a href="https://docs.k3s.io/">Documentation officielle k3s</a></li>
+<li><a href="https://www.alexellis.io/">Blog d&rsquo;Alex Ellis</a></li>
+</ul>
+<p>Maintenant, à vous de jouer ! Et si vous cassez tout (ce qui arrivera, croyez-moi), au moins vous pourrez reconstruire rapidement. C&rsquo;est ça, la beauté de l&rsquo;infrastructure as code&hellip; même quand c&rsquo;est juste une commande :)</p>
+
+        </p>
+        
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/k8s/cncf/k8s-ne-suffit-pas/">
+            &#8592;
+            :
+            Kubernetes ne suffit pas
+        </a>
+    </p>
+    <p class="prev-post-date">
+        août 6, 2025
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

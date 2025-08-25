@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Observabilité : Le pilier oublié du DevOps</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, sysadmin, observabilité, monitoring'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/sysadmin/observabilite/intro-observabilite/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Observabilité : Le pilier oublié du DevOps">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Observabilité : Le pilier oublié du DevOps">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/sysadmin/observabilite/intro-observabilite/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/sysadmin/observabilite/intro-observabilite/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/sysadmin/observabilite/intro-observabilite/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Observabilité : Le pilier oublié du DevOps</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            juin 21, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/sysadmin">sysadmin</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/observabilit%C3%A9">observabilité</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/monitoring">monitoring</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p><img src="/images/sysadmin/observabilite/schema-devops.png" alt="schéma boucle devops"></p>
+<p>Cette boucle, on la connaît tous par cœur. On nous la présente dans toutes les formations et tous les articles sur le DevOps. On sait ce qu&rsquo;est le CI (Continuous Integration) et le CD (Continuous Delivery). On a appris qu&rsquo;il faut automatiser, tester, livrer vite et souvent pour améliorer nos applications.</p>
+<p>Cette théorie, on la maîtrise. Dans notre veille ou nos projets, on passe énormément de temps à parler de Git, Docker, Kubernetes, Terraform, Ansible&hellip; Mais on a tendance à survoler, voire à complètement oublier, une partie essentielle de la boucle : la phase &ldquo;Monitor&rdquo;, qui est en réalité la porte d&rsquo;entrée vers un concept bien plus vaste et fondamental : l&rsquo;observabilité.</p>
+<h3 id="alors-cest-quoi-au-juste-lobservabilité-">Alors, c&rsquo;est quoi au juste, l&rsquo;observabilité ?</h3>
+<p>Pour faire simple, l&rsquo;observabilité est la capacité de poser des questions à notre système pour comprendre son état interne, sans avoir à le modifier. C&rsquo;est notre capacité à &ldquo;voir&rdquo; ce qui se passe à l&rsquo;intérieur.</p>
+<p>Vous allez me dire : &ldquo;Attends, mais c&rsquo;est du monitoring, ça ! On le fait déjà.&rdquo;</p>
+<p>Et c&rsquo;est là que la confusion s&rsquo;installe souvent. Meme s&rsquo;il sont liés, le monitoring et l&rsquo;observabilité ne sont pas la même chose. Comprendre les différences, c&rsquo;est comprendre l&rsquo;évolution de la supervision de nos infrastructures.</p>
+<h3 id="monitoring--répondre-aux-questions-que-lon-connaît-déjà">Monitoring : Répondre aux questions que l&rsquo;on connaît DÉJÀ</h3>
+<p>Le monitoring traditionnel, c&rsquo;est comme le tableau de bord de votre voiture. Il est conçu pour répondre à des questions que l&rsquo;on a anticipées, des problèmes connus.</p>
+<ul>
+<li>Mon CPU est-il utilisé à plus de 90% ? (<em>Quelle est ma vitesse ?</em>)</li>
+<li>Mon espace disque est-il presque plein ? (<em>Me reste-t-il de l&rsquo;essence ?</em>)</li>
+<li>Mon serveur web répond-il au ping ? (<em>Le moteur est-il allumé ?</em>)</li>
+</ul>
+<p>On surveille des métriques bien définies, et si un seuil est dépassé, un voyant rouge s&rsquo;allume sur notre dashboard. C&rsquo;est ce qu&rsquo;on appelle les &ldquo;connus connus&rdquo; (<em>known knowns</em>). C&rsquo;est indispensable, mais dans le monde des architectures modernes (microservices, cloud, conteneurs&hellip;), ce n’est pas du tout suffisant.</p>
+<p>Mon serveur peut très bien répondre au <code>ping</code>, mais l&rsquo;application qui tourne elle sur mon serveur, peut être en panne, ou une API critique peut renvoyer des erreurs 500 à la moitié de nos utilisateurs. Le voyant &ldquo;moteur allumé&rdquo; est vert, mais la voiture n&rsquo;avance plus.</p>
+<p>C&rsquo;est exactement cela, la différence essentielle entre le monitoring et l&rsquo;observabilité. Le monitoring vous dit QUE quelque chose ne va pas, mais il ne vous dit pas POURQUOI (dans les details)</p>
+<h3 id="observabilité--explorer-les-problèmes-que-lon-ne-pouvait-pas-prévoir">Observabilité : Explorer les problèmes que l&rsquo;on ne POUVAIT PAS prévoir</h3>
+<p>Reprenons notre analogie. Votre voiture se met à faire un bruit étrange et à vibrer, mais uniquement en troisième vitesse, en montée, et seulement quand il pleut (un scenario bizarre :) ). Le tableau de bord dans ce cas il ne sert a rien. Il n&rsquo;a pas été conçu pour cette question.</p>
+<p>Pour comprendre l&rsquo;origine du problème, vous n&rsquo;avez pas le choix : il faut ouvrir le capot. Écouter d&rsquo;où vient le bruit, vérifier les niveaux, brancher un outil de diagnostic sur l&rsquo;ordinateur de bord&hellip; Bref, vous devez enquêter en profondeur.</p>
+<p><img src="/images/sysadmin/observabilite/implementing-observability-diagram.svg" alt="implementing-observability-diagram"></p>
+<p>L&rsquo;observabilité, c&rsquo;est ça. C&rsquo;est la capacité de votre système à vous laisser ouvrir le capot. Elle est conçue pour vous aider à explorer les &ldquo;inconnus inconnus&rdquo; (<em>unknown unknowns</em>), ces pannes étranges et ces bugs vicieux qui n&rsquo;apparaissent que dans des conditions très spécifiques.</p>
+<p>Pour résumer la différence en une phrase :</p>
+<ul>
+<li>Le monitoring vous dit QUE quelque chose ne va pas.</li>
+<li>L&rsquo;observabilité vous donne les outils pour comprendre POURQUOI.</li>
+</ul>
+<h3 id="les-3-piliers-de-lobservabilité">Les 3 Piliers de l&rsquo;Observabilité</h3>
+<p>Pour qu&rsquo;un système soit considéré comme &ldquo;observable&rdquo;, il doit nous fournir des données riches et variées. Ces données sont généralement classées en trois catégories, qu&rsquo;on appelle les trois piliers de l&rsquo;observabilité :</p>
+<p><img src="/images/sysadmin/observabilite/data-src-image-25bd6f7e-55e6-449b-a307-c92e126c355c.png" alt="Piliers de l&rsquo;observabilité"></p>
+<ol>
+<li>
+<p>Les Métriques : Le &ldquo;Quoi&rdquo;
+Ce sont des mesures numériques collectées à intervalles réguliers (ex: utilisation CPU, RAM, nombre de requêtes par seconde). Elles sont parfaites pour les dashboards et les alertes. C&rsquo;est le pilier du monitoring classique.</p>
+</li>
+<li>
+<p>Les Logs : Le &ldquo;Pourquoi&rdquo;
+Ce sont des enregistrements textuels et horodatés d&rsquo;événements spécifiques qui se sont produits (ex: <code>User 'makhal' logged in</code>, <code>Database connection failed</code>, <code>File not found</code>). Ils donnent le contexte détaillé d&rsquo;un événement.</p>
+</li>
+<li>
+<p>Les Traces : Le &ldquo;Où&rdquo;
+C&rsquo;est le pilier le plus moderne, indispensable pour les microservices. Une trace suit le parcours complet d&rsquo;une seule requête à travers tous les services qu&rsquo;elle traverse. Si une requête est lente, la trace vous montrera exactement quel service est le goulot d&rsquo;étranglement.</p>
+</li>
+</ol>
+<h3 id="le-début-du-voyage-pas-la-destination">Le début du voyage, pas la destination</h3>
+<p>Aujourd’hui, ne pas penser à l’observabilité dès le début de ses projets, c’est comme construire une voiture sans compteur, sans voyants, sans bruit. Le monitoring, c’est un point de départ. Mais l’observabilité, c’est ce qui nous permet d’avoir un vrai regard intérieur sur ce que vivent nos systèmes.</p>
+<p>Pour affronter les problèmes modernes, il nous faut des outils qui écoutent, tracent, enregistrent, et surtout… nous permettent de poser les bonnes questions.</p>
+<p>Et pour vraiment comprendre comment ces outils fonctionnent, rien de mieux que de construire la première brique nous-mêmes.</p>
+<h3 id="notre-premier-pas-pratique--un-agent-de-métriques-en-go">Notre premier pas pratique : un agent de métriques en Go</h3>
+<p>Nous allons maintenant construire notre propre agent, ou <em>exporter</em>, en Go. Il sera simple, mais il nous montrera tout le mécanisme de l&rsquo;intérieur.</p>
+<h3 id="notre-premier-pas-pratique--un-agent-de-métriques-en-go-1">Notre premier pas pratique : un agent de métriques en Go</h3>
+<p>Nous allons maintenant construire notre propre agent, ou <em>exporter</em>, en Go. Il sera simple, mais il nous montrera tout le mécanisme de l&rsquo;intérieur.</p>
+<p>Avant de coder, il faut comprendre ce que Prometheus attend. Quand il contacte un endpoint <code>/metrics</code>, il s&rsquo;attend à recevoir du texte brut dans un format spécifique :</p>
+<pre tabindex="0"><code># HELP nom_metrique Description de la métrique.
+# TYPE nom_metrique type_de_metrique
+nom_metrique{label=&#34;valeur&#34;} valeur_numerique
+</code></pre><ul>
+<li><strong><code># HELP</code></strong> : Une explication pour les humains.</li>
+<li><strong><code># TYPE</code></strong> : Le type de métrique (<code>counter</code> qui augmente toujours, <code>gauge</code> qui peut monter/descendre).</li>
+<li><strong>La ligne de métrique</strong> : Nom, labels (étiquettes) et la valeur numérique.</li>
+</ul>
+<h4 id="le-code-de-notre-agent">Le Code de notre agent</h4>
+<p>Créez un fichier <code>main.go</code> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;log&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;net/http&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;runtime&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">metricsHandler</span>(<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Request</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">m</span> <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">MemStats</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">ReadMemStats</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">m</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Fprintln</span>(<span style="color:#a6e22e">w</span>, <span style="color:#e6db74">&#34;# HELP go_memstats_alloc_bytes Nombre de bytes alloués.&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Fprintln</span>(<span style="color:#a6e22e">w</span>, <span style="color:#e6db74">&#34;# TYPE go_memstats_alloc_bytes gauge&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Fprintf</span>(<span style="color:#a6e22e">w</span>, <span style="color:#e6db74">&#34;go_memstats_alloc_bytes %d\n&#34;</span>, <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">Alloc</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Fprintln</span>(<span style="color:#a6e22e">w</span>, <span style="color:#e6db74">&#34;# HELP go_goroutines Nombre de goroutines actives.&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Fprintln</span>(<span style="color:#a6e22e">w</span>, <span style="color:#e6db74">&#34;# TYPE go_goroutines gauge&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Fprintf</span>(<span style="color:#a6e22e">w</span>, <span style="color:#e6db74">&#34;go_goroutines %d\n&#34;</span>, <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">NumGoroutine</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/metrics&#34;</span>, <span style="color:#a6e22e">metricsHandler</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Démarrage de l&#39;exporter sur http://localhost:9091/metrics&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ListenAndServe</span>(<span style="color:#e6db74">&#34;:9091&#34;</span>, <span style="color:#66d9ef">nil</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="lançons-le-">Lançons-le !</h4>
+<p>Dans un terminal :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go run main.go
+</span></span></code></pre></div><p>Dans un autre terminal :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl http://localhost:9091/metrics
+</span></span></code></pre></div><p>Vous devriez voir les métriques s&rsquo;afficher, formatées correctement comme suit :</p>
+<p><img src="/images/sysadmin/observabilite/term1.png" alt="Terminal"></p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Et voilà ! Nous avons non seulement compris la <strong>théorie</strong> de l&rsquo;observabilité, mais nous avons aussi <strong>construit</strong> notre première brique pratique. Nous avons vu que derrière ce concept se cache un mécanisme simple et élégant : des applications qui exposent leur état interne sur un simple endpoint HTTP.</p>
+<p>Notre agent est fonctionnel, mais pour l&rsquo;instant, personne ne l&rsquo;écoute.</p>
+<p>Dans le <strong>prochain article</strong>, nous déploierons un serveur Prometheus pour collecter ces métriques, puis nous les visualiserons dans Grafana pour voir notre application vivre en temps réel. La boucle sera bouclée.</p>
+<p>D&rsquo;ici là, n&rsquo;hésitez pas à me faire part de vos retours !</p>
+
+        </p>
+        
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/sysadmin/antomie-container/antomie_container/">
+            &#8592;
+            :
+            C&#39;est quoi vraiment un conteneur ?
+        </a>
+    </p>
+    <p class="prev-post-date">
+        juin 14, 2025
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/docs/authentik/authentik-1/">
+            :
+            Authentik : Self-Hosted IAM
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            juin 27, 2025
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

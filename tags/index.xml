@@ -6,20 +6,118 @@
     <description>Recent content in Tags on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sat, 14 Jun 2025 08:10:45 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 24 Aug 2025 08:05:49 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Devops</title>
+      <link>https://makhal.fr/tags/devops/</link>
+      <pubDate>Sun, 24 Aug 2025 08:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/tags/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>K3s</title>
+      <link>https://makhal.fr/tags/k3s/</link>
+      <pubDate>Sun, 24 Aug 2025 08:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/tags/k3s/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>K3sup</title>
+      <link>https://makhal.fr/tags/k3sup/</link>
+      <pubDate>Sun, 24 Aug 2025 08:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/tags/k3sup/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kubernetes</title>
+      <link>https://makhal.fr/tags/kubernetes/</link>
+      <pubDate>Sun, 24 Aug 2025 08:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://makhal.fr/tags/docker/</link>
+      <pubDate>Wed, 06 Aug 2025 08:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Loadbalancer</title>
+      <link>https://makhal.fr/tags/loadbalancer/</link>
+      <pubDate>Thu, 10 Jul 2025 04:12:10 +0100</pubDate>
+      <guid>https://makhal.fr/tags/loadbalancer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Metallb</title>
+      <link>https://makhal.fr/tags/metallb/</link>
+      <pubDate>Thu, 10 Jul 2025 04:12:10 +0100</pubDate>
+      <guid>https://makhal.fr/tags/metallb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloud</title>
+      <link>https://makhal.fr/tags/cloud/</link>
+      <pubDate>Sun, 06 Jul 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/tags/cloud/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Containers</title>
       <link>https://makhal.fr/tags/containers/</link>
-      <pubDate>Sat, 14 Jun 2025 08:10:45 +0200</pubDate>
+      <pubDate>Sun, 06 Jul 2025 08:10:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/containers/</guid>
       <description></description>
     </item>
     <item>
-      <title>Devops</title>
-      <link>https://makhal.fr/tags/devops/</link>
-      <pubDate>Sat, 14 Jun 2025 08:10:45 +0200</pubDate>
-      <guid>https://makhal.fr/tags/devops/</guid>
+      <title>Virtualisation</title>
+      <link>https://makhal.fr/tags/virtualisation/</link>
+      <pubDate>Sun, 06 Jul 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/tags/virtualisation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Authentik</title>
+      <link>https://makhal.fr/tags/authentik/</link>
+      <pubDate>Fri, 27 Jun 2025 08:40:45 +0200</pubDate>
+      <guid>https://makhal.fr/tags/authentik/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Iam</title>
+      <link>https://makhal.fr/tags/iam/</link>
+      <pubDate>Fri, 27 Jun 2025 08:40:45 +0200</pubDate>
+      <guid>https://makhal.fr/tags/iam/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Self-Hosted</title>
+      <link>https://makhal.fr/tags/self-hosted/</link>
+      <pubDate>Fri, 27 Jun 2025 08:40:45 +0200</pubDate>
+      <guid>https://makhal.fr/tags/self-hosted/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Monitoring</title>
+      <link>https://makhal.fr/tags/monitoring/</link>
+      <pubDate>Sat, 21 Jun 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/tags/monitoring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Observabilité</title>
+      <link>https://makhal.fr/tags/observabilit%C3%A9/</link>
+      <pubDate>Sat, 21 Jun 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/tags/observabilit%C3%A9/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sysadmin</title>
+      <link>https://makhal.fr/tags/sysadmin/</link>
+      <pubDate>Sat, 21 Jun 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/tags/sysadmin/</guid>
       <description></description>
     </item>
     <item>
@@ -27,13 +125,6 @@
       <link>https://makhal.fr/tags/linux/</link>
       <pubDate>Sat, 14 Jun 2025 08:10:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/linux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sysadmin</title>
-      <link>https://makhal.fr/tags/sysadmin/</link>
-      <pubDate>Sat, 14 Jun 2025 08:10:45 +0200</pubDate>
-      <guid>https://makhal.fr/tags/sysadmin/</guid>
       <description></description>
     </item>
     <item>
@@ -72,24 +163,10 @@
       <description></description>
     </item>
     <item>
-      <title>Docker</title>
-      <link>https://makhal.fr/tags/docker/</link>
-      <pubDate>Sat, 26 Apr 2025 06:49:38 +0100</pubDate>
-      <guid>https://makhal.fr/tags/docker/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Docker-Swarm</title>
       <link>https://makhal.fr/tags/docker-swarm/</link>
       <pubDate>Sat, 26 Apr 2025 06:49:38 +0100</pubDate>
       <guid>https://makhal.fr/tags/docker-swarm/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Kubernetes</title>
-      <link>https://makhal.fr/tags/kubernetes/</link>
-      <pubDate>Sat, 26 Apr 2025 06:49:38 +0100</pubDate>
-      <guid>https://makhal.fr/tags/kubernetes/</guid>
       <description></description>
     </item>
     <item>
@@ -209,13 +286,6 @@
       <link>https://makhal.fr/tags/cloud-init/</link>
       <pubDate>Tue, 21 Jan 2025 18:10:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/cloud-init/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Virtualisation</title>
-      <link>https://makhal.fr/tags/virtualisation/</link>
-      <pubDate>Tue, 21 Jan 2025 18:10:45 +0200</pubDate>
-      <guid>https://makhal.fr/tags/virtualisation/</guid>
       <description></description>
     </item>
     <item>

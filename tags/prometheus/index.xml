@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prometheus on makhal.fr</title>
+    <link>http://localhost:1313/tags/prometheus/</link>
+    <description>Recent content in Prometheus on makhal.fr</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Sat, 21 Jun 2025 08:10:45 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/prometheus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Observabilité : Le pilier oublié du DevOps</title>
+      <link>http://localhost:1313/posts/sysadmin/observabilite/intro-observabilite/</link>
+      <pubDate>Sat, 21 Jun 2025 08:10:45 +0200</pubDate>
+      <guid>http://localhost:1313/posts/sysadmin/observabilite/intro-observabilite/</guid>
+      <description>On parle sans cesse de CI/CD, de Docker, de K8s&amp;hellip; Mais qu&amp;rsquo;en est-il de l&amp;rsquo;observabilité ? Plongeons dans ce concept crucial pour comprendre ce qui se passe réellement dans nos systèmes.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Kubernetes ne suffit pas</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, kubernetes, docker, devops'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/k8s/cncf/k8s-ne-suffit-pas/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kubernetes ne suffit pas">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kubernetes ne suffit pas">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/k8s/cncf/k8s-ne-suffit-pas/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/k8s/cncf/k8s-ne-suffit-pas/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/k8s/cncf/k8s-ne-suffit-pas/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Kubernetes ne suffit pas</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            août 6, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/kubernetes">kubernetes</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/docker">docker</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/devops">devops</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p>Comme vous le savez, le cloud Native est au centre de toutes nos discussions ces dernières années. En bref le cloud Native est un ensemble de pratiques et d&rsquo;outils qui permettent de construire des applications évolutives, résilientes et faciles à gérer dans des environnements de cloud computing. Donc des outils optimisés pour le cloud.</p>
+<p>Dont Kubernetes, qui est devenu le standard de facto pour l&rsquo;orchestration des conteneurs. Mais dans une application cloud native complexe, ou même dans une entreprise standard, Kubernetes ne suffit pas à lui seul. Kubernetes est si on peut le dire, le &ldquo;chef d&rsquo;orchestre&rdquo;, mais si on n&rsquo;ajoute pas les autres musiciens, le concert ne débutera jamais.</p>
+<p>On doit ajouter de l&rsquo;observabilité, de la sécurité, de la gestion des configurations, du stockage. Ajouter un container registry, un service mesh, des outils de CI/CD, et bien plus encore. Kubernetes est un excellent point de départ pour commencer dans le monde du cloud native, mais si on se met des œillères sur l&rsquo;existence de ces autres outils. On perd toute la puissance que le monde de la tech nous offre.</p>
+<h2 id="pourquoi-kubernetes-ne-suffit-pas-">Pourquoi Kubernetes ne suffit pas ?</h2>
+<p><img src="/images/k8s/cncf/k8s-nesuffit-pas/meme.png" alt="alt text"></p>
+<p>Kubernetes, par définition est un orchestrateur de conteneurs, <em><strong>ni plus ni moins</strong></em>. Il gère le cycle de vie des conteneurs. Donc tout le côté CI/CD, observabilité, stockage&hellip; Il dépend totalement d&rsquo;autres outils pour fonctionner de manière optimale.</p>
+<p>Ne me faites pas dire ce que je n&rsquo;ai pas dit, Kubernetes est un outil exceptionnel, on peut faire du rolling update, du scaling, de la gestion des ressources, de la haute disponibilité, de la résilience. Honnêtement c&rsquo;est un des outils les plus puissants que j&rsquo;ai pu utiliser dans ma très courte carrière.</p>
+<p>On s&rsquo;amuse bien avec Kubernetes, on le déploie, on le configure, on installe nos petites applications, on les scale, on les met à jour. Mais si on dézoome un peu, on se rend compte que Kubernetes est juste une partie de l&rsquo;équation. Il faut penser aussi au déploiement, on ne va pas passer notre vie à lancer des commandes kubectl pour déployer nos applications. Les secrets, les configurations, les mises à jour, la sécurité, l&rsquo;observabilité&hellip; Tout ça doit être pris en compte.</p>
+<h2 id="lécosystème-cncf">L&rsquo;écosystème CNCF</h2>
+<p><img src="/images/k8s/cncf/k8s-nesuffit-pas/cncf.png" alt="alt text"></p>
+<p>Avec cette capture d&rsquo;écran on est très vite submergé par la quantité d&rsquo;outils disponibles dans <a href="https://landscape.cncf.io/">l&rsquo;écosystème CNCF</a>. Il existe vraiment de TOUT, des options Open Source, des options SaaS, des options payantes. On peut trouver des outils pour la gestion des configurations, la sécurité, l&rsquo;observabilité, le stockage&hellip; La liste est longue.</p>
+<p>Avec ce genre de paysage complexe, il est facile de se perdre. On peut vite se retrouver avec une multitude d&rsquo;outils avec des fonctionnalités qui se chevauchent, des intégrations compliquées, et une gestion de la complexité qui devient ingérable. C&rsquo;est pour cela qu&rsquo;il faut simplement connaître les outils disponibles, puis si jamais on a un besoin, on fait une courte étude de marché pour trouver l&rsquo;outil qui correspond le mieux à nos besoins.</p>
+<p>Par exemple voilà à quoi pourrait ressembler un stack vraiment cloud native :</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Catégorie</strong></th>
+          <th><strong>Outil</strong></th>
+          <th><strong>Description</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Orchestrateur</strong></td>
+          <td>Kubernetes</td>
+          <td>Gestion des conteneurs</td>
+      </tr>
+      <tr>
+          <td><strong>CI/CD</strong></td>
+          <td>GitLab CI</td>
+          <td>Déploiement automatisé</td>
+      </tr>
+      <tr>
+          <td><strong>Registry</strong></td>
+          <td>Harbor</td>
+          <td>Stockage d&rsquo;images</td>
+      </tr>
+      <tr>
+          <td><strong>Service Mesh</strong></td>
+          <td>Istio</td>
+          <td>Communication sécurisée</td>
+      </tr>
+      <tr>
+          <td><strong>Monitoring</strong></td>
+          <td>Prometheus</td>
+          <td>Métriques et alertes</td>
+      </tr>
+      <tr>
+          <td><strong>Logging</strong></td>
+          <td>Loki</td>
+          <td>Collecte de logs</td>
+      </tr>
+      <tr>
+          <td><strong>Sécurité</strong></td>
+          <td>Falco</td>
+          <td>Détection d&rsquo;intrusions</td>
+      </tr>
+      <tr>
+          <td><strong>Secrets</strong></td>
+          <td>Vault</td>
+          <td>Gestion des secrets</td>
+      </tr>
+      <tr>
+          <td><strong>Stockage</strong></td>
+          <td>Rook</td>
+          <td>Stockage persistant</td>
+      </tr>
+      <tr>
+          <td><strong>GitOps</strong></td>
+          <td>ArgoCD</td>
+          <td>Déploiement déclaratif</td>
+      </tr>
+  </tbody>
+</table>
+<p>Et j&rsquo;en oublie sûrement, mais l&rsquo;idée est là.</p>
+<p>Après il ne faut pas être non plus dans l&rsquo;excès, on n&rsquo;est pas obligé de tout utiliser. On peut très bien se contenter de Kubernetes, d&rsquo;un outil de CI/CD, et d&rsquo;un outil de monitoring. Et ça peut marcher tout aussi bien. L&rsquo;important est de comprendre que Kubernetes n&rsquo;est qu&rsquo;une brique de l&rsquo;édifice, et qu&rsquo;il faut l&rsquo;accompagner d&rsquo;autres outils pour construire une infrastructure complète et efficace.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Kubernetes m’a beaucoup appris. J’ai adoré découvrir son fonctionnement, le déployer, jouer avec, le casser aussi parfois.
+Mais au bout d’un moment, je me suis rendu compte d’une chose :
+Kubernetes, ce n’est qu’un début.</p>
+<p>Ce qui compte vraiment, c’est tout ce qu’on construit autour. Les bons outils, les bons choix, la bonne architecture.</p>
+<p>Alors si vous commencez avec Kubernetes : bravo. Mais n’oubliez pas de lever la tête, et d’explorer ce que le monde cloud native peut vraiment offrir.</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/k8s/ingress/wingress/">
+            &#8592;
+            :
+            Introduction à Ingress dans Kubernetes
+        </a>
+    </p>
+    <p class="prev-post-date">
+        août 5, 2025
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/k8s/cncf/k3sup/">
+            :
+            K3sup: k3s tout simplement
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            août 24, 2025
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

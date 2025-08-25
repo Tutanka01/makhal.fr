@@ -6,8 +6,15 @@
     <description>Recent content in Containers on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sat, 14 Jun 2025 08:10:45 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 06 Jul 2025 08:10:45 +0200</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/containers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kata Containers : La sécurité des VM avec la vitesse des conteneurs</title>
+      <link>https://makhal.fr/posts/docs/katacontainers/kata-containers/</link>
+      <pubDate>Sun, 06 Jul 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/docs/katacontainers/kata-containers/</guid>
+      <description>Découvrez Kata Containers, le projet open source qui réconcilie le meilleur des deux mondes</description>
+    </item>
     <item>
       <title>C&#39;est quoi vraiment un conteneur ?</title>
       <link>https://makhal.fr/posts/sysadmin/antomie-container/antomie_container/</link>

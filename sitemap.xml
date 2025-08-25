@@ -2,28 +2,88 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://makhal.fr/tags/devops/</loc>
+    <lastmod>2025-08-24T08:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/k3s/</loc>
+    <lastmod>2025-08-24T08:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/k3sup/</loc>
+    <lastmod>2025-08-24T08:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/posts/k8s/cncf/k3sup/</loc>
+    <lastmod>2025-08-24T08:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/kubernetes/</loc>
+    <lastmod>2025-08-24T08:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/</loc>
+    <lastmod>2025-08-24T08:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/posts/</loc>
+    <lastmod>2025-08-24T08:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/</loc>
+    <lastmod>2025-08-24T08:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/docker/</loc>
+    <lastmod>2025-08-06T08:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/posts/k8s/cncf/k8s-ne-suffit-pas/</loc>
+    <lastmod>2025-08-06T08:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/posts/k8s/ingress/wingress/</loc>
+    <lastmod>2025-08-05T08:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/loadbalancer/</loc>
+    <lastmod>2025-07-10T04:12:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/metallb/</loc>
+    <lastmod>2025-07-10T04:12:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/posts/k8s/rzo-metallb/metallb/</loc>
+    <lastmod>2025-07-10T04:12:10+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/cloud/</loc>
+    <lastmod>2025-07-06T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/containers/</loc>
+    <lastmod>2025-07-06T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/posts/docs/katacontainers/kata-containers/</loc>
+    <lastmod>2025-07-06T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/virtualisation/</loc>
+    <lastmod>2025-07-06T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/authentik/</loc>
+    <lastmod>2025-06-27T08:40:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/posts/docs/authentik/authentik-1/</loc>
+    <lastmod>2025-06-27T08:40:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/iam/</loc>
+    <lastmod>2025-06-27T08:40:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/self-hosted/</loc>
+    <lastmod>2025-06-27T08:40:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/monitoring/</loc>
+    <lastmod>2025-06-21T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/observabilit%C3%A9/</loc>
+    <lastmod>2025-06-21T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/posts/sysadmin/observabilite/intro-observabilite/</loc>
+    <lastmod>2025-06-21T08:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/sysadmin/</loc>
+    <lastmod>2025-06-21T08:10:45+02:00</lastmod>
+  </url><url>
     <loc>https://makhal.fr/posts/sysadmin/antomie-container/antomie_container/</loc>
     <lastmod>2025-06-14T08:10:45+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/containers/</loc>
-    <lastmod>2025-06-14T08:10:45+02:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/devops/</loc>
-    <lastmod>2025-06-14T08:10:45+02:00</lastmod>
-  </url><url>
     <loc>https://makhal.fr/tags/linux/</loc>
-    <lastmod>2025-06-14T08:10:45+02:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/</loc>
-    <lastmod>2025-06-14T08:10:45+02:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/posts/</loc>
-    <lastmod>2025-06-14T08:10:45+02:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/sysadmin/</loc>
-    <lastmod>2025-06-14T08:10:45+02:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/</loc>
     <lastmod>2025-06-14T08:10:45+02:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/authelia/</loc>
@@ -50,13 +110,7 @@
     <loc>https://makhal.fr/posts/sysadmin/unikernel/unikernel-1/</loc>
     <lastmod>2025-05-03T08:15:45+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/docker/</loc>
-    <lastmod>2025-04-26T06:49:38+01:00</lastmod>
-  </url><url>
     <loc>https://makhal.fr/tags/docker-swarm/</loc>
-    <lastmod>2025-04-26T06:49:38+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/kubernetes/</loc>
     <lastmod>2025-04-26T06:49:38+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/posts/docker/swarm_vs_k8s/</loc>
@@ -155,9 +209,6 @@
     <loc>https://makhal.fr/posts/sysadmin/proxmox-cloud-init/</loc>
     <lastmod>2025-01-21T18:10:45+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/virtualisation/</loc>
-    <lastmod>2025-01-21T18:10:45+02:00</lastmod>
-  </url><url>
     <loc>https://makhal.fr/posts/cyber/poc/ransom-poc/</loc>
     <lastmod>2024-12-08T11:01:10+01:00</lastmod>
   </url><url>
@@ -248,10 +299,10 @@
     <loc>https://makhal.fr/posts/docker/docker-swarm/</loc>
     <lastmod>2023-10-23T06:16:53+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/posts/old/bind9/</loc>
+    <loc>https://makhal.fr/tags/bind9/</loc>
     <lastmod>2023-10-15T09:10:45+02:00</lastmod>
   </url><url>
-    <loc>https://makhal.fr/tags/bind9/</loc>
+    <loc>https://makhal.fr/posts/old/bind9/</loc>
     <lastmod>2023-10-15T09:10:45+02:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/dns/</loc>

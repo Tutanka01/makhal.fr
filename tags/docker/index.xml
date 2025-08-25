@@ -6,8 +6,22 @@
     <description>Recent content in Docker on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sat, 26 Apr 2025 06:49:38 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 06 Aug 2025 08:05:49 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes ne suffit pas</title>
+      <link>https://makhal.fr/posts/k8s/cncf/k8s-ne-suffit-pas/</link>
+      <pubDate>Wed, 06 Aug 2025 08:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/posts/k8s/cncf/k8s-ne-suffit-pas/</guid>
+      <description>Dans le landscape actuel de la CNCF, Kubernetes est omniprésent, mais il ne suffit pas à lui seul pour une infrastructure complète.</description>
+    </item>
+    <item>
+      <title>Introduction à Ingress dans Kubernetes</title>
+      <link>https://makhal.fr/posts/k8s/ingress/wingress/</link>
+      <pubDate>Tue, 05 Aug 2025 08:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/posts/k8s/ingress/wingress/</guid>
+      <description>Dans ce post, je vous présente Ingress, une ressource Kubernetes qui gère l&amp;rsquo;accès externe aux services dans un cluster.</description>
+    </item>
     <item>
       <title>Swarm vs Kubernetes : lequel choisir ?</title>
       <link>https://makhal.fr/posts/docker/swarm_vs_k8s/</link>

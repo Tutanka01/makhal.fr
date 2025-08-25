@@ -181,7 +181,8 @@
 <p>Nous, on est des sysadmins et des gars et dames de la cybersécurité. Pour nous, héberger Kiwix en local, c&rsquo;est l&rsquo;assurance d&rsquo;avoir un accès rapide et un contrôle total sur nos données. Kiwix met à disposition des images Docker avec leur visualiseur de .zim, ce qui tombe nickel.</p>
 <p>Mais avant cela, on va jeter un coup d&rsquo;œil sur le site de Kiwix, pour voir ce qu&rsquo;ils proposent.</p>
 <blockquote>
-<p>Lien : <a href="https://library.kiwix.org">Kiwix</a></p></blockquote>
+<p>Lien : <a href="https://library.kiwix.org">Kiwix</a></p>
+</blockquote>
 <p><img src="/images/doc/kiwix/accueil.png" alt="Accueil Kiwix"></p>
 <p>On peut voir que Kiwix propose des contenus pour tous les goûts. Que vous soyez intéressé par la science, la culture, la politique, ou même la cybersécurité, vous trouverez forcément quelque chose qui vous plaît.</p>
 <p>On peut, si on le veut, télécharger l&rsquo;ensemble de Wikipédia en français, ou en anglais. C&rsquo;est un peu lourd, mais c&rsquo;est une mine d&rsquo;or d&rsquo;informations. On peut aussi télécharger des livres, des cours, des vidéos&hellip; Vraiment, il y a de tout.</p>
@@ -205,13 +206,15 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker compose up -d
 </span></span></code></pre></div><p>Pour accéder à Kiwix via un nom de domaine local (comme <code>kiwix.makhal.lan</code>), il est nécessaire de configurer un enregistrement DNS pointant ce nom de domaine vers l&rsquo;adresse IP de votre serveur Docker.  Cela peut être réalisé via un serveur DNS local comme Pi-hole, ou en modifiant le fichier <code>hosts</code> de votre système d&rsquo;exploitation.  Dans mon cas, j&rsquo;utilise PiHole en tant que DNS local, donc il me suffit de créer un enregistrement DNS pour rediriger <code>kiwix.makhal.lan</code> vers l&rsquo;adresse IP de mon serveur.</p>
 <blockquote>
-<p>Ou tout simplement, en utilisant l&rsquo;adresse IP de votre serveur Docker, suivi du port 8080.  Par exemple, <code>http://localhost:8080</code> si vous êtes sur le serveur lui-même (ou votre pc)</p></blockquote>
+<p>Ou tout simplement, en utilisant l&rsquo;adresse IP de votre serveur Docker, suivi du port 8080.  Par exemple, <code>http://localhost:8080</code> si vous êtes sur le serveur lui-même (ou votre pc)</p>
+</blockquote>
 <p>Et voilà, on a maintenant accès à Kiwix en local. Il ne reste plus qu&rsquo;à télécharger des fichiers <code>.zim</code> pour commencer à explorer tout le savoir de l&rsquo;humanité.</p>
 <p>Voilà une commande <code>wget</code>, <strong>en se plaçant d&rsquo;abord dans le dossier <code>/srv/appdata/kiwix/zim</code></strong>, pour télécharger la page Chimie de Wikipédia en français.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /srv/appdata/kiwix/zim
 </span></span><span style="display:flex;"><span>sudo wget https://mirror.download.kiwix.org/zim/wikipedia/wikipedia_fr_chemistry_mini_2023-02.zim
 </span></span></code></pre></div><blockquote>
-<p>Bien entendu, il faut être dans le dossier <code>/srv/appdata/kiwix/zim</code> pour que le fichier soit téléchargé au bon endroit.</p></blockquote>
+<p>Bien entendu, il faut être dans le dossier <code>/srv/appdata/kiwix/zim</code> pour que le fichier soit téléchargé au bon endroit.</p>
+</blockquote>
 <p>Et voilà, vous avez maintenant accès à la page Chimie de Wikipédia en français. C&rsquo;est aussi simple que ça.</p>
 <p><img src="/images/doc/kiwix/chimie.png" alt="Chimie"></p>
 <h2 id="conclusion">Conclusion</h2>

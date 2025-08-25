@@ -6,8 +6,57 @@
     <description>Recent content on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sat, 14 Jun 2025 08:10:45 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 24 Aug 2025 08:05:49 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K3sup: k3s tout simplement</title>
+      <link>https://makhal.fr/posts/k8s/cncf/k3sup/</link>
+      <pubDate>Sun, 24 Aug 2025 08:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/posts/k8s/cncf/k3sup/</guid>
+      <description>k3sup est un outil open-source qui facilite l&amp;rsquo;installation de K3s, une distribution légère de Kubernetes, sur n&amp;rsquo;importe quel serveur distant.</description>
+    </item>
+    <item>
+      <title>Kubernetes ne suffit pas</title>
+      <link>https://makhal.fr/posts/k8s/cncf/k8s-ne-suffit-pas/</link>
+      <pubDate>Wed, 06 Aug 2025 08:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/posts/k8s/cncf/k8s-ne-suffit-pas/</guid>
+      <description>Dans le landscape actuel de la CNCF, Kubernetes est omniprésent, mais il ne suffit pas à lui seul pour une infrastructure complète.</description>
+    </item>
+    <item>
+      <title>Introduction à Ingress dans Kubernetes</title>
+      <link>https://makhal.fr/posts/k8s/ingress/wingress/</link>
+      <pubDate>Tue, 05 Aug 2025 08:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/posts/k8s/ingress/wingress/</guid>
+      <description>Dans ce post, je vous présente Ingress, une ressource Kubernetes qui gère l&amp;rsquo;accès externe aux services dans un cluster.</description>
+    </item>
+    <item>
+      <title>Réseau Kubernetes et MetalLB.</title>
+      <link>https://makhal.fr/posts/k8s/rzo-metallb/metallb/</link>
+      <pubDate>Thu, 10 Jul 2025 04:12:10 +0100</pubDate>
+      <guid>https://makhal.fr/posts/k8s/rzo-metallb/metallb/</guid>
+      <description>On décortique le réseau Kubernetes et on met en place MetalLB, la solution pour exposer vos applications hors du cloud..</description>
+    </item>
+    <item>
+      <title>Kata Containers : La sécurité des VM avec la vitesse des conteneurs</title>
+      <link>https://makhal.fr/posts/docs/katacontainers/kata-containers/</link>
+      <pubDate>Sun, 06 Jul 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/docs/katacontainers/kata-containers/</guid>
+      <description>Découvrez Kata Containers, le projet open source qui réconcilie le meilleur des deux mondes</description>
+    </item>
+    <item>
+      <title>Authentik : Self-Hosted IAM</title>
+      <link>https://makhal.fr/posts/docs/authentik/authentik-1/</link>
+      <pubDate>Fri, 27 Jun 2025 08:40:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/docs/authentik/authentik-1/</guid>
+      <description>Et si on parlait d&amp;rsquo;IAM ? Authentik est une solution self-hosted qui permet de gérer l&amp;rsquo;authentification et l&amp;rsquo;autorisation de vos applications.</description>
+    </item>
+    <item>
+      <title>Observabilité : Le pilier oublié du DevOps</title>
+      <link>https://makhal.fr/posts/sysadmin/observabilite/intro-observabilite/</link>
+      <pubDate>Sat, 21 Jun 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/sysadmin/observabilite/intro-observabilite/</guid>
+      <description>On oublie souvent de parler de l&amp;rsquo;observabilité, ici on va faire un petit tour d&amp;rsquo;horizon de ce que c&amp;rsquo;est et pourquoi c&amp;rsquo;est important.</description>
+    </item>
     <item>
       <title>C&#39;est quoi vraiment un conteneur ?</title>
       <link>https://makhal.fr/posts/sysadmin/antomie-container/antomie_container/</link>

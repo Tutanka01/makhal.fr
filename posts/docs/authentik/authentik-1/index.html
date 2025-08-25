@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Authentik : Self-Hosted IAM</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, authentik, iam, self-hosted'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/docs/authentik/authentik-1/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Authentik : Self-Hosted IAM">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Authentik : Self-Hosted IAM">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/docs/authentik/authentik-1/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/docs/authentik/authentik-1/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/docs/authentik/authentik-1/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Authentik : Self-Hosted IAM</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            juin 27, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/authentik">authentik</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/iam">iam</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/self-hosted">self-hosted</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p>Imaginez un monde parfait, où vous vous connectez à une seule application le matin, et vous avez accès à toutes vos applications, sans avoir à vous reconnecter à chaque fois. N&rsquo;imaginez plus, Authentik est la solution qu&rsquo;il vous faut !</p>
+<p>Vous connaissez peut-être déjà des solutions comme Keycloak, Okta, ou encore Auth0. Authentik est une solution self-hosted et totalement open-source, et honnêtement, extrêmement complète. Elle permet de gérer l&rsquo;authentification et l&rsquo;autorisation de vos applications, et est compatible avec les protocoles OAuth2, OIDC, SAML, LDAP, et bien d&rsquo;autres.</p>
+<p>Voilà un petit tableau récapitulatif des fonctionnalités d&rsquo;Authentik :</p>
+<p><img src="/images/doc/authentik/tableau.png" alt="authentik comparaison"></p>
+<p>Avant de plonger tête la première dans la configuration d&rsquo;Authentik, il est important de comprendre certains concepts de base.</p>
+<h2 id="cest-quoi-un-iam-">C&rsquo;est quoi un IAM ?</h2>
+<p>Vous connaissez tous un IAM très connu, Active Directory. Voilà, j&rsquo;ai plus besoin de continuer, vous savez ce que c&rsquo;est :)&hellip; Mais pour les autres, un IAM (Identity and Access Management) est une solution qui permet de gérer l&rsquo;identité des utilisateurs et leurs accès aux ressources de l&rsquo;entreprise. Il permet de centraliser la gestion des utilisateurs, des groupes, des rôles, des permissions, et bien plus encore.</p>
+<p>En gros, c&rsquo;est le point central de votre entreprise pour gérer l&rsquo;authentification et l&rsquo;autorisation des utilisateurs.</p>
+<p><img src="/images/doc/authentik/identity-and-access-management.jpg" alt="identity-and-access-management schema"></p>
+<p>Un IAM a quatre grandes fonctions :</p>
+<ul>
+<li><strong>Authentification</strong> : Vérifier l&rsquo;identité de l&rsquo;utilisateur.</li>
+<li><strong>Autorisation</strong> : Vérifier si l&rsquo;utilisateur a le droit d&rsquo;accéder à la ressource.</li>
+<li><strong>User Management</strong> : Gérer les utilisateurs, les groupes, les rôles, les permissions, etc.</li>
+<li><strong>Central user repository</strong> : Centraliser les informations sur les utilisateurs, les groupes, les rôles, les permissions, etc.</li>
+</ul>
+<p>Par exemple, imaginez que vous sonnez à l&rsquo;interphone de chez vous, et vous dites &ldquo;Bonjour, c&rsquo;est moi&rdquo;. Votre maman va sortir la tête de la fenêtre et va vous identifier. Donc là, on est à l&rsquo;étape de l&rsquo;authentification.</p>
+<p>Ensuite, elle va décider si vous avez le droit d&rsquo;entrer ou pas, car peut-être avez-vous oublié de ramener le pain, et là vous n&rsquo;avez pas le droit d&rsquo;entrer. Donc là, on est à l&rsquo;étape de l&rsquo;autorisation.</p>
+<p>Pour les deux autres points, mon exemple est moins parlant, mais imaginez que votre mère tient un carnet avec la liste de tous les enfants de la maison, leurs corvées et leurs droits de sortie (User management &amp; central repository).</p>
+<h2 id="authentik-dans-tout-ça-">Authentik dans tout ça ?</h2>
+<p><img src="/images/doc/authentik/social.png" alt="altAuthentik logo"></p>
+<p>Authentik est la réponse open-source à toutes les solutions IAM qui existent actuellement. Okta, Keycloak, même Active Directory, Authentik est capable de faire tout ce qu&rsquo;ils font, et même plus.</p>
+<p>Je vais arrêter avec la théorie, on apprend mieux en pratiquant, donc on va passer au déploiement d&rsquo;Authentik.</p>
+<h2 id="déploiement-dauthentik-avec-docker-compose">Déploiement d&rsquo;Authentik avec Docker compose</h2>
+<p>La première chose qu&rsquo;il faut faire, c&rsquo;est de récupérer le <code>docker-compose.yml</code> donné gracieusement par Authentik. Pour cela, sur votre serveur cible, vous allez lancer cette commande :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://goauthentik.io/docker-compose.yml
+</span></span></code></pre></div><p>Ensuite, il faut créer un fichier <code>.env</code> à la racine du projet. Authentik, dans sa documentation officielle, nous facilite la tâche en nous donnant déjà les variables obligatoires à remplir et une façon sécurisée de les générer. Pour cela, vous allez lancer cette commande :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;PG_PASS=</span><span style="color:#66d9ef">$(</span>openssl rand -base64 <span style="color:#ae81ff">36</span> | tr -d <span style="color:#e6db74">&#39;\n&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> &gt;&gt; .env
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;AUTHENTIK_SECRET_KEY=</span><span style="color:#66d9ef">$(</span>openssl rand -base64 <span style="color:#ae81ff">60</span> | tr -d <span style="color:#e6db74">&#39;\n&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> &gt;&gt; .env
+</span></span></code></pre></div><p>Et normalement, vous devriez déjà pouvoir lancer le docker compose. Pour cela, vous allez lancer cette commande :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker compose pull
+</span></span><span style="display:flex;"><span>docker compose up -d
+</span></span></code></pre></div><p>Pour info, pour ceux qui utilisent Traefik, voici le <code>docker-compose.yml</code> que j&rsquo;utilise pour Authentik :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">postgresql</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">docker.io/library/postgres:16-alpine</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">unless-stopped</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">healthcheck</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">test</span>: [<span style="color:#e6db74">&#34;CMD-SHELL&#34;</span>, <span style="color:#e6db74">&#34;pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}&#34;</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">start_period</span>: <span style="color:#ae81ff">20s</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">interval</span>: <span style="color:#ae81ff">30s</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">retries</span>: <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">timeout</span>: <span style="color:#ae81ff">5s</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">database:/var/lib/postgresql/data</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">${PG_PASS:?database password required}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">${PG_USER:-authentik}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">${PG_DB:-authentik}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">frontend</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">env_file</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">.env</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">redis</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">docker.io/library/redis:alpine</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: --<span style="color:#ae81ff">save 60 1 --loglevel warning</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">unless-stopped</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">healthcheck</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">test</span>: [<span style="color:#e6db74">&#34;CMD-SHELL&#34;</span>, <span style="color:#e6db74">&#34;redis-cli ping | grep PONG&#34;</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">start_period</span>: <span style="color:#ae81ff">20s</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">interval</span>: <span style="color:#ae81ff">30s</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">retries</span>: <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">timeout</span>: <span style="color:#ae81ff">3s</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">frontend</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">redis:/data</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">server</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">${AUTHENTIK_IMAGE:-ghcr.io/goauthentik/server}:${AUTHENTIK_TAG:-2025.6.3}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">unless-stopped</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: <span style="color:#ae81ff">server</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">AUTHENTIK_SECRET_KEY</span>: <span style="color:#ae81ff">${AUTHENTIK_SECRET_KEY:?secret key required}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">AUTHENTIK_REDIS__HOST</span>: <span style="color:#ae81ff">redis</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">AUTHENTIK_POSTGRESQL__HOST</span>: <span style="color:#ae81ff">postgresql</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">AUTHENTIK_POSTGRESQL__USER</span>: <span style="color:#ae81ff">${PG_USER:-authentik}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">AUTHENTIK_POSTGRESQL__NAME</span>: <span style="color:#ae81ff">${PG_DB:-authentik}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">AUTHENTIK_POSTGRESQL__PASSWORD</span>: <span style="color:#ae81ff">${PG_PASS}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./media:/media</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./custom-templates:/templates</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">env_file</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">.env</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.enable=true&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># HTTP -&gt; HTTPS redirection</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.routers.authentik.entrypoints=http&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.routers.authentik.rule=Host(`authentik.homelab.makhal.fr`)&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.routers.authentik.middlewares=https-redirect&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.middlewares.https-redirect.redirectscheme.scheme=https&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># HTTPS configuration</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.routers.authentik-secure.entrypoints=https&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.routers.authentik-secure.rule=Host(`authentik.homelab.makhal.fr`)&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.routers.authentik-secure.tls=true&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.routers.authentik-secure.tls.certresolver=cloudflare&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># Security headers middleware</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.middlewares.security-headers.headers.browserXssFilter=true&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.middlewares.security-headers.headers.contentTypeNosniff=true&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.middlewares.security-headers.headers.forceSTSHeader=true&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.middlewares.security-headers.headers.stsIncludeSubdomains=true&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.middlewares.security-headers.headers.stsPreload=true&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.middlewares.security-headers.headers.stsSeconds=31536000&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.middlewares.security-headers.headers.customFrameOptionsValue=DENY&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.routers.authentik-secure.middlewares=realip-headers@file,security-headers&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># Service configuration</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;traefik.http.services.authentik.loadbalancer.server.port=9000&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">frontend</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">depends_on</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">postgresql</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">condition</span>: <span style="color:#ae81ff">service_healthy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">redis</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">condition</span>: <span style="color:#ae81ff">service_healthy</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">worker</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">${AUTHENTIK_IMAGE:-ghcr.io/goauthentik/server}:${AUTHENTIK_TAG:-2025.6.3}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">unless-stopped</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: <span style="color:#ae81ff">worker</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">AUTHENTIK_SECRET_KEY</span>: <span style="color:#ae81ff">${AUTHENTIK_SECRET_KEY:?secret key required}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">AUTHENTIK_REDIS__HOST</span>: <span style="color:#ae81ff">redis</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">AUTHENTIK_POSTGRESQL__HOST</span>: <span style="color:#ae81ff">postgresql</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">AUTHENTIK_POSTGRESQL__USER</span>: <span style="color:#ae81ff">${PG_USER:-authentik}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">AUTHENTIK_POSTGRESQL__NAME</span>: <span style="color:#ae81ff">${PG_DB:-authentik}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">AUTHENTIK_POSTGRESQL__PASSWORD</span>: <span style="color:#ae81ff">${PG_PASS}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># `user: root` and the docker socket volume are optional.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># See more for the docker socket integration here:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># https://goauthentik.io/docs/outposts/integrations/docker</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Removing `user: root` also prevents the worker from fixing the permissions</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># on the mounted folders, so when removing this make sure the folders have the correct UID/GID</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># (1000:1000 by default)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">user</span>: <span style="color:#ae81ff">root</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/var/run/docker.sock:/var/run/docker.sock</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./media:/media</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./certs:/certs</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./custom-templates:/templates</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">env_file</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">.env</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">frontend</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">depends_on</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">postgresql</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">condition</span>: <span style="color:#ae81ff">service_healthy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">redis</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">condition</span>: <span style="color:#ae81ff">service_healthy</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">database</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">driver</span>: <span style="color:#ae81ff">local</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">redis</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">driver</span>: <span style="color:#ae81ff">local</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">frontend</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">external</span>: <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><p>Avec votre configuration, il faudra donc adapter les labels pour que cela fonctionne avec votre domaine et votre configuration Traefik.</p>
+<h2 id="accéder-à-authentik">Accéder à Authentik</h2>
+<p>Une fois que tout est lancé, vous pouvez accéder à Authentik en vous rendant sur l&rsquo;URL que vous avez configurée dans les labels de votre docker compose. Par exemple, si vous avez configuré <code>authentik.homelab.makhal.fr</code>, vous pouvez y accéder en ouvrant votre navigateur et en tapant cette URL.</p>
+<p><img src="/images/doc/authentik/front.png" alt="Authentik login page"></p>
+<p>La première fois que vous accédez à Authentik, il faudra en fait vous rendre à l&rsquo;URL suivante :</p>
+<pre tabindex="0"><code>https://authentik.homelab.makhal.fr/if/flow/initial-setup/
+</code></pre><p>Et ici, vous allez créer votre premier utilisateur administrateur.</p>
+<p>Une fois dedans, vous allez tomber sur cette page :</p>
+<p><img src="/images/doc/authentik/step-1.png" alt="Page applications authentik"></p>
+<p>Et vous allez appuyer sur <strong>Interface d&rsquo;administration</strong> pour accéder à l&rsquo;interface d&rsquo;administration d&rsquo;Authentik.</p>
+<p><img src="/images/doc/authentik/dash-admin.png" alt="Dashboard Admin"></p>
+<h2 id="sécuriser-notre-première-application">Sécuriser notre première application</h2>
+<p>J&rsquo;aurais pu m&rsquo;arrêter là et vous dire qu&rsquo;Authentik est super, mais je vais aller plus loin et vous montrer comment mettre en place OAuth2 sur une application. J&rsquo;aurais pu prendre n&rsquo;importe quelle application qui supporte OAuth2. Moi, je vais prendre Portainer.</p>
+<p>D&rsquo;abord, on va créer une application dans Authentik. L&rsquo;application, c&rsquo;est ce qui va permettre à Authentik de communiquer avec notre application.</p>
+<p><img src="/images/doc/authentik/app-1.png" alt="alt text"></p>
+<p>Pour cela, on va aller dans la section <strong>Applications</strong> et cliquer sur <strong>Créer avec un fournisseur</strong>.</p>
+<p>Vous allez avoir ce menu qui va s&rsquo;afficher :</p>
+<p><img src="/images/doc/authentik/app-2.png" alt="alt text"></p>
+<p>Vous pouvez le remplir comme je l&rsquo;ai fait.</p>
+<p>Une fois fini, vous allez appuyer sur <strong>Next</strong>.</p>
+<p><img src="/images/doc/authentik/app-3.png" alt="alt text"></p>
+<p>Comme vous le voyez, Authentik nous donne beaucoup de choix : on a du Radius, du LDAP, du SAML, de l&rsquo;OIDC, et bien d&rsquo;autres. C&rsquo;est hyper intéressant d&rsquo;aller jeter un coup d&rsquo;œil à la doc et de voir à quoi sert chacun de ces protocoles.</p>
+<p>Et si jamais votre application ne supporte aucun de ces protocoles, Authentik permet de faire du reverse proxy !! Il va donc être comme un middleware entre votre application et l&rsquo;utilisateur, où il devra s&rsquo;authentifier avant d&rsquo;accéder à votre application. C&rsquo;est vraiment super-complet.</p>
+<p>On va choisir <strong>OAuth2</strong> et appuyer sur <strong>Next</strong>.</p>
+<p><img src="/images/doc/authentik/app-4.png" alt="alt text"></p>
+<p>Une fois dedans, vous allez pouvoir configurer votre fournisseur OAuth2. Comme vous le voyez, il faut un nom, vous pouvez mettre ce que vous voulez.</p>
+<p>Pour le <strong>flux de l&rsquo;autorisation</strong>, on va prendre <code>explicit-consent</code>. Cette configuration va dire à Authentik de demander à l&rsquo;utilisateur de se connecter à chaque fois qu&rsquo;il veut accéder à cette application. Il y a d&rsquo;autres flux, comme <code>implicit</code>, qui permettent de ne pas demander à l&rsquo;utilisateur de se connecter à chaque fois, mais je vous laisse aller voir la doc pour en savoir plus.</p>
+<p>Une fois qu&rsquo;on a rempli cela, on voit plus en bas, l&rsquo;ID Client et le Secret Client. Ces deux valeurs sont importantes, car elles vont permettre à votre application de se connecter à Authentik. N&rsquo;ayez pas peur, on pourra les récupérer plus tard.</p>
+<p>On va appuyer sur <strong>Next</strong> pour continuer.</p>
+<p><img src="/images/doc/authentik/app-5.png" alt="alt text"></p>
+<p>Ici, on va sélectionner le groupe d&rsquo;utilisateurs qui aura accès à cette application. Moi, je ne vais pas me prendre la tête, je vais prendre le groupe admin par défaut.</p>
+<p>Une fois que c&rsquo;est fait, vous pouvez faire <strong>Next, Next</strong> et <strong>Soumettre</strong>.</p>
+<p>Et on a notre application qui est créée.</p>
+<p><img src="/images/doc/authentik/app-6.png" alt="alt text"></p>
+<h2 id="connecter-portainer-à-authentik">Connecter Portainer à Authentik</h2>
+<p>Maintenant que notre application est créée sur Authentik, on va pouvoir la connecter à Portainer. Pour cela, on va aller dans Portainer.</p>
+<p><img src="/images/doc/authentik/port-1.png" alt="alt text"></p>
+<p>Et ici, on va aller dans <strong>Settings</strong> et dans la section <strong>Authentication</strong>. On va sélectionner <strong>OAuth2</strong>. Il nous demande de remplir quelques champs.</p>
+<p>Pour récupérer les valeurs que notre fournisseur nous a données un peu plus tôt, il faut aller dans la section <strong>Providers</strong> dans Authentik, et cliquer sur le fournisseur qu&rsquo;on a créé pour l&rsquo;éditer.</p>
+<p>Et on a ici les valeurs qu&rsquo;il faut remplir dans Portainer :</p>
+<p><img src="/images/doc/authentik/port-2.png" alt="alt text"></p>
+<p>Donc dans l&rsquo;interface de Portainer, il suffit de copier/coller les valeurs dans les champs correspondants.</p>
+<p>Maintenant, il faut saisir les URL de redirection. Pour récupérer ces URL, il faut cliquer sur le nom de votre provider dans la section <strong>Providers</strong> (pas comme tout à l&rsquo;heure où on a édité le provider), et vous allez avoir cette page :</p>
+<p><img src="/images/doc/authentik/port-3.png" alt="alt text"></p>
+<p>Chez moi, du coup, ça va ressembler à ça lorsque l&rsquo;on met ces valeurs dans Portainer :</p>
+<p><img src="/images/doc/authentik/port-4.png" alt="alt text"></p>
+<p>Si jamais vous n&rsquo;utilisez pas Traefik, ça va devoir ressembler à ça :</p>
+<p><img src="/images/doc/authentik/port-5.png" alt="alt text"></p>
+<p>Maintenant, une fois qu&rsquo;on a appuyé sur <strong>Save</strong>, on va aller sur la section <strong>Users</strong> de Portainer, et on va créer un utilisateur.</p>
+<p><img src="/images/doc/authentik/port-6.png" alt="alt text"></p>
+<p>Et vous allez voir qu&rsquo;automatiquement, Portainer va mettre cet utilisateur dans la méthode d&rsquo;authentification OAuth2.</p>
+<h2 id="moment-de-vérité">Moment de vérité</h2>
+<p>Maintenant, si on se déconnecte de Portainer, on va tomber sur cette page :</p>
+<p><img src="/images/doc/authentik/port-7.png" alt="alt text"></p>
+<p>Donc déjà, bon signe, on voit le bouton <strong>Login with OAuth</strong>. On va cliquer dessus, et on va être redirigé vers Authentik.</p>
+<p><img src="/images/doc/authentik/port-8.png" alt="alt text"></p>
+<p>Il va me demander de me connecter, et une fois connecté, il va me rediriger vers Portainer !!</p>
+
+
+<style>
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 850px; /* Limite la largeur maximale de la vidéo */
+    height: auto;
+    margin: 0 auto; /* Centre la vidéo horizontalement */
+  }
+
+  .video-container video {
+    width: 100%; /* La vidéo prendra 100% de la largeur du conteneur */
+    height: auto; /* La hauteur sera ajustée proportionnellement */
+  }
+</style>
+
+<div class="video-container">
+  <video controls src="/images/doc/authentik/20250628-1108-04.9168421.mp4" title="Test du Workflow VT + IA"></video>
+</div>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Et voilà, on a réussi à connecter Portainer à Authentik en utilisant OAuth2. C&rsquo;est vraiment super simple, et ça permet de centraliser l&rsquo;authentification de vos applications.</p>
+<p>Si vous avez des questions, n&rsquo;hésitez pas à me les envoyer par message sur LinkedIn, je me ferai un plaisir de vous aider.</p>
+<p>Et sur ce, je vous dis à la prochaine pour un nouvel article.</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/sysadmin/observabilite/intro-observabilite/">
+            &#8592;
+            :
+            Observabilité : Le pilier oublié du DevOps
+        </a>
+    </p>
+    <p class="prev-post-date">
+        juin 21, 2025
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/docs/katacontainers/kata-containers/">
+            :
+            Kata Containers : La sécurité des VM avec la vitesse des conteneurs
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            juillet 6, 2025
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Introduction à Ingress dans Kubernetes</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, kubernetes, docker, devops'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/k8s/ingress/wingress/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Introduction à Ingress dans Kubernetes">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Introduction à Ingress dans Kubernetes">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/k8s/ingress/wingress/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/k8s/ingress/wingress/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/k8s/ingress/wingress/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Introduction à Ingress dans Kubernetes</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            août 5, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/kubernetes">kubernetes</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/docker">docker</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/devops">devops</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p>Le réseau sous Kubernetes est un sujet vaste et complexe. Mais il existe une ressource qui a énormément simplifié la gestion de l&rsquo;accès externe aux services : <strong>Ingress</strong>.</p>
+<p>Les ingresses sont des ressources Kubernetes qui permettent de gérer l&rsquo;accès externe aux services dans un cluster, en gros, ce sont elles qui font le lien entre l&rsquo;extérieur et les services internes. Elles permettent de définir des règles de routage basées sur des URL, des hôtes, etc.</p>
+<h2 id="cest-quoi-un-ingress--et-la-différence-avec-un-loadbalancer-">C&rsquo;est quoi un Ingress ? Et la différence avec un LoadBalancer ?</h2>
+<p>Comme on l&rsquo;a présenté dans un précédent <a href="/posts/k8s/rzo-metallb/metallb/">article</a>, un LoadBalancer est un type de service Kubernetes qui expose un service à l&rsquo;extérieur du cluster en utilisant un équilibreur de charge. Cet équilibreur de charge est généralement fourni par un cloud provider (AWS, GCP, Azure, etc.) ou par un service tiers comme MetalLB pour les clusters bare-metal.</p>
+
+
+<img src="/images/k8s/ingress/loadBalancer.png" alt="Image explicative Load balancer" width="400">
+
+<p>Au début on faisait tout avec des LoadBalancer, c&rsquo;était la belle époque. Dès qu&rsquo;on avait une nouvelle application, on créait un nouveau service de type LoadBalancer. On avait une adresse IP publique qu&rsquo;on pouvait utiliser comme on voulait et où on voulait, DNS, etc. Mais cette approche a ses limites :</p>
+<ul>
+<li><strong>Coût</strong> : Chaque service de type LoadBalancer coûte de l&rsquo;argent, pensez au cloud, dans le cloud chaque ressource est payante.</li>
+<li><strong>Complexité</strong> : Imaginons dans un cluster on a 10 applications, chacune avec son LoadBalancer, on se retrouve avec 10 adresses IP publiques, 10 règles de firewall, etc. Ce n&rsquo;est pas sympa pour l&rsquo;administrateur système de gérer tout ça.</li>
+<li><strong>Scalabilité</strong> : Si on veut ajouter une nouvelle application, on doit créer un nouveau LoadBalancer, ce qui peut devenir ingérable à grande échelle.</li>
+</ul>
+<p>C&rsquo;est pour cela qu&rsquo;on s&rsquo;est dit qu&rsquo;il nous fallait une solution plus flexible, un genre de reverse proxy avec lequel on pourrait avoir une seule adresse IP publique et router le trafic vers les différents services en fonction de certains paramètres comme l&rsquo;URL, l&rsquo;hôte, etc. Et c&rsquo;est là qu&rsquo;intervient Ingress.</p>
+<h2 id="comment-ça-marche-">Comment ça marche ?</h2>
+<p>Déjà il faut faire la différence entre un Ingress et un Ingress Controller. Un Ingress est une ressource Kubernetes officielle qui définit les règles de routage, tandis qu&rsquo;un Ingress Controller est une implémentation qui applique ces règles et gère le trafic entrant.</p>
+<p>C&rsquo;est comme si vous aviez un Ingress qui est le plan (l&rsquo;architecte) et un Ingress Controller qui est celui qui va appliquer le plan de l&rsquo;architecte (l&rsquo;ouvrier).</p>
+<p>Voilà à quoi ça ressemble un Ingress :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">networking.k8s.io/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Ingress</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">example-ingress</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">rules</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">host</span>: <span style="color:#ae81ff">makhal.fr</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">http</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">paths</span>:
+</span></span><span style="display:flex;"><span>            - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">pathType</span>: <span style="color:#ae81ff">Prefix</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">backend</span>:
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">service</span>:
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">example-service</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">port</span>:
+</span></span><span style="display:flex;"><span>                            <span style="color:#f92672">number</span>: <span style="color:#ae81ff">80</span>
+</span></span></code></pre></div><p>En gros, on lui dit que dès qu&rsquo;il reçoit une requête pour l&rsquo;hôte <code>makhal.fr</code>, il doit router la requête vers le service <code>example-service</code> sur le port 80. C&rsquo;est simple, non ?</p>
+<p><img src="/images/k8s/ingress/ingress.png" alt="alt text"></p>
+<p>Il ne faut pas croire non plus, que dès qu&rsquo;on utilise ingress on délaisse totalement les LoadBalancer, on peut toujours les utiliser pour exposer l&rsquo;Ingress Controller lui-même. En fait, c&rsquo;est souvent la meilleure pratique de le faire, car cela permet de centraliser la gestion du trafic entrant.</p>
+<p>Comme suit :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Service</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ingress-nginx-controller</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">LoadBalancer</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">port</span>: <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">targetPort</span>: <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">port</span>: <span style="color:#ae81ff">443</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">targetPort</span>: <span style="color:#ae81ff">443</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">selector</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">app</span>: <span style="color:#ae81ff">ingress-nginx</span>
+</span></span></code></pre></div><p>Dans cet exemple, on expose l&rsquo;Ingress Controller via un service de type LoadBalancer, ce qui permet d&rsquo;avoir une adresse IP publique unique pour accéder à tous les services gérés par l&rsquo;Ingress.</p>
+<p>Il existe plusieurs Ingress Controllers disponibles (par exemple NGINX, Traefik, HAProxy, etc.), chacun avec ses propres fonctionnalités et configurations. Mais le truc sympa, c&rsquo;est que notre seul fichier Ingress reste le même. Tous comprennent l&rsquo;architecte mais chacun a sa propre manière de construire la maison.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Ingress est une brique essentielle dans le monde Kubernetes.
+Il permet de centraliser et simplifier l&rsquo;accès à vos services, en évitant la multiplication de LoadBalancers ou de NodePorts.</p>
+<p>Mais attention : créer une ressource Ingress ne suffit pas. Pour que ça fonctionne, il faut déployer un Ingress Controller, qui va appliquer les règles de routage.</p>
+<p>C&rsquo;est justement ce qu&rsquo;on verra dans un prochain article :
+Comment déployer un Ingress Controller (comme NGINX ou Traefik) dans un cluster Kubernetes, et rediriger le trafic HTTP vers vos applications.</p>
+<p>Jusque-là, n&rsquo;hésitez pas à tester Ingress dans vos clusters, et à partager vos expériences ou questions dans les commentaires LinkedIn !</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/k8s/rzo-metallb/metallb/">
+            &#8592;
+            :
+            Réseau Kubernetes et MetalLB.
+        </a>
+    </p>
+    <p class="prev-post-date">
+        juillet 10, 2025
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/k8s/cncf/k8s-ne-suffit-pas/">
+            :
+            Kubernetes ne suffit pas
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            août 6, 2025
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

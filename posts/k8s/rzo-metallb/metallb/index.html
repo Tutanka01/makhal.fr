@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Réseau Kubernetes et MetalLB.</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, kubernetes, metallb, loadbalancer'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/k8s/rzo-metallb/metallb/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Réseau Kubernetes et MetalLB.">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Réseau Kubernetes et MetalLB.">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/k8s/rzo-metallb/metallb/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/k8s/rzo-metallb/metallb/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/k8s/rzo-metallb/metallb/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Réseau Kubernetes et MetalLB.</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            juillet 10, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/kubernetes">kubernetes</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/metallb">metallb</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/loadbalancer">loadbalancer</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p><img src="/images/k8s/metallb/meme.jpg" alt="Meme Kubernetes, I just wrote a Kubernetes blog, AAAAnd is out of date"></p>
+<p>Kubernetes&hellip;.</p>
+<p>Les joies de Kubernetes ne s&rsquo;arrêtent jamais, les pods, les deployments, les services, les ingress, les loadbalancers&hellip; Il y a tant de choses à apprendre et à comprendre. Et surtout, à déployer !</p>
+<p>Dans cet article on va se pencher sur comment est-ce que le réseau fonctionne dans Kubernetes, surtout du côté exposition des applications. Une fois qu&rsquo;on aura bien compris comment ça marche, on va mettre en place MetalLB. Qui va servir comme notre base pour exposer nos applications dans d&rsquo;autres futurs articles.</p>
+<p>Tenez-vous bien, car je vais essayer de vous expliquer ça de la manière la plus simple possible. Sans bien entendu tomber dans les travers de la simplification excessive.</p>
+<h2 id="cest-quoi-un-service-">C&rsquo;est quoi un service ?</h2>
+<p>Avant de parler des services, il faut parler bien évidemment du cœur du problème que les services essayent de résoudre : l&rsquo;exposition des pods (qui dit pods, dit application).</p>
+<p>L&rsquo;exposition des pods tant vers d&rsquo;autres pods dans le cluster, que vers l&rsquo;extérieur du cluster.</p>
+<p>Car vous, en tant qu&rsquo;administrateur de cluster, vous ne voulez pas seulement déployer une application pour que personne ne puisse y accéder. Sauf si vous êtes un admin sadique&hellip;</p>
+<p>Il existe plusieurs types de services dans Kubernetes, mais on va se concentrer sur les trois principaux :</p>
+<ol>
+<li><strong>ClusterIP</strong> : C&rsquo;est le type de service par défaut. Il permet d&rsquo;exposer un service à l&rsquo;intérieur du cluster. C&rsquo;est-à-dire que les autres pods dans le cluster peuvent accéder à ce service, mais pas l&rsquo;extérieur du cluster. C&rsquo;est utile pour les services internes, comme les bases de données ou les caches.</li>
+</ol>
+<div class="mermaid">
+graph TD
+    subgraph Cluster Kubernetes
+        subgraph "Réseau Interne du Cluster"
+            Svc_CI[Service ClusterIP<br>IP: 10.96.10.5<br>Port: 80]
+
+            Pod_A(Pod A<br>IP: 10.244.1.2<br>Port Cible: 8080)
+            Pod_B(Pod B<br>IP: 10.244.2.3<br>Port Cible: 8080)
+
+            AutrePod(Autre Pod)
+
+            AutrePod -- "Requête vers 10.96.10.5:80" --> Svc_CI
+            Svc_CI -- "Redirige vers le Port Cible 8080" --> Pod_A
+            Svc_CI -- "Redirige vers le Port Cible 8080" --> Pod_B
+        end
+    end
+    
+    style Svc_CI fill:#b3b4b5,stroke:#333,stroke-width:2px,color:#000000
+    style AutrePod fill:#b3b4b5,stroke:#333,stroke-width:1px,color:#000000
+</div>
+<ol start="2">
+<li><strong>NodePort</strong> : Ce type de service expose le service sur un port spécifique de chaque nœud du cluster. Cela permet d&rsquo;accéder au service depuis l&rsquo;extérieur du cluster en utilisant l&rsquo;adresse IP d&rsquo;un des nœuds et le port attribué. C&rsquo;est une solution simple pour exposer des services, mais elle a ses limites en termes de scalabilité et de gestion des adresses IP.</li>
+</ol>
+<div class="mermaid">
+graph TD
+    Utilisateur[Utilisateur Externe]
+
+    subgraph Cluster Kubernetes
+        
+        subgraph "Node 1 (IP: 192.168.1.101)"
+            Port_N1("Port Ouvert<br>NodePort: 30080")
+        end
+        subgraph "Node 2 (IP: 192.168.1.102)"
+            Port_N2("Port Ouvert<br>NodePort: 30080")
+        end
+
+        Svc_NP[Service NodePort<br>ClusterIP: 10.96.20.15<br>Port: 80]
+
+        Pod_A(Pod A<br>Port Cible: 8080)
+        Pod_B(Pod B<br>Port Cible: 8080)
+
+    end
+    
+    %% Correction ici : "http://" a été retiré du texte des flèches %%
+    Utilisateur -- "Requête vers 192.168.1.101:30080" --> Port_N1
+    Utilisateur -- "ou 192.168.1.102:30080" --> Port_N2
+    
+    Port_N1 -- "Redirige vers le ClusterIP interne" --> Svc_NP
+    Port_N2 -- "Redirige vers le ClusterIP interne" --> Svc_NP
+    
+    Svc_NP -- "Port 80 -> Port Cible 8080" --> Pod_A
+    Svc_NP -- "Port 80 -> Port Cible 8080" --> Pod_B
+
+    style Svc_NP fill:#cde4ff,stroke:#333,stroke-width:2px,color:#000000
+    style Utilisateur fill:#d5e8d4,stroke:#333,stroke-width:2px,color:#000000
+</div>
+<ol start="3">
+<li><strong>LoadBalancer</strong> : Ce type de service est utilisé dans les environnements de cloud. Il provisionne un load balancer externe qui distribue le trafic vers les pods du service. Cela permet d&rsquo;avoir une adresse IP stable et d&rsquo;exposer facilement le service au monde extérieur. Cependant, cela peut engendrer des coûts supplémentaires en fonction du fournisseur de cloud.</li>
+</ol>
+<div class="mermaid">
+graph TD
+    Utilisateur[Utilisateur Externe]
+    LB[Load Balancer Externe - ex: MetalLB - IP Publique: 88.99.100.1]
+
+    Utilisateur -- "Requête sur le port 80" --> LB
+
+    subgraph Cluster Kubernetes        
+        Node1["Node 1 - IP: 192.168.1.101 - Écoute sur NodePort 30080"]
+        Node2["Node 2 - IP: 192.168.1.102 - Écoute sur NodePort 30080"]
+
+        Svc_LB[Service LoadBalancer - Agit comme un aiguilleur interne]
+
+        PodA[Pod A - Port Cible: 8080]
+        PodB[Pod B - Port Cible: 8080]
+
+        Node1 -- "Transfère au service interne" --> Svc_LB
+        Node2 -- "Transfère au service interne" --> Svc_LB
+
+        Svc_LB -- "Équilibre la charge vers le port cible d'un Pod - 8080" --> PodA
+        Svc_LB -- " " --> PodB
+    end
+    
+    LB -- "Redirige le trafic vers un des nœuds sur son NodePort - 30080" --> Node1
+    LB -- " " --> Node2
+
+    %% Styles pour la clarté
+    style Utilisateur fill:#d5e8d4,stroke:#333,stroke-width:2px,color:#000000
+    style LB fill:#dae8fc,stroke:#6c8ebf,stroke-width:2px,color:#000000
+    style Svc_LB fill:#cde4ff,stroke:#333,stroke-width:2px,color:#000000
+
+</div>
+<p>Voilà un exemple de définition simple d&rsquo;un service lorsque on veut exposer une application en NodePort :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Service</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">mon-service-nodeport</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">NodePort</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">selector</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">app</span>: <span style="color:#ae81ff">mon-application</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">port</span>: <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">targetPort</span>: <span style="color:#ae81ff">8080</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">nodePort</span>: <span style="color:#ae81ff">30080</span>
+</span></span></code></pre></div><p>Dans cet exemple, deux éléments sont importants :</p>
+<p>Le sélecteur <code>app: mon-application</code> qui permet de lier le service aux pods qui ont cette étiquette. Et le port <code>nodePort: 30080</code> qui est le port sur lequel le service sera exposé sur chaque nœud du cluster.</p>
+<p>Maintenant lorsque vous allez faire une requête vers l&rsquo;un des nœuds du cluster sur le port 30080, la requête sera redirigée vers le service, qui lui redirigera la requête vers les pods qui ont l&rsquo;étiquette <code>app: mon-application</code> sur le port cible 8080.</p>
+<p>Si vous avez bien compris, vous allez me dire pourquoi on a besoin d&rsquo;un service LoadBalancer si on a déjà un service NodePort ?</p>
+<p>C&rsquo;est une très bonne question, la réponse est que le service LoadBalancer offre des fonctionnalités supplémentaires qui ne sont pas disponibles avec un service NodePort. Par exemple, un service LoadBalancer fournit une adresse IP externe stable, car un nœud peut changer d&rsquo;adresse IP si jamais on le supprime ou le remplace. Cela permet d&rsquo;avoir une interface stable pour mettre nos entrées DNS, et de ne pas avoir à se soucier des changements d&rsquo;adresse IP des nœuds du cluster.</p>
+<h2 id="et-metallb-dans-tout-ça-">Et MetalLB dans tout ça ?</h2>
+<p>Les loadBalancers marchent super bien dans le cloud, mais dans un cluster Kubernetes qu&rsquo;on héberge nous-mêmes en bare-metal (ou VM&rsquo;s) on n&rsquo;a pas de load balancer, on n&rsquo;a pas cette couche logicielle qui va nous attribuer une adresse IP externe stable. C&rsquo;est là où MetalLB entre en jeu.</p>
+<p>MetalLB est une implémentation de load balancer pour les clusters Kubernetes bare-metal. Il permet d&rsquo;attribuer des adresses IP externes aux services de type LoadBalancer, en utilisant des protocoles de routage standard comme BGP ou ARP. Cela permet d&rsquo;exposer facilement les services Kubernetes au monde extérieur, tout en conservant la flexibilité et la scalabilité de Kubernetes.</p>
+<p>MetalLB fonctionne en deux modes principaux :</p>
+<p>Layer 2 mode : Dans ce mode, MetalLB utilise le protocole ARP pour annoncer les adresses IP externes aux nœuds du cluster. Car comme vous savez, dans un réseau local, les adresses IP sont résolues en adresses MAC pour pouvoir acheminer les paquets.</p>
+<p>Donc dans chaque nœud du cluster, on va avoir un genre d&rsquo;agent (speaker) MetalLB qui va envoyer des annonces ARP gratuites pour les adresses IP externes qu&rsquo;il gère. Cela permet aux routeurs ou autres clients de savoir que ces adresses IP sont disponibles sur le réseau local et comme quoi il y a une machine qui répondra à ces adresses IP.</p>
+<p><img src="/images/k8s/metallb/schem.png" alt="Schema explicatif de MetalLB"></p>
+<p>Dans ce schéma, on voit un nouveau composant, le Kube-Proxy. C&rsquo;est un composant de Kubernetes qui est responsable de la gestion du trafic entrant et sortant des services. Il va rediriger le trafic vers les pods qui sont en train de tourner dans le cluster.</p>
+<p>Donc avec MetalLB, on donne à un nœud du cluster la capacité d&rsquo;annoncer une adresse IP externe. Et donc si vous êtes des magiciens du réseau, vous vous rendez vite compte de la limitation de ce mode. Car vous dépendez de la bande passante d&rsquo;un seul et unique nœud du cluster. Donc si vous avez un gros trafic, vous allez vite saturer la bande passante de ce nœud&hellip;</p>
+<p>C&rsquo;est une limitation connue par MetalLB, et qui peut poser des problèmes de performance si vous avez beaucoup de trafic entrant sur votre service. Mais pour la plupart des cas d&rsquo;utilisation, cela fonctionne très bien.</p>
+<p>BGP mode : Dans ce mode, MetalLB utilise le protocole BGP pour annoncer les adresses IP externes aux routeurs du réseau. Cela permet de distribuer la charge entre plusieurs nœuds du cluster, car chaque nœud peut annoncer une adresse IP externe différente. Cela permet également de gérer des adresses IP externes qui ne sont pas sur le même sous-réseau que les nœuds du cluster.</p>
+<p>Nous dans cet article, on va se concentrer sur le mode Layer 2, car c&rsquo;est le plus simple à mettre en place et à comprendre. Mais si vous voulez en savoir plus sur le mode BGP, je vous invite à consulter la <a href="https://metallb.universe.tf/configuration/">documentation de MetalLB</a>.</p>
+<h2 id="installation-de-metallb">Installation de MetalLB</h2>
+<p><img src="/images/k8s/metallb/0_4WkH-pktvEttw65u.png" alt="Meme deux"></p>
+<p>Pour installer MetalLB, vous pouvez suivre ces étapes :</p>
+<ol>
+<li><strong>Appliquer les manifests de MetalLB</strong> :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.15.2/config/manifests/metallb-native.yaml
+</span></span></code></pre></div><ol start="2">
+<li><strong>Configurer MetalLB</strong> :
+Vous devez créer un ConfigMap pour configurer MetalLB. Voici un exemple de configuration en mode Layer 2 :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">metallb.io/v1beta1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">IPAddressPool</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">first-pool</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">metallb-system</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">addresses</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">192.168.100.40-192.168.100.50</span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">metallb.io/v1beta1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">L2Advertisement</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">example</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">metallb-system</span>
+</span></span></code></pre></div><p>Il faut bien vérifier que les adresses IP que vous avez spécifiées dans la configuration sont disponibles sur votre réseau.</p>
+<p>Enregistrez ce fichier sous le nom <code>metallb-config.yaml</code> et appliquez-le avec la commande suivante :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl apply -f metallb-config.yaml
+</span></span></code></pre></div><ol start="3">
+<li><strong>Vérifier l&rsquo;installation</strong> :
+Vous pouvez vérifier que MetalLB est bien installé et fonctionne en exécutant la commande suivante :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get pods -n metallb-system
+</span></span></code></pre></div><p>Vous devriez voir les pods <code>controller</code> et <code>speaker</code> de MetalLB en cours d&rsquo;exécution.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mohamad@Mohamad-PC:~$ kubectl get pods -n metallb-system
+</span></span><span style="display:flex;"><span>NAME                          READY   STATUS    RESTARTS   AGE
+</span></span><span style="display:flex;"><span>controller-58fdf44d87-4f7fm   1/1     Running   <span style="color:#ae81ff">0</span>          38h
+</span></span><span style="display:flex;"><span>speaker-46pkk                 1/1     Running   <span style="color:#ae81ff">0</span>          38h
+</span></span><span style="display:flex;"><span>speaker-kc4hg                 1/1     Running   <span style="color:#ae81ff">0</span>          38h
+</span></span><span style="display:flex;"><span>speaker-n9xs2                 1/1     Running   <span style="color:#ae81ff">0</span>          38h
+</span></span></code></pre></div><p>Maintenant on va tester MetalLB en créant un service de type LoadBalancer. Mais avant ça, on va déployer une application simple pour pouvoir l&rsquo;exposer.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app1-deploy</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app1-deploy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">tier1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">selector</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">matchLabels</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">template</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">ealen/echo-server</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Service</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">loadbalancer-app1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">LoadBalancer</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">selector</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">port</span>: <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">targetPort</span>: <span style="color:#ae81ff">80</span>
+</span></span></code></pre></div><p>Donc cette application est un simple serveur HTTP qui va répondre aux requêtes HTTP sur le port 80. On va l&rsquo;exposer en tant que service de type LoadBalancer, ce qui va permettre à MetalLB de lui attribuer une adresse IP externe.</p>
+<p>Pour appliquer cette configuration, enregistrez-la dans un fichier <code>app1.yaml</code> et exécutez la commande suivante :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl apply -f app1.yaml
+</span></span></code></pre></div><p>Vous pouvez vérifier que le service a bien été créé et que MetalLB lui a attribué une adresse IP externe en exécutant la commande suivante :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># kubectl get svc loadbalancer-app1</span>
+</span></span><span style="display:flex;"><span>NAME                TYPE           CLUSTER-IP     EXTERNAL-IP    PORT<span style="color:#f92672">(</span>S<span style="color:#f92672">)</span>        AGE
+</span></span><span style="display:flex;"><span>loadbalancer-app1   LoadBalancer   10.43.51.195   192.168.9.41   80:32370/TCP   26h
+</span></span></code></pre></div><p>Et si on fait un curl sur l&rsquo;adresse IP :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl http://192.168.9.41
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># curl http://192.168.9.41</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>StatusCode        : <span style="color:#ae81ff">200</span>
+</span></span><span style="display:flex;"><span>StatusDescription : OK
+</span></span><span style="display:flex;"><span>Content           : <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;host&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;hostname&#34;</span>:<span style="color:#e6db74">&#34;192.168.9.41&#34;</span>,<span style="color:#e6db74">&#34;ip&#34;</span>:<span style="color:#e6db74">&#34;::ffff:10.42.0.0&#34;</span>,<span style="color:#e6db74">&#34;ips&#34;</span>:<span style="color:#f92672">[]}</span>,<span style="color:#e6db74">&#34;http&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;method&#34;</span>:<span style="color:#e6db74">&#34;GET&#34;</span>,<span style="color:#e6db74">&#34;baseUr
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    l&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#e6db74">&#34;originalUrl&#34;</span>:<span style="color:#e6db74">&#34;/&#34;</span>,<span style="color:#e6db74">&#34;protocol&#34;</span>:<span style="color:#e6db74">&#34;http&#34;</span><span style="color:#f92672">}</span>,<span style="color:#e6db74">&#34;request&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;params&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;0&#34;</span>:<span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">}</span>,<span style="color:#e6db74">&#34;query&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;cookies&#34;</span>:<span style="color:#f92672">{}</span>,<span style="color:#e6db74">&#34;b
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    od...
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">RawContent        : HTTP/1.1 200 OK
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    Connection: keep-alive
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    Keep-Alive: timeout=5
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    Content-Length: 1200
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    Content-Type: application/json; charset=utf-8
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    Date: Thu, 10 Jul 2025 09:39:45 GMT
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    ETag: W/&#34;</span>4b0-T+p8x1RXYDP+WvXU2...
+</span></span><span style="display:flex;"><span>Forms             : <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>Headers           : <span style="color:#f92672">{[</span>Connection, keep-alive<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>Keep-Alive, timeout<span style="color:#f92672">=</span>5<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>Content-Length, 1200<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>Content-Type,
+</span></span><span style="display:flex;"><span>                    application/json; charset<span style="color:#f92672">=</span>utf-8<span style="color:#f92672">]</span>...<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>Images            : <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>InputFields       : <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>Links             : <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>ParsedHtml        : mshtml.HTMLDocumentClass
+</span></span><span style="display:flex;"><span>RawContentLength  : <span style="color:#ae81ff">1200</span>
+</span></span></code></pre></div><p><img src="/images/k8s/metallb/yes.gif" alt="Lets go GIF"></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>MetalLB est une solution puissante pour exposer des services Kubernetes dans un environnement bare-metal. Il permet de gérer facilement les adresses IP externes et d&rsquo;exposer les services au monde extérieur, tout en conservant la flexibilité et la scalabilité de Kubernetes.</p>
+<p>Dans cet article, nous avons vu comment fonctionne le réseau dans Kubernetes, comment les services permettent d&rsquo;exposer les applications, et comment MetalLB peut être utilisé pour gérer les adresses IP externes dans un cluster bare-metal.</p>
+<p>Si vous avez des questions ou des suggestions, n&rsquo;hésitez pas à m&rsquo;envoyer un message. Et sur ce, je vous dis à la prochaine !</p>
+
+        </p>
+        
+        
+            <script
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+></script>
+<script>
+  var config = {
+    startOnLoad: true,
+    theme:'dark',
+    align:'center',
+  };
+  mermaid.initialize(config);
+</script>
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/docs/katacontainers/kata-containers/">
+            &#8592;
+            :
+            Kata Containers : La sécurité des VM avec la vitesse des conteneurs
+        </a>
+    </p>
+    <p class="prev-post-date">
+        juillet 6, 2025
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/k8s/ingress/wingress/">
+            :
+            Introduction à Ingress dans Kubernetes
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            août 5, 2025
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>
