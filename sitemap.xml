@@ -3,7 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://makhal.fr/tags/devops/</loc>
-    <lastmod>2025-08-24T08:05:49+01:00</lastmod>
+    <lastmod>2025-09-01T08:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/docker/</loc>
+    <lastmod>2025-09-01T08:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/kubernetes/</loc>
+    <lastmod>2025-09-01T08:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/posts/k8s/k8s-os/k8s-os/</loc>
+    <lastmod>2025-09-01T08:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/</loc>
+    <lastmod>2025-09-01T08:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/posts/</loc>
+    <lastmod>2025-09-01T08:05:49+01:00</lastmod>
+  </url><url>
+    <loc>https://makhal.fr/tags/</loc>
+    <lastmod>2025-09-01T08:05:49+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/tags/k3s/</loc>
     <lastmod>2025-08-24T08:05:49+01:00</lastmod>
@@ -13,21 +31,6 @@
   </url><url>
     <loc>https://makhal.fr/posts/k8s/cncf/k3sup/</loc>
     <lastmod>2025-08-24T08:05:49+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/kubernetes/</loc>
-    <lastmod>2025-08-24T08:05:49+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/</loc>
-    <lastmod>2025-08-24T08:05:49+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/posts/</loc>
-    <lastmod>2025-08-24T08:05:49+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/</loc>
-    <lastmod>2025-08-24T08:05:49+01:00</lastmod>
-  </url><url>
-    <loc>https://makhal.fr/tags/docker/</loc>
-    <lastmod>2025-08-06T08:05:49+01:00</lastmod>
   </url><url>
     <loc>https://makhal.fr/posts/k8s/cncf/k8s-ne-suffit-pas/</loc>
     <lastmod>2025-08-06T08:05:49+01:00</lastmod>

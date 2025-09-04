@@ -6,8 +6,15 @@
     <description>Recent content in Posts on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sun, 24 Aug 2025 08:05:49 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 01 Sep 2025 08:05:49 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>L&#39;explication que j&#39;aurais aimé avoir sur Kubernetes</title>
+      <link>https://makhal.fr/posts/k8s/k8s-os/k8s-os/</link>
+      <pubDate>Mon, 01 Sep 2025 08:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/posts/k8s/k8s-os/k8s-os/</guid>
+      <description>Expliquer k8s c&amp;rsquo;est complexe, et ça prend du temps. Et si on prenait un autre angle ?</description>
+    </item>
     <item>
       <title>K3sup: k3s tout simplement</title>
       <link>https://makhal.fr/posts/k8s/cncf/k3sup/</link>
