@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Monitoring pour les nuls</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, sysadmin, Infra, secops, devops'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/sysadmin/monitoring/intro-monitoring/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Monitoring pour les nuls">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Monitoring pour les nuls">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/sysadmin/monitoring/intro-monitoring/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/sysadmin/monitoring/intro-monitoring/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/sysadmin/monitoring/intro-monitoring/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.30b2395f3ff8c77f92f8f803732c95cd644f831ff0f058f07e1314dc79d8f3de.js" integrity="sha256-MLI5Xz/4x3&#43;S&#43;PgDcyyVzWRPgx/w8FjwfhMU3HnY894="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Monitoring pour les nuls</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            septembre 27, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/sysadmin">sysadmin</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/infra">Infra</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/secops">secops</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/devops">devops</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p>Ces derniers temps, j&rsquo;ai dû déployer en production quelques applications plutôt critiques.</p>
+<p>Je faisais tout le nécessaire, j&rsquo;optimisais les configurations, je testais en local, je faisais même des optimisations de performance pour certains services anciens. Et quand je déployais, j&rsquo;étais confiant de ce que j&rsquo;avais fait.</p>
+<p>Mais une fois en production, je me rendais compte qu&rsquo;il fallait que je sache ce qui se passe à l&rsquo;intérieur de mes applications. Est-ce que tout fonctionne bien ? Est-ce que les utilisateurs n&rsquo;ont pas de problème ? Est-ce que les performances sont bonnes ? Est-ce que le système est stable ?</p>
+<p>Tant de questions auxquelles je ne pouvais pas répondre. En tout cas pas sans me connecter à chaque serveur, regarder les logs, faire des tests manuels, etc. C&rsquo;est long et pas scalable.</p>
+<p>Vous allez me dire, oui mais pourquoi tu n&rsquo;as pas mis un dashboard Grafana avec Prometheus avec un alert manager&hellip; Déjà on va aller doucement, c&rsquo;est ce que j&rsquo;ai fait, et je l&rsquo;ai fait plusieurs fois dans ma vie.</p>
+<p>Mais je me suis rendu compte que je n&rsquo;avais jamais fait d&rsquo;article sur mon blog pour expliquer ce qu&rsquo;est le monitoring, ce concept si important pour tout sysadmin, devops qui se respecte.</p>
+<p>Dans cet article on va voir :</p>
+<ul>
+<li>C&rsquo;est quoi le monitoring ?</li>
+<li>Pourquoi est-ce indispensable ?</li>
+<li>Quels outils utiliser pour débuter ?</li>
+</ul>
+<p>Accrochez vos ceintures, car vous allez apprendre des choses intéressantes.</p>
+<h2 id="cest-quoi-le-monitoring-">C&rsquo;est quoi le monitoring ?</h2>
+<p><img src="/images/sysadmin/monitoring/giphy.gif" alt="Nasa monitoring GIF"></p>
+<p>Comme dans cette image, on peut s&rsquo;imaginer le monitoring comme une salle de contrôle, où on peut voir tout ce qui se passe dans nos différents systèmes (serveurs, applications, réseaux&hellip;).</p>
+<p>Tout simplement, le monitoring c&rsquo;est l&rsquo;art de collecter, analyser et visualiser des données en temps réel sur l&rsquo;état de l&rsquo;ensemble de nos systèmes d&rsquo;information.</p>
+<p>En ayant ça en tête, on peut définir le monitoring comme un processus continu qui nous permet de surveiller la performance, la disponibilité et la santé de nos infrastructures informatiques. Par exemple pour un serveur web, on peut monitorer :</p>
+<ul>
+<li>Le taux d&rsquo;utilisation du CPU</li>
+<li>La mémoire utilisée</li>
+<li>Le taux de requêtes réussies</li>
+<li>Le temps de réponse</li>
+<li>&hellip;</li>
+</ul>
+<p>Tellement de petits paramètres, que c&rsquo;est très compliqué de faire cela manuellement.</p>
+<p>Le monitoring nous permet de détecter rapidement les anomalies, les pannes potentielles et les dégradations de performance avant qu&rsquo;elles n&rsquo;affectent nos utilisateurs finaux. C&rsquo;est un peu comme avoir un système d&rsquo;alarme pour notre infrastructure informatique.</p>
+<p>C&rsquo;est pour ça que des fois vous allez entendre monitoring+alerting. Car le monitoring c&rsquo;est bien, mais si on ne fait rien avec les données qu&rsquo;on collecte, ça ne sert à rien. Donc l&rsquo;alerting c&rsquo;est l&rsquo;étape suivante, où on va définir des règles pour nous alerter en cas de problème. Par exemple si le taux d&rsquo;utilisation du CPU dépasse 90% pendant plus de 5 minutes, on peut envoyer une alerte par email, SMS ou Teams.</p>
+<h2 id="pourquoi-est-ce-indispensable-">Pourquoi est-ce indispensable ?</h2>
+<p><img src="/images/sysadmin/monitoring/server-is-fine-burn.gif" alt="datacenter on fire, spongebob souffle"></p>
+<p>Si jusqu&rsquo;à maintenant vous n&rsquo;avez pas été convaincu de l&rsquo;importance du monitoring, laissez-moi vous donner quelques exemples concrets, car sinon vous allez finir comme Bob l&rsquo;éponge dans cette image.</p>
+<h3 id="1-détection-précoce-des-problèmes">1. Détection précoce des problèmes</h3>
+<p>Si vous aimez les maths, les probabilités, vous savez que plus on a de systèmes, plus la probabilité qu&rsquo;un système tombe en panne augmente. C&rsquo;est pour cela que lorsqu&rsquo;on conçoit un système distribué, le nombre de nœuds doit toujours être impair. Car si on a 2 nœuds, et qu&rsquo;un tombe en panne, on ne peut plus assurer la disponibilité du service.</p>
+<p>Le monitoring nous permet de détecter rapidement les différentes anomalies, les pannes potentielles et les dégradations de performance avant qu&rsquo;elles n&rsquo;affectent nos utilisateurs finaux.</p>
+<p>Il y a un article très bon de la part d&rsquo;Anthropic, les créateurs de Claude AI, qu&rsquo;à un moment, ils ont commencé à voir dans leur système de monitoring, que la latence de leur API augmentait. Et que cela pouvait causer des problèmes à leurs utilisateurs. Grâce au monitoring, ils ont pu détecter le problème avant que ça n&rsquo;affecte d&rsquo;autres utilisateurs d&rsquo;une manière plus globale : <a href="https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues">Lien pour l&rsquo;article</a>.</p>
+<h3 id="2-amélioration-des-performances">2. Amélioration des performances</h3>
+<p>Le monitoring nous permet d&rsquo;identifier les goulets d&rsquo;étranglement, les ressources sous-utilisées et les opportunités d&rsquo;optimisation. Par exemple si on voit que la mémoire d&rsquo;un serveur est toujours à 100%, on peut se dire qu&rsquo;il faut ajouter plus de mémoire, ou optimiser l&rsquo;application pour qu&rsquo;elle utilise moins de mémoire.</p>
+<p>Donc juste en ayant des yeux sur les performances de nos systèmes, on peut faire des optimisations qui vont avoir un impact positif sur l&rsquo;expérience utilisateur.</p>
+<h3 id="3-analyse-des-tendances">3. Analyse des tendances</h3>
+<p>Le monitoring nous permet de collecter des données sur une période de temps, et d&rsquo;analyser les tendances. Par exemple si on voit que le taux d&rsquo;utilisation du CPU augmente de plus en plus chaque jour, on peut se dire qu&rsquo;il faut ajouter plus de serveurs pour répondre à la demande future.</p>
+<p>Ou même si on se rend compte que les weekends, le taux d&rsquo;utilisation est plus bas, on peut baisser le nombre d&rsquo;instances pour économiser des ressources (money !!).</p>
+<p>Bref, le monitoring nous permet de prendre des décisions éclairées basées sur des données réelles, c&rsquo;est comme avoir un business analyste qui travaille pour nous 24/7 :)</p>
+<h2 id="quels-outils-utiliser-pour-débuter-">Quels outils utiliser pour débuter ?</h2>
+<p>Il y a tellement d&rsquo;outils de monitoring, que c&rsquo;est difficile de faire un choix. Mais je vais vous donner quelques outils populaires, open source et faciles à utiliser pour commencer.</p>
+<h3 id="1-prometheus--grafana">1. Prometheus + Grafana</h3>
+<p>C&rsquo;est la combinaison la plus populaire dans le monde du monitoring open source. Prometheus est un système de collecte de données, qui va aller chercher les données depuis des endpoints exposés par nos applications (on appelle ça des exporters).</p>
+<p>Grafana lui, c&rsquo;est un outil de visualisation, qui va nous permettre de créer des dashboards magnifiques pour voir l&rsquo;état de nos systèmes en temps réel.</p>
+<p>Voici un exemple de dashboard Grafana :</p>
+<p><img src="/images/sysadmin/monitoring/grafana.png" alt="Grafana dashboard"></p>
+<p>C&rsquo;est très facile à installer, il y a plein de tutos en ligne, et la communauté est très active.</p>
+<h3 id="2-zabbix">2. Zabbix</h3>
+<p>Là on rentre dans le monitoring plus traditionnel. Zabbix est une solution de monitoring tout-en-un, qui nous permet de monitorer des serveurs, des applications, des réseaux, etc. Il a une interface web très complète, et il est aussi open source.</p>
+<p>Zabbix est un peu plus complexe à configurer que Prometheus + Grafana, mais il offre beaucoup de fonctionnalités intéressantes, comme l&rsquo;auto-découverte des devices, le monitoring distribué, etc.</p>
+<p>C&rsquo;est très complet, et vachement utilisé dans tout type d&rsquo;entreprise.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Le monitoring c&rsquo;est un sujet vaste et complexe, mais aussi passionnant. C&rsquo;est un outil indispensable pour tout sysadmin, devops qui se respecte.</p>
+<p>J&rsquo;espère que cet article vous a donné envie de vous intéresser au monitoring, et de commencer à l&rsquo;implémenter dans vos projets. Si vous avez des questions, n&rsquo;hésitez pas à me les poser directement sur LinkedIn. Je serais ravi de vous répondre.</p>
+<p>Je vous remercie d&rsquo;avoir lu cet article jusqu&rsquo;au bout. À la prochaine !</p>
+
+        </p>
+        
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/other/lorawan/">
+            &#8592;
+            :
+            LoRaWAN expliqué simplement : le réseau IoT des Smart Cities
+        </a>
+    </p>
+    <p class="prev-post-date">
+        septembre 15, 2025
+    </p>
+</div>
+
+
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

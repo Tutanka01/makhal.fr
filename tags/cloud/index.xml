@@ -6,8 +6,15 @@
     <description>Recent content in Cloud on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sun, 06 Jul 2025 08:10:45 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 07 Sep 2025 08:40:45 +0200</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sommes-nous devenus accros au cloud ?</title>
+      <link>https://makhal.fr/posts/docs/reflexion/addictes_au_cloud/</link>
+      <pubDate>Sun, 07 Sep 2025 08:40:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/docs/reflexion/addictes_au_cloud/</guid>
+      <description>Accros ou dépendants du cloud ? Entre innovation, coûts et risques, où placer la limite ?</description>
+    </item>
     <item>
       <title>Kata Containers : La sécurité des VM avec la vitesse des conteneurs</title>
       <link>https://makhal.fr/posts/docs/katacontainers/kata-containers/</link>

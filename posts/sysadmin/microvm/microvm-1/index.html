@@ -48,7 +48,7 @@
     <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
 
     
-    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    <script src="/js/bundle.min.30b2395f3ff8c77f92f8f803732c95cd644f831ff0f058f07e1314dc79d8f3de.js" integrity="sha256-MLI5Xz/4x3&#43;S&#43;PgDcyyVzWRPgx/w8FjwfhMU3HnY894="></script>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
     <script>
@@ -223,8 +223,7 @@ C’est exactement ce que les microVMs promettent.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
 </span></span><span style="display:flex;"><span>sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils cpu-checker
 </span></span></code></pre></div><blockquote>
-<p>(Note : tous ces paquets ne sont pas strictement nécessaires pour Firecracker seul, notamment <code>libvirt-*</code>. <code>qemu-kvm</code> peut être utile pour les outils ou pour vérifier KVM. L&rsquo;essentiel est que le module KVM soit chargé et que l&rsquo;utilisateur exécutant Firecracker ait les droits sur <code>/dev/kvm</code>).</p>
-</blockquote>
+<p>(Note : tous ces paquets ne sont pas strictement nécessaires pour Firecracker seul, notamment <code>libvirt-*</code>. <code>qemu-kvm</code> peut être utile pour les outils ou pour vérifier KVM. L&rsquo;essentiel est que le module KVM soit chargé et que l&rsquo;utilisateur exécutant Firecracker ait les droits sur <code>/dev/kvm</code>).</p></blockquote>
 <p>On peut vérifier que le module KVM est bien chargé et que notre utilisateur a les permissions nécessaires (il doit faire partie du groupe <code>kvm</code>) :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Vérifie si KVM est supporté et activé</span>
 </span></span><span style="display:flex;"><span>sudo kvm-ok 
@@ -285,8 +284,7 @@ C’est exactement ce que les microVMs promettent.</p>
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        \&#34;is_read_only\&#34;: false
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }&#34;</span>
 </span></span></code></pre></div><blockquote>
-<p>Script inspiré de celui de <a href="https://une-tasse-de.cafe/blog/firecracker/">Quentin Joly</a>, qui est très bien fait !</p>
-</blockquote>
+<p>Script inspiré de celui de <a href="https://une-tasse-de.cafe/blog/firecracker/">Quentin Joly</a>, qui est très bien fait !</p></blockquote>
 <p>Et enfin, démarrons l&rsquo;instance :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Démarre la microVM</span>
 </span></span><span style="display:flex;"><span>curl --unix-socket /tmp/firecracker.socket -i <span style="color:#ae81ff">\

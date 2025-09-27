@@ -6,8 +6,29 @@
     <description>Recent content in Posts on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Mon, 01 Sep 2025 08:05:49 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 27 Sep 2025 08:10:45 +0200</lastBuildDate>
     <atom:link href="https://makhal.fr/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monitoring pour les nuls</title>
+      <link>https://makhal.fr/posts/sysadmin/monitoring/intro-monitoring/</link>
+      <pubDate>Sat, 27 Sep 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/sysadmin/monitoring/intro-monitoring/</guid>
+      <description>Ici je vais vous expliquer ce qu&amp;rsquo;est le monitoring, pourquoi c&amp;rsquo;est important et quelques outils pour commencer.</description>
+    </item>
+    <item>
+      <title>LoRaWAN expliqué simplement : le réseau IoT des Smart Cities</title>
+      <link>https://makhal.fr/posts/other/lorawan/</link>
+      <pubDate>Mon, 15 Sep 2025 08:47:49 +0200</pubDate>
+      <guid>https://makhal.fr/posts/other/lorawan/</guid>
+      <description>On découvre ensemble c&amp;rsquo;est quoi le protocole Lora et plus précisément LoraWan, très utilisé dans le monde de l&amp;rsquo;IoT</description>
+    </item>
+    <item>
+      <title>Sommes-nous devenus accros au cloud ?</title>
+      <link>https://makhal.fr/posts/docs/reflexion/addictes_au_cloud/</link>
+      <pubDate>Sun, 07 Sep 2025 08:40:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/docs/reflexion/addictes_au_cloud/</guid>
+      <description>Accros ou dépendants du cloud ? Entre innovation, coûts et risques, où placer la limite ?</description>
+    </item>
     <item>
       <title>L&#39;explication que j&#39;aurais aimé avoir sur Kubernetes</title>
       <link>https://makhal.fr/posts/k8s/k8s-os/k8s-os/</link>
@@ -252,6 +273,13 @@
       <pubDate>Wed, 07 Aug 2024 20:05:49 +0100</pubDate>
       <guid>https://makhal.fr/posts/cyber/decouverte_siem/</guid>
       <description>Dans une (encore) nouvelle serie de posts, nous allons decouvir le monde extraordianaire des SIEM</description>
+    </item>
+    <item>
+      <title>Comment monitorer un cluster Kubernetes ?</title>
+      <link>https://makhal.fr/posts/k8s/monitoring/monitoring-k8s/</link>
+      <pubDate>Sun, 19 May 2024 12:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/posts/k8s/monitoring/monitoring-k8s/</guid>
+      <description>Dans ce post, je vous explique comment mettre en place un système de monitoring pour votre cluster Kubernetes avec Prometheus et Grafana.</description>
     </item>
     <item>
       <title>Kubernetes Partie 1</title>

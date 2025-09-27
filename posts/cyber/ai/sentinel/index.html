@@ -48,7 +48,7 @@
     <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
 
     
-    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    <script src="/js/bundle.min.30b2395f3ff8c77f92f8f803732c95cd644f831ff0f058f07e1314dc79d8f3de.js" integrity="sha256-MLI5Xz/4x3&#43;S&#43;PgDcyyVzWRPgx/w8FjwfhMU3HnY894="></script>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
     <script>
@@ -178,8 +178,7 @@
             <p>Aujourd&rsquo;hui, je vais vous donner un retour d&rsquo;expérience complet sur un projet qui me tient à cœur : <strong>SentinelBox</strong> (le nom est mauvais oui, mais j&rsquo;ai du en trouver un&hellip;). Ici, je vais créer de A à Z un modèle d&rsquo;IA pour détecter les anomalies réseau sur un cluster Proxmox.</p>
 <p>Ce sera un article long et technique, mais je vais quand meme essayer de faire quelque chose de ludique. On va passer par la mise en place de l&rsquo;infrastructure Proxmox jusqu&rsquo;à la création du modèle d&rsquo;IA, et même sa mise en production avec Prometheus et Grafana. Je vous promets, ça va être une aventure où j&rsquo;apprendrai autant que vous, enfin je l&rsquo;espère en tout cas. Bon, assez de blabla, c&rsquo;est parti !</p>
 <blockquote>
-<p><strong>Disclaimer</strong> : Je ne suis pas un expert en IA, vraiment pas. Je suis juste un simple étudiant avec des idées, qui aime bien les partager. Si vous voyez des erreurs ou des points à améliorer, n’hésitez pas à me le dire, je suis là pour apprendre.</p>
-</blockquote>
+<p><strong>Disclaimer</strong> : Je ne suis pas un expert en IA, vraiment pas. Je suis juste un simple étudiant avec des idées, qui aime bien les partager. Si vous voyez des erreurs ou des points à améliorer, n’hésitez pas à me le dire, je suis là pour apprendre.</p></blockquote>
 <h2 id="introduction"><strong>Introduction</strong></h2>
 <p>Ces dernières années, avec l’émergence de technologies comme ChatGPT, Gemini et d’autres, j’ai commencé à m’intéresser aux IA, surtout au côté <em><strong>LLM</strong></em> (Large Language Model – ce qui permet de générer du texte en fonction des inputs utilisateurs) et au <em><strong>NLP</strong></em> (Natural Language Processing). J’ai donc suivi quelques cours sur YouTube, lu des articles sur Medium et ailleurs et meme des theses sur <em><strong>arxive</strong></em>. Et franchement, c’est super intéressant.</p>
 <p>Même si je ne pense pas faire de l’IA mon métier, je me suis senti obligé d’en apprendre davantage. Dans cet article, je vais vous montrer comment j’ai réussi à créer un modèle d’IA pour détecter des anomalies réseau sur un cluster Proxmox. Ce modèle est assez modeste, entraîné sur un dataset que j’ai trouvé sur internet (je vais aussi vous expliquer comment créer votre propre dataset si besoin).</p>
@@ -497,8 +496,7 @@ graph LR
 </span></span><span style="display:flex;"><span>sentinelbox-prometheus-1           prom/prometheus:latest      <span style="color:#e6db74">&#34;/bin/prometheus --c…&#34;</span>   prometheus           <span style="color:#ae81ff">22</span> minutes ago   Up <span style="color:#ae81ff">21</span> minutes   0.0.0.0:9090-&gt;9090/tcp, :::9090-&gt;9090/tcp
 </span></span><span style="display:flex;"><span>sentinelbox-tensorflow-serving-1   tensorflow/serving:latest   <span style="color:#e6db74">&#34;/usr/bin/tf_serving…&#34;</span>   tensorflow-serving   <span style="color:#ae81ff">22</span> minutes ago   Up <span style="color:#ae81ff">21</span> minutes   8500/tcp, 0.0.0.0:8501-&gt;8501/tcp, :::8501-&gt;8501/tcp
 </span></span></code></pre></div><blockquote>
-<p>Attention ! Pour le container tensorflow-serving j&rsquo;ai du changer le type de CPU par host sur proxmox, sinon le docker refusait de demarrer !</p>
-</blockquote>
+<p>Attention ! Pour le container tensorflow-serving j&rsquo;ai du changer le type de CPU par host sur proxmox, sinon le docker refusait de demarrer !</p></blockquote>
 <p>Cette commande vous donnera l&rsquo;état des containers lancés par Docker Compose.  Vous devriez voir <code>tensorflow-serving</code>, <code>prometheus</code> et <code>grafana</code> avec le statut &ldquo;Up&rdquo; ou &ldquo;running&rdquo;.  Si jamais un container a un problème, son statut vous l&rsquo;indiquera, et vous pourrez examiner les logs avec la commande <code>docker compose logs &lt;nom_du_service&gt;</code> (par exemple, <code>docker compose logs tensorflow-serving</code>).</p>
 <h2 id="test-du-modele">Test du modele</h2>
 <p>Maintenant, il nous reste encore une chose à faire avant d’aller sur Grafana : <em><strong>tester</strong></em> le modèle.</p>

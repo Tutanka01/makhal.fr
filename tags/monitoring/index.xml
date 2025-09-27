@@ -15,5 +15,12 @@
       <guid>https://makhal.fr/posts/sysadmin/observabilite/intro-observabilite/</guid>
       <description>On oublie souvent de parler de l&amp;rsquo;observabilité, ici on va faire un petit tour d&amp;rsquo;horizon de ce que c&amp;rsquo;est et pourquoi c&amp;rsquo;est important.</description>
     </item>
+    <item>
+      <title>Comment monitorer un cluster Kubernetes ?</title>
+      <link>https://makhal.fr/posts/k8s/monitoring/monitoring-k8s/</link>
+      <pubDate>Sun, 19 May 2024 12:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/posts/k8s/monitoring/monitoring-k8s/</guid>
+      <description>Dans ce post, je vous explique comment mettre en place un système de monitoring pour votre cluster Kubernetes avec Prometheus et Grafana.</description>
+    </item>
   </channel>
 </rss>

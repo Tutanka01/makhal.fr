@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>LoRaWAN expliqué simplement : le réseau IoT des Smart Cities</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, makhal, cyber, SIEM, BUT R&amp;T, IOT, LoraWan'>
+
+    <meta property="og:url" content="https://makhal.fr/posts/other/lorawan/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="LoRaWAN expliqué simplement : le réseau IoT des Smart Cities">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://makhal.fr/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://makhal.fr/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LoRaWAN expliqué simplement : le réseau IoT des Smart Cities">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="https://makhal.fr/posts/other/lorawan/">
+    <meta property="twitter:url" content="https://makhal.fr/posts/other/lorawan/">
+    <meta name="twitter:image" content="https://makhal.fr/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://makhal.fr/posts/other/lorawan/" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.30b2395f3ff8c77f92f8f803732c95cd644f831ff0f058f07e1314dc79d8f3de.js" integrity="sha256-MLI5Xz/4x3&#43;S&#43;PgDcyyVzWRPgx/w8FjwfhMU3HnY894="></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6QF6WSBEBS');
+    </script>
+    
+    
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+        
+        
+            <div class="avatar">
+                <a href="https://makhal.fr/">
+                    <img src="https://makhal.fr//images/avatar.jpg" alt="avatar" />
+                </a>
+            </div>
+        
+
+        
+        <div class="nav-title">
+            <a class="nav-brand" href="https://makhal.fr/">makhal.fr</a>
+        </div>
+
+        
+        <div class="nav-links">
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/posts/"> Posts </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/tags/"> Tags </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://makhal.fr/pages/about/"> Bio </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                </div>
+            
+                <div class="nav-link">
+                    <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                </div>
+            
+
+            
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">   
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/posts/"> Posts </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/tags/"> Tags </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://makhal.fr/pages/about/"> Bio </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.youtube.com/@makhalX"><span data-feather='youtube'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/in/mohamad-el-akhal-8b8319221/"><span data-feather='linkedin'></span>  </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="https://github.com/tutanka01"><span data-feather='github'></span>  </a>
+                    </li>
+                
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>LoRaWAN expliqué simplement : le réseau IoT des Smart Cities</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            septembre 15, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/iot">IOT</a></li>
+        
+            <li class="post-tag"><a href="https://makhal.fr/tags/lorawan">LoraWan</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p>Le monde de la radio et des IOT, n&rsquo;est pas forcément mon cœur de métier, mais comme j&rsquo;aime bien apprendre des nouvelles choses. Je me suis dit que ça serait pas mal qu&rsquo;on découvre ensemble un des protocoles les plus utilisés dans le monde de l&rsquo;IOT, à savoir Lora et LoraWan.</p>
+<h2 id="pourquoi-liot-dans-nos-villes-">Pourquoi l&rsquo;IoT dans nos villes ?</h2>
+<p>Avant de plonger dans la technique, arrêtons-nous deux minutes sur pourquoi on parle tant d&rsquo;IoT dans les Smart Cities. La réponse est simple : nos villes deviennent de plus en plus complexes à gérer.</p>
+<p>Imaginez devoir gérer l&rsquo;éclairage public de Paris avec ses 300 000 points lumineux, ou encore optimiser la collecte des déchets dans une ville de 100 000 habitants. Sans données en temps réel, c&rsquo;est comme piloter un avion les yeux bandés.</p>
+<p>C&rsquo;est là que l&rsquo;IoT entre en jeu. On va pouvoir mesurer, surveiller et optimiser tout un tas de trucs :</p>
+<ul>
+<li>La qualité de l&rsquo;air en temps réel</li>
+<li>Le niveau de remplissage des poubelles</li>
+<li>L&rsquo;occupation des places de parking</li>
+<li>La consommation d&rsquo;eau des fontaines publiques</li>
+<li>L&rsquo;état des routes et des ponts</li>
+</ul>
+<p>Mais pour que ça marche, il faut une technologie qui puisse :</p>
+<ul>
+<li>Fonctionner pendant des années sans maintenance</li>
+<li>Couvrir de grandes distances (toute la ville quoi)</li>
+<li>Coûter pas cher à déployer</li>
+<li>Être fiable même avec beaucoup d&rsquo;interférences</li>
+</ul>
+<p>Et devinez quoi ? C&rsquo;est exactement ce que propose LoRa/LoRaWAN.</p>
+<h2 id="cest-quoi-lora">C&rsquo;est quoi Lora</h2>
+<p>Selon notre ami Wikipedia :</p>
+<p><img src="/images/other/Lora/definition.png" alt="LoRa (from &ldquo;long range&rdquo;, sometimes abbreviated as &ldquo;LR&rdquo;) is a physical proprietary radio communication technique.[2] It is based on spread spectrum modulation techniques derived from chirp spread spectrum (CSS) technology.[3] It was developed by Cycleo, a company of Grenoble, France, and patented in 2014.[4] In March 2012, Cycleo was acquired by the US company Semtech.[5]"></p>
+<p>En bref, Lora est une technologie de modulation radio, qui va nous permettre d&rsquo;envoyer des données sur une très longue distance, théoriquement jusqu&rsquo;à 380km en ligne droite, mais en pratique on est plus proche des 15km en milieu rural et 5km en milieu urbain, ce qui est déjà énorme.</p>
+<p>Mais le deuxième plus grand avantage de Lora, c&rsquo;est sa faible consommation électrique. On peut faire tourner un capteur Lora sur une simple pile d&rsquo;horloge pendant plusieurs années, ce qui est idéal pour des capteurs IOT qui sont situés dans des endroits difficiles d&rsquo;accès, comme des capteurs de température dans des forêts, ou des capteurs de niveau d&rsquo;eau dans des rivières ou au milieu de la mer. Honnêtement, c&rsquo;est assez impressionnant comment on peut faire des choses avec si peu d&rsquo;énergie.</p>
+<h3 id="et-plus-techniquement-">Et plus techniquement ?</h3>
+<p>Comme cité plus haut, Lora est une &ldquo;simple&rdquo; technologie de modulation radio, qui utilise une technique appelée &ldquo;Chirp Spread Spectrum&rdquo; (CSS). Ce Chirp Spread Spectrum c&rsquo;est la même méthode que les dauphins utilisent pour communiquer entre eux sous l&rsquo;eau, c&rsquo;est à dire qu&rsquo;ils émettent des sons qui varient en fréquence selon le temps, ce qui permet de transmettre des informations sur de longues distances, même dans des environnements bruyants.</p>
+<p><img src="/images/other/Lora/css.png" alt="alt text"></p>
+<p>Si on réfléchit deux minutes on se rend compte que c&rsquo;est une très bonne idée, car en variant la fréquence du signal, on peut éviter les interférences avec d&rsquo;autres signaux radio, et donc augmenter la portée de la communication. Comme le signal est étalé sur une large bande de fréquence, il est moins susceptible d&rsquo;être affecté par le bruit et les interférences, ce qui permet d&rsquo;avoir une communication plus fiable.</p>
+<h3 id="les-fréquences-parlons-en">Les fréquences, parlons-en</h3>
+<p>En Europe, LoRa utilise principalement la bande <strong>868 MHz</strong> (bande ISM libre). C&rsquo;est important de le savoir car cette bande est partagée avec plein d&rsquo;autres applications : télécommandes de garage, systèmes d&rsquo;alarme, etc.</p>
+<p>Du coup, il y a des règles strictes :</p>
+<ul>
+<li><strong>Duty cycle limité à 1%</strong> : votre capteur ne peut émettre que 36 secondes par heure maximum</li>
+<li><strong>Puissance limitée à 14 dBm</strong> (25 mW) pour la plupart des applications</li>
+</ul>
+<p>C&rsquo;est pour ça que LoRa est parfait pour des capteurs qui envoient quelques données de temps en temps, mais complètement inadapté pour du streaming vidéo !</p>
+<h2 id="ok-à-quoi-ça-me-sert-moi-">Ok à quoi ça me sert moi ?</h2>
+<p>Lora est principalement utilisé pour des applications IOT. Pourquoi IOT ?</p>
+<p>Car un défaut de LoRa est que le débit reste faible (il faut compenser d&rsquo;une façon ou d&rsquo;une autre pour avoir une longue portée et une faible consommation), on parle de l&rsquo;ordre de <strong>quelques kbps au maximum</strong>. Pour vous donner une idée :</p>
+<ul>
+<li><strong>SF7</strong> (Spreading Factor 7) : ~5.5 kbps</li>
+<li><strong>SF12</strong> (Spreading Factor 12) : ~250 bps</li>
+</ul>
+<p>Plus le Spreading Factor est élevé, plus la portée augmente, mais plus le débit diminue. C&rsquo;est un compromis permanent dans LoRa.</p>
+<p>Ce débit est largement suffisant pour des capteurs qui envoient des petites quantités de données, comme la température, l&rsquo;humidité, la pression, etc.</p>
+<p>Mais nous des gens de l&rsquo;informatique, on sait que c&rsquo;est pas avec ce &ldquo;truc&rdquo; radio qu&rsquo;on va pouvoir visualiser les données, car si on se rappelle du modèle OSI, là on est en train de parler de la couche physique (couche 1), et pour pouvoir exploiter les données, il faut passer par plusieurs autres couches, comme la couche liaison de données (couche 2) et la couche réseau (couche 3).</p>
+<p>C&rsquo;est là que LoraWan entre en jeu.</p>
+<h2 id="cest-quoi-lorawan">C&rsquo;est quoi LoraWan</h2>
+<p>LoraWan, c&rsquo;est un protocole de communication qui utilise la technologie Lora pour transmettre des données entre des capteurs IOT et des passerelles (gateways) qui sont connectées à internet (ou non). LoraWan définit comment les capteurs et les passerelles communiquent entre eux, comment les données sont structurées, comment la sécurité est gérée, etc.</p>
+<p><img src="/images/other/Lora/lorawan.png" alt="alt text"></p>
+<h3 id="larchitecture-lorawan--qui-fait-quoi-">L&rsquo;architecture LoRaWAN : qui fait quoi ?</h3>
+<p>Pour gérer tout ça on va avoir besoin de plusieurs éléments, et c&rsquo;est important de bien comprendre les rôles de chacun :</p>
+<p><strong>1. Les End-Devices (capteurs LoRa)</strong>
+Ce sont nos petits soldats sur le terrain. Ils mesurent des paramètres physiques (température, humidité, pression, etc.) et envoient ces données via LoRa. Ils sont conçus pour être autonomes pendant des années.</p>
+<p><strong>2. Les Gateways (passerelles LoRa)</strong>
+C&rsquo;est le pont entre le monde LoRa et Internet. Une gateway peut écouter plusieurs milliers de capteurs simultanément sur différents canaux. Elle fait juste du &ldquo;forwarding&rdquo; : elle prend tout ce qu&rsquo;elle reçoit en LoRa et l&rsquo;envoie au Network Server via IP.</p>
+<p><strong>3. Le Network Server (NS)</strong>
+C&rsquo;est le cerveau du réseau. Il gère :</p>
+<ul>
+<li>L&rsquo;authentification des devices</li>
+<li>Le routage des messages</li>
+<li>L&rsquo;optimisation des paramètres radio (ADR - Adaptive Data Rate)</li>
+<li>La détection des doublons (quand plusieurs gateways reçoivent le même message)</li>
+</ul>
+<p><strong>4. L&rsquo;Application Server (AS)</strong>
+C&rsquo;est là que vos données prennent enfin du sens. L&rsquo;Application Server déchiffre les données métier et les met à disposition de vos applications via des APIs REST, MQTT, etc.</p>
+<h3 id="la-sécurité--on-rigole-pas-avec-ça">La sécurité : on rigole pas avec ça</h3>
+<p>Un des gros avantages de LoRaWAN par rapport à des protocoles plus &ldquo;artisanaux&rdquo;, c&rsquo;est que la sécurité est pensée dès le départ.</p>
+<p>Il y a deux méthodes d&rsquo;activation :</p>
+<p><strong>ABP (Activation By Personalization)</strong>
+Les clés de sécurité sont &ldquo;gravées&rdquo; dans le device dès la fabrication. C&rsquo;est simple mais moins sécurisé car les clés ne changent jamais.</p>
+<p><strong>OTAA (Over-The-Air Activation)</strong>
+Le device génère ses clés de session dynamiquement lors de sa première connexion. C&rsquo;est plus sécurisé et c&rsquo;est la méthode recommandée.</p>
+<p>Dans tous les cas, LoRaWAN utilise <strong>AES-128</strong> avec deux niveaux de chiffrement :</p>
+<ul>
+<li><strong>Network Session Key</strong> : pour l&rsquo;intégrité et l&rsquo;authentification réseau</li>
+<li><strong>Application Session Key</strong> : pour chiffrer les données applicatives</li>
+</ul>
+<h2 id="les-limites">Les limites</h2>
+<p>Comme toute technologie, LoRaWAN n&rsquo;est pas magique et a ses limites :</p>
+<h3 id="le-duty-cycle--la-frustration-européenne">Le duty cycle : la frustration européenne</h3>
+<p>En Europe, la limitation à 1% de duty cycle peut être contraignante. Si votre capteur a besoin d&rsquo;envoyer des données toutes les minutes, vous allez rapidement atteindre la limite.</p>
+<h3 id="les-interférences--quand-ça-se-bagarre">Les interférences : quand ça se bagarre</h3>
+<p>Plus il y a de devices LoRa dans une zone, plus les risques d&rsquo;interférences augmentent. Dans certains centres-villes très équipés, on peut observer des taux de perte de messages de 5 à 10%.</p>
+<h3 id="la-latence--pas-de-temps-réel">La latence : pas de temps réel</h3>
+<p>LoRaWAN n&rsquo;est pas fait pour le temps réel. Entre le temps de transmission, le traitement réseau et les retransmissions possibles, comptez quelques secondes à quelques minutes.</p>
+<h3 id="la-localisation--cest-approximatif">La localisation : c&rsquo;est approximatif</h3>
+<p>Même si LoRaWAN permet une localisation basée sur TDOA (Time Difference of Arrival), la précision reste de l&rsquo;ordre de 50 à 200 mètres. Pas terrible pour retrouver votre trottinette volée !</p>
+<h2 id="conclusion--lorawan-lépine-dorsale-des-smart-cities">Conclusion : LoRaWAN, l&rsquo;épine dorsale des Smart Cities</h2>
+<p>Après avoir décortiqué tout ça, force est de constater que LoRaWAN s&rsquo;impose comme une technologie mature et incontournable pour les Smart Cities. Son équilibre entre portée, autonomie et coût en fait l&rsquo;outil idéal pour connecter nos villes.</p>
+<p>Mais comme toujours en tech, il n&rsquo;y a pas de solution miracle. LoRaWAN excelle pour de la télémétrie périodique sur de longues distances, mais ne cherchez pas à faire du streaming vidéo avec !</p>
+<p>Ma conclusion personnelle : si vous travaillez sur des projets IoT urbains, LoRaWAN mérite définitivement sa place dans votre boîte à outils. C&rsquo;est une technologie qui a fait ses preuves sur le terrain et qui continue d&rsquo;évoluer.</p>
+<p>Et vous, avez-vous déjà eu l&rsquo;occasion de jouer avec LoRaWAN ? Partagez vos expériences en commentaire, j&rsquo;adore découvrir de nouveaux cas d&rsquo;usage !</p>
+
+        </p>
+        
+        
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/posts/docs/reflexion/addictes_au_cloud/">
+            &#8592;
+            :
+            Sommes-nous devenus accros au cloud ?
+        </a>
+    </p>
+    <p class="prev-post-date">
+        septembre 7, 2025
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/posts/sysadmin/monitoring/intro-monitoring/">
+            :
+            Monitoring pour les nuls
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            septembre 27, 2025
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2025 makhal.fr</span>
+    
+</footer>
+</body>
+</html>

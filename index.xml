@@ -6,8 +6,29 @@
     <description>Recent content on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Mon, 01 Sep 2025 08:05:49 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 27 Sep 2025 08:10:45 +0200</lastBuildDate>
     <atom:link href="https://makhal.fr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monitoring pour les nuls</title>
+      <link>https://makhal.fr/posts/sysadmin/monitoring/intro-monitoring/</link>
+      <pubDate>Sat, 27 Sep 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/sysadmin/monitoring/intro-monitoring/</guid>
+      <description>Ici je vais vous expliquer ce qu&amp;rsquo;est le monitoring, pourquoi c&amp;rsquo;est important et quelques outils pour commencer.</description>
+    </item>
+    <item>
+      <title>LoRaWAN expliqué simplement : le réseau IoT des Smart Cities</title>
+      <link>https://makhal.fr/posts/other/lorawan/</link>
+      <pubDate>Mon, 15 Sep 2025 08:47:49 +0200</pubDate>
+      <guid>https://makhal.fr/posts/other/lorawan/</guid>
+      <description>On découvre ensemble c&amp;rsquo;est quoi le protocole Lora et plus précisément LoraWan, très utilisé dans le monde de l&amp;rsquo;IoT</description>
+    </item>
+    <item>
+      <title>Sommes-nous devenus accros au cloud ?</title>
+      <link>https://makhal.fr/posts/docs/reflexion/addictes_au_cloud/</link>
+      <pubDate>Sun, 07 Sep 2025 08:40:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/docs/reflexion/addictes_au_cloud/</guid>
+      <description>Accros ou dépendants du cloud ? Entre innovation, coûts et risques, où placer la limite ?</description>
+    </item>
     <item>
       <title>L&#39;explication que j&#39;aurais aimé avoir sur Kubernetes</title>
       <link>https://makhal.fr/posts/k8s/k8s-os/k8s-os/</link>
@@ -223,7 +244,7 @@
       <link>https://makhal.fr/pages/about/</link>
       <pubDate>Wed, 25 Sep 2024 17:29:57 +0200</pubDate>
       <guid>https://makhal.fr/pages/about/</guid>
-      <description>&lt;h1 id=&#34;mohamad-el-akhal-el-bouzidi&#34;&gt;Mohamad El Akhal El Bouzidi&lt;/h1&gt;&#xA;&lt;p&gt;Salut ! Je m&amp;rsquo;appelle Mohamad El Akhal El Bouzidi, et je suis un passionné de tout ce qui touche à l&amp;rsquo;informatique, particulièrement la cybersécurité et l&amp;rsquo;univers Linux. Actuellement étudiant en BUT Réseaux et Télécommunications avec une spécialisation en Cybersécurité, j&amp;rsquo;ai la chance de combiner théorie et pratique en travaillant en alternance comme Administrateur Systèmes et Réseaux chez Aditu.&lt;/p&gt;&#xA;&lt;p&gt;Mon parcours n’est pas juste guidé par les lignes de code ou les configurations réseau, mais par une vraie passion pour la sécurité informatique et un désir profond de contribuer positivement à ce domaine en constante évolution. J&amp;rsquo;aime découvrir comment les systèmes fonctionnent, trouver des moyens de les sécuriser, et surtout, partager mes connaissances avec ceux qui s&amp;rsquo;intéressent aussi à ce domaine fascinant.&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;mohamad-el-akhal-el-bouzidi&#34;&gt;Mohamad El Akhal El Bouzidi&lt;/h1&gt;&#xA;&lt;p&gt;Salut ! Je m&amp;rsquo;appelle &lt;strong&gt;Mohamad El Akhal El Bouzidi&lt;/strong&gt;, passionné d’informatique, de cloud, et de cybersécurité.&#xA;Actuellement en &lt;strong&gt;Master Systèmes d’Information Avancés (SIGLIS)&lt;/strong&gt; à l’&lt;strong&gt;Université de Pau et des Pays de l’Adour&lt;/strong&gt;, je travaille en alternance au &lt;strong&gt;FabLab Ingénierie Numérique&lt;/strong&gt;, où je conçois et déploie des infrastructures &lt;strong&gt;cloud natives&lt;/strong&gt; (Kubernetes, CI/CD, DevOps) au service des étudiants, chercheurs et entreprises.&lt;/p&gt;&#xA;&lt;p&gt;Mon parcours est guidé par une double envie :&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kubernetes Partie 2</title>
@@ -259,6 +280,13 @@
       <pubDate>Wed, 07 Aug 2024 20:05:49 +0100</pubDate>
       <guid>https://makhal.fr/posts/cyber/decouverte_siem/</guid>
       <description>Dans une (encore) nouvelle serie de posts, nous allons decouvir le monde extraordianaire des SIEM</description>
+    </item>
+    <item>
+      <title>Comment monitorer un cluster Kubernetes ?</title>
+      <link>https://makhal.fr/posts/k8s/monitoring/monitoring-k8s/</link>
+      <pubDate>Sun, 19 May 2024 12:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/posts/k8s/monitoring/monitoring-k8s/</guid>
+      <description>Dans ce post, je vous explique comment mettre en place un système de monitoring pour votre cluster Kubernetes avec Prometheus et Grafana.</description>
     </item>
     <item>
       <title>Kubernetes Partie 1</title>
@@ -328,7 +356,7 @@
       <link>https://makhal.fr/index-about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://makhal.fr/index-about/</guid>
-      <description>&lt;h1 id=&#34;a-propos-de-moi&#34;&gt;A propos de moi&lt;/h1&gt;&#xA;&lt;p&gt;Je suis Mohamad El Akhal El Bouzidi, étudiant en 3ème année de BUT Réseaux et Télécoms et alternant spécialisé en cybersécurité chez Aditu&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;a-propos-de-moi&#34;&gt;A propos de moi&lt;/h1&gt;&#xA;&lt;p&gt;Je suis Mohamad El Akhal El Bouzidi, apprenti ingénieur en Master SIGLIS à l’UPPA et alternant au FabLab Ingénierie Numérique.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

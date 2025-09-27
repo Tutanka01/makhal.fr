@@ -48,7 +48,7 @@
     <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
 
     
-    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+    <script src="/js/bundle.min.30b2395f3ff8c77f92f8f803732c95cd644f831ff0f058f07e1314dc79d8f3de.js" integrity="sha256-MLI5Xz/4x3&#43;S&#43;PgDcyyVzWRPgx/w8FjwfhMU3HnY894="></script>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QF6WSBEBS"></script>
     <script>
@@ -184,8 +184,7 @@
 </span></span></code></pre></div><p>Voilà ce que vous devriez voir :</p>
 <p><img src="/images/Docker/Capture_images_1.png" alt="capture alpine" title="capture Alpine"></p>
 <blockquote>
-<p>On constate que l&rsquo;image &ldquo;alpine&rdquo; fait 7.38MB. C&rsquo;est une image très légère !!</p>
-</blockquote>
+<p>On constate que l&rsquo;image &ldquo;alpine&rdquo; fait 7.38MB. C&rsquo;est une image très légère !!</p></blockquote>
 <p>Ce qu&rsquo;il s&rsquo;est passé lors de l&rsquo;exécution de la commande <code>docker pull</code>, c&rsquo;est que Docker a téléchargé l&rsquo;image <em><strong>&ldquo;alpine&rdquo;</strong></em> depuis le <strong>Docker Hub</strong> qui est un registre d&rsquo;images Docker. Vous pouvez trouver des images prêtes à l&rsquo;emploi sur le <em>Docker Hub</em>.</p>
 <p>Les images c&rsquo;est en quelque sorte des templates pour créer des conteneurs. Vous pouvez créer autant de conteneurs que vous voulez à partir d&rsquo;une seule image. Il y a des images pour tout ce qu&rsquo;on veut et déjà prêtes à l&rsquo;emploi. Comme par exemple, des images pour des serveurs web, des bases de données, des applications, etc. Et même des images pour des systèmes d&rsquo;exploitation du genre Ubuntu, Debian, Fedora, etc.</p>
 <p>Mais aussi vous pouvez créer vos propres images, cela on le verra dans une autre partie. L&rsquo;utilité de cela est que vous pouvez, en quelque sorte, encapsuler votre application dans une image et la distribuer à n&rsquo;importe qui. Et cette personne pourra créer un conteneur à partir de cette image et exécuter votre application sans avoir à installer quoi que ce soit.</p>
@@ -229,7 +228,7 @@
 <p>serveur web. La communauté Docker nous donne déjà le travail presque fait. On peut utiliser une image qui contient déjà un serveur web et qui est prête à l&rsquo;emploi. On va utiliser l&rsquo;image <code>httpd</code> qui est une image pour un serveur web Apache2.</p>
 <p>Une fois que j&rsquo;aurais créé mon image avec mon Dockerfile, je pourrais créer un conteneur à partir de cette image et exécuter mon serveur web. Et ça, n&rsquo;importe où, sans avoir à refaire tout le travail.</p>
 <p>Voilà le contenu de mon Dockerfile :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> httpd:2.4</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">httpd:2.4</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> site.html /usr/local/apache2/htdocs/index.html<span style="color:#960050;background-color:#1e0010">
 </span></span></span></code></pre></div><p>La première ligne <code>FROM httpd:2.4</code> permet de définir l&rsquo;image de base à utiliser pour créer notre image. Dans notre cas, on utilise l&rsquo;image <code>httpd</code> qui est. Pour savoir les possibilités qu&rsquo;on a avec cette image, on peut consulter la documentation de l&rsquo;image sur le <em>Docker Hub</em>.</p>
 <p>Également vous pouvez voir que j&rsquo;ai spécifié la version de l&rsquo;image <code>httpd</code> que je veux utiliser. C&rsquo;est pour éviter d&rsquo;avoir des surprises lors de la création de l&rsquo;image. Si je ne spécifie pas la version, Docker va utiliser la dernière version de l&rsquo;image <code>httpd</code> qui est disponible sur le <em>Docker Hub</em>. Donc par défaut, Docker va utiliser le flag <code>:latest</code> pour la version de l&rsquo;image.</p>

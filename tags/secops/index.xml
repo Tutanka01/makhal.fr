@@ -6,8 +6,15 @@
     <description>Recent content in Secops on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Wed, 19 Feb 2025 08:10:45 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 27 Sep 2025 08:10:45 +0200</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/secops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monitoring pour les nuls</title>
+      <link>https://makhal.fr/posts/sysadmin/monitoring/intro-monitoring/</link>
+      <pubDate>Sat, 27 Sep 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/sysadmin/monitoring/intro-monitoring/</guid>
+      <description>Ici je vais vous expliquer ce qu&amp;rsquo;est le monitoring, pourquoi c&amp;rsquo;est important et quelques outils pour commencer.</description>
+    </item>
     <item>
       <title>KASM - Navigateur et OS jetables</title>
       <link>https://makhal.fr/posts/sysadmin/kasm-post/</link>

@@ -6,8 +6,15 @@
     <description>Recent content in Devops on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Mon, 01 Sep 2025 08:05:49 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 27 Sep 2025 08:10:45 +0200</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monitoring pour les nuls</title>
+      <link>https://makhal.fr/posts/sysadmin/monitoring/intro-monitoring/</link>
+      <pubDate>Sat, 27 Sep 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/posts/sysadmin/monitoring/intro-monitoring/</guid>
+      <description>Ici je vais vous expliquer ce qu&amp;rsquo;est le monitoring, pourquoi c&amp;rsquo;est important et quelques outils pour commencer.</description>
+    </item>
     <item>
       <title>L&#39;explication que j&#39;aurais aimé avoir sur Kubernetes</title>
       <link>https://makhal.fr/posts/k8s/k8s-os/k8s-os/</link>
@@ -91,6 +98,13 @@
       <pubDate>Sat, 21 Sep 2024 13:56:10 +0100</pubDate>
       <guid>https://makhal.fr/posts/k8s/k8s1-2/</guid>
       <description>Ici vous trouverez une explication plus detaille a propos des elements qui composent K8s</description>
+    </item>
+    <item>
+      <title>Comment monitorer un cluster Kubernetes ?</title>
+      <link>https://makhal.fr/posts/k8s/monitoring/monitoring-k8s/</link>
+      <pubDate>Sun, 19 May 2024 12:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/posts/k8s/monitoring/monitoring-k8s/</guid>
+      <description>Dans ce post, je vous explique comment mettre en place un système de monitoring pour votre cluster Kubernetes avec Prometheus et Grafana.</description>
     </item>
     <item>
       <title>Kubernetes Partie 1</title>

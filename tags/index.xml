@@ -6,13 +6,62 @@
     <description>Recent content in Tags on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Mon, 01 Sep 2025 08:05:49 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 27 Sep 2025 08:10:45 +0200</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Devops</title>
       <link>https://makhal.fr/tags/devops/</link>
-      <pubDate>Mon, 01 Sep 2025 08:05:49 +0100</pubDate>
+      <pubDate>Sat, 27 Sep 2025 08:10:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Infra</title>
+      <link>https://makhal.fr/tags/infra/</link>
+      <pubDate>Sat, 27 Sep 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/tags/infra/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Secops</title>
+      <link>https://makhal.fr/tags/secops/</link>
+      <pubDate>Sat, 27 Sep 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/tags/secops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sysadmin</title>
+      <link>https://makhal.fr/tags/sysadmin/</link>
+      <pubDate>Sat, 27 Sep 2025 08:10:45 +0200</pubDate>
+      <guid>https://makhal.fr/tags/sysadmin/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IOT</title>
+      <link>https://makhal.fr/tags/iot/</link>
+      <pubDate>Mon, 15 Sep 2025 08:47:49 +0200</pubDate>
+      <guid>https://makhal.fr/tags/iot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LoraWan</title>
+      <link>https://makhal.fr/tags/lorawan/</link>
+      <pubDate>Mon, 15 Sep 2025 08:47:49 +0200</pubDate>
+      <guid>https://makhal.fr/tags/lorawan/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloud</title>
+      <link>https://makhal.fr/tags/cloud/</link>
+      <pubDate>Sun, 07 Sep 2025 08:40:45 +0200</pubDate>
+      <guid>https://makhal.fr/tags/cloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reflexion</title>
+      <link>https://makhal.fr/tags/reflexion/</link>
+      <pubDate>Sun, 07 Sep 2025 08:40:45 +0200</pubDate>
+      <guid>https://makhal.fr/tags/reflexion/</guid>
       <description></description>
     </item>
     <item>
@@ -55,13 +104,6 @@
       <link>https://makhal.fr/tags/metallb/</link>
       <pubDate>Thu, 10 Jul 2025 04:12:10 +0100</pubDate>
       <guid>https://makhal.fr/tags/metallb/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cloud</title>
-      <link>https://makhal.fr/tags/cloud/</link>
-      <pubDate>Sun, 06 Jul 2025 08:10:45 +0200</pubDate>
-      <guid>https://makhal.fr/tags/cloud/</guid>
       <description></description>
     </item>
     <item>
@@ -114,13 +156,6 @@
       <description></description>
     </item>
     <item>
-      <title>Sysadmin</title>
-      <link>https://makhal.fr/tags/sysadmin/</link>
-      <pubDate>Sat, 21 Jun 2025 08:10:45 +0200</pubDate>
-      <guid>https://makhal.fr/tags/sysadmin/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Linux</title>
       <link>https://makhal.fr/tags/linux/</link>
       <pubDate>Sat, 14 Jun 2025 08:10:45 +0200</pubDate>
@@ -146,13 +181,6 @@
       <link>https://makhal.fr/tags/gitops/</link>
       <pubDate>Fri, 16 May 2025 08:10:45 +0200</pubDate>
       <guid>https://makhal.fr/tags/gitops/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Infra</title>
-      <link>https://makhal.fr/tags/infra/</link>
-      <pubDate>Sat, 03 May 2025 08:15:45 +0200</pubDate>
-      <guid>https://makhal.fr/tags/infra/</guid>
       <description></description>
     </item>
     <item>
@@ -237,13 +265,6 @@
       <link>https://makhal.fr/tags/windows/</link>
       <pubDate>Fri, 14 Mar 2025 06:01:10 +0100</pubDate>
       <guid>https://makhal.fr/tags/windows/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Secops</title>
-      <link>https://makhal.fr/tags/secops/</link>
-      <pubDate>Wed, 19 Feb 2025 08:10:45 +0200</pubDate>
-      <guid>https://makhal.fr/tags/secops/</guid>
       <description></description>
     </item>
     <item>
