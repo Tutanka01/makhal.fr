@@ -223,7 +223,8 @@ C’est exactement ce que les microVMs promettent.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
 </span></span><span style="display:flex;"><span>sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils cpu-checker
 </span></span></code></pre></div><blockquote>
-<p>(Note : tous ces paquets ne sont pas strictement nécessaires pour Firecracker seul, notamment <code>libvirt-*</code>. <code>qemu-kvm</code> peut être utile pour les outils ou pour vérifier KVM. L&rsquo;essentiel est que le module KVM soit chargé et que l&rsquo;utilisateur exécutant Firecracker ait les droits sur <code>/dev/kvm</code>).</p></blockquote>
+<p>(Note : tous ces paquets ne sont pas strictement nécessaires pour Firecracker seul, notamment <code>libvirt-*</code>. <code>qemu-kvm</code> peut être utile pour les outils ou pour vérifier KVM. L&rsquo;essentiel est que le module KVM soit chargé et que l&rsquo;utilisateur exécutant Firecracker ait les droits sur <code>/dev/kvm</code>).</p>
+</blockquote>
 <p>On peut vérifier que le module KVM est bien chargé et que notre utilisateur a les permissions nécessaires (il doit faire partie du groupe <code>kvm</code>) :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Vérifie si KVM est supporté et activé</span>
 </span></span><span style="display:flex;"><span>sudo kvm-ok 
@@ -284,7 +285,8 @@ C’est exactement ce que les microVMs promettent.</p>
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        \&#34;is_read_only\&#34;: false
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }&#34;</span>
 </span></span></code></pre></div><blockquote>
-<p>Script inspiré de celui de <a href="https://une-tasse-de.cafe/blog/firecracker/">Quentin Joly</a>, qui est très bien fait !</p></blockquote>
+<p>Script inspiré de celui de <a href="https://une-tasse-de.cafe/blog/firecracker/">Quentin Joly</a>, qui est très bien fait !</p>
+</blockquote>
 <p>Et enfin, démarrons l&rsquo;instance :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Démarre la microVM</span>
 </span></span><span style="display:flex;"><span>curl --unix-socket /tmp/firecracker.socket -i <span style="color:#ae81ff">\

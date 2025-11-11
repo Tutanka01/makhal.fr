@@ -6,8 +6,15 @@
     <description>Recent content in Cyber on makhal.fr</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Wed, 28 May 2025 08:10:45 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 05 Oct 2025 08:05:49 +0100</lastBuildDate>
     <atom:link href="https://makhal.fr/tags/cyber/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Twingate : Le Zero Trust, enfin simplifié</title>
+      <link>https://makhal.fr/posts/cyber/twingate/twingate/</link>
+      <pubDate>Sun, 05 Oct 2025 08:05:49 +0100</pubDate>
+      <guid>https://makhal.fr/posts/cyber/twingate/twingate/</guid>
+      <description>On découvre Twingate, une solution de sécurité réseau qui remplace les VPN traditionnels avec une approche Zero Trust Network Access (ZTNA).</description>
+    </item>
     <item>
       <title>Authelia &#43; Traefik : sécurisez tous vos services web</title>
       <link>https://makhal.fr/posts/sysadmin/authelia/authelia/</link>

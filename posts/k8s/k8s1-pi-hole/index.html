@@ -258,7 +258,8 @@ graph TD
 <p>On va donc installer Longhorn en utilisant <strong>Helm</strong>. Pour ça, je vais utiliser un outil qui va me permettre d&rsquo;organiser tous les différents helm charts qu&rsquo;on va utiliser pour ce projet. Cet outil s&rsquo;appelle <strong>Helmfile</strong>.</p>
 <p>Pour installer cet outil, il faudra simplement télécharger le binaire, et le mettre dans votre PATH. Voici le <a href="https://github.com/helmfile/helmfile/releases/tag/v0.171.0">GITHUB</a> du projet.</p>
 <blockquote>
-<p>Pour Linux, il suffira de déplacer le binaire dans le path <code>/usr/bin</code> ou <code>/usr/local/bin</code> par exemple.</p></blockquote>
+<p>Pour Linux, il suffira de déplacer le binaire dans le path <code>/usr/bin</code> ou <code>/usr/local/bin</code> par exemple.</p>
+</blockquote>
 <p>Pourquoi Helmfile ? Eh bien, Helmfile permet de gérer plusieurs charts Helm dans un seul fichier. Ça simplifie la gestion de tes applications Kubernetes, surtout quand on a plusieurs dépendances.</p>
 <p>Il faut également installer le binaire de <strong>Helm</strong>. Pour ça, il suffit de télécharger le binaire depuis le <a href="https://github.com/helm/helm/releases">site officiel</a>, et de le déplacer dans votre PATH.</p>
 <p>Maintenant, avant de faire quoi que ce soit, il faut connaître la dernière version de Longhorn. Pour ça, on va utiliser la commande suivante :</p>
@@ -398,7 +399,8 @@ graph TD
 </span></span><span style="display:flex;"><span>metallb-speaker-cx2j6                4/4     Running   <span style="color:#ae81ff">0</span>          2m55s
 </span></span><span style="display:flex;"><span>metallb-speaker-zt86w                4/4     Running   <span style="color:#ae81ff">0</span>          2m55s
 </span></span></code></pre></div><blockquote>
-<p>Il faudra attendre quelques minutes pour que MetalLB soit installé correctement, et passe son étape d&rsquo;<em>init</em>.</p></blockquote>
+<p>Il faudra attendre quelques minutes pour que MetalLB soit installé correctement, et passe son étape d&rsquo;<em>init</em>.</p>
+</blockquote>
 <p>Maintenant, on doit configurer MetalLB pour qu&rsquo;il puisse fonctionner correctement, comme par exemple lui donner le range d&rsquo;adresses IP qu&rsquo;il pourra utiliser. Pour faire ça, il existe différentes façons. Pour configurer correctement MetalLB, je vais utiliser <strong>Kustomize</strong>.</p>
 <p>Kustomize va nous permettre de créer un fichier de configuration pour MetalLB et de le déployer sur notre cluster Kubernetes. On peux considérer Kustomize comme un gestionnaire de configuration pour Kubernetes. C&rsquo;est super pratique pour éviter de répéter des configs et pour gérer facilement les différences entre les environnements.</p>
 <p>Tout d&rsquo;abord, il faudra créer un nouveau fichier, le mien je l&rsquo;ai nommé <code>kustomization.yaml</code> et il contient le contenu suivant :</p>
@@ -435,7 +437,8 @@ graph TD
 <p>Une fois qu&rsquo;on a fait, rien de plus compliqué que de lancer la commande suivante :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl apply -k .
 </span></span></code></pre></div><blockquote>
-<p>Il faut être dans le même dossier que le fichier <code>kustomization.yaml</code> :)</p></blockquote>
+<p>Il faut être dans le même dossier que le fichier <code>kustomization.yaml</code> :)</p>
+</blockquote>
 <p>Et normalement, vous verrez quelque chose comme ça :</p>
 
 

@@ -211,7 +211,8 @@
 <p>Pour construire l&rsquo;image, exécutez la commande suivante depuis la racine de votre projet :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker build -t tutanka01/k8s:art3 .
 </span></span></code></pre></div><blockquote>
-<p>(Pensez à remplacer <code>tutanka01/k8s:art3</code> par votre nom d&rsquo;utilisateur Docker Hub, egalement il faudra sur dockerhub avoir créé un repository nommé <code>k8s</code>)</p></blockquote>
+<p>(Pensez à remplacer <code>tutanka01/k8s:art3</code> par votre nom d&rsquo;utilisateur Docker Hub, egalement il faudra sur dockerhub avoir créé un repository nommé <code>k8s</code>)</p>
+</blockquote>
 <p>Une fois l&rsquo;image faite, vous allez voir quelque chose qui resseble a ça :
 <img src="/images/k8s/k8s3/docker-build-1.png" alt="docker-build-1"></p>
 <p>Une fois que tout est prêt, vous pouvez exécuter la commande suivante pour tester votre image :</p>
@@ -223,7 +224,8 @@
 <p>Passons maintenant aux choses sérieuses : la création de notre cluster Kubernetes. Pour cela, les options ne manquent pas. Vous pourriez, par exemple, déployer un cluster sur des conteneurs avec KinD (Kubernetes in Docker), utiliser Minikube, ou encore choisir un service cloud comme GCP, AWS ou Azure via leurs services EKS, GKE ou AKS respectifs.</p>
 <p>Pour ce tutoriel, nous allons créer un <em>vrai</em> cluster Kubernetes, mais sans passer par le cloud. Nous utiliserons <a href="https://k3s.io/">K3s</a>, une distribution Kubernetes légère, rapide, et certifiée par la <em><strong>CNCF</strong></em>.</p>
 <blockquote>
-<p>Petite parenthèse : Si vous ne connaissez pas la CNCF (Cloud Native Computing Foundation), c&rsquo;est l&rsquo;organisme qui supervise Kubernetes et de nombreux autres projets open source. Si vous êtes curieux de découvrir cet écosystème, je vous recommande de jeter un œil à leur incroyable tableau de bord : <a href="https://landscape.cncf.io/">CNCF Landscape</a>. Vous y trouverez des centaines de projets, tous classés par catégories, pour explorer les outils open source du cloud-native.</p></blockquote>
+<p>Petite parenthèse : Si vous ne connaissez pas la CNCF (Cloud Native Computing Foundation), c&rsquo;est l&rsquo;organisme qui supervise Kubernetes et de nombreux autres projets open source. Si vous êtes curieux de découvrir cet écosystème, je vous recommande de jeter un œil à leur incroyable tableau de bord : <a href="https://landscape.cncf.io/">CNCF Landscape</a>. Vous y trouverez des centaines de projets, tous classés par catégories, pour explorer les outils open source du cloud-native.</p>
+</blockquote>
 <h3 id="c"><strong>C&rsquo;est quoi K3s ?</strong></h3>
 <p>Avant de rentrer dans le vif du sujet, répondons à une question essentielle : <strong>Pourquoi K3s existe-t-il ?</strong></p>
 <p>Kubernetes est sans aucun doute un outil extrêmement puissant. Mais, comme tout ce qui est puissant, il est aussi complexe et exigeant. Cette complexité, combinée à son appétit en ressources, en fait parfois un choix difficile à justifier, surtout pour les environnements limités ou les petits projets.</p>
@@ -237,7 +239,8 @@
 <li><strong>Production Ready</strong> : K3s n&rsquo;est pas seulement destiné aux tests ou aux petits projets. Vous pouvez l&rsquo;utiliser en production sans problème.</li>
 </ul>
 <blockquote>
-<p><strong>Note importante</strong> : K3s supprime certaines fonctionnalités non essentielles de Kubernetes (comme les plugins cloud inutiles en local). Mais rassurez-vous, tout ce que vous apprenez avec K3s est transférable à un cluster Kubernetes standard.</p></blockquote>
+<p><strong>Note importante</strong> : K3s supprime certaines fonctionnalités non essentielles de Kubernetes (comme les plugins cloud inutiles en local). Mais rassurez-vous, tout ce que vous apprenez avec K3s est transférable à un cluster Kubernetes standard.</p>
+</blockquote>
 <p>K3s coche donc toutes les cases : légèreté, simplicité et compatibilité. Que ce soit pour apprendre Kubernetes, pour expérimenter dans un homelab ou même pour des environnements de production légers, K3s est une excellente option.</p>
 <h3 id="en-savoir-plus"><strong>En savoir plus</strong></h3>
 <p>Je ne vais pas m’étendre davantage sur la théorie. Si vous voulez aller plus loin, je vous recommande cet excellent article qui explique très bien ce qu’est K3s et ses cas d’utilisation :<br>
